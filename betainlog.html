@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicesets Beta</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --teal:#66C0B5;
+    --teal-dark:#3F8F86;
+    --light:#EAF7F5;
+    --dark:#1A171B;
+    --white:#fff;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Lato',sans-serif;
+    background:linear-gradient(180deg,var(--light),white);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.card{
+
+    width:420px;
+    max-width:90%;
+    background:white;
+    border-radius:20px;
+    padding:50px;
+    text-align:center;
+    box-shadow:0 20px 60px rgba(0,0,0,.12);
+
+}
+
+.logo{
+
+    font-size:34px;
+    margin-bottom:10px;
+
+}
+
+.logo span:first-child{
+    font-weight:300;
+}
+
+.logo span:last-child{
+    font-weight:900;
+}
+
+.beta{
+
+    display:inline-block;
+    background:var(--teal);
+    color:white;
+    padding:6px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:700;
+    margin-bottom:30px;
+
+}
+
+h1{
+
+    margin:0 0 15px;
+    font-size:32px;
+
+}
+
+p{
+
+    color:#666;
+    line-height:1.6;
+    margin-bottom:30px;
+
+}
+
+input{
+
+    width:100%;
+    padding:16px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:16px;
+    margin-bottom:20px;
+
+}
+
+button{
+
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:50px;
+    background:var(--dark);
+    color:white;
+    font-size:16px;
+    font-weight:700;
+    cursor:pointer;
+    transition:.2s;
+
+}
+
+button:hover{
+
+    background:var(--teal-dark);
+
+}
+
+#error{
+
+    color:#c62828;
+    margin-top:18px;
+    display:none;
+
+}
+
+footer{
+
+    margin-top:35px;
+    color:#999;
+    font-size:13px;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<div class="logo">
+<span>Service</span><span>SETS</span>
+</div>
+
+<div class="beta">BETA</div>
+
+<h1>Welkom!</h1>
+
+<p>
+Deze website bevindt zich nog in ontwikkeling.
+Voer het wachtwoord in om de beta-versie te bekijken.
+</p>
+
+<input
+type="password"
+id="password"
+placeholder="Wachtwoord">
+
+<button onclick="login()">
+Website openen
+</button>
+
+<div id="error">
+Onjuist wachtwoord.
+</div>
+
+<footer>
+© Servicesets
+</footer>
+
+</div><script>
+
+const PASSWORD = "servicesets2026";
+
+function login(){
+
+    const input = document.getElementById("password").value;
+
+    if(input === PASSWORD){
+        window.location.href = "index.html";
+    }else{
+        document.getElementById("error").style.display = "block";
+    }
+
+}
+
+document.getElementById("password").addEventListener("keypress", function(e){
+    if(e.key === "Enter"){
+        login();
+    }
+});
+
+</script>
+
+</body>
+</html>
