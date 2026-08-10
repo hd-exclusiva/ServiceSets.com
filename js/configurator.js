@@ -1,4 +1,4 @@
- StepIndex = 1;
+ let cfgStepIndex = 1;
   function updateCfgUI(){
     for(let i=1;i<=4;i++){
       document.getElementById('cfg-step-'+i).classList.toggle('active', i===cfgStepIndex);
