@@ -52,3 +52,18 @@
     document.getElementById('searchToggle').classList.remove('active');
     document.getElementById('searchToggle').setAttribute('aria-expanded', 'false');
   }
+
+ document.addEventListener('click', (e)=>{
+    if(!document.getElementById('langSelect').contains(e.target)){
+      document.getElementById('langSelect').classList.remove('open');
+    }
+    if(!document.getElementById('searchWrap').contains(e.target)){
+      closeSearch();
+    }
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key==='Escape'){
+      document.getElementById('langSelect').classList.remove('open');
+      closeSearch();
+    }
+  });

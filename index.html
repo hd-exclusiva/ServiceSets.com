@@ -395,7 +395,6 @@
     </div>
   </div>
 </section>
-
 <!-- ============ CONTACT ============ -->
 <section class="page" id="page-contact">
   <div class="contact-hero">
@@ -500,7 +499,7 @@
     </div>
   </div>
   <div class="wrap footer-bottom">
-    <span>© 2014–2026 Servicesets — merk van Exclusiva BV</span>
+    <span>© 2014–2026 Servicesets - merk van Exclusiva BV</span>
     <div class="legal-links">
       <a href="#">Privacy Policy</a><a href="#">Disclaimer</a><a href="#">Cookie-instellingen</a>
     </div>
@@ -535,155 +534,11 @@
   </div>
 </div>
 
-<script>
-  // ---------- page router ----------
- 
-  function performSearch(e){
-    e.preventDefault();
-    const term = document.getElementById('searchInput').value.trim();
-    closeSearch();
-    filterProductGrid(term);
-    showPage('shop');
-    return false;
-  }
-  function filterProductGrid(term){
-    const cards = document.querySelectorAll('#productGrid .product-card');
-    let visibleCount = 0;
-    cards.forEach(card=>{
-      const name = card.dataset.name.toLowerCase();
-      const cat = card.dataset.cat.toLowerCase();
-      const match = !term || name.includes(term.toLowerCase()) || cat.includes(term.toLowerCase());
-      card.style.display = match ? '' : 'none';
-      if(match) visibleCount++;
-    });
-    const countEl = document.getElementById('resultCount');
-    countEl.textContent = term
-      ? `${visibleCount} service-set${visibleCount===1?'':'s'} gevonden voor "${term}"`
-      : `${cards.length} service-sets gevonden`;
-  }
-
-  // close any open dropdown (lang or search) on outside click
-  document.addEventListener('click', (e)=>{
-    if(!document.getElementById('langSelect').contains(e.target)){
-      document.getElementById('langSelect').classList.remove('open');
-    }
-    if(!document.getElementById('searchWrap').contains(e.target)){
-      closeSearch();
-    }
-  });
-  document.addEventListener('keydown', (e)=>{
-    if(e.key==='Escape'){
-      document.getElementById('langSelect').classList.remove('open');
-      closeSearch();
-    }
-  });
-
-  // ---------- product grid (shop) ----------
-  const products = [
-    {name:'Recreatie Startpakket', cat:'Recreatie', price:'€ 6,95', ribbon:'stock', ribbonLabel:'Op voorraad', c1:'#3F8F86', c2:'#1A171B'},
-    {name:'Hotel Wellness Duo', cat:'Hotel & Wellness', price:'€ 4,50', ribbon:'order', ribbonLabel:'Bestel-item', c1:'#1A171B', c2:'#66C0B5'},
-    {name:'Koffie Compleet', cat:'Koffie', price:'€ 3,25', ribbon:'stock', ribbonLabel:'Op voorraad', c1:'#66C0B5', c2:'#1A171B'},
-    {name:'Bad & Douche Basis', cat:'Bad & Douche', price:'€ 5,10', ribbon:'sale', ribbonLabel:'Uitverkoop', c1:'#4A4A4C', c2:'#66C0B5'},
-    {name:'Schoonmaakset Compact', cat:'Schoonmaak', price:'€ 7,80', ribbon:'stock', ribbonLabel:'Op voorraad', c1:'#1A171B', c2:'#EAF7F5'},
-    {name:'Recreatie XL', cat:'Recreatie', price:'€ 9,40', ribbon:'order', ribbonLabel:'Bestel-item', c1:'#3F8F86', c2:'#66C0B5'},
-  ];
-  const grid = document.getElementById('productGrid');
-  products.forEach(p=>{
-    const el = document.createElement('div');
-    el.className='product-card';
-    el.dataset.name = p.name;
-    el.dataset.cat = p.cat;
-    el.innerHTML = `
-      <div class="product-media">
-        <span class="ribbon ${p.ribbon}">${p.ribbonLabel}</span>
-        <svg viewBox="0 0 300 300" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-          <rect width="300" height="300" fill="${p.c1}"/>
-          <rect x="70" y="70" width="160" height="160" rx="18" fill="${p.c2}" opacity=".55"/>
-        </svg>
-      </div>
-      <div class="product-info">
-        <span class="cat">${p.cat}</span>
-        <h3>${p.name}</h3>
-        <div class="price">${p.price} <button class="mini-add" aria-label="Toevoegen">+</button></div>
-      </div>`;
-    grid.appendChild(el);
-  });
-
-  // ---------- configurator ----------
-  let cfgStepIndex = 1;
-  function updateCfgUI(){
-    for(let i=1;i<=4;i++){
-      document.getElementById('cfg-step-'+i).classList.toggle('active', i===cfgStepIndex);
-      document.getElementById('seg'+i).style.width = (i<=cfgStepIndex ? '100%':'0%');
-      document.getElementById('lbl'+i).classList.toggle('on', i<=cfgStepIndex);
-    }
-    document.getElementById('cfgPrev').style.visibility = cfgStepIndex===1 ? 'hidden':'visible';
-    document.getElementById('cfgNext').textContent = cfgStepIndex===4 ? 'Offerte aanvragen' : 'Volgende →';
-    document.getElementById('cfgNext').onclick = cfgStepIndex===4 ? function(){alert('In het echte platform stuurt dit de configuratie als offerteaanvraag naar Odoo.');} : function(){cfgStep(1);};
-  }
-  function cfgStep(dir){
-    cfgStepIndex = Math.min(4, Math.max(1, cfgStepIndex+dir));
-    updateCfgUI();
-  }
-  function selectOption(btn, step, multi){
-    if(multi){
-      btn.classList.toggle('selected');
-    } else {
-      btn.parentElement.querySelectorAll('.cfg-option').forEach(o=>o.classList.remove('selected'));
-      btn.classList.add('selected');
-    }
-    updateSummary();
-  }
-  function updateSummary(){
-    const inhoudCount = document.querySelectorAll('#cfg-step-2 .cfg-option.selected').length;
-    const verpakking = document.querySelector('#cfg-step-3 .cfg-option.selected');
-    const sumInhoud = document.getElementById('sumInhoud');
-    const sumVerpakking = document.getElementById('sumVerpakking');
-    if(inhoudCount>0){
-      sumInhoud.classList.remove('muted');
-      sumInhoud.innerHTML = `<span>Inhoud</span><span>${inhoudCount} onderdelen gekozen</span>`;
-      document.getElementById('sumBox2').setAttribute('opacity','1');
-    }
-    if(verpakking){
-      sumVerpakking.classList.remove('muted');
-      sumVerpakking.innerHTML = `<span>Verpakking</span><span>${verpakking.querySelector('strong').textContent}</span>`;
-    }
-  }
-  updateCfgUI();
-
-  // ---------- chat widget ----------
-  function toggleChat(){
-    document.getElementById('chatPanel').classList.toggle('open');
-  }
-  function chatQuick(msg){
-    addBubble(msg, 'user');
-    respond(msg);
-  }
-  function chatSend(){
-    const input = document.getElementById('chatInput');
-    if(!input.value.trim()) return;
-    addBubble(input.value, 'user');
-    respond(input.value);
-    input.value='';
-  }
-  function addBubble(text, who){
-    const body = document.getElementById('chatBody');
-    const b = document.createElement('div');
-    b.className = 'bubble '+who;
-    b.textContent = text;
-    body.appendChild(b);
-    body.scrollTop = body.scrollHeight;
-  }
-  function respond(msg){
-    setTimeout(()=>{
-      let reply = "Goede vraag — in de live omgeving beantwoordt onze AI-chatbot dit op basis van de kennisbank, of verbindt ik je met een collega.";
-      if(/levertijd/i.test(msg)) reply = "Standaardpakketten zijn uit voorraad leverbaar, meestal binnen 2–3 werkdagen. Maatwerk sets hangen af van de configuratie.";
-      if(/maatwerk|180/i.test(msg)) reply = "Maatwerk service-sets, inclusief eigen verpakking, kunnen we vanaf 180 sets samenstellen.";
-      if(/medewerker/i.test(msg)) reply = "Ik verbind je door — je kunt ook direct bellen naar 088 435 66 88, ma–vr 8:30–17:00.";
-      addBubble(reply, 'bot');
-    }, 500);
-  }
-</script>
+    <script src="js/navigation.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/configurator.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 </html>
