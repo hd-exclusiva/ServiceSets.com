@@ -21,3 +21,5 @@ cpq.configuration (de "instantie" — wat de klant daadwerkelijk gekozen heeft)
   ├── personalization_id
   ├── computed_dimensions (L x B x H van het samengestelde geheel)
   └── suggested_box_id → resultaat van de py3dbp-berekening
+
+
