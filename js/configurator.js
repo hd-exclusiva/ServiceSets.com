@@ -21,20 +21,20 @@
 
   // ---------- PYODIDE: laad de ECHTE packer_core.py ----------
   let pyodideInstance = null;
-const pyReady = (async () => {
-  const pyodide = await loadPyodide();
-  // Pas pad aan naar absoluut t.o.v. root
-  const src = await (await fetch('/py/packer_core.py')).text();
-  pyodide.runPython(src);
-  pyodideInstance = pyodide;
-  const statusEl = document.getElementById('sscpq-pyStatus');
-  statusEl.textContent = 'Python klaar (packer_core.py geladen)';
-  statusEl.className = 'ready';
-  const calcBtn = document.getElementById('sscpq-calcBtn');
-  calcBtn.disabled = false;
-  calcBtn.textContent = 'Bereken passende doos →';
-  return pyodide;
-})();
+  const pyReady = (async () => {
+    const pyodide = await loadPyodide();
+    // Gebruik absoluut pad naar de root-map /py/
+    const src = await (await fetch('/py/packer_core.py')).text();
+    pyodide.runPython(src);
+    pyodideInstance = pyodide;
+    const statusEl = document.getElementById('sscpq-pyStatus');
+    statusEl.textContent = 'Python klaar (packer_core.py geladen)';
+    statusEl.className = 'ready';
+    const calcBtn = document.getElementById('sscpq-calcBtn');
+    calcBtn.disabled = false;
+    calcBtn.textContent = 'Bereken passende doos →';
+    return pyodide;
+  })();
 
   async function pySelectBox(items, candidateBoxes){
     const pyodide = await pyReady;
@@ -115,22 +115,22 @@ json.dumps(_result)
   }
 
   // ---------- SERVICESETS-CATALOGUS (automatisch geladen bij openen) ----------
- async function loadCatalog(){
-  const statusEl = document.getElementById('sscpq-catalogStatus');
-  statusEl.textContent = 'laden…';
-  try{
-    // Pas pad aan naar absoluut t.o.v. root
-    const resp = await fetch('/data/products.json');
-    const data = await resp.json();
-    products = data.map(p => ({ id: nextId('p'), num: p.num, name: p.name, l: p.l, w: p.w, h: p.h, weight_g: p.weight_g }));
-    composition = {};
-    renderProductTable();
-    renderComposition();
-    statusEl.textContent = `${products.length} producten geladen uit catalogus`;
-  } catch(err){
-    statusEl.textContent = 'kon catalogus niet laden (' + err.message + ')';
+  async function loadCatalog(){
+    const statusEl = document.getElementById('sscpq-catalogStatus');
+    statusEl.textContent = 'laden…';
+    try{
+      // Gebruik absoluut pad naar de root-map
+      const resp = await fetch('/products.json');
+      const data = await resp.json();
+      products = data.map(p => ({ id: nextId('p'), num: p.num, name: p.name, l: p.l, w: p.w, h: p.h, weight_g: p.weight_g }));
+      composition = {};
+      renderProductTable();
+      renderComposition();
+      statusEl.textContent = `${products.length} producten geladen uit catalogus`;
+    } catch(err){
+      statusEl.textContent = 'kon catalogus niet laden (' + err.message + ')';
+    }
   }
-}
 
   // ---------- FILE UPLOAD ----------
   function initFileUpload(){
