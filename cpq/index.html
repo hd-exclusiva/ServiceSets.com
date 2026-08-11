@@ -1,365 +1,238 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8">
-<title>Servicesets — CPQ Box-Fit Demo</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicesets — Configureer uw eigen set</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
 
+  <!-- Externe libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+
+  <!-- Eigen scripts (configurator.js moet na pyodide worden geladen) -->
+  <script src="../js/configurator.js" defer></script>
+  <script src="../js/navigation.js" defer></script>
+  <script src="../js/shop.js" defer></script>
+  <script src="../js/chat.js" defer></script>
+  <script src="../js/app.js" defer></script>
 </head>
 <body>
+
+<!-- ====== BANNER (prototype) ====== -->
+<div class="proto-banner">Klikbaar concept — <strong>customer journey</strong> voor Servicesets.com · nog geen koppeling met Odoo</div>
+
+<!-- ====== HEADER ====== -->
 <header class="site">
-    <div class="nav-inner">
-
-        <a href="../index.html" class="brand">
-            <span class="brand-name">
-                ServiceSets
-            </span>
-        </a>
-
-        <a href="../index.html" class="nav-link">
-            Terug naar ServiceSets
-        </a>
-
+  <div class="utility-bar">
+    <div class="wrap">
+      <div class="utility-left">
+        <a class="util-tel" href="tel:0884356688">088 435 66 88</a>
+        <a href="../index.html#over-ons">Over ons</a>
+        <a href="#">Klantenservice</a>
+      </div>
+      <div class="lang-select" id="langSelect">
+        <button class="lang-btn" onclick="toggleLang(event)" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">NL</span><span class="lang-caret">▾</span>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button role="menuitem" aria-pressed="true" onclick="setLang('NL', event)">Nederlands <span>NL</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('DE', event)">Deutsch <span>DE</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('EN', event)">English <span>EN</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('FR', event)">Français <span>FR</span></button>
+          <div class="lang-cookie-note">We onthouden je taalkeuze via een functionele cookie, zodat je hem niet steeds opnieuw hoeft te kiezen.</div>
+        </div>
+      </div>
     </div>
-</header>
-<div class="cpq-root">
-  <div class="cpq-header">
-    <div class="cpq-title">Servicesets CPQ <span class="tag">PYTHON</span></div>
-    <div id="pyStatus" class="loading">Python-interpreter laden…</div>
   </div>
 
-  <div class="cpq-grid">
-    <div>
-      <div class="panel">
-        <div class="panel-title">01 · Productdata <span class="num">artikelnummer · naam · L · B · H (cm)</span></div>
-        <div class="row-actions" style="margin-bottom:12px;">
-          <button class="btn secondary small" id="loadCatalogBtn">↻ Servicesets-catalogus herladen</button>
-          <span class="dz-sub" id="catalogStatus" style="align-self:center;"></span>
+  <div class="wrap nav-row">
+    <a href="../index.html" class="logo">
+      <span class="light">Service</span><span class="bold">SETS</span><sup>TM</sup>
+    </a>
+    <nav class="primary" id="primaryNav">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#shop">Shop</a>
+      <a href="#" class="active">Set op maat</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="search-wrap" id="searchWrap">
+        <button class="icon-btn" id="searchToggle" title="Zoeken" aria-label="Zoeken" aria-haspopup="true" aria-expanded="false" onclick="toggleSearch(event)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <div class="search-panel" id="searchPanel">
+          <form onsubmit="return performSearch(event)">
+            <input type="text" id="searchInput" placeholder="Zoek op setnaam of categorie…" aria-label="Zoeken" autocomplete="off">
+            <button class="search-submit" type="submit" aria-label="Zoeken uitvoeren">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            </button>
+          </form>
         </div>
-        <div class="drop-zone" id="dropZone">
-          <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
-          <div class="dz-title">Of sleep je eigen Excel hierheen</div>
-          <div class="dz-sub">Kolom A–E: artikelnummer, naam, lengte, breedte, hoogte</div>
+      </div>
+      <button class="icon-btn" title="Winkelmand" aria-label="Winkelmand">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h2l2.4 12.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+      </button>
+      <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== MAIN ====== -->
+<main>
+  <!-- CPQ-component, volledig ingebed in de huisstijl -->
+  <div class="ssets-cpq-configurator" style="padding: 20px; max-width: 1400px; margin: 0 auto;">
+
+    <!-- Header van de CPQ -->
+    <div class="sscpq-header">
+      <div class="sscpq-title">
+        <span class="light">Servicesets</span><span class="black">CPQ</span>
+        <span class="tag">PYTHON</span>
+      </div>
+      <div id="sscpq-pyStatus" class="loading">Python-interpreter laden…</div>
+    </div>
+
+    <!-- CPQ Grid -->
+    <div class="sscpq-grid">
+
+      <!-- Linker kolom -->
+      <div>
+        <!-- Panel 1: Productdata -->
+        <div class="sscpq-panel">
+          <div class="sscpq-panel-title">01 · Productdata <span class="num">artikelnummer · naam · L · B · H (cm)</span></div>
+          <div class="sscpq-row-actions" style="margin-bottom:12px;">
+            <button class="sscpq-btn secondary small" id="sscpq-loadCatalogBtn">↻ Servicesets-catalogus herladen</button>
+            <span class="sscpq-dz-sub" id="sscpq-catalogStatus" style="align-self:center;"></span>
+          </div>
+          <div class="sscpq-dropzone" id="sscpq-dropZone">
+            <input type="file" id="sscpq-fileInput" accept=".xlsx,.xls,.csv" />
+            <div class="sscpq-dz-title">Of sleep je eigen Excel hierheen</div>
+            <div class="sscpq-dz-sub">Kolom A–E: artikelnummer, naam, lengte, breedte, hoogte</div>
+          </div>
+          <div class="sscpq-manual-add">
+            <input type="text" id="sscpq-manNum" placeholder="artikelnr" />
+            <input type="text" id="sscpq-manName" placeholder="naam" style="width:140px" />
+            <input type="number" id="sscpq-manL" placeholder="L" />
+            <input type="number" id="sscpq-manW" placeholder="B" />
+            <input type="number" id="sscpq-manH" placeholder="H" />
+            <button class="sscpq-btn secondary small" id="sscpq-addManualBtn">+ Toevoegen</button>
+          </div>
+          <div id="sscpq-productTableWrap" style="margin-top:14px;"></div>
         </div>
-        <div class="manual-add">
-          <input type="text" id="manNum" placeholder="artikelnr" />
-          <input type="text" id="manName" placeholder="naam" style="width:140px" />
-          <input type="number" id="manL" placeholder="L" />
-          <input type="number" id="manW" placeholder="B" />
-          <input type="number" id="manH" placeholder="H" />
-          <button class="btn secondary small" id="addManualBtn">+ Toevoegen</button>
+
+        <!-- Panel 2: Samenstelling -->
+        <div class="sscpq-panel">
+          <div class="sscpq-panel-title">02 · Samenstelling <span class="num" id="sscpq-compCount">0 items</span></div>
+          <div id="sscpq-compositionWrap"><div class="sscpq-empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div></div>
         </div>
-        <div id="productTableWrap" style="margin-top:14px;"></div>
       </div>
 
-      <div class="panel">
-        <div class="panel-title">02 · Samenstelling <span class="num" id="compCount">0 items</span></div>
-        <div id="compositionWrap"><div class="empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div></div>
+      <!-- Rechter kolom -->
+      <div>
+        <!-- Panel 3: Kandidaat-dozen -->
+        <div class="sscpq-panel">
+          <div class="sscpq-panel-title">03 · Kandidaat-dozen</div>
+          <div id="sscpq-boxTableWrap"></div>
+          <div class="sscpq-manual-add">
+            <input type="text" id="sscpq-boxName" placeholder="naam" style="width:90px" />
+            <input type="number" id="sscpq-boxL" placeholder="L" />
+            <input type="number" id="sscpq-boxW" placeholder="B" />
+            <input type="number" id="sscpq-boxH" placeholder="H" />
+            <button class="sscpq-btn secondary small" id="sscpq-addBoxBtn">+ Doos</button>
+          </div>
+        </div>
+
+        <!-- Panel 4: Berekening -->
+        <div class="sscpq-panel">
+          <div class="sscpq-panel-title">04 · Berekening <span class="num">draait als Python (Pyodide)</span></div>
+          <button class="sscpq-btn" id="sscpq-calcBtn" style="width:100%;" disabled>Python laadt nog…</button>
+          <div id="sscpq-resultWrap" style="margin-top:16px;"></div>
+        </div>
       </div>
     </div>
 
-    <div>
-      <div class="panel">
-        <div class="panel-title">03 · Kandidaat-dozen</div>
-        <div id="boxTableWrap"></div>
-        <div class="manual-add">
-          <input type="text" id="boxName" placeholder="naam" style="width:90px" />
-          <input type="number" id="boxL" placeholder="L" />
-          <input type="number" id="boxW" placeholder="B" />
-          <input type="number" id="boxH" placeholder="H" />
-          <button class="btn secondary small" id="addBoxBtn">+ Doos</button>
-        </div>
-      </div>
+  </div> <!-- einde .ssets-cpq-configurator -->
+</main>
 
-      <div class="panel">
-        <div class="panel-title">04 · Berekening <span class="num">draait als Python (Pyodide)</span></div>
-        <button class="btn" id="calcBtn" style="width:100%;" disabled>Python laadt nog…</button>
-        <div id="resultWrap" style="margin-top:16px;"></div>
+<!-- ====== FOOTER ====== -->
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-logo"><span class="light">Service</span><span class="bold">SETS</span></div>
+      <p style="max-width:34ch;">Merk van Exclusiva BV — bedenkt en produceert samengestelde service-sets voor recreatie, hotellerie en meer.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">in</a>
+        <a href="#" aria-label="YouTube">yt</a>
       </div>
     </div>
+    <div>
+      <h4>Over Servicesets</h4>
+      <ul>
+        <li><a href="../index.html#over-ons">Over ons</a></li>
+        <li><a href="#">Klantenservice</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="#">Algemene voorwaarden</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Onze pakketten</h4>
+      <ul>
+        <li><a href="../index.html#shop">Recreatie</a></li>
+        <li><a href="../index.html#shop">Hotel &amp; Wellness</a></li>
+        <li><a href="../index.html#shop">Koffie</a></li>
+        <li><a href="#" class="active">Set op maat</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Taal</h4>
+      <ul>
+        <li><a href="#" onclick="setLang('NL', event)">Nederlands</a></li>
+        <li><a href="#" onclick="setLang('DE', event)">Deutsch</a></li>
+        <li><a href="#" onclick="setLang('EN', event)">English</a></li>
+        <li><a href="#" onclick="setLang('FR', event)">Français</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2014–2026 Servicesets - merk van Exclusiva BV</span>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a><a href="#">Disclaimer</a><a href="#">Cookie-instellingen</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ====== CHAT WIDGET ====== -->
+<button class="chat-launcher" id="chatLauncher" onclick="toggleChat()" aria-label="Open chat">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.2 0-2.3-.25-3.3-.7L3 21l1.8-4.9A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+  <span class="chat-dot"></span>
+</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-head">
+    <div class="chat-avatar">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#1A171B"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+    </div>
+    <div><strong>Servicesets helpt je verder</strong><span>Meestal binnen 1 minuut online</span></div>
+  </div>
+  <div class="chat-body" id="chatBody">
+    <div class="bubble bot">Hoi 👋 Waar kan ik je mee helpen? Kies hieronder een vraag of typ je eigen bericht.</div>
+  </div>
+  <div class="chat-quick">
+    <button onclick="chatQuick('Wat is de levertijd?')">Levertijd?</button>
+    <button onclick="chatQuick('Vanaf hoeveel sets kan ik maatwerk bestellen?')">Maatwerk vanaf?</button>
+    <button onclick="chatQuick('Ik wil met een medewerker spreken')">Medewerker spreken</button>
+  </div>
+  <div class="chat-input-row">
+    <input type="text" placeholder="Typ een bericht…" id="chatInput" onkeydown="if(event.key==='Enter')chatSend()">
+    <button onclick="chatSend()" aria-label="Verstuur">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/></svg>
+    </button>
   </div>
 </div>
 
-<script>
-(function(){
-  // ---------- STATE ----------
-  let products = [];
-  let composition = {};
-  let boxes = [
-    {id:'box1', name:'Doos S', l:15, w:12, h:12},
-    {id:'box2', name:'Doos M', l:20, w:15, h:15},
-    {id:'box3', name:'Doos L', l:30, w:25, h:20},
-    {id:'box4', name:'Doos XL', l:40, w:30, h:25},
-  ];
-  let uidCounter = 1;
-  const nextId = (p) => p + (uidCounter++);
-  const fmt = (n) => Number.isInteger(n) ? n : n.toFixed(1);
-
-  // ---------- PYODIDE: laad de ECHTE packer_core.py ----------
-  let pyodideInstance = null;
-  const pyReady = (async () => {
-    const pyodide = await loadPyodide();
-    const src = await (await fetch('py/packer_core.py')).text();
-    pyodide.runPython(src);
-    pyodideInstance = pyodide;
-    document.getElementById('pyStatus').textContent = 'Python klaar (packer_core.py geladen)';
-    document.getElementById('pyStatus').className = 'ready';
-    document.getElementById('calcBtn').disabled = false;
-    document.getElementById('calcBtn').textContent = 'Bereken passende doos →';
-    return pyodide;
-  })();
-
-  async function pySelectBox(items, candidateBoxes){
-    const pyodide = await pyReady;
-    pyodide.globals.set('items_json', JSON.stringify(items));
-    pyodide.globals.set('boxes_json', JSON.stringify(candidateBoxes));
-    const resultJson = pyodide.runPython(`
-import json
-_items = json.loads(items_json)
-_boxes = json.loads(boxes_json)
-_result = select_box(_items, _boxes)
-json.dumps(_result)
-`);
-    return JSON.parse(resultJson);
-  }
-
-  // ---------- PRODUCT TABEL ----------
-  function renderProductTable(){
-    const wrap = document.getElementById('productTableWrap');
-    if(products.length === 0){ wrap.innerHTML = '<div class="empty-hint">Nog geen producten geladen.</div>'; return; }
-    let rows = products.map(p => `
-      <tr class="item-row">
-        <td><input type="checkbox" data-id="${p.id}" class="prod-check" ${composition[p.id] ? 'checked' : ''}/></td>
-        <td>${p.num}</td><td class="name-cell">${p.name}</td>
-        <td>${fmt(p.l)}</td><td>${fmt(p.w)}</td><td>${fmt(p.h)}</td>
-        <td><input type="number" min="0" class="prod-qty" data-id="${p.id}" value="${composition[p.id] || 1}" style="width:48px" /></td>
-      </tr>`).join('');
-    wrap.innerHTML = `
-      <div style="max-height:260px; overflow:auto;">
-      <table><thead><tr><th></th><th>Art.nr</th><th>Naam</th><th>L</th><th>B</th><th>H</th><th>Aantal</th></tr></thead>
-      <tbody>${rows}</tbody></table></div>
-      <div class="row-actions"><button class="btn secondary small" id="clearProductsBtn">Wis lijst</button></div>`;
-    document.querySelectorAll('.prod-check').forEach(cb => cb.addEventListener('change', onCheckChange));
-    document.querySelectorAll('.prod-qty').forEach(inp => inp.addEventListener('input', onQtyChange));
-    document.getElementById('clearProductsBtn').addEventListener('click', () => {
-      products = []; composition = {}; renderProductTable(); renderComposition();
-    });
-  }
-  function onCheckChange(e){
-    const id = e.target.dataset.id;
-    if(e.target.checked){ composition[id] = parseInt(document.querySelector(`.prod-qty[data-id="${id}"]`).value) || 1; }
-    else{ delete composition[id]; }
-    renderComposition();
-  }
-  function onQtyChange(e){
-    const id = e.target.dataset.id;
-    const val = Math.max(0, parseInt(e.target.value) || 0);
-    if(composition[id] !== undefined){
-      if(val === 0){ delete composition[id]; document.querySelector(`.prod-check[data-id="${id}"]`).checked = false; }
-      else composition[id] = val;
-    }
-    renderComposition();
-  }
-  function renderComposition(){
-    const wrap = document.getElementById('compositionWrap');
-    const ids = Object.keys(composition);
-    document.getElementById('compCount').textContent = ids.reduce((s,id)=>s+composition[id],0) + ' items';
-    if(ids.length === 0){ wrap.innerHTML = '<div class="empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div>'; return; }
-    let totalVol = 0;
-    let rows = ids.map(id => {
-      const p = products.find(x=>x.id===id); if(!p) return '';
-      totalVol += p.l*p.w*p.h*composition[id];
-      return `<tr><td class="name-cell">${p.name}</td><td>${fmt(p.l)}×${fmt(p.w)}×${fmt(p.h)}</td><td>${composition[id]}×</td></tr>`;
-    }).join('');
-    wrap.innerHTML = `<table><thead><tr><th>Naam</th><th>Afmeting (cm)</th><th>Aantal</th></tr></thead><tbody>${rows}</tbody></table>
-      <div class="note">Totaal itemvolume: ${(totalVol/1000).toFixed(2)} liter</div>`;
-  }
-
-  // ---------- BOX TABEL ----------
-  function renderBoxTable(){
-    const wrap = document.getElementById('boxTableWrap');
-    let rows = boxes.map(b => `
-      <tr><td class="name-cell">${b.name}</td><td>${fmt(b.l)}×${fmt(b.w)}×${fmt(b.h)}</td>
-      <td><button class="btn secondary small" data-id="${b.id}" data-action="del-box">✕</button></td></tr>`).join('');
-    wrap.innerHTML = `<table><thead><tr><th>Naam</th><th>Afmeting (cm)</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
-    wrap.querySelectorAll('[data-action="del-box"]').forEach(btn=>{
-      btn.addEventListener('click', () => { boxes = boxes.filter(b=>b.id !== btn.dataset.id); renderBoxTable(); });
-    });
-  }
-
-  // ---------- SERVICESETS-CATALOGUS (automatisch geladen bij openen) ----------
-  async function loadCatalog(){
-    const statusEl = document.getElementById('catalogStatus');
-    statusEl.textContent = 'laden…';
-    try{
-      const resp = await fetch('data/products.json');
-      const data = await resp.json();
-      products = data.map(p => ({ id: nextId('p'), num: p.num, name: p.name, l: p.l, w: p.w, h: p.h, weight_g: p.weight_g }));
-      composition = {};
-      renderProductTable();
-      renderComposition();
-      statusEl.textContent = `${products.length} producten geladen uit catalogus`;
-    } catch(err){
-      statusEl.textContent = 'kon catalogus niet laden (' + err.message + ')';
-    }
-  }
-  document.getElementById('loadCatalogBtn').addEventListener('click', loadCatalog);
-
-  // ---------- FILE UPLOAD ----------
-  const dropZone = document.getElementById('dropZone');
-  const fileInput = document.getElementById('fileInput');
-  dropZone.addEventListener('click', () => fileInput.click());
-  ;['dragenter','dragover'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('drag'); }));
-  ;['dragleave','drop'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove('drag'); }));
-  dropZone.addEventListener('drop', e => { if(e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
-  fileInput.addEventListener('change', e => { if(e.target.files.length) handleFile(e.target.files[0]); });
-
-  function handleFile(file){
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try{
-        const data = new Uint8Array(e.target.result);
-        const wb = XLSX.read(data, {type:'array'});
-        const sheet = wb.Sheets[wb.SheetNames[0]];
-        const rows = XLSX.utils.sheet_to_json(sheet, {header:1, defval:''});
-        let added = 0;
-        rows.forEach((r, idx) => {
-          if(idx === 0) return;
-          const [num, name, l, w, h] = r;
-          if(name === '' && num === '') return;
-          const L = parseFloat(l), W = parseFloat(w), H = parseFloat(h);
-          if(isNaN(L) || isNaN(W) || isNaN(H)) return;
-          products.push({ id: nextId('p'), num: String(num||'').trim(), name: String(name||'').trim() || '(naamloos)', l:L, w:W, h:H });
-          added++;
-        });
-        renderProductTable();
-        if(added === 0) alert('Geen geldige rijen gevonden. Check kolom A–E en of rij 1 een kop is.');
-      } catch(err){ alert('Kon het bestand niet lezen: ' + err.message); }
-    };
-    reader.readAsArrayBuffer(file);
-  }
-
-  document.getElementById('addManualBtn').addEventListener('click', () => {
-    const num = document.getElementById('manNum').value.trim();
-    const name = document.getElementById('manName').value.trim();
-    const l = parseFloat(document.getElementById('manL').value);
-    const w = parseFloat(document.getElementById('manW').value);
-    const h = parseFloat(document.getElementById('manH').value);
-    if(!name || isNaN(l) || isNaN(w) || isNaN(h)){ alert('Vul naam, L, B en H in.'); return; }
-    products.push({id: nextId('p'), num: num || '-', name, l, w, h});
-    ['manNum','manName','manL','manW','manH'].forEach(id => document.getElementById(id).value = '');
-    renderProductTable();
-  });
-
-  document.getElementById('addBoxBtn').addEventListener('click', () => {
-    const name = document.getElementById('boxName').value.trim();
-    const l = parseFloat(document.getElementById('boxL').value);
-    const w = parseFloat(document.getElementById('boxW').value);
-    const h = parseFloat(document.getElementById('boxH').value);
-    if(!name || isNaN(l) || isNaN(w) || isNaN(h)){ alert('Vul naam, L, B en H in.'); return; }
-    boxes.push({id: nextId('b'), name, l, w, h});
-    ['boxName','boxL','boxW','boxH'].forEach(id => document.getElementById(id).value = '');
-    renderBoxTable();
-  });
-
-  function expandItems(){
-    const out = [];
-    Object.keys(composition).forEach(id => {
-      const p = products.find(x=>x.id===id); if(!p) return;
-      for(let i=0;i<composition[id];i++){ out.push({name: p.name, l:p.l, w:p.w, h:p.h}); }
-    });
-    return out;
-  }
-
-  // ---------- ISOMETRISCHE VISUALISATIE ----------
-  const PALETTE = ['#E8A33D','#6FCF97','#7EB6D9','#D98E8E','#B98FD9','#8FD9C4','#D9C48F','#8FA8D9'];
-  function isoProject(x,y,z, scale, ox, oy){
-    const px = (x - y) * Math.cos(Math.PI/6) * scale;
-    const py = ((x + y) * Math.sin(Math.PI/6) - z) * scale;
-    return [ox + px, oy + py];
-  }
-  function shade(hex, factor){
-    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-    const f = (v) => Math.min(255, Math.round(v*factor));
-    return `rgb(${f(r)},${f(g)},${f(b)})`;
-  }
-  function cuboidPolygons(x,y,z,l,w,h, scale, ox, oy, color){
-    const c = (dx,dy,dz) => isoProject(x+dx, y+dy, z+dz, scale, ox, oy);
-    const top = [c(0,0,h), c(l,0,h), c(l,w,h), c(0,w,h)];
-    const right = [c(l,0,0), c(l,w,0), c(l,w,h), c(l,0,h)];
-    const front = [c(0,w,0), c(l,w,0), c(l,w,h), c(0,w,h)];
-    const poly = (pts, fill) => `<polygon points="${pts.map(p=>p.join(',')).join(' ')}" fill="${fill}" stroke="#0B2A3F" stroke-width="0.6"/>`;
-    return poly(top, shade(color,1.25)) + poly(right, shade(color,0.65)) + poly(front, shade(color,0.9));
-  }
-  function binWireframe(l,w,h,scale,ox,oy){
-    const c = (x,y,z) => isoProject(x,y,z,scale,ox,oy);
-    const pts = { o:c(0,0,0), lx:c(l,0,0), wy:c(0,w,0), lw:c(l,w,0), oz:c(0,0,h), lxz:c(l,0,h), wyz:c(0,w,h), lwz:c(l,w,h) };
-    const line = (a,b) => `<line x1="${pts[a][0]}" y1="${pts[a][1]}" x2="${pts[b][0]}" y2="${pts[b][1]}" stroke="rgba(148,196,224,0.5)" stroke-width="1" stroke-dasharray="3,2"/>`;
-    return ['o-lx','o-wy','o-oz','lx-lw','lx-lxz','wy-lw','wy-wyz','oz-lxz','oz-wyz','lw-lwz','lxz-lwz','wyz-lwz']
-      .map(k => line(...k.split('-'))).join('');
-  }
-  function renderIsoSVG(bin, placements){
-    const scale = 460 / (bin.l + bin.w + bin.h);
-    const ox = 260, oy = 60;
-    const binEdges = binWireframe(bin.l, bin.w, bin.h, scale, ox, oy);
-    const sorted = [...placements].sort((a,b) => (a.x+a.y+a.z) - (b.x+b.y+b.z));
-    const itemSvg = sorted.map((p,i) => cuboidPolygons(p.x,p.y,p.z,p.l,p.w,p.h, scale, ox, oy, PALETTE[i % PALETTE.length])).join('');
-    return `<svg class="iso" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">${binEdges}${itemSvg}</svg>`;
-  }
-
-  // ---------- BEREKENEN (via Python/Pyodide) ----------
-  document.getElementById('calcBtn').addEventListener('click', async () => {
-    const items = expandItems();
-    const resultWrap = document.getElementById('resultWrap');
-    if(items.length === 0){ resultWrap.innerHTML = '<div class="empty-hint">Selecteer eerst producten in stap 2.</div>'; return; }
-    if(boxes.length === 0){ resultWrap.innerHTML = '<div class="empty-hint">Voeg minstens één kandidaat-doos toe in stap 3.</div>'; return; }
-
-    resultWrap.innerHTML = '<div class="empty-hint">Python berekent…</div>';
-    const outcome = await pySelectBox(items, boxes);
-
-    if(!outcome.chosen_box){
-      const best = outcome.attempts.reduce((a,b) => (b.result.placed_count > a.result.placed_count ? b : a));
-      resultWrap.innerHTML = `
-        <div class="result-box">
-          <div class="result-status"><span class="status-dot fail"></span><span class="status-text">Geen enkele doos past</span></div>
-          <div class="note">Grootste kandidaat (${best.box.name}, ${fmt(best.box.l)}×${fmt(best.box.w)}×${fmt(best.box.h)}cm) kreeg ${best.result.placed_count} van ${best.result.total_count} items geplaatst.</div>
-        </div>`;
-      return;
-    }
-
-    const chosen = outcome.chosen_box;
-    const result = outcome.result;
-    const itemVol = items.reduce((s,i)=>s + i.l*i.w*i.h, 0);
-    const boxVol = chosen.l*chosen.w*chosen.h;
-    const util = (itemVol/boxVol*100).toFixed(1);
-    const legend = result.placements.map((p,i) => `<span><span class="swatch" style="background:${PALETTE[i%PALETTE.length]}"></span>${p.name}</span>`).join('');
-
-    resultWrap.innerHTML = `
-      <div class="result-box">
-        <div class="result-status">
-          <span class="status-dot ok"></span><span class="status-text">${chosen.name} past</span>
-          <span class="status-meta">${fmt(chosen.l)}×${fmt(chosen.w)}×${fmt(chosen.h)} cm</span>
-        </div>
-        <div class="stat-row">
-          <div class="stat"><div class="stat-label">Items</div><div class="stat-value">${result.placed_count}</div></div>
-          <div class="stat"><div class="stat-label">Volumebenutting</div><div class="stat-value">${util}%</div></div>
-          <div class="stat"><div class="stat-label">Geteste dozen</div><div class="stat-value">${outcome.attempts.length}</div></div>
-        </div>
-        ${renderIsoSVG(chosen, result.placements)}
-        <div class="legend">${legend}</div>
-        <div class="note">Berekend door packer_core.py, uitgevoerd als échte Python via Pyodide (WebAssembly) — hetzelfde bestand als python/packer_core.py dat je lokaal in VS Code draait.</div>
-      </div>`;
-  });
-
-  // ---------- INIT ----------
-  renderProductTable();
-  renderComposition();
-  renderBoxTable();
-  loadCatalog();
-})();
-</script>
 </body>
 </html>
