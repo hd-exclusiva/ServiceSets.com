@@ -130,17 +130,9 @@ async function loadCatalog(){
       throw new Error(`HTTP ${resp.status} bij laden van catalogus`);
     }
 
-    const contentType = resp.headers.get('content-type') || '';
-    if (!contentType.includes('application/json')) {
-      const text = await resp.text();
-      throw new Error(
-        `Verwachtte JSON, maar kreeg ${contentType}: ${text.slice(0, 200)}`
-      );
-    }
+    const catalogData = await resp.json();
 
-    const data = await resp.json();
-
-    products = data.map(p => ({
+    products = catalogData.map(p => ({
       id: nextId('p'),
       num: p.num,
       name: p.name,
@@ -157,7 +149,7 @@ async function loadCatalog(){
     statusEl.textContent =
       `${products.length} producten geladen uit catalogus`;
 
-  } catch (err) {
+  } catch(err) {
     console.error('Catalogus laden mislukt:', err);
     statusEl.textContent =
       'kon catalogus niet laden (' + err.message + ')';
