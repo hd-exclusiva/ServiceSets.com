@@ -120,25 +120,32 @@ async function loadCatalog(){
   statusEl.textContent = 'laden…';
 
   try {
-    const resp = await fetch('data/products.json', {
+    const catalogUrl =
+      'https://hd-exclusiva.github.io/ServiceSets.com/data/products.json';
+
+    const resp = await fetch(catalogUrl, {
       headers: {
         Accept: 'application/json'
       }
     });
 
     if (!resp.ok) {
-      throw new Error(`HTTP ${resp.status} bij laden van catalogus`);
+      throw new Error(`HTTP ${resp.status} bij ${catalogUrl}`);
     }
 
     const catalogData = await resp.json();
+
+    if (!Array.isArray(catalogData)) {
+      throw new Error('products.json bevat geen JSON-array');
+    }
 
     products = catalogData.map(p => ({
       id: nextId('p'),
       num: p.num,
       name: p.name,
-      l: p.l,
-      w: p.w,
-      h: p.h,
+      l: Number(p.l),
+      w: Number(p.w),
+      h: Number(p.h),
       weight_g: p.weight_g
     }));
 
@@ -149,7 +156,7 @@ async function loadCatalog(){
     statusEl.textContent =
       `${products.length} producten geladen uit catalogus`;
 
-  } catch(err) {
+  } catch (err) {
     console.error('Catalogus laden mislukt:', err);
     statusEl.textContent =
       'kon catalogus niet laden (' + err.message + ')';
