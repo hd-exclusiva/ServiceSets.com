@@ -115,22 +115,54 @@ json.dumps(_result)
   }
 
   // ---------- SERVICESETS-CATALOGUS (automatisch geladen bij openen) ----------
-  async function loadCatalog(){
-    const statusEl = document.getElementById('sscpq-catalogStatus');
-    statusEl.textContent = 'laden…';
-    try{
-      // Gebruik absoluut pad naar de root-map
-      const resp = await fetch(data/products.json);
-      const data = await resp.json();
-      products = data.map(p => ({ id: nextId('p'), num: p.num, name: p.name, l: p.l, w: p.w, h: p.h, weight_g: p.weight_g }));
-      composition = {};
-      renderProductTable();
-      renderComposition();
-      statusEl.textContent = `${products.length} producten geladen uit catalogus`;
-    } catch(err){
-      statusEl.textContent = 'kon catalogus niet laden (' + err.message + ')';
+async function loadCatalog(){
+  const statusEl = document.getElementById('sscpq-catalogStatus');
+  statusEl.textContent = 'laden…';
+
+  try {
+    const resp = await fetch('data/products.json', {
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+
+    if (!resp.ok) {
+      throw new Error(`HTTP ${resp.status} bij laden van catalogus`);
     }
+
+    const contentType = resp.headers.get('content-type') || '';
+    if (!contentType.includes('application/json')) {
+      const text = await resp.text();
+      throw new Error(
+        `Verwachtte JSON, maar kreeg ${contentType}: ${text.slice(0, 200)}`
+      );
+    }
+
+    const data = await resp.json();
+
+    products = data.map(p => ({
+      id: nextId('p'),
+      num: p.num,
+      name: p.name,
+      l: p.l,
+      w: p.w,
+      h: p.h,
+      weight_g: p.weight_g
+    }));
+
+    composition = {};
+    renderProductTable();
+    renderComposition();
+
+    statusEl.textContent =
+      `${products.length} producten geladen uit catalogus`;
+
+  } catch (err) {
+    console.error('Catalogus laden mislukt:', err);
+    statusEl.textContent =
+      'kon catalogus niet laden (' + err.message + ')';
   }
+}
 
   // ---------- FILE UPLOAD ----------
   function initFileUpload(){
