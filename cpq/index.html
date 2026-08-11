@@ -8,82 +8,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
 
-<style>
-  :root{
-    --ink:#0B2A3F; --paper:#0E3350; --paper-2:#123D5E;
-    --grid-line: rgba(148,196,224,0.14); --line-bright: rgba(148,196,224,0.35);
-    --text:#DCEBF5; --text-dim:#8FB0C7;
-    --amber:#E8A33D; --amber-dim: rgba(232,163,61,0.15);
-    --good:#6FCF97; --bad:#E5606E;
-    --mono: 'IBM Plex Mono', monospace; --display: 'Space Grotesk', sans-serif; --body: 'Inter', sans-serif;
-  }
-  *{box-sizing:border-box;}
-  body{ margin:0; }
-  .cpq-root{
-    background:
-      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/24px 24px,
-      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/24px 24px,
-      var(--paper);
-    color:var(--text); font-family:var(--body); padding:28px; min-height:100vh;
-  }
-  .cpq-header{ display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--line-bright); padding-bottom:16px; margin-bottom:24px; flex-wrap:wrap; gap:8px;}
-  .cpq-title{ font-family:var(--display); font-weight:700; font-size:22px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px;}
-  .cpq-title .tag{ font-family:var(--mono); font-size:11px; color:var(--ink); background:var(--amber); padding:2px 7px; border-radius:2px; font-weight:600; letter-spacing:0.04em;}
-  .cpq-sub{ font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.03em;}
-  #pyStatus{ font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:2px; }
-  #pyStatus.loading{ color:var(--amber); background:var(--amber-dim); }
-  #pyStatus.ready{ color:var(--good); background:rgba(111,207,151,0.12); }
-
-  .cpq-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:20px; }
-  @media (max-width: 860px){ .cpq-grid{ grid-template-columns: 1fr; } }
-  .panel{ background: var(--paper-2); border:1px solid var(--line-bright); border-radius:3px; padding:18px; margin-bottom:18px; }
-  .panel-title{ font-family:var(--display); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); margin:0 0 14px 0; display:flex; align-items:center; gap:8px;}
-  .panel-title .num{ font-family:var(--mono); font-size:11px; color:var(--text-dim); font-weight:400;}
-  .drop-zone{ border:1.5px dashed var(--line-bright); border-radius:3px; padding:22px; text-align:center; cursor:pointer; transition:border-color .15s, background .15s;}
-  .drop-zone:hover, .drop-zone.drag{ border-color:var(--amber); background:var(--amber-dim); }
-  .drop-zone input{ display:none; }
-  .drop-zone .dz-title{ font-family:var(--display); font-weight:600; font-size:14px; margin-bottom:4px;}
-  .drop-zone .dz-sub{ font-family:var(--mono); font-size:11px; color:var(--text-dim); }
-  table{ width:100%; border-collapse:collapse; font-size:13px; }
-  th{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); text-align:left; padding:6px 8px; border-bottom:1px solid var(--line-bright); font-weight:500;}
-  td{ padding:6px 8px; border-bottom:1px solid var(--grid-line); font-family:var(--mono); font-size:12.5px; }
-  tr.item-row:hover{ background: rgba(255,255,255,0.03); }
-  td.name-cell{ font-family:var(--body); font-size:13px; }
-  input[type="number"], input[type="text"]{ background:var(--ink); border:1px solid var(--line-bright); color:var(--text); border-radius:2px; padding:4px 6px; font-family:var(--mono); font-size:12.5px; width:64px;}
-  input[type="text"].wide{ width:100%; }
-  input[type="checkbox"]{ accent-color:var(--amber); width:15px; height:15px; }
-  .btn{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:0.03em; background:var(--amber); color:var(--ink); border:none; border-radius:2px; padding:9px 16px; cursor:pointer; transition:filter .15s;}
-  .btn:hover{ filter:brightness(1.1); }
-  .btn.secondary{ background:transparent; color:var(--text); border:1px solid var(--line-bright);}
-  .btn.secondary:hover{ border-color:var(--amber); color:var(--amber); }
-  .btn.small{ padding:4px 9px; font-size:11px; }
-  .btn:disabled{ opacity:0.4; cursor:not-allowed; }
-  .row-actions{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
-  .manual-add{ display:flex; gap:6px; margin-top:12px; flex-wrap:wrap; align-items:center; }
-  .manual-add input[type="text"]{ width:110px; }
-  .empty-hint{ font-family:var(--mono); font-size:11.5px; color:var(--text-dim); padding:10px 0; }
-  .result-box{ border:1px solid var(--line-bright); border-radius:3px; padding:18px; margin-top:6px; }
-  .result-status{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
-  .status-dot{ width:10px; height:10px; border-radius:50%; }
-  .status-dot.ok{ background:var(--good); box-shadow:0 0 8px var(--good); }
-  .status-dot.fail{ background:var(--bad); box-shadow:0 0 8px var(--bad); }
-  .status-text{ font-family:var(--display); font-weight:600; font-size:15px; }
-  .status-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); margin-left:auto; }
-  .stat-row{ display:flex; gap:22px; margin-bottom:14px; flex-wrap:wrap; }
-  .stat .stat-label{ font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; font-family:var(--mono);}
-  .stat .stat-value{ font-size:17px; color:var(--amber); font-weight:600; font-family:var(--mono);}
-  svg.iso{ width:100%; height:auto; background:var(--ink); border-radius:3px; border:1px solid var(--line-bright); }
-  .legend{ display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; font-family:var(--mono); font-size:11px; color:var(--text-dim); }
-  .legend .swatch{ display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
-  .note{ font-family:var(--mono); font-size:10.5px; color:var(--text-dim); margin-top:12px; line-height:1.5; border-top:1px dashed var(--line-bright); padding-top:10px; }
-</style>
 </head>
 <body>
 <header class="site">
     <div class="nav-inner">
 
         <a href="../index.html" class="brand">
-            <span class="brand-mark">S</span>
             <span class="brand-name">
                 ServiceSets
             </span>
