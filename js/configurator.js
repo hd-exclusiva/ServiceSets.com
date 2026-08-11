@@ -24,7 +24,7 @@
   const pyReady = (async () => {
     const pyodide = await loadPyodide();
     // Gebruik absoluut pad naar de root-map /py/
-    const src = await (await fetch('/py/packer_core.py')).text();
+    const src = await (await fetch('cpq/python/python_packer.py')).text();
     pyodide.runPython(src);
     pyodideInstance = pyodide;
     const statusEl = document.getElementById('sscpq-pyStatus');
@@ -120,7 +120,7 @@ json.dumps(_result)
     statusEl.textContent = 'laden…';
     try{
       // Gebruik absoluut pad naar de root-map
-      const resp = await fetch('/products.json');
+      const resp = await fetch(data/products.json);
       const data = await resp.json();
       products = data.map(p => ({ id: nextId('p'), num: p.num, name: p.name, l: p.l, w: p.w, h: p.h, weight_g: p.weight_g }));
       composition = {};
