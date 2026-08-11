@@ -416,3 +416,161 @@
     .anim-box{animation:none;}
     html{scroll-behavior:auto;}
   }
+  /* ==========================================================================
+   ALLES is genest onder .ssets-cpq-configurator, zodat dit veilig
+   toegevoegd kan worden aan het bestaande sitebrede styles.css zonder
+   andere onderdelen van de website te beïnvloeden (geen kale body/table/
+   input-selectors die buiten deze component lekken).
+   ========================================================================== */
+
+.ssets-cpq-configurator {
+  --sscpq-teal: #66C0B5;
+  --sscpq-teal-dark: #4A9E93;
+  --sscpq-teal-tint: #EAF6F4;
+  --sscpq-ink: #1A171B;
+  --sscpq-ink-soft: #55585B;
+  --sscpq-border: #D9ECE9;
+  --sscpq-bg: #FFFFFF;
+  --sscpq-panel-bg: #FAFDFD;
+  --sscpq-good: #4A9E93;
+  --sscpq-bad: #C4544A;
+  --sscpq-font: 'Lato', Arial, sans-serif;
+
+  font-family: var(--sscpq-font);
+  font-weight: 300;
+  color: var(--sscpq-ink);
+  background: var(--sscpq-bg);
+  padding: 32px;
+  border-radius: 4px;
+}
+.ssets-cpq-configurator *{ box-sizing: border-box; }
+
+/* ---------- Header ---------- */
+.ssets-cpq-configurator .sscpq-header{
+  display:flex; align-items:flex-end; justify-content:space-between;
+  padding-bottom:20px; margin-bottom:8px; flex-wrap:wrap; gap:10px;
+  border-bottom: 2px solid var(--sscpq-ink);
+}
+.ssets-cpq-configurator .sscpq-title{
+  font-size:26px; letter-spacing:0.01em; display:flex; align-items:baseline; gap:2px;
+}
+.ssets-cpq-configurator .sscpq-title .light{ font-weight:300; }
+.ssets-cpq-configurator .sscpq-title .black{ font-weight:900; }
+.ssets-cpq-configurator .sscpq-title .tag{
+  font-size:11px; font-weight:700; color:#fff; background:var(--sscpq-teal);
+  padding:3px 9px; border-radius:2px; letter-spacing:0.06em; margin-left:12px;
+  text-transform:uppercase; align-self:center;
+}
+.ssets-cpq-configurator #sscpq-pyStatus{
+  font-size:12px; font-weight:700; padding:4px 10px; border-radius:2px; letter-spacing:0.02em;
+}
+.ssets-cpq-configurator #sscpq-pyStatus.loading{ color:var(--sscpq-ink-soft); background:#F1F1F1; }
+.ssets-cpq-configurator #sscpq-pyStatus.ready{ color:#fff; background:var(--sscpq-teal-dark); }
+
+/* teal wedge divider — echoot het driehoekje uit het huisstijlhandboek */
+.ssets-cpq-configurator .sscpq-wedge{
+  width:100%; height:6px; background:var(--sscpq-teal); position:relative; margin-bottom:28px;
+}
+.ssets-cpq-configurator .sscpq-wedge::after{
+  content:""; position:absolute; left:50%; top:100%; transform:translateX(-50%);
+  border-left:7px solid transparent; border-right:7px solid transparent;
+  border-top:7px solid var(--sscpq-teal);
+}
+
+/* ---------- Layout ---------- */
+.ssets-cpq-configurator .sscpq-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:24px; }
+@media (max-width: 860px){ .ssets-cpq-configurator .sscpq-grid{ grid-template-columns: 1fr; } }
+
+.ssets-cpq-configurator .sscpq-panel{
+  background: var(--sscpq-panel-bg);
+  border:1px solid var(--sscpq-border);
+  border-radius:3px;
+  padding:20px;
+  margin-bottom:20px;
+}
+.ssets-cpq-configurator .sscpq-panel-title{
+  font-weight:900; font-size:13px; text-transform:uppercase; letter-spacing:0.07em;
+  color:var(--sscpq-ink); margin:0 0 16px 0; display:flex; align-items:center; gap:10px;
+  padding-bottom:10px; border-bottom:1px solid var(--sscpq-border);
+}
+.ssets-cpq-configurator .sscpq-panel-title .num{
+  font-size:11px; color:var(--sscpq-ink-soft); font-weight:400; text-transform:none; letter-spacing:0;
+}
+
+/* ---------- Upload / drop zone ---------- */
+.ssets-cpq-configurator .sscpq-dropzone{
+  border:1.5px dashed var(--sscpq-teal); border-radius:3px; padding:24px;
+  text-align:center; cursor:pointer; transition:border-color .15s, background .15s;
+  background:#fff;
+}
+.ssets-cpq-configurator .sscpq-dropzone:hover,
+.ssets-cpq-configurator .sscpq-dropzone.drag{ background:var(--sscpq-teal-tint); }
+.ssets-cpq-configurator .sscpq-dropzone input{ display:none; }
+.ssets-cpq-configurator .sscpq-dz-title{ font-weight:700; font-size:14px; margin-bottom:4px; }
+.ssets-cpq-configurator .sscpq-dz-sub{ font-size:12px; color:var(--sscpq-ink-soft); font-weight:300; }
+
+/* ---------- Tables ---------- */
+.ssets-cpq-configurator table{ width:100%; border-collapse:collapse; font-size:13px; }
+.ssets-cpq-configurator th{
+  font-size:10.5px; text-transform:uppercase; letter-spacing:0.05em; font-weight:700;
+  color:var(--sscpq-ink-soft); text-align:left; padding:7px 8px; border-bottom:2px solid var(--sscpq-ink);
+}
+.ssets-cpq-configurator td{ padding:7px 8px; border-bottom:1px solid var(--sscpq-border); font-weight:300; font-size:13px; }
+.ssets-cpq-configurator tr.sscpq-item-row:hover{ background: var(--sscpq-teal-tint); }
+.ssets-cpq-configurator td.sscpq-name-cell{ font-weight:400; }
+
+/* ---------- Inputs ---------- */
+.ssets-cpq-configurator input[type="number"],
+.ssets-cpq-configurator input[type="text"]{
+  background:#fff; border:1px solid var(--sscpq-border); color:var(--sscpq-ink);
+  border-radius:2px; padding:5px 7px; font-family:var(--sscpq-font); font-size:13px;
+  font-weight:400; width:64px;
+}
+.ssets-cpq-configurator input[type="number"]:focus,
+.ssets-cpq-configurator input[type="text"]:focus{
+  outline:none; border-color:var(--sscpq-teal); box-shadow:0 0 0 2px var(--sscpq-teal-tint);
+}
+.ssets-cpq-configurator input[type="text"].wide{ width:100%; }
+.ssets-cpq-configurator input[type="checkbox"]{ accent-color:var(--sscpq-teal); width:16px; height:16px; }
+
+/* ---------- Buttons ---------- */
+.ssets-cpq-configurator .sscpq-btn{
+  font-family:var(--sscpq-font); font-size:13px; font-weight:700; letter-spacing:0.02em;
+  background:var(--sscpq-teal); color:#fff; border:none; border-radius:2px;
+  padding:10px 18px; cursor:pointer; transition:background .15s;
+}
+.ssets-cpq-configurator .sscpq-btn:hover{ background:var(--sscpq-teal-dark); }
+.ssets-cpq-configurator .sscpq-btn.secondary{
+  background:transparent; color:var(--sscpq-ink); border:1px solid var(--sscpq-ink);
+}
+.ssets-cpq-configurator .sscpq-btn.secondary:hover{ background:var(--sscpq-ink); color:#fff; }
+.ssets-cpq-configurator .sscpq-btn.small{ padding:5px 10px; font-size:11.5px; }
+.ssets-cpq-configurator .sscpq-btn:disabled{ opacity:0.4; cursor:not-allowed; }
+
+.ssets-cpq-configurator .sscpq-row-actions{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; align-items:center; }
+.ssets-cpq-configurator .sscpq-manual-add{ display:flex; gap:6px; margin-top:12px; flex-wrap:wrap; align-items:center; }
+.ssets-cpq-configurator .sscpq-manual-add input[type="text"]{ width:110px; }
+.ssets-cpq-configurator .sscpq-empty-hint{ font-size:12.5px; color:var(--sscpq-ink-soft); padding:10px 0; font-style:italic; }
+
+/* ---------- Result ---------- */
+.ssets-cpq-configurator .sscpq-result-box{ border:1px solid var(--sscpq-border); border-radius:3px; padding:20px; margin-top:6px; background:#fff; }
+.ssets-cpq-configurator .sscpq-result-status{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.ssets-cpq-configurator .sscpq-status-dot{ width:11px; height:11px; border-radius:50%; }
+.ssets-cpq-configurator .sscpq-status-dot.ok{ background:var(--sscpq-good); }
+.ssets-cpq-configurator .sscpq-status-dot.fail{ background:var(--sscpq-bad); }
+.ssets-cpq-configurator .sscpq-status-text{ font-weight:900; font-size:16px; }
+.ssets-cpq-configurator .sscpq-status-meta{ font-size:12px; color:var(--sscpq-ink-soft); margin-left:auto; font-weight:400; }
+
+.ssets-cpq-configurator .sscpq-stat-row{ display:flex; gap:26px; margin-bottom:16px; flex-wrap:wrap; }
+.ssets-cpq-configurator .sscpq-stat-label{ font-size:10.5px; color:var(--sscpq-ink-soft); text-transform:uppercase; letter-spacing:0.05em; font-weight:700; }
+.ssets-cpq-configurator .sscpq-stat-value{ font-size:19px; color:var(--sscpq-teal-dark); font-weight:900; }
+
+.ssets-cpq-configurator svg.sscpq-iso{ width:100%; height:auto; background:#fff; border-radius:3px; border:1px solid var(--sscpq-border); }
+
+.ssets-cpq-configurator .sscpq-legend{ display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; font-size:12px; color:var(--sscpq-ink-soft); font-weight:400; }
+.ssets-cpq-configurator .sscpq-swatch{ display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:6px; vertical-align:-1px; }
+
+.ssets-cpq-configurator .sscpq-note{
+  font-size:11.5px; color:var(--sscpq-ink-soft); margin-top:14px; line-height:1.6;
+  border-top:1px dashed var(--sscpq-border); padding-top:12px; font-weight:300; font-style:italic;
+}

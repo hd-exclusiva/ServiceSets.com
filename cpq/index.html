@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>Servicesets — CPQ Box-Fit Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
+
+<style>
+  :root{
+    --ink:#0B2A3F; --paper:#0E3350; --paper-2:#123D5E;
+    --grid-line: rgba(148,196,224,0.14); --line-bright: rgba(148,196,224,0.35);
+    --text:#DCEBF5; --text-dim:#8FB0C7;
+    --amber:#E8A33D; --amber-dim: rgba(232,163,61,0.15);
+    --good:#6FCF97; --bad:#E5606E;
+    --mono: 'IBM Plex Mono', monospace; --display: 'Space Grotesk', sans-serif; --body: 'Inter', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; }
+  .cpq-root{
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0/24px 24px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0/24px 24px,
+      var(--paper);
+    color:var(--text); font-family:var(--body); padding:28px; min-height:100vh;
+  }
+  .cpq-header{ display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--line-bright); padding-bottom:16px; margin-bottom:24px; flex-wrap:wrap; gap:8px;}
+  .cpq-title{ font-family:var(--display); font-weight:700; font-size:22px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px;}
+  .cpq-title .tag{ font-family:var(--mono); font-size:11px; color:var(--ink); background:var(--amber); padding:2px 7px; border-radius:2px; font-weight:600; letter-spacing:0.04em;}
+  .cpq-sub{ font-family:var(--mono); font-size:11px; color:var(--text-dim); letter-spacing:0.03em;}
+  #pyStatus{ font-family:var(--mono); font-size:11px; padding:3px 8px; border-radius:2px; }
+  #pyStatus.loading{ color:var(--amber); background:var(--amber-dim); }
+  #pyStatus.ready{ color:var(--good); background:rgba(111,207,151,0.12); }
+
+  .cpq-grid{ display:grid; grid-template-columns: 1.15fr 0.85fr; gap:20px; }
+  @media (max-width: 860px){ .cpq-grid{ grid-template-columns: 1fr; } }
+  .panel{ background: var(--paper-2); border:1px solid var(--line-bright); border-radius:3px; padding:18px; margin-bottom:18px; }
+  .panel-title{ font-family:var(--display); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber); margin:0 0 14px 0; display:flex; align-items:center; gap:8px;}
+  .panel-title .num{ font-family:var(--mono); font-size:11px; color:var(--text-dim); font-weight:400;}
+  .drop-zone{ border:1.5px dashed var(--line-bright); border-radius:3px; padding:22px; text-align:center; cursor:pointer; transition:border-color .15s, background .15s;}
+  .drop-zone:hover, .drop-zone.drag{ border-color:var(--amber); background:var(--amber-dim); }
+  .drop-zone input{ display:none; }
+  .drop-zone .dz-title{ font-family:var(--display); font-weight:600; font-size:14px; margin-bottom:4px;}
+  .drop-zone .dz-sub{ font-family:var(--mono); font-size:11px; color:var(--text-dim); }
+  table{ width:100%; border-collapse:collapse; font-size:13px; }
+  th{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.06em; color:var(--text-dim); text-align:left; padding:6px 8px; border-bottom:1px solid var(--line-bright); font-weight:500;}
+  td{ padding:6px 8px; border-bottom:1px solid var(--grid-line); font-family:var(--mono); font-size:12.5px; }
+  tr.item-row:hover{ background: rgba(255,255,255,0.03); }
+  td.name-cell{ font-family:var(--body); font-size:13px; }
+  input[type="number"], input[type="text"]{ background:var(--ink); border:1px solid var(--line-bright); color:var(--text); border-radius:2px; padding:4px 6px; font-family:var(--mono); font-size:12.5px; width:64px;}
+  input[type="text"].wide{ width:100%; }
+  input[type="checkbox"]{ accent-color:var(--amber); width:15px; height:15px; }
+  .btn{ font-family:var(--mono); font-size:12px; font-weight:600; letter-spacing:0.03em; background:var(--amber); color:var(--ink); border:none; border-radius:2px; padding:9px 16px; cursor:pointer; transition:filter .15s;}
+  .btn:hover{ filter:brightness(1.1); }
+  .btn.secondary{ background:transparent; color:var(--text); border:1px solid var(--line-bright);}
+  .btn.secondary:hover{ border-color:var(--amber); color:var(--amber); }
+  .btn.small{ padding:4px 9px; font-size:11px; }
+  .btn:disabled{ opacity:0.4; cursor:not-allowed; }
+  .row-actions{ display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
+  .manual-add{ display:flex; gap:6px; margin-top:12px; flex-wrap:wrap; align-items:center; }
+  .manual-add input[type="text"]{ width:110px; }
+  .empty-hint{ font-family:var(--mono); font-size:11.5px; color:var(--text-dim); padding:10px 0; }
+  .result-box{ border:1px solid var(--line-bright); border-radius:3px; padding:18px; margin-top:6px; }
+  .result-status{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .status-dot{ width:10px; height:10px; border-radius:50%; }
+  .status-dot.ok{ background:var(--good); box-shadow:0 0 8px var(--good); }
+  .status-dot.fail{ background:var(--bad); box-shadow:0 0 8px var(--bad); }
+  .status-text{ font-family:var(--display); font-weight:600; font-size:15px; }
+  .status-meta{ font-family:var(--mono); font-size:11px; color:var(--text-dim); margin-left:auto; }
+  .stat-row{ display:flex; gap:22px; margin-bottom:14px; flex-wrap:wrap; }
+  .stat .stat-label{ font-size:10px; color:var(--text-dim); text-transform:uppercase; letter-spacing:0.05em; font-family:var(--mono);}
+  .stat .stat-value{ font-size:17px; color:var(--amber); font-weight:600; font-family:var(--mono);}
+  svg.iso{ width:100%; height:auto; background:var(--ink); border-radius:3px; border:1px solid var(--line-bright); }
+  .legend{ display:flex; gap:14px; flex-wrap:wrap; margin-top:10px; font-family:var(--mono); font-size:11px; color:var(--text-dim); }
+  .legend .swatch{ display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:-1px; }
+  .note{ font-family:var(--mono); font-size:10.5px; color:var(--text-dim); margin-top:12px; line-height:1.5; border-top:1px dashed var(--line-bright); padding-top:10px; }
+</style>
+</head>
+<body>
+
+<div class="cpq-root">
+  <div class="cpq-header">
+    <div class="cpq-title">Servicesets CPQ <span class="tag">PYTHON</span></div>
+    <div id="pyStatus" class="loading">Python-interpreter laden…</div>
+  </div>
+
+  <div class="cpq-grid">
+    <div>
+      <div class="panel">
+        <div class="panel-title">01 · Productdata <span class="num">artikelnummer · naam · L · B · H (cm)</span></div>
+        <div class="row-actions" style="margin-bottom:12px;">
+          <button class="btn secondary small" id="loadCatalogBtn">↻ Servicesets-catalogus herladen</button>
+          <span class="dz-sub" id="catalogStatus" style="align-self:center;"></span>
+        </div>
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+          <div class="dz-title">Of sleep je eigen Excel hierheen</div>
+          <div class="dz-sub">Kolom A–E: artikelnummer, naam, lengte, breedte, hoogte</div>
+        </div>
+        <div class="manual-add">
+          <input type="text" id="manNum" placeholder="artikelnr" />
+          <input type="text" id="manName" placeholder="naam" style="width:140px" />
+          <input type="number" id="manL" placeholder="L" />
+          <input type="number" id="manW" placeholder="B" />
+          <input type="number" id="manH" placeholder="H" />
+          <button class="btn secondary small" id="addManualBtn">+ Toevoegen</button>
+        </div>
+        <div id="productTableWrap" style="margin-top:14px;"></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">02 · Samenstelling <span class="num" id="compCount">0 items</span></div>
+        <div id="compositionWrap"><div class="empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <div class="panel-title">03 · Kandidaat-dozen</div>
+        <div id="boxTableWrap"></div>
+        <div class="manual-add">
+          <input type="text" id="boxName" placeholder="naam" style="width:90px" />
+          <input type="number" id="boxL" placeholder="L" />
+          <input type="number" id="boxW" placeholder="B" />
+          <input type="number" id="boxH" placeholder="H" />
+          <button class="btn secondary small" id="addBoxBtn">+ Doos</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">04 · Berekening <span class="num">draait als Python (Pyodide)</span></div>
+        <button class="btn" id="calcBtn" style="width:100%;" disabled>Python laadt nog…</button>
+        <div id="resultWrap" style="margin-top:16px;"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---------- STATE ----------
+  let products = [];
+  let composition = {};
+  let boxes = [
+    {id:'box1', name:'Doos S', l:15, w:12, h:12},
+    {id:'box2', name:'Doos M', l:20, w:15, h:15},
+    {id:'box3', name:'Doos L', l:30, w:25, h:20},
+    {id:'box4', name:'Doos XL', l:40, w:30, h:25},
+  ];
+  let uidCounter = 1;
+  const nextId = (p) => p + (uidCounter++);
+  const fmt = (n) => Number.isInteger(n) ? n : n.toFixed(1);
+
+  // ---------- PYODIDE: laad de ECHTE packer_core.py ----------
+  let pyodideInstance = null;
+  const pyReady = (async () => {
+    const pyodide = await loadPyodide();
+    const src = await (await fetch('py/packer_core.py')).text();
+    pyodide.runPython(src);
+    pyodideInstance = pyodide;
+    document.getElementById('pyStatus').textContent = 'Python klaar (packer_core.py geladen)';
+    document.getElementById('pyStatus').className = 'ready';
+    document.getElementById('calcBtn').disabled = false;
+    document.getElementById('calcBtn').textContent = 'Bereken passende doos →';
+    return pyodide;
+  })();
+
+  async function pySelectBox(items, candidateBoxes){
+    const pyodide = await pyReady;
+    pyodide.globals.set('items_json', JSON.stringify(items));
+    pyodide.globals.set('boxes_json', JSON.stringify(candidateBoxes));
+    const resultJson = pyodide.runPython(`
+import json
+_items = json.loads(items_json)
+_boxes = json.loads(boxes_json)
+_result = select_box(_items, _boxes)
+json.dumps(_result)
+`);
+    return JSON.parse(resultJson);
+  }
+
+  // ---------- PRODUCT TABEL ----------
+  function renderProductTable(){
+    const wrap = document.getElementById('productTableWrap');
+    if(products.length === 0){ wrap.innerHTML = '<div class="empty-hint">Nog geen producten geladen.</div>'; return; }
+    let rows = products.map(p => `
+      <tr class="item-row">
+        <td><input type="checkbox" data-id="${p.id}" class="prod-check" ${composition[p.id] ? 'checked' : ''}/></td>
+        <td>${p.num}</td><td class="name-cell">${p.name}</td>
+        <td>${fmt(p.l)}</td><td>${fmt(p.w)}</td><td>${fmt(p.h)}</td>
+        <td><input type="number" min="0" class="prod-qty" data-id="${p.id}" value="${composition[p.id] || 1}" style="width:48px" /></td>
+      </tr>`).join('');
+    wrap.innerHTML = `
+      <div style="max-height:260px; overflow:auto;">
+      <table><thead><tr><th></th><th>Art.nr</th><th>Naam</th><th>L</th><th>B</th><th>H</th><th>Aantal</th></tr></thead>
+      <tbody>${rows}</tbody></table></div>
+      <div class="row-actions"><button class="btn secondary small" id="clearProductsBtn">Wis lijst</button></div>`;
+    document.querySelectorAll('.prod-check').forEach(cb => cb.addEventListener('change', onCheckChange));
+    document.querySelectorAll('.prod-qty').forEach(inp => inp.addEventListener('input', onQtyChange));
+    document.getElementById('clearProductsBtn').addEventListener('click', () => {
+      products = []; composition = {}; renderProductTable(); renderComposition();
+    });
+  }
+  function onCheckChange(e){
+    const id = e.target.dataset.id;
+    if(e.target.checked){ composition[id] = parseInt(document.querySelector(`.prod-qty[data-id="${id}"]`).value) || 1; }
+    else{ delete composition[id]; }
+    renderComposition();
+  }
+  function onQtyChange(e){
+    const id = e.target.dataset.id;
+    const val = Math.max(0, parseInt(e.target.value) || 0);
+    if(composition[id] !== undefined){
+      if(val === 0){ delete composition[id]; document.querySelector(`.prod-check[data-id="${id}"]`).checked = false; }
+      else composition[id] = val;
+    }
+    renderComposition();
+  }
+  function renderComposition(){
+    const wrap = document.getElementById('compositionWrap');
+    const ids = Object.keys(composition);
+    document.getElementById('compCount').textContent = ids.reduce((s,id)=>s+composition[id],0) + ' items';
+    if(ids.length === 0){ wrap.innerHTML = '<div class="empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div>'; return; }
+    let totalVol = 0;
+    let rows = ids.map(id => {
+      const p = products.find(x=>x.id===id); if(!p) return '';
+      totalVol += p.l*p.w*p.h*composition[id];
+      return `<tr><td class="name-cell">${p.name}</td><td>${fmt(p.l)}×${fmt(p.w)}×${fmt(p.h)}</td><td>${composition[id]}×</td></tr>`;
+    }).join('');
+    wrap.innerHTML = `<table><thead><tr><th>Naam</th><th>Afmeting (cm)</th><th>Aantal</th></tr></thead><tbody>${rows}</tbody></table>
+      <div class="note">Totaal itemvolume: ${(totalVol/1000).toFixed(2)} liter</div>`;
+  }
+
+  // ---------- BOX TABEL ----------
+  function renderBoxTable(){
+    const wrap = document.getElementById('boxTableWrap');
+    let rows = boxes.map(b => `
+      <tr><td class="name-cell">${b.name}</td><td>${fmt(b.l)}×${fmt(b.w)}×${fmt(b.h)}</td>
+      <td><button class="btn secondary small" data-id="${b.id}" data-action="del-box">✕</button></td></tr>`).join('');
+    wrap.innerHTML = `<table><thead><tr><th>Naam</th><th>Afmeting (cm)</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
+    wrap.querySelectorAll('[data-action="del-box"]').forEach(btn=>{
+      btn.addEventListener('click', () => { boxes = boxes.filter(b=>b.id !== btn.dataset.id); renderBoxTable(); });
+    });
+  }
+
+  // ---------- SERVICESETS-CATALOGUS (automatisch geladen bij openen) ----------
+  async function loadCatalog(){
+    const statusEl = document.getElementById('catalogStatus');
+    statusEl.textContent = 'laden…';
+    try{
+      const resp = await fetch('data/products.json');
+      const data = await resp.json();
+      products = data.map(p => ({ id: nextId('p'), num: p.num, name: p.name, l: p.l, w: p.w, h: p.h, weight_g: p.weight_g }));
+      composition = {};
+      renderProductTable();
+      renderComposition();
+      statusEl.textContent = `${products.length} producten geladen uit catalogus`;
+    } catch(err){
+      statusEl.textContent = 'kon catalogus niet laden (' + err.message + ')';
+    }
+  }
+  document.getElementById('loadCatalogBtn').addEventListener('click', loadCatalog);
+
+  // ---------- FILE UPLOAD ----------
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+  dropZone.addEventListener('click', () => fileInput.click());
+  ;['dragenter','dragover'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('drag'); }));
+  ;['dragleave','drop'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove('drag'); }));
+  dropZone.addEventListener('drop', e => { if(e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
+  fileInput.addEventListener('change', e => { if(e.target.files.length) handleFile(e.target.files[0]); });
+
+  function handleFile(file){
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      try{
+        const data = new Uint8Array(e.target.result);
+        const wb = XLSX.read(data, {type:'array'});
+        const sheet = wb.Sheets[wb.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(sheet, {header:1, defval:''});
+        let added = 0;
+        rows.forEach((r, idx) => {
+          if(idx === 0) return;
+          const [num, name, l, w, h] = r;
+          if(name === '' && num === '') return;
+          const L = parseFloat(l), W = parseFloat(w), H = parseFloat(h);
+          if(isNaN(L) || isNaN(W) || isNaN(H)) return;
+          products.push({ id: nextId('p'), num: String(num||'').trim(), name: String(name||'').trim() || '(naamloos)', l:L, w:W, h:H });
+          added++;
+        });
+        renderProductTable();
+        if(added === 0) alert('Geen geldige rijen gevonden. Check kolom A–E en of rij 1 een kop is.');
+      } catch(err){ alert('Kon het bestand niet lezen: ' + err.message); }
+    };
+    reader.readAsArrayBuffer(file);
+  }
+
+  document.getElementById('addManualBtn').addEventListener('click', () => {
+    const num = document.getElementById('manNum').value.trim();
+    const name = document.getElementById('manName').value.trim();
+    const l = parseFloat(document.getElementById('manL').value);
+    const w = parseFloat(document.getElementById('manW').value);
+    const h = parseFloat(document.getElementById('manH').value);
+    if(!name || isNaN(l) || isNaN(w) || isNaN(h)){ alert('Vul naam, L, B en H in.'); return; }
+    products.push({id: nextId('p'), num: num || '-', name, l, w, h});
+    ['manNum','manName','manL','manW','manH'].forEach(id => document.getElementById(id).value = '');
+    renderProductTable();
+  });
+
+  document.getElementById('addBoxBtn').addEventListener('click', () => {
+    const name = document.getElementById('boxName').value.trim();
+    const l = parseFloat(document.getElementById('boxL').value);
+    const w = parseFloat(document.getElementById('boxW').value);
+    const h = parseFloat(document.getElementById('boxH').value);
+    if(!name || isNaN(l) || isNaN(w) || isNaN(h)){ alert('Vul naam, L, B en H in.'); return; }
+    boxes.push({id: nextId('b'), name, l, w, h});
+    ['boxName','boxL','boxW','boxH'].forEach(id => document.getElementById(id).value = '');
+    renderBoxTable();
+  });
+
+  function expandItems(){
+    const out = [];
+    Object.keys(composition).forEach(id => {
+      const p = products.find(x=>x.id===id); if(!p) return;
+      for(let i=0;i<composition[id];i++){ out.push({name: p.name, l:p.l, w:p.w, h:p.h}); }
+    });
+    return out;
+  }
+
+  // ---------- ISOMETRISCHE VISUALISATIE ----------
+  const PALETTE = ['#E8A33D','#6FCF97','#7EB6D9','#D98E8E','#B98FD9','#8FD9C4','#D9C48F','#8FA8D9'];
+  function isoProject(x,y,z, scale, ox, oy){
+    const px = (x - y) * Math.cos(Math.PI/6) * scale;
+    const py = ((x + y) * Math.sin(Math.PI/6) - z) * scale;
+    return [ox + px, oy + py];
+  }
+  function shade(hex, factor){
+    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    const f = (v) => Math.min(255, Math.round(v*factor));
+    return `rgb(${f(r)},${f(g)},${f(b)})`;
+  }
+  function cuboidPolygons(x,y,z,l,w,h, scale, ox, oy, color){
+    const c = (dx,dy,dz) => isoProject(x+dx, y+dy, z+dz, scale, ox, oy);
+    const top = [c(0,0,h), c(l,0,h), c(l,w,h), c(0,w,h)];
+    const right = [c(l,0,0), c(l,w,0), c(l,w,h), c(l,0,h)];
+    const front = [c(0,w,0), c(l,w,0), c(l,w,h), c(0,w,h)];
+    const poly = (pts, fill) => `<polygon points="${pts.map(p=>p.join(',')).join(' ')}" fill="${fill}" stroke="#0B2A3F" stroke-width="0.6"/>`;
+    return poly(top, shade(color,1.25)) + poly(right, shade(color,0.65)) + poly(front, shade(color,0.9));
+  }
+  function binWireframe(l,w,h,scale,ox,oy){
+    const c = (x,y,z) => isoProject(x,y,z,scale,ox,oy);
+    const pts = { o:c(0,0,0), lx:c(l,0,0), wy:c(0,w,0), lw:c(l,w,0), oz:c(0,0,h), lxz:c(l,0,h), wyz:c(0,w,h), lwz:c(l,w,h) };
+    const line = (a,b) => `<line x1="${pts[a][0]}" y1="${pts[a][1]}" x2="${pts[b][0]}" y2="${pts[b][1]}" stroke="rgba(148,196,224,0.5)" stroke-width="1" stroke-dasharray="3,2"/>`;
+    return ['o-lx','o-wy','o-oz','lx-lw','lx-lxz','wy-lw','wy-wyz','oz-lxz','oz-wyz','lw-lwz','lxz-lwz','wyz-lwz']
+      .map(k => line(...k.split('-'))).join('');
+  }
+  function renderIsoSVG(bin, placements){
+    const scale = 460 / (bin.l + bin.w + bin.h);
+    const ox = 260, oy = 60;
+    const binEdges = binWireframe(bin.l, bin.w, bin.h, scale, ox, oy);
+    const sorted = [...placements].sort((a,b) => (a.x+a.y+a.z) - (b.x+b.y+b.z));
+    const itemSvg = sorted.map((p,i) => cuboidPolygons(p.x,p.y,p.z,p.l,p.w,p.h, scale, ox, oy, PALETTE[i % PALETTE.length])).join('');
+    return `<svg class="iso" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">${binEdges}${itemSvg}</svg>`;
+  }
+
+  // ---------- BEREKENEN (via Python/Pyodide) ----------
+  document.getElementById('calcBtn').addEventListener('click', async () => {
+    const items = expandItems();
+    const resultWrap = document.getElementById('resultWrap');
+    if(items.length === 0){ resultWrap.innerHTML = '<div class="empty-hint">Selecteer eerst producten in stap 2.</div>'; return; }
+    if(boxes.length === 0){ resultWrap.innerHTML = '<div class="empty-hint">Voeg minstens één kandidaat-doos toe in stap 3.</div>'; return; }
+
+    resultWrap.innerHTML = '<div class="empty-hint">Python berekent…</div>';
+    const outcome = await pySelectBox(items, boxes);
+
+    if(!outcome.chosen_box){
+      const best = outcome.attempts.reduce((a,b) => (b.result.placed_count > a.result.placed_count ? b : a));
+      resultWrap.innerHTML = `
+        <div class="result-box">
+          <div class="result-status"><span class="status-dot fail"></span><span class="status-text">Geen enkele doos past</span></div>
+          <div class="note">Grootste kandidaat (${best.box.name}, ${fmt(best.box.l)}×${fmt(best.box.w)}×${fmt(best.box.h)}cm) kreeg ${best.result.placed_count} van ${best.result.total_count} items geplaatst.</div>
+        </div>`;
+      return;
+    }
+
+    const chosen = outcome.chosen_box;
+    const result = outcome.result;
+    const itemVol = items.reduce((s,i)=>s + i.l*i.w*i.h, 0);
+    const boxVol = chosen.l*chosen.w*chosen.h;
+    const util = (itemVol/boxVol*100).toFixed(1);
+    const legend = result.placements.map((p,i) => `<span><span class="swatch" style="background:${PALETTE[i%PALETTE.length]}"></span>${p.name}</span>`).join('');
+
+    resultWrap.innerHTML = `
+      <div class="result-box">
+        <div class="result-status">
+          <span class="status-dot ok"></span><span class="status-text">${chosen.name} past</span>
+          <span class="status-meta">${fmt(chosen.l)}×${fmt(chosen.w)}×${fmt(chosen.h)} cm</span>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><div class="stat-label">Items</div><div class="stat-value">${result.placed_count}</div></div>
+          <div class="stat"><div class="stat-label">Volumebenutting</div><div class="stat-value">${util}%</div></div>
+          <div class="stat"><div class="stat-label">Geteste dozen</div><div class="stat-value">${outcome.attempts.length}</div></div>
+        </div>
+        ${renderIsoSVG(chosen, result.placements)}
+        <div class="legend">${legend}</div>
+        <div class="note">Berekend door packer_core.py, uitgevoerd als échte Python via Pyodide (WebAssembly) — hetzelfde bestand als python/packer_core.py dat je lokaal in VS Code draait.</div>
+      </div>`;
+  });
+
+  // ---------- INIT ----------
+  renderProductTable();
+  renderComposition();
+  renderBoxTable();
+  loadCatalog();
+})();
+</script>
+</body>
+</html>
