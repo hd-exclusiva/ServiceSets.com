@@ -1,0 +1,52 @@
+{
+  "package_dimensions": [
+    {
+      "naam": "LW",
+      "lengte_cm": 24,
+      "hoogte_cm": 8,
+      "breedte_cm": 6
+    },
+    {
+      "naam": "Doosje Hoog",
+      "lengte_cm": 20,
+      "hoogte_cm": 20,
+      "breedte_cm": 10
+    },
+    {
+      "naam": "Mini",
+      "lengte_cm": 6,
+      "hoogte_cm": 8.3,
+      "breedte_cm": 4.2
+    },
+    {
+      "naam": "5 CM",
+      "lengte_cm": 19.3,
+      "hoogte_cm": 10,
+      "breedte_cm": 4.8
+    },
+    {
+      "naam": "Wave",
+      "lengte_cm": 20,
+      "hoogte_cm": 12,
+      "breedte_cm": 10
+    },
+    {
+      "naam": "Small paper bag",
+      "lengte_cm": 11,
+      "hoogte_cm": 30,
+      "breedte_cm": 8
+    },
+    {
+      "naam": "Medium paper bag",
+      "lengte_cm": 16,
+      "hoogte_cm": 36,
+      "breedte_cm": 8
+    },
+    {
+      "naam": "Large paper bag",
+      "lengte_cm": 22,
+      "hoogte_cm": 30,
+      "breedte_cm": 10
+    }
+  ]
+}
