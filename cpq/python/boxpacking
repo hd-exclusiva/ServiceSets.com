@@ -1,0 +1,293 @@
+#!/usr/bin/env python3
+
+import argparse
+import json
+import sys
+from dataclasses import dataclass, field
+from typing import List, Optional
+
+try:
+    from py3dbp import Packer, Bin, Item
+except ImportError:
+    sys.exit(
+        "De library 'py3dbp' is niet geinstalleerd.\n"
+        "Installeer met:  pip install py3dbp --break-system-packages"
+    )
+
+# ---------------------------------------------------------------------------
+# Pas deze keys aan als jouw JSON-bestanden andere veldnamen gebruiken
+# ---------------------------------------------------------------------------
+ART_KEY_ID = "artikelnummer"
+ART_KEY_NAAM = "artikelnaam"
+ART_KEY_L = "lengte"
+ART_KEY_B = "breedte"
+ART_KEY_H = "hoogte"
+ART_KEY_GEWICHT = "gewicht"          # optioneel veld, mag ontbreken
+
+BOX_KEY_NAAM = "naam"
+BOX_KEY_L = "lengte"
+BOX_KEY_B = "breedte"
+BOX_KEY_H = "hoogte"
+BOX_KEY_MAXGEWICHT = "max_gewicht"   # optioneel veld, mag ontbreken
+
+
+@dataclass
+class Artikel:
+    artikelnummer: str
+    naam: str
+    lengte: float
+    breedte: float
+    hoogte: float
+    gewicht: float = 0.0
+
+    @property
+    def volume(self) -> float:
+        return self.lengte * self.breedte * self.hoogte
+
+
+@dataclass
+class Verpakking:
+    naam: str
+    lengte: float
+    breedte: float
+    hoogte: float
+    max_gewicht: Optional[float] = None
+
+    @property
+    def volume(self) -> float:
+        return self.lengte * self.breedte * self.hoogte
+
+
+@dataclass
+class PakResultaat:
+    verpakking: Verpakking
+    past: bool
+    gebruikt_volume_pct: float
+    aantal_niet_passend: int
+
+
+# ---------------------------------------------------------------------------
+# Data inladen
+# ---------------------------------------------------------------------------
+def laad_artikelen(pad: str) -> List[Artikel]:
+    with open(pad, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    artikelen = []
+    for rij in data:
+        artikelen.append(
+            Artikel(
+                artikelnummer=str(rij[ART_KEY_ID]),
+                naam=rij.get(ART_KEY_NAAM, rij[ART_KEY_ID]),
+                lengte=float(rij[ART_KEY_L]),
+                breedte=float(rij[ART_KEY_B]),
+                hoogte=float(rij[ART_KEY_H]),
+                gewicht=float(rij.get(ART_KEY_GEWICHT, 0.0)),
+            )
+        )
+    return artikelen
+
+
+def laad_verpakkingen(pad: str) -> List[Verpakking]:
+    with open(pad, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    verpakkingen = []
+    for rij in data:
+        verpakkingen.append(
+            Verpakking(
+                naam=rij[BOX_KEY_NAAM],
+                lengte=float(rij[BOX_KEY_L]),
+                breedte=float(rij[BOX_KEY_B]),
+                hoogte=float(rij[BOX_KEY_H]),
+                max_gewicht=(
+                    float(rij[BOX_KEY_MAXGEWICHT])
+                    if rij.get(BOX_KEY_MAXGEWICHT) not in (None, "")
+                    else None
+                ),
+            )
+        )
+    return verpakkingen
+
+
+# ---------------------------------------------------------------------------
+# Artikelselectie
+# ---------------------------------------------------------------------------
+def kies_artikelen_interactief(artikelen: List[Artikel]) -> List[Artikel]:
+    print("\nBeschikbare artikelen:")
+    for i, a in enumerate(artikelen, start=1):
+        print(
+            f"  {i:>3}. {a.artikelnummer:<10} {a.naam:<30} "
+            f"{a.lengte}x{a.breedte}x{a.hoogte}"
+        )
+
+    print(
+        "\nGeef de nummers van de te selecteren artikelen, gescheiden door "
+        "een komma. Voeg optioneel een aantal toe met ':' (bv. 1:2,3:1)."
+    )
+    keuze = input("Selectie: ").strip()
+    return _verwerk_selectie(keuze, artikelen, via_index=True)
+
+
+def _verwerk_selectie(
+    selectie_string: str, artikelen: List[Artikel], via_index: bool
+) -> List[Artikel]:
+    """Zet een selectie-string ('1:2,3' of 'A001:2,A004:1') om in een lijst
+    Artikel-objecten, waarbij een artikel met aantal N ook N keer in de
+    lijst voorkomt (elk item moet apart worden ingepakt)."""
+    resultaat: List[Artikel] = []
+    lookup_index = {str(i + 1): a for i, a in enumerate(artikelen)}
+    lookup_nummer = {a.artikelnummer: a for a in artikelen}
+
+    for deel in selectie_string.split(","):
+        deel = deel.strip()
+        if not deel:
+            continue
+        if ":" in deel:
+            ref, aantal_str = deel.split(":", 1)
+            aantal = int(aantal_str)
+        else:
+            ref, aantal = deel, 1
+
+        artikel = lookup_index.get(ref) if via_index else lookup_nummer.get(ref)
+        if artikel is None:
+            # val ook terug op artikelnummer, voor de zekerheid
+            artikel = lookup_nummer.get(ref)
+        if artikel is None:
+            print(f"  Waarschuwing: '{ref}' niet gevonden, wordt overgeslagen.")
+            continue
+
+        resultaat.extend([artikel] * aantal)
+
+    return resultaat
+
+
+# ---------------------------------------------------------------------------
+# 3D bin packing
+# ---------------------------------------------------------------------------
+def past_in_verpakking(
+    artikelen: List[Artikel], verpakking: Verpakking
+) -> PakResultaat:
+    """Probeert alle geselecteerde artikelen in 1 verpakking te passen met
+    py3dbp en geeft het resultaat terug (past ja/nee, benut volume %, aantal
+    artikelen dat niet paste)."""
+    packer = Packer()
+
+    max_gewicht = verpakking.max_gewicht if verpakking.max_gewicht else 1_000_000
+    packer.add_bin(
+        Bin(
+            verpakking.naam,
+            verpakking.lengte,
+            verpakking.breedte,
+            verpakking.hoogte,
+            max_gewicht,
+        )
+    )
+
+    for i, a in enumerate(artikelen):
+        packer.add_item(
+            Item(
+                f"{a.artikelnummer}#{i}",
+                a.lengte,
+                a.breedte,
+                a.hoogte,
+                a.gewicht,
+            )
+        )
+
+    packer.pack(bigger_first=True, distribute_items=False, number_of_decimals=2)
+
+    doos = packer.bins[0]
+    aantal_niet_passend = len(doos.unfitted_items)
+    past = aantal_niet_passend == 0
+
+    totaal_artikel_volume = sum(a.volume for a in artikelen)
+    gebruikt_pct = (
+        (totaal_artikel_volume / verpakking.volume) * 100
+        if verpakking.volume
+        else 0.0
+    )
+
+    return PakResultaat(
+        verpakking=verpakking,
+        past=past,
+        gebruikt_volume_pct=round(min(gebruikt_pct, 100.0), 1),
+        aantal_niet_passend=aantal_niet_passend,
+    )
+
+
+def vind_passende_verpakkingen(
+    artikelen: List[Artikel], verpakkingen: List[Verpakking]
+) -> List[PakResultaat]:
+    """Test alle verpakkingen, klein naar groot (op volume), en geeft de
+    resultaten terug in diezelfde volgorde. Zo zie je meteen de kleinste
+    passende doos bovenaan, met steeds grotere alternatieven erna."""
+    gesorteerd = sorted(verpakkingen, key=lambda v: v.volume)
+    return [past_in_verpakking(artikelen, v) for v in gesorteerd]
+
+
+# ---------------------------------------------------------------------------
+# Output
+# ---------------------------------------------------------------------------
+def print_advies(artikelen: List[Artikel], resultaten: List[PakResultaat]) -> None:
+    print("\nGeselecteerde artikelen:")
+    for a in artikelen:
+        print(f"  - {a.artikelnummer} {a.naam} ({a.lengte}x{a.breedte}x{a.hoogte})")
+
+    print("\nVerpakkingsadvies (klein -> groot):")
+    passende = [r for r in resultaten if r.past]
+
+    if not passende:
+        print("  Geen enkele verpakking uit de lijst is groot genoeg.")
+        print("  Dichtstbijzijnde optie(s):")
+        for r in resultaten[:3]:
+            print(
+                f"    - {r.verpakking.naam}: {r.aantal_niet_passend} "
+                f"artikel(en) passen niet"
+            )
+        return
+
+    for r in passende:
+        markering = " <== KLEINST PASSENDE" if r == passende[0] else ""
+        print(
+            f"  - {r.verpakking.naam:<20} "
+            f"{r.verpakking.lengte}x{r.verpakking.breedte}x{r.verpakking.hoogte}  "
+            f"(volume benut: {r.gebruikt_volume_pct}%){markering}"
+        )
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Selecteer artikelen en vind passende verpakkingen (3D bin packing)."
+    )
+    parser.add_argument("--articles", required=True, help="Pad naar articles.json")
+    parser.add_argument("--boxes", required=True, help="Pad naar boxes.json")
+    parser.add_argument(
+        "--select",
+        help=(
+            "Optioneel: rechtstreeks selecteren zonder interactief menu, "
+            "bv. 'A001:2,A004:1' (artikelnummer:aantal)."
+        ),
+    )
+    args = parser.parse_args()
+
+    artikelen_beschikbaar = laad_artikelen(args.articles)
+    verpakkingen = laad_verpakkingen(args.boxes)
+
+    if args.select:
+        geselecteerd = _verwerk_selectie(
+            args.select, artikelen_beschikbaar, via_index=False
+        )
+    else:
+        geselecteerd = kies_artikelen_interactief(artikelen_beschikbaar)
+
+    if not geselecteerd:
+        sys.exit("Geen (geldige) artikelen geselecteerd, script stopt.")
+
+    resultaten = vind_passende_verpakkingen(geselecteerd, verpakkingen)
+    print_advies(geselecteerd, resultaten)
+
+
+if __name__ == "__main__":
+    main()
