@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
 import argparse
+import csv
+import io
 import json
 import sys
-from dataclasses import dataclass, field
-from typing import List, Optional
-
+from dataclasses import dataclass
+from typing import Any, Dict, List, Optional
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
 try:
     from py3dbp import Packer, Bin, Item
 except ImportError:
@@ -30,7 +33,19 @@ BOX_KEY_B = "breedte"
 BOX_KEY_H = "hoogte"
 BOX_KEY_MAXGEWICHT = "max_gewicht"   # optioneel veld, mag ontbreken
 
+GITHUB_REPOSITORY = "hd-exclusiva/ServiceSets.com"
+GITHUB_BRANCH = "main"
+GITHUB_DATA_PATH = "data"
 
+GITHUB_CONTENTS_URL = (
+    f"https://api.github.com/repos/{GITHUB_REPOSITORY}"
+    f"/contents/{GITHUB_DATA_PATH}?ref={GITHUB_BRANCH}"
+)
+
+GITHUB_HEADERS = {
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "ServiceSets-verpakkingsadvies",
+}
 @dataclass
 class Artikel:
     artikelnummer: str
@@ -69,45 +84,339 @@ class PakResultaat:
 # ---------------------------------------------------------------------------
 # Data inladen
 # ---------------------------------------------------------------------------
-def laad_artikelen(pad: str) -> List[Artikel]:
-    with open(pad, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    artikelen = []
-    for rij in data:
-        artikelen.append(
-            Artikel(
-                artikelnummer=str(rij[ART_KEY_ID]),
-                naam=rij.get(ART_KEY_NAAM, rij[ART_KEY_ID]),
-                lengte=float(rij[ART_KEY_L]),
-                breedte=float(rij[ART_KEY_B]),
-                hoogte=float(rij[ART_KEY_H]),
-                gewicht=float(rij.get(ART_KEY_GEWICHT, 0.0)),
-            )
+def github_json(url: str) -> Any:
+    """Haalt JSON op uit de GitHub Contents API."""
+    request = Request(url, headers=GITHUB_HEADERS)
+
+    try:
+        with urlopen(request, timeout=30) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except HTTPError as exc:
+        raise RuntimeError(
+            f"GitHub gaf HTTP-fout {exc.code} terug voor:\n{url}"
+        ) from exc
+    except URLError as exc:
+        raise RuntimeError(
+            f"Kan GitHub niet bereiken: {exc.reason}"
+        ) from exc
+
+
+def download_text(url: str) -> str:
+    """Downloadt tekst van een raw GitHub-bestand."""
+    request = Request(url, headers={"User-Agent": GITHUB_HEADERS["User-Agent"]})
+
+    try:
+        with urlopen(request, timeout=30) as response:
+            return response.read().decode("utf-8-sig")
+    except HTTPError as exc:
+        raise RuntimeError(
+            f"Kan GitHub-bestand niet downloaden, HTTP-fout {exc.code}:\n{url}"
+        ) from exc
+    except URLError as exc:
+        raise RuntimeError(
+            f"Kan GitHub-bestand niet downloaden: {exc.reason}"
+        ) from exc
+
+
+def vind_github_bestanden(url: str) -> List[Dict[str, Any]]:
+    """
+    Zoekt recursief naar data-bestanden in de GitHub-map.
+    Alleen JSON, JSONL en CSV worden ingelezen.
+    """
+    inhoud = github_json(url)
+    bestanden = []
+
+    for item in inhoud:
+        item_type = item.get("type")
+        item_name = item.get("name", "").lower()
+
+        if item_type == "dir":
+            bestanden.extend(vind_github_bestanden(item["url"]))
+
+        elif item_type == "file" and item_name.endswith(
+            (".json", ".jsonl", ".csv")
+        ):
+            bestanden.append(item)
+
+    return bestanden
+
+
+def records_uit_json(data: Any) -> List[Dict[str, Any]]:
+    """
+    Zet verschillende JSON-structuren om naar een lijst records.
+
+    Ondersteunde voorbeelden:
+    - [...]
+    - {"artikelen": [...]}
+    - {"products": [...]}
+    - {"data": [...]}
+    """
+    if isinstance(data, list):
+        return [rij for rij in data if isinstance(rij, dict)]
+
+    if isinstance(data, dict):
+        mogelijke_lijsten = (
+            "artikelen",
+            "articles",
+            "producten",
+            "products",
+            "verpakkingen",
+            "boxes",
+            "packaging",
+            "data",
+            "items",
+            "records",
         )
+
+        records = []
+
+        for sleutel in mogelijke_lijsten:
+            waarde = data.get(sleutel)
+
+            if isinstance(waarde, list):
+                records.extend(
+                    rij for rij in waarde if isinstance(rij, dict)
+                )
+
+        if records:
+            return records
+
+        # Ook een enkel object wordt ondersteund.
+        return [data]
+
+    return []
+
+
+def laad_records_uit_github() -> List[Dict[str, Any]]:
+    """Laadt alle bruikbare records uit de GitHub data-map."""
+    bestanden = vind_github_bestanden(GITHUB_CONTENTS_URL)
+    alle_records = []
+
+    if not bestanden:
+        raise RuntimeError(
+            f"Geen JSON-, JSONL- of CSV-bestanden gevonden in "
+            f"{GITHUB_REPOSITORY}/{GITHUB_DATA_PATH}."
+        )
+
+    for bestand in bestanden:
+        bestandsnaam = bestand["name"].lower()
+        tekst = download_text(bestand["download_url"])
+
+        try:
+            if bestandsnaam.endswith(".json"):
+                data = json.loads(tekst)
+                records = records_uit_json(data)
+
+            elif bestandsnaam.endswith(".jsonl"):
+                records = []
+
+                for regel in tekst.splitlines():
+                    regel = regel.strip()
+
+                    if regel:
+                        record = json.loads(regel)
+
+                        if isinstance(record, dict):
+                            records.append(record)
+
+            elif bestandsnaam.endswith(".csv"):
+                try:
+                    dialect = csv.Sniffer().sniff(tekst[:4096])
+                except csv.Error:
+                    dialect = csv.excel
+
+                reader = csv.DictReader(
+                    io.StringIO(tekst),
+                    dialect=dialect,
+                )
+                records = [
+                    dict(rij)
+                    for rij in reader
+                    if isinstance(rij, dict)
+                ]
+
+            else:
+                records = []
+
+        except (json.JSONDecodeError, csv.Error, UnicodeDecodeError) as exc:
+            print(
+                f"Waarschuwing: {bestand['name']} kan niet worden gelezen: "
+                f"{exc}",
+                file=sys.stderr,
+            )
+            continue
+
+        for record in records:
+            record["_bronbestand"] = bestand["name"]
+            alle_records.append(record)
+
+    return alle_records
+
+
+def eerste_waarde(record: Dict[str, Any], sleutels: tuple) -> Any:
+    """Geeft de eerste bestaande, niet-lege waarde terug."""
+    for sleutel in sleutels:
+        if sleutel in record and record[sleutel] not in (None, ""):
+            return record[sleutel]
+
+    return None
+
+
+def getal(record: Dict[str, Any], sleutels: tuple, standaard: float = 0.0) -> float:
+    waarde = eerste_waarde(record, sleutels)
+
+    if waarde in (None, ""):
+        return standaard
+
+    if isinstance(waarde, str):
+        waarde = waarde.replace(",", ".")
+
+    return float(waarde)
+
+
+def laad_artikelen_van_github(records: List[Dict[str, Any]]) -> List[Artikel]:
+    artikelen = []
+
+    for rij in records:
+        artikelnummer = eerste_waarde(
+            rij,
+            (
+                ART_KEY_ID,
+                "artikelnummer",
+                "article_number",
+                "article_id",
+                "sku",
+                "id",
+            ),
+        )
+
+        naam = eerste_waarde(
+            rij,
+            (
+                ART_KEY_NAAM,
+                "artikelnaam",
+                "productnaam",
+                "naam",
+                "name",
+                "product_name",
+            ),
+        )
+
+        lengte = eerste_waarde(
+            rij,
+            (ART_KEY_L, "length", "len", "l"),
+        )
+        breedte = eerste_waarde(
+            rij,
+            (ART_KEY_B, "width", "w", "b"),
+        )
+        hoogte = eerste_waarde(
+            rij,
+            (ART_KEY_H, "height", "h"),
+        )
+
+        # Een productrecord moet minimaal een ID en drie afmetingen hebben.
+        if None in (artikelnummer, lengte, breedte, hoogte):
+            continue
+
+        try:
+            artikelen.append(
+                Artikel(
+                    artikelnummer=str(artikelnummer),
+                    naam=str(naam or artikelnummer),
+                    lengte=float(str(lengte).replace(",", ".")),
+                    breedte=float(str(breedte).replace(",", ".")),
+                    hoogte=float(str(hoogte).replace(",", ".")),
+                    gewicht=getal(
+                        rij,
+                        (
+                            ART_KEY_GEWICHT,
+                            "weight",
+                            "massa",
+                        ),
+                    ),
+                )
+            )
+        except (TypeError, ValueError):
+            print(
+                f"Waarschuwing: ongeldig productrecord uit "
+                f"{rij.get('_bronbestand', 'onbekend')} wordt overgeslagen.",
+                file=sys.stderr,
+            )
+
     return artikelen
 
 
-def laad_verpakkingen(pad: str) -> List[Verpakking]:
-    with open(pad, "r", encoding="utf-8") as f:
-        data = json.load(f)
+def laad_verpakkingen_van_github(
+    records: List[Dict[str, Any]],
+) -> List[Verpakking]:
     verpakkingen = []
-    for rij in data:
-        verpakkingen.append(
-            Verpakking(
-                naam=rij[BOX_KEY_NAAM],
-                lengte=float(rij[BOX_KEY_L]),
-                breedte=float(rij[BOX_KEY_B]),
-                hoogte=float(rij[BOX_KEY_H]),
-                max_gewicht=(
-                    float(rij[BOX_KEY_MAXGEWICHT])
-                    if rij.get(BOX_KEY_MAXGEWICHT) not in (None, "")
-                    else None
+
+    for rij in records:
+        naam = eerste_waarde(
+            rij,
+            (
+                BOX_KEY_NAAM,
+                "verpakkingsnaam",
+                "box_name",
+                "box",
+                "name",
+            ),
+        )
+
+        lengte = eerste_waarde(
+            rij,
+            (BOX_KEY_L, "length", "len", "l"),
+        )
+        breedte = eerste_waarde(
+            rij,
+            (BOX_KEY_B, "width", "w", "b"),
+        )
+        hoogte = eerste_waarde(
+            rij,
+            (BOX_KEY_H, "height", "h"),
+        )
+
+        # Een verpakkingsrecord moet een naam en drie afmetingen hebben.
+        if None in (naam, lengte, breedte, hoogte):
+            continue
+
+        try:
+            max_gewicht_waarde = eerste_waarde(
+                rij,
+                (
+                    BOX_KEY_MAXGEWICHT,
+                    "max_weight",
+                    "maximum_weight",
+                    "weight_limit",
                 ),
             )
-        )
+
+            max_gewicht = (
+                None
+                if max_gewicht_waarde in (None, "")
+                else float(
+                    str(max_gewicht_waarde).replace(",", ".")
+                )
+            )
+
+            verpakkingen.append(
+                Verpakking(
+                    naam=str(naam),
+                    lengte=float(str(lengte).replace(",", ".")),
+                    breedte=float(str(breedte).replace(",", ".")),
+                    hoogte=float(str(hoogte).replace(",", ".")),
+                    max_gewicht=max_gewicht,
+                )
+            )
+        except (TypeError, ValueError):
+            print(
+                f"Waarschuwing: ongeldig verpakkingsrecord uit "
+                f"{rij.get('_bronbestand', 'onbekend')} wordt overgeslagen.",
+                file=sys.stderr,
+            )
+
     return verpakkingen
-
-
 # ---------------------------------------------------------------------------
 # Artikelselectie
 # ---------------------------------------------------------------------------
@@ -257,37 +566,70 @@ def print_advies(artikelen: List[Artikel], resultaten: List[PakResultaat]) -> No
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
+
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Selecteer artikelen en vind passende verpakkingen (3D bin packing)."
+        description=(
+            "Selecteer artikelen uit GitHub en vind passende verpakkingen."
+        )
     )
-    parser.add_argument("--articles", required=True, help="Pad naar articles.json")
-    parser.add_argument("--boxes", required=True, help="Pad naar boxes.json")
+
     parser.add_argument(
         "--select",
         help=(
-            "Optioneel: rechtstreeks selecteren zonder interactief menu, "
-            "bv. 'A001:2,A004:1' (artikelnummer:aantal)."
+            "Rechtstreeks selecteren op artikelnummer, "
+            "bijvoorbeeld 'A001:2,A004:1'."
         ),
     )
+
     args = parser.parse_args()
 
-    artikelen_beschikbaar = laad_artikelen(args.articles)
-    verpakkingen = laad_verpakkingen(args.boxes)
+    try:
+        print("Data ophalen uit GitHub...")
+
+        records = laad_records_uit_github()
+        artikelen_beschikbaar = laad_artikelen_van_github(records)
+        verpakkingen = laad_verpakkingen_van_github(records)
+
+    except RuntimeError as exc:
+        sys.exit(f"Fout bij ophalen van GitHub-data: {exc}")
+
+    if not artikelen_beschikbaar:
+        sys.exit(
+            "Geen producten met geldige afmetingen gevonden in de GitHub-data."
+        )
+
+    if not verpakkingen:
+        sys.exit(
+            "Geen verpakkingen met geldige afmetingen gevonden in "
+            "de GitHub-data."
+        )
+
+    print(
+        f"{len(artikelen_beschikbaar)} producten en "
+        f"{len(verpakkingen)} verpakkingen geladen."
+    )
 
     if args.select:
         geselecteerd = _verwerk_selectie(
-            args.select, artikelen_beschikbaar, via_index=False
+            args.select,
+            artikelen_beschikbaar,
+            via_index=False,
         )
     else:
-        geselecteerd = kies_artikelen_interactief(artikelen_beschikbaar)
+        geselecteerd = kies_artikelen_interactief(
+            artikelen_beschikbaar
+        )
 
     if not geselecteerd:
-        sys.exit("Geen (geldige) artikelen geselecteerd, script stopt.")
+        sys.exit("Geen geldige artikelen geselecteerd, script stopt.")
 
-    resultaten = vind_passende_verpakkingen(geselecteerd, verpakkingen)
+    resultaten = vind_passende_verpakkingen(
+        geselecteerd,
+        verpakkingen,
+    )
+
     print_advies(geselecteerd, resultaten)
-
 
 if __name__ == "__main__":
     main()
