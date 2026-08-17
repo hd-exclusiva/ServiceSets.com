@@ -4,6 +4,7 @@ import argparse
 import csv
 import io
 import json
+import os
 import sys
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional
@@ -20,6 +21,8 @@ except ImportError:
 # ---------------------------------------------------------------------------
 # Pas deze keys aan als jouw JSON-bestanden andere veldnamen gebruiken
 # ---------------------------------------------------------------------------
+GITHUB_TOKEN = ""  # vul hier je Personal Access Token in, bv. "ghp_xxxxxxxxxxxx"
+
 ART_KEY_ID = "artikelnummer"
 ART_KEY_NAAM = "artikelnaam"
 ART_KEY_L = "lengte"
@@ -67,6 +70,10 @@ GITHUB_HEADERS = {
     "User-Agent": "ServiceSets-verpakkingsadvies",
 }
 
+_GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN")
+if _GITHUB_TOKEN:
+    GITHUB_HEADERS["Authorization"] = f"Bearer {_GITHUB_TOKEN}"
+ 
 
 @dataclass
 class Artikel:
