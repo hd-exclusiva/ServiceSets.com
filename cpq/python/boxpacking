@@ -177,21 +177,7 @@ def _tag_categorie(records: List[Dict[str, Any]], categorie: str) -> List[Dict[s
 
 
 def records_uit_json(data: Any) -> List[Dict[str, Any]]:
-    """
-    Zet verschillende JSON-structuren om naar een lijst records.
-
-    Elk record krijgt een veld '_categorie' ('artikel' of 'verpakking'),
-    afhankelijk van onder welke sleutel het gevonden is. Zo kunnen artikelen
-    en verpakkingen later niet meer door elkaar gehaald worden, ook al
-    gebruiken ze dezelfde veldnamen (lengte/breedte/hoogte/naam).
-
-    Ondersteunde voorbeelden:
-    - [...]                              (categorie later bepaald via bestandsnaam)
-    - {"artikelen": [...]}               -> categorie 'artikel'
-    - {"products": [...]}                -> categorie 'artikel'
-    - {"package_dimensions": [...]}      -> categorie 'verpakking'
-    - {"data": [...]}                    -> categorie 'artikel' (generieke fallback)
-    """
+    
     if isinstance(data, list):
         # Geen sleutel om op te categoriseren: dit wordt later, op basis
         # van de bestandsnaam, alsnog ingevuld in laad_records_uit_github().
