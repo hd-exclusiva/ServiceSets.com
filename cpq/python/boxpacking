@@ -21,7 +21,27 @@ except ImportError:
 # ---------------------------------------------------------------------------
 # Pas deze keys aan als jouw JSON-bestanden andere veldnamen gebruiken
 # ---------------------------------------------------------------------------
-GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or "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" # vul hier je Personal Access Token in, bv. "ghp_xxxxxxxxxxxx"
+def _laad_dotenv() -> None:
+    env_pad = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+ 
+    if not os.path.isfile(env_pad):
+        return
+ 
+    with open(env_pad, "r", encoding="utf-8") as f:
+        for regel in f:
+            regel = regel.strip()
+ 
+            if not regel or regel.startswith("#") or "=" not in regel:
+                continue
+ 
+            sleutel, _, waarde = regel.partition("=")
+            sleutel = sleutel.strip()
+            waarde = waarde.strip().strip('"').strip("'")
+ 
+            # Bestaande omgevingsvariabelen (bv. al ge-export) hebben voorrang.
+            os.environ.setdefault(sleutel, waarde)
+_laad_dotenv()
+
 
 ART_KEY_ID = "artikelnummer"
 ART_KEY_NAAM = "artikelnaam"
