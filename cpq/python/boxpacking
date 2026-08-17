@@ -21,7 +21,7 @@ except ImportError:
 # ---------------------------------------------------------------------------
 # Pas deze keys aan als jouw JSON-bestanden andere veldnamen gebruiken
 # ---------------------------------------------------------------------------
-GITHUB_TOKEN = ""  # vul hier je Personal Access Token in, bv. "ghp_xxxxxxxxxxxx"
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN") or "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" # vul hier je Personal Access Token in, bv. "ghp_xxxxxxxxxxxx"
 
 ART_KEY_ID = "artikelnummer"
 ART_KEY_NAAM = "artikelnaam"
@@ -421,7 +421,7 @@ def laad_verpakkingen_van_github(
             rij,
             (
                 BOX_KEY_NAAM,
-                "verpakkingsnaam",
+                "naam",
                 "box_name",
                 "box",
                 "name",
@@ -430,15 +430,15 @@ def laad_verpakkingen_van_github(
 
         lengte = eerste_waarde(
             rij,
-            (BOX_KEY_L, "length", "len", "l"),
+            (BOX_KEY_L, "lengte_cm", "len", "l"),
         )
         breedte = eerste_waarde(
             rij,
-            (BOX_KEY_B, "width", "w", "b"),
+            (BOX_KEY_B, "breedte_cm", "w", "b"),
         )
         hoogte = eerste_waarde(
             rij,
-            (BOX_KEY_H, "height", "h"),
+            (BOX_KEY_H, "hoogte_cm", "h"),
         )
 
         # Een verpakkingsrecord moet een naam en drie afmetingen hebben.
