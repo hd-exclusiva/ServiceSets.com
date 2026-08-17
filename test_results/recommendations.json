@@ -11,6 +11,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag",
@@ -29,6 +31,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag",
@@ -49,6 +53,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW"
     ]
@@ -61,6 +67,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -74,8 +82,9 @@
     "product": "3552235",
     "product_name": "Koffie cup Lungo nr6 aluminium",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -85,15 +94,17 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
     "product": "3552520",
     "product_name": "Stick Limonade",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -103,15 +114,17 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
     "product": "3551400",
     "product_name": "Afvalzak HDPE 60x80",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -121,6 +134,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -128,8 +142,9 @@
     "product": "3551300",
     "product_name": "Pedaalemmerzak HDPE 28/8-56",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -139,6 +154,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -146,8 +162,9 @@
     "product": "3551420",
     "product_name": "Afvalzak HDPE 60x80 transp",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -157,6 +174,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -164,8 +182,9 @@
     "product": "3551468",
     "product_name": "Afvalzak PMD 61x80+5cm ge",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -175,6 +194,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -186,6 +206,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -199,8 +221,9 @@
     "product": "3558113",
     "product_name": "notitieblok Superdobbel",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -210,7 +233,8 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
@@ -220,6 +244,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -238,6 +264,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -255,6 +283,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -272,6 +302,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -289,6 +321,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -306,6 +340,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -323,6 +359,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -340,6 +378,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -357,6 +397,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -374,6 +416,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -391,6 +435,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -408,6 +454,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -425,6 +473,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -442,6 +492,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -459,6 +511,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -476,6 +530,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -493,6 +549,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -510,6 +568,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -527,6 +587,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -540,8 +602,9 @@
     "product": "3550280",
     "product_name": "Afwasmiddel sachet 10ml",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -551,7 +614,8 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
@@ -569,6 +633,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM"
     ]
   },
@@ -585,6 +651,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Doosje Hoog"
@@ -603,6 +671,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -621,6 +691,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -639,6 +711,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -657,6 +731,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -675,6 +751,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -693,6 +771,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -711,6 +791,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -723,6 +805,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -740,6 +824,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -764,6 +850,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW"
     ]
@@ -772,8 +860,9 @@
     "product": "3552600",
     "product_name": "Koffiefilter los",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -783,6 +872,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -799,6 +889,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -811,6 +903,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -829,6 +923,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -848,6 +944,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -867,6 +965,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -889,7 +989,9 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup",
+      "Coffee set box"
     ]
   },
   {
@@ -907,7 +1009,9 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup",
+      "Coffee set box"
     ]
   },
   {
@@ -925,15 +1029,18 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup",
+      "Coffee set box"
     ]
   },
   {
     "product": "3562290",
     "product_name": "Munchy Stick voor hond",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -943,7 +1050,8 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
@@ -953,6 +1061,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -970,6 +1080,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -987,6 +1099,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1004,6 +1118,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1018,8 +1134,9 @@
     "product": "3552200",
     "product_name": "Koffie sachet 60gr (+-8 kops)",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -1029,6 +1146,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -1046,6 +1164,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW"
     ]
@@ -1060,6 +1180,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1072,8 +1194,9 @@
     "product": "3562270",
     "product_name": "Tennisbal 2e leven:)",
     "requested_quantity": 1,
-    "smallest_package": "Wave",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
       "Wave",
       "Small paper bag",
       "Doosje Hoog",
@@ -1082,6 +1205,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "Coffee set box",
       "5 CM",
       "LW"
     ]
@@ -1094,6 +1218,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1111,6 +1237,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1128,6 +1256,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1145,6 +1275,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1162,6 +1294,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1184,6 +1318,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Small paper bag"
@@ -1193,8 +1329,9 @@
     "product": "3551620",
     "product_name": "Schuurspons viscose bl 7x9cm",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1204,15 +1341,17 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
     "product": "3612255",
     "product_name": "Schuurspons viscose bl 9x14cm",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "Wave",
       "Small paper bag",
@@ -1222,6 +1361,7 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
       "LW"
     ]
   },
@@ -1229,8 +1369,10 @@
     "product": "3551600",
     "product_name": "Schuurspons met groen abrasief",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1247,8 +1389,9 @@
     "product": "3551650",
     "product_name": "Schuurspons met wit abrasief",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1258,7 +1401,8 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
@@ -1268,6 +1412,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1285,6 +1431,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1307,6 +1455,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1320,6 +1470,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1334,8 +1486,10 @@
     "product": "3552305",
     "product_name": "Thee Quiero Earl Grey",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1352,8 +1506,10 @@
     "product": "3552317",
     "product_name": "Thee Quiero Green Lemon",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1370,8 +1526,10 @@
     "product": "3552316",
     "product_name": "Thee Quiero Green tea",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1388,8 +1546,10 @@
     "product": "3552315",
     "product_name": "Thee Quiero Rooibos Orange",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1410,6 +1570,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1427,6 +1589,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1440,8 +1604,10 @@
     "product": "3558300",
     "product_name": "Koffie pad regular",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1458,8 +1624,9 @@
     "product": "3552400",
     "product_name": "Stick Welcome Suiker coffee",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1469,15 +1636,17 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
     "product": "3552500",
     "product_name": "Stick Welcome Creamer coffee",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "Coffee set box",
     "packages_that_fit": [
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1487,7 +1656,8 @@
       "Large paper bag"
     ],
     "packages_that_do_not_fit": [
-      "Mini"
+      "Mini",
+      "The smart cup"
     ]
   },
   {
@@ -1497,6 +1667,8 @@
     "smallest_package": "Mini",
     "packages_that_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1515,6 +1687,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1532,6 +1706,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1549,6 +1725,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1566,6 +1744,8 @@
     "packages_that_fit": [],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1590,6 +1770,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM"
     ]
   },
@@ -1608,6 +1790,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM"
     ]
   },
@@ -1615,8 +1799,10 @@
     "product": "3552318",
     "product_name": "Thee Wilder Land boswandeling",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1633,8 +1819,10 @@
     "product": "3552319",
     "product_name": "Thee Wilder Land offline",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1651,8 +1839,10 @@
     "product": "3559980",
     "product_name": "Welcome Vanity kit",
     "requested_quantity": 1,
-    "smallest_package": "5 CM",
+    "smallest_package": "The smart cup",
     "packages_that_fit": [
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",
@@ -1677,6 +1867,8 @@
     ],
     "packages_that_do_not_fit": [
       "Mini",
+      "The smart cup",
+      "Coffee set box",
       "5 CM",
       "LW",
       "Wave",

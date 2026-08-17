@@ -1,317 +1,329 @@
 SERVICESETS PACKING ANALYSIS
 ============================
 
-Tests: 768
-PASS: 379
-FAIL: 389
-PASS percentage: 49.3%
+Tests: 960
+PASS: 438
+FAIL: 522
+PASS percentage: 45.6%
 
 VERPAKKINGEN
 ------------
 5 CM: 40 PASS / 56 FAIL (41.7%)
+Coffee set box: 37 PASS / 59 FAIL (38.5%)
 Doosje Hoog: 59 PASS / 37 FAIL (61.5%)
 LW: 37 PASS / 59 FAIL (38.5%)
 Large paper bag: 64 PASS / 32 FAIL (66.7%)
 Medium paper bag: 59 PASS / 37 FAIL (61.5%)
 Mini: 12 PASS / 84 FAIL (12.5%)
 Small paper bag: 50 PASS / 46 FAIL (52.1%)
+The smart cup: 22 PASS / 74 FAIL (22.9%)
 Wave: 58 PASS / 38 FAIL (60.4%)
 
 PRODUCTEN
 ---------
-2212500: 0 PASS / 8 FAIL (0.0%)
+2212500: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2212600: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2212600: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2212700: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2212700: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2212800: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2212800: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2212900: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2212900: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2213100: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2213100: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2213200: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2213200: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2213300: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2213300: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2213400: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2213400: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-2213500: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+2213500: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3550050: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3550050: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3550052: 2 PASS / 6 FAIL (25.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3550052: 2 PASS / 8 FAIL (20.0%)
   Past in: Doosje Hoog, Large paper bag
-  Past niet in: 5 CM, LW, Medium paper bag, Mini, Small paper bag, Wave
-3550053: 1 PASS / 7 FAIL (12.5%)
+  Past niet in: 5 CM, Coffee set box, LW, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3550053: 1 PASS / 9 FAIL (10.0%)
   Past in: Large paper bag
-  Past niet in: 5 CM, Doosje Hoog, LW, Medium paper bag, Mini, Small paper bag, Wave
-3550201: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3550201: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3550260: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3550260: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3550280: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3551010: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3550280: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3551010: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551050: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551050: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551110: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551110: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551250: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551250: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3551260: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3551260: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3551280: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3551280: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3551300: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-3551320: 0 PASS / 8 FAIL (0.0%)
+3551300: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+3551320: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551400: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-3551420: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-3551450: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551400: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+3551420: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+3551450: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551467: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551467: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551468: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-3551500: 6 PASS / 2 FAIL (75.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551468: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+3551500: 6 PASS / 4 FAIL (60.0%)
   Past in: Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, Mini
-3551550: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: 5 CM, Coffee set box, Mini, The smart cup
+3551550: 4 PASS / 6 FAIL (40.0%)
   Past in: LW, Large paper bag, Medium paper bag, Small paper bag
-  Past niet in: 5 CM, Doosje Hoog, Mini, Wave
-3551600: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, Mini, The smart cup, Wave
+3551600: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3551620: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3551650: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3551700: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3551620: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3551650: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3551700: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3551760: 4 PASS / 4 FAIL (50.0%)
+3551760: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3551780: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3551780: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3551800: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3551800: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3551900: 0 PASS / 8 FAIL (0.0%)
+3551900: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3552100: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3552100: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3552200: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-3552235: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3552300: 5 PASS / 3 FAIL (62.5%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3552200: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+3552235: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3552300: 5 PASS / 5 FAIL (50.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, LW, Mini
-3552305: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, LW, Mini, The smart cup
+3552305: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3552315: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+3552315: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3552316: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+3552316: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3552317: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+3552317: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3552318: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+3552318: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3552319: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+3552319: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3552400: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3552500: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3552520: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3552522: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3552400: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3552500: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3552520: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3552522: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3552523: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3552523: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3552528: 3 PASS / 5 FAIL (37.5%)
+3552528: 3 PASS / 7 FAIL (30.0%)
   Past in: Large paper bag, Medium paper bag, Small paper bag
-  Past niet in: 5 CM, Doosje Hoog, LW, Mini, Wave
-3552600: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-3552660: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Mini, The smart cup, Wave
+3552600: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+3552660: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3552750: 0 PASS / 8 FAIL (0.0%)
+3552750: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3554350: 5 PASS / 3 FAIL (62.5%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3554350: 5 PASS / 5 FAIL (50.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, LW, Mini
-3554400: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, The smart cup
+3554400: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3554500: 1 PASS / 7 FAIL (12.5%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3554500: 1 PASS / 9 FAIL (10.0%)
   Past in: Large paper bag
-  Past niet in: 5 CM, Doosje Hoog, LW, Medium paper bag, Mini, Small paper bag, Wave
-3558112: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3558112: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3558113: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3558114: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3558113: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3558114: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3558300: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+3558300: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3558807: 4 PASS / 4 FAIL (50.0%)
+3558807: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3559440: 7 PASS / 1 FAIL (87.5%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3559440: 7 PASS / 3 FAIL (70.0%)
   Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3559471: 7 PASS / 1 FAIL (87.5%)
+  Past niet in: Coffee set box, Mini, The smart cup
+3559471: 7 PASS / 3 FAIL (70.0%)
   Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3559480: 7 PASS / 1 FAIL (87.5%)
+  Past niet in: Coffee set box, Mini, The smart cup
+3559480: 7 PASS / 3 FAIL (70.0%)
   Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3559541: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: Coffee set box, Mini, The smart cup
+3559541: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3559543: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3559543: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3559580: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3559580: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3559581: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3559581: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3559607: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3559607: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3559820: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3559820: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3559830: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3559830: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3559840: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3559840: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3559850: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3559850: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3559860: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3559860: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3559920: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3559920: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3559955: 3 PASS / 5 FAIL (37.5%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3559955: 3 PASS / 7 FAIL (30.0%)
   Past in: Large paper bag, Medium paper bag, Small paper bag
-  Past niet in: 5 CM, Doosje Hoog, LW, Mini, Wave
-3559980: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Mini, The smart cup, Wave
+3559980: 9 PASS / 1 FAIL (90.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
   Past niet in: Mini
-3559990: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3559990: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3559995: 8 PASS / 0 FAIL (100.0%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
+3559995: 10 PASS / 0 FAIL (100.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
   Past niet in: -
-3559998: 4 PASS / 4 FAIL (50.0%)
+3559998: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3560000: 3 PASS / 5 FAIL (37.5%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3560000: 3 PASS / 7 FAIL (30.0%)
   Past in: Doosje Hoog, Large paper bag, Wave
-  Past niet in: 5 CM, LW, Medium paper bag, Mini, Small paper bag
-3560071: 3 PASS / 5 FAIL (37.5%)
+  Past niet in: 5 CM, Coffee set box, LW, Medium paper bag, Mini, Small paper bag, The smart cup
+3560071: 3 PASS / 7 FAIL (30.0%)
   Past in: Doosje Hoog, Large paper bag, Wave
-  Past niet in: 5 CM, LW, Medium paper bag, Mini, Small paper bag
-3562270: 5 PASS / 3 FAIL (62.5%)
+  Past niet in: 5 CM, Coffee set box, LW, Medium paper bag, Mini, Small paper bag, The smart cup
+3562270: 6 PASS / 4 FAIL (60.0%)
+  Past in: Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, The smart cup, Wave
+  Past niet in: 5 CM, Coffee set box, LW, Mini
+3562285: 5 PASS / 5 FAIL (50.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, LW, Mini
-3562285: 5 PASS / 3 FAIL (62.5%)
-  Past in: Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, LW, Mini
-3562290: 7 PASS / 1 FAIL (87.5%)
-  Past in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: Mini
-3599075: 4 PASS / 4 FAIL (50.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, The smart cup
+3562290: 8 PASS / 2 FAIL (80.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: Mini, The smart cup
+3599075: 4 PASS / 6 FAIL (40.0%)
   Past in: Doosje Hoog, Large paper bag, Medium paper bag, Wave
-  Past niet in: 5 CM, LW, Mini, Small paper bag
-3610450: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, LW, Mini, Small paper bag, The smart cup
+3610450: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3610460: 0 PASS / 8 FAIL (0.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3610460: 0 PASS / 10 FAIL (0.0%)
   Past in: -
-  Past niet in: 5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave
-3612255: 6 PASS / 2 FAIL (75.0%)
-  Past in: 5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: LW, Mini
-4070000: 6 PASS / 2 FAIL (75.0%)
+  Past niet in: 5 CM, Coffee set box, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, The smart cup, Wave
+3612255: 7 PASS / 3 FAIL (70.0%)
+  Past in: 5 CM, Coffee set box, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave
+  Past niet in: LW, Mini, The smart cup
+4070000: 6 PASS / 4 FAIL (60.0%)
   Past in: Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, Mini
-4070100: 6 PASS / 2 FAIL (75.0%)
+  Past niet in: 5 CM, Coffee set box, Mini, The smart cup
+4070100: 6 PASS / 4 FAIL (60.0%)
   Past in: Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave
-  Past niet in: 5 CM, Mini
+  Past niet in: 5 CM, Coffee set box, Mini, The smart cup
 
 NIET PASSENDE COMBINATIES
 -------------------------
 - Product: 3560000
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3560000
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3560000
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -337,6 +349,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3560071
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3560071
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3560071
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -362,6 +384,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3562285
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3562285
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3562285
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -377,6 +409,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3552100
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552100
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552100
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -420,13 +462,28 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3552235
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3552520
   Verpakking: Mini
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3552520
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3551400
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551400
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -437,6 +494,11 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551300
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551300
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -447,6 +509,11 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551420
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551420
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -457,6 +524,11 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551468
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551468
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -467,6 +539,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3552750
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552750
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552750
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -510,8 +592,23 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3558113
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3550201
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550201
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550201
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -552,6 +649,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3550260
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550260
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550260
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -592,6 +699,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559920
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559920
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559920
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -632,6 +749,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559820
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559820
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559820
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -672,6 +799,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559830
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559830
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559830
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -712,6 +849,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559850
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559850
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559850
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -752,6 +899,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559840
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559840
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559840
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -792,6 +949,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559860
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559860
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559860
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -832,6 +999,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2213100
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213100
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213100
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -872,6 +1049,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2213300
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213300
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213300
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -912,6 +1099,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2212500
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212500
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212500
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -952,6 +1149,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2212800
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212800
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212800
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -992,6 +1199,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2212700
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212700
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212700
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1032,6 +1249,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2213400
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213400
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213400
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1072,6 +1299,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2212600
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212600
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212600
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1112,6 +1349,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2212900
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212900
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2212900
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1152,6 +1399,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2213500
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213500
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213500
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1192,6 +1449,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 2213200
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213200
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 2213200
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1235,8 +1502,23 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3550280
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3551500
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551500
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551500
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1247,6 +1529,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551550
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551550
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551550
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1271,6 +1563,16 @@ NIET PASSENDE COMBINATIES
   Reden: PRODUCT_TOO_LARGE
 
 - Product: 3559580
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559580
+  Verpakking: Coffee set box
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559580
   Verpakking: 5 CM
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
@@ -1287,6 +1589,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559581
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559581
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559581
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1307,6 +1619,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559541
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559541
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559541
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1327,6 +1649,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559607
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559607
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559607
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1347,6 +1679,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559543
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559543
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559543
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1367,6 +1709,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3599075
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3599075
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3599075
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1387,6 +1739,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559998
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559998
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559998
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1407,6 +1769,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3554350
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3554350
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3554350
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1422,6 +1794,11 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3552600
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552600
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1432,6 +1809,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551760
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551760
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551760
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1452,6 +1839,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3550050
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550050
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550050
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1496,6 +1893,16 @@ NIET PASSENDE COMBINATIES
   Reden: PRODUCT_TOO_LARGE
 
 - Product: 3550053
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550053
+  Verpakking: Coffee set box
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550053
   Verpakking: 5 CM
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
@@ -1527,6 +1934,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3550052
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550052
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3550052
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1560,8 +1977,28 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3559471
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559471
+  Verpakking: Coffee set box
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3559480
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559480
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559480
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1570,13 +2007,33 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3559440
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559440
+  Verpakking: Coffee set box
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3562290
   Verpakking: Mini
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3562290
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3552200
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552200
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1587,6 +2044,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3552300
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552300
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552300
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1602,6 +2069,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3554500
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3554500
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3554500
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1641,6 +2118,11 @@ NIET PASSENDE COMBINATIES
   Reden: PRODUCT_TOO_LARGE
 
 - Product: 3562270
+  Verpakking: Coffee set box
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3562270
   Verpakking: 5 CM
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
@@ -1652,6 +2134,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3610450
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3610450
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3610450
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1692,6 +2184,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3610460
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3610460
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3610460
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1732,6 +2234,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551050
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551050
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551050
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1772,6 +2284,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551467
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551467
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551467
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1812,6 +2334,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3554400
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3554400
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3554400
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1852,6 +2384,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3558807
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3558807
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3558807
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1875,8 +2417,18 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3551620
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3612255
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3612255
+  Verpakking: The smart cup
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1895,8 +2447,23 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3551650
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3552528
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552528
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3552528
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -1946,6 +2513,16 @@ NIET PASSENDE COMBINATIES
   Reden: PRODUCT_TOO_LARGE
 
 - Product: 3551010
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551010
+  Verpakking: Coffee set box
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551010
   Verpakking: 5 CM
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
@@ -1982,6 +2559,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551110
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551110
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551110
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2030,13 +2617,33 @@ NIET PASSENDE COMBINATIES
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3552400
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3552500
   Verpakking: Mini
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
+- Product: 3552500
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
 - Product: 3551900
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551900
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551900
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2077,6 +2684,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551780
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551780
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551780
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2117,6 +2734,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551450
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551450
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551450
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2157,6 +2784,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3551320
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551320
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3551320
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2197,6 +2834,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 4070100
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 4070100
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 4070100
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2207,6 +2854,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 4070000
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 4070000
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 4070000
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 
@@ -2232,6 +2889,16 @@ NIET PASSENDE COMBINATIES
 
 - Product: 3559955
   Verpakking: Mini
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559955
+  Verpakking: The smart cup
+  Status: FAIL
+  Reden: PRODUCT_TOO_LARGE
+
+- Product: 3559955
+  Verpakking: Coffee set box
   Status: FAIL
   Reden: PRODUCT_TOO_LARGE
 

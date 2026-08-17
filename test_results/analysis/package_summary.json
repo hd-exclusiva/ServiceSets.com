@@ -8,6 +8,14 @@
     "average_volume_pct": 502.1
   },
   {
+    "package": "Coffee set box",
+    "tests": 96,
+    "pass": 37,
+    "fail": 59,
+    "pass_pct": 38.5,
+    "average_volume_pct": 726.9
+  },
+  {
     "package": "Doosje Hoog",
     "tests": 96,
     "pass": 59,
@@ -54,6 +62,14 @@
     "fail": 46,
     "pass_pct": 52.1,
     "average_volume_pct": 176.2
+  },
+  {
+    "package": "The smart cup",
+    "tests": 96,
+    "pass": 22,
+    "fail": 74,
+    "pass_pct": 22.9,
+    "average_volume_pct": 972.9
   },
   {
     "package": "Wave",

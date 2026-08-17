@@ -1,10 +1,10 @@
 {
-  "total_tests": 768,
-  "pass": 379,
-  "fail": 389,
+  "total_tests": 960,
+  "pass": 438,
+  "fail": 522,
   "errors": 0,
-  "pass_percentage": 49.3,
+  "pass_percentage": 45.6,
   "products_tested": 96,
-  "packages_tested": 8,
+  "packages_tested": 10,
   "data_problems": 0
 }

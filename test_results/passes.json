@@ -348,6 +348,37 @@
       "breedte": 6.85,
       "hoogte": 3.07
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 5.5,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      15.2,
+      3.07,
+      6.85
+    ],
+    "volume_pct": 49.9,
+    "product_volume_cm3": 319.65,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552235",
+    "product_name": "Koffie cup Lungo nr6 aluminium",
+    "product_dimensions_cm": {
+      "lengte": 15.2,
+      "breedte": 6.85,
+      "hoogte": 3.07
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -554,6 +585,37 @@
     "volume_pct": 4.8,
     "product_volume_cm3": 319.65,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552520",
+    "product_name": "Stick Limonade",
+    "product_dimensions_cm": {
+      "lengte": 6.5,
+      "breedte": 3.5,
+      "hoogte": 13.0
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 9.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      13.0,
+      3.5,
+      6.5
+    ],
+    "volume_pct": 46.2,
+    "product_volume_cm3": 295.75,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -782,6 +844,37 @@
       "breedte": 10.0,
       "hoogte": 1.0
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 15.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      15.0,
+      1.0,
+      10.0
+    ],
+    "volume_pct": 23.4,
+    "product_volume_cm3": 150.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551400",
+    "product_name": "Afvalzak HDPE 60x80",
+    "product_dimensions_cm": {
+      "lengte": 15.0,
+      "breedte": 10.0,
+      "hoogte": 1.0
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -968,6 +1061,37 @@
       "breedte": 10.0,
       "hoogte": 1.0
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 15.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      15.0,
+      1.0,
+      10.0
+    ],
+    "volume_pct": 23.4,
+    "product_volume_cm3": 150.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551300",
+    "product_name": "Pedaalemmerzak HDPE 28/8-56",
+    "product_dimensions_cm": {
+      "lengte": 15.0,
+      "breedte": 10.0,
+      "hoogte": 1.0
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -1154,6 +1278,37 @@
       "breedte": 10.0,
       "hoogte": 1.0
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 15.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      15.0,
+      1.0,
+      10.0
+    ],
+    "volume_pct": 23.4,
+    "product_volume_cm3": 150.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551420",
+    "product_name": "Afvalzak HDPE 60x80 transp",
+    "product_dimensions_cm": {
+      "lengte": 15.0,
+      "breedte": 10.0,
+      "hoogte": 1.0
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -1340,6 +1495,37 @@
       "breedte": 10.0,
       "hoogte": 1.0
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 15.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      15.0,
+      1.0,
+      10.0
+    ],
+    "volume_pct": 23.4,
+    "product_volume_cm3": 150.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551468",
+    "product_name": "Afvalzak PMD 61x80+5cm ge",
+    "product_dimensions_cm": {
+      "lengte": 15.0,
+      "breedte": 10.0,
+      "hoogte": 1.0
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -1515,6 +1701,37 @@
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558113",
+    "product_name": "notitieblok Superdobbel",
+    "product_dimensions_cm": {
+      "lengte": 7.6,
+      "breedte": 10.7,
+      "hoogte": 0.8
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 45.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      10.7,
+      0.8,
+      7.6
+    ],
+    "volume_pct": 10.2,
+    "product_volume_cm3": 65.06,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -1774,6 +1991,68 @@
       "breedte": 2.8,
       "hoogte": 1.5
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 20.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      2.8,
+      3.8
+    ],
+    "volume_pct": 3.3,
+    "product_volume_cm3": 15.96,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551250",
+    "product_name": "Vaatwastablet 5in1",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 2.8,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 20.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      2.8,
+      3.8
+    ],
+    "volume_pct": 2.5,
+    "product_volume_cm3": 15.96,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551250",
+    "product_name": "Vaatwastablet 5in1",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 2.8,
+      "hoogte": 1.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -1980,6 +2259,37 @@
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550280",
+    "product_name": "Afwasmiddel sachet 10ml",
+    "product_dimensions_cm": {
+      "lengte": 0.5,
+      "breedte": 4.5,
+      "hoogte": 9.0
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 11.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      4.5,
+      0.5,
+      9.0
+    ],
+    "volume_pct": 3.2,
+    "product_volume_cm3": 20.25,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -3417,6 +3727,68 @@
       "breedte": 1.6,
       "hoogte": 1.6
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 5.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.6,
+      1.6,
+      1.6
+    ],
+    "volume_pct": 0.9,
+    "product_volume_cm3": 4.1,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558112",
+    "product_name": "Dobbelsteen hout",
+    "product_dimensions_cm": {
+      "lengte": 1.6,
+      "breedte": 1.6,
+      "hoogte": 1.6
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 5.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.6,
+      1.6,
+      1.6
+    ],
+    "volume_pct": 0.6,
+    "product_volume_cm3": 4.1,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558112",
+    "product_name": "Dobbelsteen hout",
+    "product_dimensions_cm": {
+      "lengte": 1.6,
+      "breedte": 1.6,
+      "hoogte": 1.6
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -3654,6 +4026,68 @@
     "volume_pct": 40.5,
     "product_volume_cm3": 84.7,
     "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558114",
+    "product_name": "JoJo hout",
+    "product_dimensions_cm": {
+      "lengte": 5.5,
+      "breedte": 5.5,
+      "hoogte": 2.8
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.8,
+      5.5,
+      5.5
+    ],
+    "volume_pct": 17.7,
+    "product_volume_cm3": 84.7,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558114",
+    "product_name": "JoJo hout",
+    "product_dimensions_cm": {
+      "lengte": 5.5,
+      "breedte": 5.5,
+      "hoogte": 2.8
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      5.5,
+      2.8,
+      5.5
+    ],
+    "volume_pct": 13.2,
+    "product_volume_cm3": 84.7,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -4037,6 +4471,37 @@
       "breedte": 10.0,
       "hoogte": 0.1
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      12.0,
+      0.1,
+      10.0
+    ],
+    "volume_pct": 1.9,
+    "product_volume_cm3": 12.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552600",
+    "product_name": "Koffiefilter los",
+    "product_dimensions_cm": {
+      "lengte": 12.0,
+      "breedte": 10.0,
+      "hoogte": 0.1
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -4367,6 +4832,68 @@
     "volume_pct": 12.6,
     "product_volume_cm3": 26.25,
     "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551700",
+    "product_name": "Lucifers",
+    "product_dimensions_cm": {
+      "lengte": 5.0,
+      "breedte": 3.5,
+      "hoogte": 1.5
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 10.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      3.5,
+      5.0
+    ],
+    "volume_pct": 5.5,
+    "product_volume_cm3": 26.25,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551700",
+    "product_name": "Lucifers",
+    "product_dimensions_cm": {
+      "lengte": 5.0,
+      "breedte": 3.5,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 10.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      3.5,
+      5.0
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 26.25,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -5339,6 +5866,37 @@
       "breedte": 1.0,
       "hoogte": 1.0
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 10.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      12.0,
+      1.0,
+      1.0
+    ],
+    "volume_pct": 1.9,
+    "product_volume_cm3": 12.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3562290",
+    "product_name": "Munchy Stick voor hond",
+    "product_dimensions_cm": {
+      "lengte": 12.0,
+      "breedte": 1.0,
+      "hoogte": 1.0
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -5587,6 +6145,68 @@
       "breedte": 2.7,
       "hoogte": 6.8
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 25.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.7,
+      2.7,
+      6.8
+    ],
+    "volume_pct": 10.4,
+    "product_volume_cm3": 49.57,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559990",
+    "product_name": "Welcome Sauna olie Lavendel",
+    "product_dimensions_cm": {
+      "lengte": 2.7,
+      "breedte": 2.7,
+      "hoogte": 6.8
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 25.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.7,
+      2.7,
+      6.8
+    ],
+    "volume_pct": 7.7,
+    "product_volume_cm3": 49.57,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559990",
+    "product_name": "Welcome Sauna olie Lavendel",
+    "product_dimensions_cm": {
+      "lengte": 2.7,
+      "breedte": 2.7,
+      "hoogte": 6.8
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -5835,6 +6455,68 @@
       "breedte": 2.7,
       "hoogte": 6.8
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 25.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.7,
+      2.7,
+      6.8
+    ],
+    "volume_pct": 10.4,
+    "product_volume_cm3": 49.57,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559995",
+    "product_name": "Welcome Sauna olie Eucalyptus",
+    "product_dimensions_cm": {
+      "lengte": 2.7,
+      "breedte": 2.7,
+      "hoogte": 6.8
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 25.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.7,
+      2.7,
+      6.8
+    ],
+    "volume_pct": 7.7,
+    "product_volume_cm3": 49.57,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559995",
+    "product_name": "Welcome Sauna olie Eucalyptus",
+    "product_dimensions_cm": {
+      "lengte": 2.7,
+      "breedte": 2.7,
+      "hoogte": 6.8
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -6083,6 +6765,68 @@
       "breedte": 2.8,
       "hoogte": 1.5
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 20.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      2.8,
+      3.8
+    ],
+    "volume_pct": 3.3,
+    "product_volume_cm3": 15.96,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551260",
+    "product_name": "Vaatwastablet 7in1 oplos folie",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 2.8,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 20.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      2.8,
+      3.8
+    ],
+    "volume_pct": 2.5,
+    "product_volume_cm3": 15.96,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551260",
+    "product_name": "Vaatwastablet 7in1 oplos folie",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 2.8,
+      "hoogte": 1.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -6331,6 +7075,68 @@
       "breedte": 2.8,
       "hoogte": 1.5
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 20.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      2.8,
+      3.8
+    ],
+    "volume_pct": 3.3,
+    "product_volume_cm3": 15.96,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551280",
+    "product_name": "Vaatwastablet fosfaatvrij WF",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 2.8,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 20.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      2.8,
+      3.8
+    ],
+    "volume_pct": 2.5,
+    "product_volume_cm3": 15.96,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551280",
+    "product_name": "Vaatwastablet fosfaatvrij WF",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 2.8,
+      "hoogte": 1.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -6537,6 +7343,37 @@
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552200",
+    "product_name": "Koffie sachet 60gr (+-8 kops)",
+    "product_dimensions_cm": {
+      "lengte": 15.0,
+      "breedte": 10.0,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 60.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      15.0,
+      1.5,
+      10.0
+    ],
+    "volume_pct": 35.2,
+    "product_volume_cm3": 225.0,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -6920,6 +7757,37 @@
       "breedte": 6.7,
       "hoogte": 6.7
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 58.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.7,
+      6.7,
+      6.7
+    ],
+    "volume_pct": 62.9,
+    "product_volume_cm3": 300.76,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3562270",
+    "product_name": "Tennisbal 2e leven:)",
+    "product_dimensions_cm": {
+      "lengte": 6.7,
+      "breedte": 6.7,
+      "hoogte": 6.7
+    },
     "package": "Wave",
     "package_dimensions_cm": {
       "lengte": 20.0,
@@ -7199,6 +8067,37 @@
       "breedte": 7.0,
       "hoogte": 2.5
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 12.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      7.0,
+      2.5,
+      9.0
+    ],
+    "volume_pct": 24.6,
+    "product_volume_cm3": 157.5,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551620",
+    "product_name": "Schuurspons viscose bl 7x9cm",
+    "product_dimensions_cm": {
+      "lengte": 9.0,
+      "breedte": 7.0,
+      "hoogte": 2.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -7416,6 +8315,37 @@
       "breedte": 9.0,
       "hoogte": 2.5
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 18.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      14.0,
+      2.5,
+      9.0
+    ],
+    "volume_pct": 49.2,
+    "product_volume_cm3": 315.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3612255",
+    "product_name": "Schuurspons viscose bl 9x14cm",
+    "product_dimensions_cm": {
+      "lengte": 14.0,
+      "breedte": 9.0,
+      "hoogte": 2.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -7591,6 +8521,68 @@
     "volume_pct": 4.8,
     "product_volume_cm3": 315.0,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551600",
+    "product_name": "Schuurspons met groen abrasief",
+    "product_dimensions_cm": {
+      "lengte": 8.5,
+      "breedte": 6.0,
+      "hoogte": 2.1
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 8.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.1,
+      6.0,
+      8.5
+    ],
+    "volume_pct": 22.4,
+    "product_volume_cm3": 107.1,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551600",
+    "product_name": "Schuurspons met groen abrasief",
+    "product_dimensions_cm": {
+      "lengte": 8.5,
+      "breedte": 6.0,
+      "hoogte": 2.1
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 8.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.0,
+      2.1,
+      8.5
+    ],
+    "volume_pct": 16.7,
+    "product_volume_cm3": 107.1,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -7808,6 +8800,37 @@
     "volume_pct": 1.6,
     "product_volume_cm3": 107.1,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551650",
+    "product_name": "Schuurspons met wit abrasief",
+    "product_dimensions_cm": {
+      "lengte": 8.7,
+      "breedte": 6.0,
+      "hoogte": 2.1
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 8.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.0,
+      2.1,
+      8.7
+    ],
+    "volume_pct": 17.1,
+    "product_volume_cm3": 109.62,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -8067,6 +9090,68 @@
       "breedte": 3.5,
       "hoogte": 0.8
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 6.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.8,
+      3.5,
+      7.5
+    ],
+    "volume_pct": 4.4,
+    "product_volume_cm3": 21.0,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552660",
+    "product_name": "Koffiekoekje per st verpakt",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 3.5,
+      "hoogte": 0.8
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 6.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.8,
+      3.5,
+      7.5
+    ],
+    "volume_pct": 3.3,
+    "product_volume_cm3": 21.0,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552660",
+    "product_name": "Koffiekoekje per st verpakt",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 3.5,
+      "hoogte": 0.8
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -8304,6 +9389,68 @@
     "volume_pct": 0.7,
     "product_volume_cm3": 1.5,
     "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552522",
+    "product_name": "Stick Peper 0.2gram",
+    "product_dimensions_cm": {
+      "lengte": 5.0,
+      "breedte": 1.5,
+      "hoogte": 0.2
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 0.5,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.2,
+      1.5,
+      5.0
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 1.5,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552522",
+    "product_name": "Stick Peper 0.2gram",
+    "product_dimensions_cm": {
+      "lengte": 5.0,
+      "breedte": 1.5,
+      "hoogte": 0.2
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 0.5,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.2,
+      1.5,
+      5.0
+    ],
+    "volume_pct": 0.2,
+    "product_volume_cm3": 1.5,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -8656,6 +9803,68 @@
       "breedte": 3.8,
       "hoogte": 1.5
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 12.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      3.8,
+      3.8
+    ],
+    "volume_pct": 4.5,
+    "product_volume_cm3": 21.66,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551800",
+    "product_name": "Waxinelichtje 4 branduren",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 3.8,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 12.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      3.8,
+      3.8
+    ],
+    "volume_pct": 3.4,
+    "product_volume_cm3": 21.66,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551800",
+    "product_name": "Waxinelichtje 4 branduren",
+    "product_dimensions_cm": {
+      "lengte": 3.8,
+      "breedte": 3.8,
+      "hoogte": 1.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -8873,6 +10082,68 @@
       "breedte": 6.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      6.5,
+      7.5
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552305",
+    "product_name": "Thee Quiero Earl Grey",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.5,
+      0.3,
+      7.5
+    ],
+    "volume_pct": 2.3,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552305",
+    "product_name": "Thee Quiero Earl Grey",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -9090,6 +10361,68 @@
       "breedte": 6.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      6.5,
+      7.5
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552317",
+    "product_name": "Thee Quiero Green Lemon",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.5,
+      0.3,
+      7.5
+    ],
+    "volume_pct": 2.3,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552317",
+    "product_name": "Thee Quiero Green Lemon",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -9307,6 +10640,68 @@
       "breedte": 6.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      6.5,
+      7.5
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552316",
+    "product_name": "Thee Quiero Green tea",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.5,
+      0.3,
+      7.5
+    ],
+    "volume_pct": 2.3,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552316",
+    "product_name": "Thee Quiero Green tea",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -9524,6 +10919,68 @@
       "breedte": 6.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      6.5,
+      7.5
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552315",
+    "product_name": "Thee Quiero Rooibos Orange",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.5,
+      0.3,
+      7.5
+    ],
+    "volume_pct": 2.3,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552315",
+    "product_name": "Thee Quiero Rooibos Orange",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -9730,6 +11187,68 @@
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558300",
+    "product_name": "Koffie pad regular",
+    "product_dimensions_cm": {
+      "lengte": 6.2,
+      "breedte": 6.2,
+      "hoogte": 1.2
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 7.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.2,
+      6.2,
+      6.2
+    ],
+    "volume_pct": 9.6,
+    "product_volume_cm3": 46.13,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558300",
+    "product_name": "Koffie pad regular",
+    "product_dimensions_cm": {
+      "lengte": 6.2,
+      "breedte": 6.2,
+      "hoogte": 1.2
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 7.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.2,
+      1.2,
+      6.2
+    ],
+    "volume_pct": 7.2,
+    "product_volume_cm3": 46.13,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -9958,6 +11477,37 @@
       "breedte": 1.5,
       "hoogte": 0.5
     },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 4.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.5,
+      1.5,
+      10.0
+    ],
+    "volume_pct": 1.2,
+    "product_volume_cm3": 7.5,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552400",
+    "product_name": "Stick Welcome Suiker coffee",
+    "product_dimensions_cm": {
+      "lengte": 10.0,
+      "breedte": 1.5,
+      "hoogte": 0.5
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -10164,6 +11714,37 @@
     "volume_pct": 0.1,
     "product_volume_cm3": 7.5,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552500",
+    "product_name": "Stick Welcome Creamer coffee",
+    "product_dimensions_cm": {
+      "lengte": 10.0,
+      "breedte": 1.8,
+      "hoogte": 0.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.5,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.5,
+      1.8,
+      10.0
+    ],
+    "volume_pct": 1.4,
+    "product_volume_cm3": 9.0,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
@@ -10423,6 +12004,68 @@
       "breedte": 1.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 1.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      1.5,
+      5.0
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 2.25,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552523",
+    "product_name": "Stick Zout 1gram",
+    "product_dimensions_cm": {
+      "lengte": 5.0,
+      "breedte": 1.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 1.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      1.5,
+      5.0
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 2.25,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552523",
+    "product_name": "Stick Zout 1gram",
+    "product_dimensions_cm": {
+      "lengte": 5.0,
+      "breedte": 1.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -11012,6 +12655,68 @@
       "breedte": 6.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      6.5,
+      7.5
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552318",
+    "product_name": "Thee Wilder Land boswandeling",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.5,
+      0.3,
+      7.5
+    ],
+    "volume_pct": 2.3,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552318",
+    "product_name": "Thee Wilder Land boswandeling",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -11229,6 +12934,68 @@
       "breedte": 6.5,
       "hoogte": 0.3
     },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      0.3,
+      6.5,
+      7.5
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552319",
+    "product_name": "Thee Wilder Land offline",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 2.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      6.5,
+      0.3,
+      7.5
+    ],
+    "volume_pct": 2.3,
+    "product_volume_cm3": 14.62,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3552319",
+    "product_name": "Thee Wilder Land offline",
+    "product_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 6.5,
+      "hoogte": 0.3
+    },
     "package": "5 CM",
     "package_dimensions_cm": {
       "lengte": 19.3,
@@ -11435,6 +13202,68 @@
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
     "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559980",
+    "product_name": "Welcome Vanity kit",
+    "product_dimensions_cm": {
+      "lengte": 8.5,
+      "breedte": 5.5,
+      "hoogte": 1.5
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 10.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.5,
+      5.5,
+      8.5
+    ],
+    "volume_pct": 14.7,
+    "product_volume_cm3": 70.12,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559980",
+    "product_name": "Welcome Vanity kit",
+    "product_dimensions_cm": {
+      "lengte": 8.5,
+      "breedte": 5.5,
+      "hoogte": 1.5
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 10.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      5.5,
+      1.5,
+      8.5
+    ],
+    "volume_pct": 11.0,
+    "product_volume_cm3": 70.12,
+    "package_volume_cm3": 640.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
