@@ -1,0 +1,97 @@
+﻿product,tests,pass,fail,counterexamples,pass_pct,packages_that_fit,packages_that_fail,number_of_passing_packages,number_of_failing_packages
+2212500,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2212600,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2212700,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2212800,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2212900,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2213100,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2213200,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2213300,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2213400,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+2213500,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3550050,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3550052,8,2,6,0,25.0,"Doosje Hoog, Large paper bag","5 CM, LW, Medium paper bag, Mini, Small paper bag, Wave",2,6
+3550053,8,1,7,0,12.5,Large paper bag,"5 CM, Doosje Hoog, LW, Medium paper bag, Mini, Small paper bag, Wave",1,7
+3550201,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3550260,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3550280,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3551010,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551050,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551110,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551250,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3551260,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3551280,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3551300,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+3551320,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551400,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+3551420,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+3551450,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551467,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551468,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+3551500,8,6,2,0,75.0,"Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, Mini",6,2
+3551550,8,4,4,0,50.0,"LW, Large paper bag, Medium paper bag, Small paper bag","5 CM, Doosje Hoog, Mini, Wave",4,4
+3551600,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3551620,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3551650,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3551700,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3551760,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3551780,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3551800,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3551900,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3552100,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3552200,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+3552235,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552300,8,5,3,0,62.5,"Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, LW, Mini",5,3
+3552305,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552315,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552316,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552317,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552318,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552319,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552400,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552500,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552520,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3552522,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3552523,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3552528,8,3,5,0,37.5,"Large paper bag, Medium paper bag, Small paper bag","5 CM, Doosje Hoog, LW, Mini, Wave",3,5
+3552600,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+3552660,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3552750,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3554350,8,5,3,0,62.5,"Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, LW, Mini",5,3
+3554400,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3554500,8,1,7,0,12.5,Large paper bag,"5 CM, Doosje Hoog, LW, Medium paper bag, Mini, Small paper bag, Wave",1,7
+3558112,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3558113,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3558114,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3558300,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3558807,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3559440,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3559471,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3559480,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3559541,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3559543,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3559580,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3559581,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3559607,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3559820,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3559830,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3559840,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3559850,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3559860,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3559920,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3559955,8,3,5,0,37.5,"Large paper bag, Medium paper bag, Small paper bag","5 CM, Doosje Hoog, LW, Mini, Wave",3,5
+3559980,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3559990,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3559995,8,8,0,0,100.0,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",,8,0
+3559998,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3560000,8,3,5,0,37.5,"Doosje Hoog, Large paper bag, Wave","5 CM, LW, Medium paper bag, Mini, Small paper bag",3,5
+3560071,8,3,5,0,37.5,"Doosje Hoog, Large paper bag, Wave","5 CM, LW, Medium paper bag, Mini, Small paper bag",3,5
+3562270,8,5,3,0,62.5,"Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, LW, Mini",5,3
+3562285,8,5,3,0,62.5,"Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, LW, Mini",5,3
+3562290,8,7,1,0,87.5,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave",Mini,7,1
+3599075,8,4,4,0,50.0,"Doosje Hoog, Large paper bag, Medium paper bag, Wave","5 CM, LW, Mini, Small paper bag",4,4
+3610450,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3610460,8,0,8,0,0.0,,"5 CM, Doosje Hoog, LW, Large paper bag, Medium paper bag, Mini, Small paper bag, Wave",0,8
+3612255,8,6,2,0,75.0,"5 CM, Doosje Hoog, Large paper bag, Medium paper bag, Small paper bag, Wave","LW, Mini",6,2
+4070000,8,6,2,0,75.0,"Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, Mini",6,2
+4070100,8,6,2,0,75.0,"Doosje Hoog, LW, Large paper bag, Medium paper bag, Small paper bag, Wave","5 CM, Mini",6,2

@@ -1,0 +1,9 @@
+﻿package,tests,pass,fail,pass_pct,average_volume_pct
+5 CM,96,40,56,41.7,502.1
+Doosje Hoog,96,59,37,61.5,116.3
+LW,96,37,59,38.5,403.8
+Large paper bag,96,64,32,66.7,70.5
+Medium paper bag,96,59,37,61.5,101.0
+Mini,96,12,84,12.5,2224.1
+Small paper bag,96,50,46,52.1,176.2
+Wave,96,58,38,60.4,193.8

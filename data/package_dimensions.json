@@ -47,6 +47,18 @@
       "lengte_cm": 22,
       "hoogte_cm": 30,
       "breedte_cm": 10
+    },
+       {
+      "naam": "The smart cup",
+      "lengte_cm": 7.5,
+      "hoogte_cm": 8.5,
+      "breedte_cm": 7.5
+    },
+    {
+      "naam": "Coffee set box",
+      "lengte_cm": 16,
+      "hoogte_cm": 10,
+      "breedte_cm": 4
     }
   ]
 }

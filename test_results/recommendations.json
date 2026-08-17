@@ -1,0 +1,1686 @@
+[
+  {
+    "product": "3560000",
+    "product_name": "Toiletrol 2 laags wit ecolabel",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag",
+      "Medium paper bag"
+    ]
+  },
+  {
+    "product": "3560071",
+    "product_name": "Toiletrol 3 laags lux wit",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag",
+      "Medium paper bag"
+    ]
+  },
+  {
+    "product": "3562285",
+    "product_name": "Hondenpoepzakje papier",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW"
+    ]
+  },
+  {
+    "product": "3552100",
+    "product_name": "Omdoos voor pakketjes",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3552235",
+    "product_name": "Koffie cup Lungo nr6 aluminium",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552520",
+    "product_name": "Stick Limonade",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3551400",
+    "product_name": "Afvalzak HDPE 60x80",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3551300",
+    "product_name": "Pedaalemmerzak HDPE 28/8-56",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3551420",
+    "product_name": "Afvalzak HDPE 60x80 transp",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3551468",
+    "product_name": "Afvalzak PMD 61x80+5cm ge",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3552750",
+    "product_name": "Smartcup Bruin beker & Deksel",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3558113",
+    "product_name": "notitieblok Superdobbel",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3551250",
+    "product_name": "Vaatwastablet 5in1",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2213100",
+    "product_name": "Wandhouder Welcome handpomp",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2213300",
+    "product_name": "Welcome Handzeep pomp",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2212500",
+    "product_name": "Welcome Hair & Body pomp",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2212800",
+    "product_name": "Welcome Shampoo navulling",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2212700",
+    "product_name": "Welcome Hair & Body navulling",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2213400",
+    "product_name": "Welcome Handzeep navulling",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2212600",
+    "product_name": "Welcome Shampoo pomp",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2212900",
+    "product_name": "Welcome Hair & Body knijpfles",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2213500",
+    "product_name": "Doseerpomp Welcome 5 ltr. can",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "2213200",
+    "product_name": "Wandhouder Welcome knijpfles",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3550280",
+    "product_name": "Afwasmiddel sachet 10ml",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3551500",
+    "product_name": "Afwasborstel",
+    "requested_quantity": 1,
+    "smallest_package": "LW",
+    "packages_that_fit": [
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM"
+    ]
+  },
+  {
+    "product": "3551550",
+    "product_name": "Afwasborstel TakeMeHome TmH",
+    "requested_quantity": 1,
+    "smallest_package": "LW",
+    "packages_that_fit": [
+      "LW",
+      "Small paper bag",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "Wave",
+      "Doosje Hoog"
+    ]
+  },
+  {
+    "product": "3559580",
+    "product_name": "Bakje/ bodem doosje bruin 4p",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3559581",
+    "product_name": "Inlay bruin klein 4pers. Cups",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3559541",
+    "product_name": "Sleeve BLANCO bruin 4p",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3559607",
+    "product_name": "Doosje mini Welcome bruin",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3559543",
+    "product_name": "Sleeve Welcome Coffee bruin 4p",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3599075",
+    "product_name": "Doosje sleeve luxe Koffie",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3559998",
+    "product_name": "Welcome scrub handschoen",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3558112",
+    "product_name": "Dobbelsteen hout",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3558114",
+    "product_name": "JoJo hout",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3554350",
+    "product_name": "Beker 180cc Future",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW"
+    ]
+  },
+  {
+    "product": "3552600",
+    "product_name": "Koffiefilter los",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3551760",
+    "product_name": "Aanmaakblokjes 8st",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3551700",
+    "product_name": "Lucifers",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3550050",
+    "product_name": "Etiket blanco 95mm wit rond",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3550053",
+    "product_name": "Etiket Smart Cup 72.5mm",
+    "requested_quantity": 1,
+    "smallest_package": "Large paper bag",
+    "packages_that_fit": [
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag"
+    ]
+  },
+  {
+    "product": "3550052",
+    "product_name": "Etiket blanco 44mm rond wit",
+    "requested_quantity": 1,
+    "smallest_package": "Doosje Hoog",
+    "packages_that_fit": [
+      "Doosje Hoog",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Medium paper bag"
+    ]
+  },
+  {
+    "product": "3559471",
+    "product_name": "LmS Afwasmiddel 250ml",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3559480",
+    "product_name": "LmS Handreiniger 250ml",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3559440",
+    "product_name": "LmS Interieurreiniger 250ml",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3562290",
+    "product_name": "Munchy Stick voor hond",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3559990",
+    "product_name": "Welcome Sauna olie Lavendel",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3559995",
+    "product_name": "Welcome Sauna olie Eucalyptus",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3551260",
+    "product_name": "Vaatwastablet 7in1 oplos folie",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3551280",
+    "product_name": "Vaatwastablet fosfaatvrij WF",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3552200",
+    "product_name": "Koffie sachet 60gr (+-8 kops)",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3552300",
+    "product_name": "Thee voor koffiedoosje",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW"
+    ]
+  },
+  {
+    "product": "3554500",
+    "product_name": "Poepzakje Eco plastic rol",
+    "requested_quantity": 1,
+    "smallest_package": "Large paper bag",
+    "packages_that_fit": [
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag"
+    ]
+  },
+  {
+    "product": "3562270",
+    "product_name": "Tennisbal 2e leven:)",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW"
+    ]
+  },
+  {
+    "product": "3610450",
+    "product_name": "Microvezel Doek 35x35cm TmH",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3610460",
+    "product_name": "Microvezel Dweil  55x35cm TmH",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3551050",
+    "product_name": "Theedoek 45x60cm gewassen",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3551467",
+    "product_name": "Afvalzak trekband 65x85cm gs",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3554400",
+    "product_name": "Bord rond 22cm wit",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3558807",
+    "product_name": "Organzazakje zwart 12x17cm",
+    "requested_quantity": 1,
+    "smallest_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Small paper bag"
+    ]
+  },
+  {
+    "product": "3551620",
+    "product_name": "Schuurspons viscose bl 7x9cm",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3612255",
+    "product_name": "Schuurspons viscose bl 9x14cm",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "LW"
+    ]
+  },
+  {
+    "product": "3551600",
+    "product_name": "Schuurspons met groen abrasief",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3551650",
+    "product_name": "Schuurspons met wit abrasief",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552660",
+    "product_name": "Koffiekoekje per st verpakt",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3552522",
+    "product_name": "Stick Peper 0.2gram",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3552528",
+    "product_name": "Flesje water",
+    "requested_quantity": 1,
+    "smallest_package": "Small paper bag",
+    "packages_that_fit": [
+      "Small paper bag",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Doosje Hoog"
+    ]
+  },
+  {
+    "product": "3551800",
+    "product_name": "Waxinelichtje 4 branduren",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3552305",
+    "product_name": "Thee Quiero Earl Grey",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552317",
+    "product_name": "Thee Quiero Green Lemon",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552316",
+    "product_name": "Thee Quiero Green tea",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552315",
+    "product_name": "Thee Quiero Rooibos Orange",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3551010",
+    "product_name": "Dweil",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3551110",
+    "product_name": "Vaatdoek",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3558300",
+    "product_name": "Koffie pad regular",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552400",
+    "product_name": "Stick Welcome Suiker coffee",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552500",
+    "product_name": "Stick Welcome Creamer coffee",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552523",
+    "product_name": "Stick Zout 1gram",
+    "requested_quantity": 1,
+    "smallest_package": "Mini",
+    "packages_that_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": []
+  },
+  {
+    "product": "3551900",
+    "product_name": "Keukenrol",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3551450",
+    "product_name": "Afvalzak LDPE 60x80 gr DIK",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "3551320",
+    "product_name": "Afvalzak HDPE \"Der Gelbe Sack\"",
+    "requested_quantity": 1,
+    "smallest_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ]
+  },
+  {
+    "product": "4070100",
+    "product_name": "Tape 50mmx66M PP Ulith tr 36R",
+    "requested_quantity": 1,
+    "smallest_package": "LW",
+    "packages_that_fit": [
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM"
+    ]
+  },
+  {
+    "product": "4070000",
+    "product_name": "Tape 50mmx66M PP Ulith tr 6R",
+    "requested_quantity": 1,
+    "smallest_package": "LW",
+    "packages_that_fit": [
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM"
+    ]
+  },
+  {
+    "product": "3552318",
+    "product_name": "Thee Wilder Land boswandeling",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3552319",
+    "product_name": "Thee Wilder Land offline",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3559980",
+    "product_name": "Welcome Vanity kit",
+    "requested_quantity": 1,
+    "smallest_package": "5 CM",
+    "packages_that_fit": [
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini"
+    ]
+  },
+  {
+    "product": "3559955",
+    "product_name": "Welcome Slippers dichte neus",
+    "requested_quantity": 1,
+    "smallest_package": "Small paper bag",
+    "packages_that_fit": [
+      "Small paper bag",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Doosje Hoog"
+    ]
+  }
+]
