@@ -106,65 +106,65 @@
   {
     "num": "3550201",
     "name": "Afwasmiddel tube 25ml",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 32.0
   },
   {
     "num": "3550260",
     "name": "Allesreiniger tube 25ml",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 32.0
   },
   {
     "num": "3559920",
     "name": "Welcome Zeepje rond",
-    "l": 39.1,
-    "w": 19.2,
-    "h": 23.1,
+    "l": 3.91,
+    "w": 1.92,
+    "h": 2.31,
     "weight_g": 32.0
   },
   {
     "num": "3559820",
     "name": "Welcome 30ml Body wash",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559830",
     "name": "Welcome 30ml Shampoo",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559850",
     "name": "Welcome 30ml Bodylotion",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559840",
     "name": "Welcome 30ml Hair&Body",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559860",
     "name": "Welcome 30ml Conditioner",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
@@ -498,49 +498,49 @@
   {
     "num": "3610450",
     "name": "Microvezel Doek 35x35cm TmH",
-    "l": 35.0,
-    "w": 35.0,
-    "h": 1.0,
+    "l": 18.0,
+    "w": 2.0,
+    "h": 2.0,
     "weight_g": 25.0
   },
   {
     "num": "3610460",
     "name": "Microvezel Dweil  55x35cm TmH",
-    "l": 55.0,
-    "w": 35.0,
-    "h": 1.0,
+    "l": 20.0,
+    "w": 15.0,
+    "h": 2.0,
     "weight_g": 45.0
   },
   {
     "num": "3551050",
     "name": "Theedoek 45x60cm gewassen",
-    "l": 45.0,
-    "w": 60.0,
-    "h": 1.0,
+    "l": 15.0,
+    "w": 20.0,
+    "h": 1.5,
     "weight_g": 65.0
   },
   {
     "num": "3551467",
     "name": "Afvalzak trekband 65x85cm gs",
-    "l": 65.0,
-    "w": 85.0,
-    "h": 5.0,
-    "weight_g": 120.0
+    "l": 13.0,
+    "w": 15.0,
+    "h": 1.0,
+    "weight_g": 12.0
   },
   {
     "num": "3554400",
     "name": "Bord rond 22cm wit",
     "l": 22.0,
     "w": 22.0,
-    "h": 22.0,
+    "h": 0.5,
     "weight_g": 10.0
   },
   {
     "num": "3558807",
     "name": "Organzazakje zwart 12x17cm",
-    "l": 12.0,
+    "l": 4.0,
     "w": 2.0,
-    "h": 17.0,
+    "h": 6.0,
     "weight_g": 1.5
   },
   {
@@ -642,16 +642,16 @@
   {
     "num": "3551010",
     "name": "Dweil",
-    "l": 38.0,
-    "w": 50.0,
-    "h": 2.0,
+    "l": 13.0,
+    "w": 15.0,
+    "h": 1.0,
     "weight_g": 25.0
   },
   {
     "num": "3551110",
     "name": "Vaatdoek",
-    "l": 32.0,
-    "w": 38.0,
+    "l": 19.0,
+    "w": 12.0,
     "h": 2.0,
     "weight_g": 25.0
   },
@@ -690,32 +690,32 @@
   {
     "num": "3551900",
     "name": "Keukenrol",
-    "l": 23.0,
-    "w": 10.5,
+    "l": 10.0,
+    "w": 10.0,
     "h": 22.0,
     "weight_g": 19.6
   },
   {
     "num": "3551780",
     "name": "Chloortablet Apesin per stuk",
-    "l": 10.5,
-    "w": 10.5,
-    "h": 16.5,
-    "weight_g": 900.0
+    "l": 1.05,
+    "w": 1.05,
+    "h": 1.65,
+    "weight_g": 60.0
   },
   {
     "num": "3551450",
     "name": "Afvalzak LDPE 60x80 gr DIK",
-    "l": 60.0,
-    "w": 80.0,
+    "l": 13.0,
+    "w": 15.0,
     "h": 1.0,
     "weight_g": 15.0
   },
   {
     "num": "3551320",
     "name": "Afvalzak HDPE \"Der Gelbe Sack\"",
-    "l": 62.0,
-    "w": 88.0,
+    "l": 13.0,
+    "w": 15.0,
     "h": 1.0,
     "weight_g": 15.0
   },
