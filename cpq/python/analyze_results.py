@@ -339,6 +339,112 @@ def normalize_results(raw: Any) -> pd.DataFrame:
     return df
 
 
+def normalize_combinations(
+    raw: Any,
+) -> tuple[pd.DataFrame, pd.DataFrame]:
+
+    """
+    Zet combination_results.json (lijst van scenario's,
+    elk met resultaten per verpakking) om naar twee
+    platte DataFrames:
+
+    - scenario_df: één rij per scenario (samenvatting)
+    - detail_df:   één rij per scenario × verpakking
+    """
+
+    if not isinstance(raw, list):
+        return pd.DataFrame(), pd.DataFrame()
+
+    scenario_rows = []
+    detail_rows = []
+
+    for scenario in raw:
+        if not isinstance(scenario, dict):
+            continue
+
+        items = scenario.get("items", []) or []
+
+        items_text = ", ".join(
+            f"{it.get('product_name', it.get('product_id', '?'))} "
+            f"×{it.get('quantity', 1)}"
+            for it in items
+        )
+
+        per_package = scenario.get(
+            "results_per_package", []
+        ) or []
+
+        packages_total = len(per_package)
+
+        packages_fit = sum(
+            1
+            for r in per_package
+            if r.get("status") == "PASS"
+        )
+
+        pass_rate = (
+            packages_fit / packages_total * 100
+            if packages_total
+            else 0.0
+        )
+
+        scenario_rows.append(
+            {
+                "scenario_id": scenario.get("scenario_id", ""),
+                "scenario_name": scenario.get("scenario_name", ""),
+                "category": scenario.get("category", "") or "—",
+                "description": scenario.get("description", ""),
+                "distinct_articles": scenario.get("distinct_articles", len(items)),
+                "total_quantity": scenario.get(
+                    "total_quantity",
+                    sum(it.get("quantity", 1) for it in items),
+                ),
+                "items_text": items_text,
+                "fits_any_package": scenario.get("fits_any_package", packages_fit > 0),
+                "smallest_fitting_package": scenario.get(
+                    "smallest_fitting_package"
+                ) or "—",
+                "packages_fit": packages_fit,
+                "packages_total": packages_total,
+                "pass_rate": round(pass_rate, 1),
+            }
+        )
+
+        for r in per_package:
+            detail_rows.append(
+                {
+                    "scenario_id": scenario.get("scenario_id", ""),
+                    "scenario_name": scenario.get("scenario_name", ""),
+                    "category": scenario.get("category", "") or "—",
+                    "items_text": items_text,
+                    "distinct_articles": scenario.get("distinct_articles", len(items)),
+                    "total_quantity": scenario.get("total_quantity", ""),
+                    "package": r.get("package", ""),
+                    "package_dimensions": dimensions_text(
+                        r.get("package_dimensions_cm", {})
+                    ),
+                    "status": str(r.get("status", "")).upper(),
+                    "fits": r.get("fits"),
+                    "volume_pct": r.get("volume_pct"),
+                    "total_weight_g": r.get("total_weight_g"),
+                    "package_max_weight_g": r.get("package_max_weight_g"),
+                    "reason_text": reason_text(pd.Series(r)),
+                    "fitted_count": r.get("fitted_count"),
+                    "unfitted_count": r.get("unfitted_count"),
+                    "number_of_products": r.get("number_of_products"),
+                }
+            )
+
+    scenario_df = pd.DataFrame(scenario_rows)
+    detail_df = pd.DataFrame(detail_rows)
+
+    for col in ["volume_pct", "total_weight_g", "package_max_weight_g"]:
+        if col in detail_df:
+            detail_df[col] = pd.to_numeric(detail_df[col], errors="coerce")
+
+    return scenario_df, detail_df
+
+
 def metric_card(label: str, value: str) -> None:
     st.markdown(
         f"""
@@ -390,6 +496,10 @@ df = normalize_results(raw_results)
 if df.empty:
     st.error("all_results.json bevat geen bruikbare resultaten.")
     st.stop()
+
+combination_results_path = RESULTS_DIR / "combination_results.json"
+raw_combinations = load_json(combination_results_path, default=[])
+scenario_df, combo_detail_df = normalize_combinations(raw_combinations)
 
 
 # ============================================================
@@ -530,11 +640,12 @@ st.markdown(
 # TABBLADEN
 # ============================================================
 
-tab_overview, tab_products, tab_packages, tab_failures, tab_details = st.tabs(
+tab_overview, tab_products, tab_packages, tab_combinations, tab_failures, tab_details = st.tabs(
     [
         "Overzicht",
         "Per product",
         "Per verpakking",
+        "Combinaties",
         "Failures",
         "Alle resultaten",
     ]
@@ -872,6 +983,249 @@ with tab_packages:
         fig,
         use_container_width=True,
     )
+
+
+# ============================================================
+# COMBINATIES (service-set scenario's met meerdere artikelen/aantallen)
+# ============================================================
+
+with tab_combinations:
+    st.markdown(
+        '<div class="section-title">Service-set combinaties &amp; aantallen</div>',
+        unsafe_allow_html=True,
+    )
+
+    if scenario_df.empty:
+        st.info(
+            "Geen `combination_results.json` gevonden of leeg. "
+            "Voer `python tester.py --all` uit (scenario's staan standaard aan) "
+            "om benoemde service-set samenstellingen — met meerdere artikelen "
+            "en aantallen (bv. 6× limonade) — samen te testen tegen alle "
+            "verpakkingen."
+        )
+
+    else:
+        st.markdown(
+            f"""
+            <div class="info-box">
+                <strong>{len(scenario_df)} service-set scenario('s) getest.</strong>
+                Elk scenario bevat meerdere artikelen — soms met meerdere
+                stuks van hetzelfde artikel (bv. meerdere sticks limonade of
+                koffiepads) — die <em>samen</em> in één verpakking moeten passen.
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+        # ---- KPI's ----
+        n_scenarios = len(scenario_df)
+        n_fit_any = int(scenario_df["fits_any_package"].sum())
+        n_no_fit = n_scenarios - n_fit_any
+        avg_pass_rate = scenario_df["pass_rate"].mean()
+
+        k1, k2, k3, k4 = st.columns(4)
+
+        with k1:
+            metric_card("Scenario's getest", f"{n_scenarios:,}".replace(",", "."))
+
+        with k2:
+            metric_card("Passen ergens", f"{n_fit_any:,}".replace(",", "."))
+
+        with k3:
+            metric_card("Passen nergens", f"{n_no_fit:,}".replace(",", "."))
+
+        with k4:
+            metric_card(
+                "Gem. passpercentage",
+                f"{avg_pass_rate:.1f}%".replace(".", ","),
+            )
+
+        # ---- Filter op categorie ----
+        categories = sorted(scenario_df["category"].dropna().unique())
+
+        selected_categories = st.multiselect(
+            "Filter op categorie",
+            options=categories,
+            default=[],
+            help="Bijv. koffie, bad_douche, schoonmaak, recreatie, gecombineerd",
+        )
+
+        scenario_view = scenario_df.copy()
+
+        if selected_categories:
+            scenario_view = scenario_view[
+                scenario_view["category"].isin(selected_categories)
+            ]
+
+        # ---- Overzichtstabel per scenario ----
+        st.markdown(
+            '<div class="section-title">Welke combinaties, welke aantallen?</div>',
+            unsafe_allow_html=True,
+        )
+
+        overview_display = scenario_view[
+            [
+                "scenario_name",
+                "category",
+                "items_text",
+                "distinct_articles",
+                "total_quantity",
+                "smallest_fitting_package",
+                "packages_fit",
+                "packages_total",
+                "pass_rate",
+                "fits_any_package",
+            ]
+        ].rename(
+            columns={
+                "scenario_name": "Service-set",
+                "category": "Categorie",
+                "items_text": "Artikelen × aantallen",
+                "distinct_articles": "# Verschillende artikelen",
+                "total_quantity": "Totaal aantal stuks",
+                "smallest_fitting_package": "Kleinste passende verpakking",
+                "packages_fit": "Verpakkingen die passen",
+                "packages_total": "Verpakkingen getest",
+                "pass_rate": "Pass %",
+                "fits_any_package": "Past ergens?",
+            }
+        )
+
+        st.dataframe(
+            overview_display,
+            use_container_width=True,
+            hide_index=True,
+            height=min(70 + 45 * len(overview_display), 600),
+        )
+
+        st.download_button(
+            "Download combinatie-overzicht als CSV",
+            data=overview_display.to_csv(index=False).encode("utf-8"),
+            file_name="servicesets_combinaties_overzicht.csv",
+            mime="text/csv",
+        )
+
+        # ---- Passpercentage per scenario (chart) ----
+        st.markdown(
+            '<div class="section-title">Passpercentage per combinatie</div>',
+            unsafe_allow_html=True,
+        )
+
+        chart_df = scenario_view.sort_values("pass_rate").copy()
+
+        fig = px.bar(
+            chart_df,
+            x="pass_rate",
+            y="scenario_name",
+            orientation="h",
+            text="pass_rate",
+            color="category",
+            title="Welk % van de verpakkingen is groot genoeg voor deze combinatie?",
+        )
+
+        fig.update_traces(
+            texttemplate="%{text:.1f}%",
+        )
+
+        fig.update_layout(
+            template="plotly_white",
+            height=max(340, 55 * len(chart_df)),
+            xaxis_title="Passpercentage over geteste verpakkingen",
+            yaxis_title="",
+            margin=dict(l=20, r=20, t=65, b=20),
+            legend_title_text="Categorie",
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
+
+        # ---- Combinaties die nergens passen ----
+        no_fit_df = scenario_view[
+            ~scenario_view["fits_any_package"]
+        ]
+
+        if not no_fit_df.empty:
+            st.markdown(
+                '<div class="section-title">⚠ Combinaties die in géén enkele verpakking passen</div>',
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <div class="info-box">
+                    Deze service-sets — met hun huidige artikelen en aantallen —
+                    passen in geen van de geteste verpakkingen. Dit is direct
+                    input voor de Maatwerk-behoefte 3D fit-check / gecombineerde
+                    sets uit de Fit-Gap analyse: ofwel is een grotere/andere
+                    verpakking nodig, ofwel moet de samenstelling (aantallen)
+                    worden herzien.
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            for _, row in no_fit_df.iterrows():
+                st.markdown(
+                    f"**{row['scenario_name']}** ({row['category']}) — "
+                    f"{row['total_quantity']} stuks over "
+                    f"{row['distinct_articles']} artikelen: "
+                    f"<span class='small-note'>{row['items_text']}</span>",
+                    unsafe_allow_html=True,
+                )
+
+        # ---- Detail per scenario x verpakking ----
+        st.markdown(
+            '<div class="section-title">Detail per combinatie × verpakking</div>',
+            unsafe_allow_html=True,
+        )
+
+        scenario_pick = st.selectbox(
+            "Kies een service-set voor het volledige verpakkingsoverzicht",
+            options=scenario_view["scenario_name"].tolist(),
+        )
+
+        picked = combo_detail_df[
+            combo_detail_df["scenario_name"] == scenario_pick
+        ].copy()
+
+        if not picked.empty:
+
+            st.markdown(
+                f"<span class='small-note'>{picked['items_text'].iloc[0]}</span>",
+                unsafe_allow_html=True,
+            )
+
+            picked_display = picked[
+                [
+                    "package",
+                    "package_dimensions",
+                    "status",
+                    "volume_pct",
+                    "total_weight_g",
+                    "reason_text",
+                    "fitted_count",
+                    "unfitted_count",
+                ]
+            ].rename(
+                columns={
+                    "package": "Verpakking",
+                    "package_dimensions": "Afmetingen L × B × H",
+                    "status": "Resultaat",
+                    "volume_pct": "Volume %",
+                    "total_weight_g": "Totaalgewicht g",
+                    "reason_text": "Waarom (niet)?",
+                    "fitted_count": "Items die passen",
+                    "unfitted_count": "Items die niet passen",
+                }
+            )
+
+            picked_display["Volume %"] = picked_display["Volume %"].round(1)
+
+            st.dataframe(
+                picked_display,
+                use_container_width=True,
+                hide_index=True,
+                height=min(70 + 40 * len(picked_display), 450),
+            )
 
 
 # ============================================================

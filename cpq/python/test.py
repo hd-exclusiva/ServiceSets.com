@@ -9,6 +9,7 @@ Leest automatisch:
 Data:
     data/products.json
     data/package_dimensions.json
+    data/combination_scenarios.json   (benoemde service-sets)
 
 Output:
     test_results/
@@ -17,6 +18,8 @@ Output:
         failures.json
         summary.json
         data_problems.json
+        recommendations.json
+        combination_results.json      (scenario's + ad-hoc combinatie)
 
 Voorbeeld:
 
@@ -39,6 +42,25 @@ Lokale JSON-bestanden gebruiken:
     python tester.py \
         --products products.json \
         --packages package_dimensions.json
+
+Benoemde service-set scenario's testen (standaard aan,
+leest data/combination_scenarios.json indien aanwezig,
+anders van GitHub):
+
+    python tester.py --all
+
+Scenario's overslaan:
+
+    python tester.py --all --no-scenarios
+
+Eigen scenario-bestand:
+
+    python tester.py --all --scenarios mijn_scenarios.json
+
+Ad-hoc combinatie los van scenario's (items + aantallen
+SAMEN in één verpakking testen, bv. 6x limonade + 1x water):
+
+    python tester.py --all --combination 3552520:6,3552528:1
 """
 
 from __future__ import annotations
@@ -72,8 +94,10 @@ GITHUB_RAW_BASE = (
 
 PRODUCTS_URL = GITHUB_RAW_BASE + "products.json"
 PACKAGES_URL = GITHUB_RAW_BASE + "package_dimensions.json"
+SCENARIOS_URL = GITHUB_RAW_BASE + "combination_scenarios.json"
 
 DEFAULT_OUTPUT_DIR = Path("test_results")
+DEFAULT_SCENARIOS_PATH = Path("data/combination_scenarios.json")
 
 
 # ============================================================================
@@ -447,6 +471,294 @@ def load_packages(
             )
 
     return packages, problems
+
+
+# ============================================================================
+# COMBINATION SCENARIOS (benoemde service-set samenstellingen)
+# ============================================================================
+
+def load_scenarios(
+    data: Any,
+    products: List[Product],
+) -> Tuple[
+    List[Dict[str, Any]],
+    List[Dict[str, Any]],
+]:
+
+    """
+    Laadt benoemde combinatie-scenario's ("service-sets") uit JSON.
+
+    Verwacht per scenario:
+
+        id
+        name
+        items: [{product_id, quantity}, ...]
+
+    category en description zijn optioneel.
+    """
+
+    rows = unwrap_list(
+        data,
+        ["scenarios"],
+    )
+
+    lookup = {
+        product.product_id: product
+        for product in products
+    }
+
+    scenarios = []
+    problems = []
+
+    for index, row in enumerate(
+        rows,
+        start=1,
+    ):
+
+        if not isinstance(row, dict):
+            problems.append(
+                {
+                    "type": "INVALID_SCENARIO",
+                    "index": index,
+                    "error": "Record is geen object",
+                    "record": row,
+                }
+            )
+            continue
+
+        scenario_id = row.get(
+            "id",
+            f"scenario_{index}",
+        )
+
+        items_raw = row.get("items")
+
+        if not isinstance(
+            items_raw,
+            list,
+        ) or not items_raw:
+
+            problems.append(
+                {
+                    "type": "INVALID_SCENARIO",
+                    "index": index,
+                    "error": (
+                        f"Scenario '{scenario_id}' "
+                        f"heeft geen (geldige) items-lijst"
+                    ),
+                    "record": row,
+                }
+            )
+            continue
+
+        resolved_items = []
+        missing_products = []
+
+        for item in items_raw:
+
+            if not isinstance(item, dict):
+                continue
+
+            product_id = str(
+                item.get(
+                    "product_id",
+                    "",
+                )
+            )
+
+            quantity = item.get(
+                "quantity",
+                1,
+            )
+
+            try:
+                quantity = int(quantity)
+
+            except (TypeError, ValueError):
+                quantity = 0
+
+            product = lookup.get(
+                product_id
+            )
+
+            if product is None:
+                missing_products.append(
+                    product_id
+                )
+                continue
+
+            if quantity <= 0:
+                missing_products.append(
+                    f"{product_id} "
+                    f"(ongeldig aantal: "
+                    f"{item.get('quantity')})"
+                )
+                continue
+
+            resolved_items.append(
+                {
+                    "product": product,
+                    "quantity": quantity,
+                    "note": item.get(
+                        "note",
+                        "",
+                    ),
+                }
+            )
+
+        if missing_products:
+            problems.append(
+                {
+                    "type": "SCENARIO_MISSING_PRODUCTS",
+                    "index": index,
+                    "error": (
+                        f"Scenario '{scenario_id}' "
+                        f"verwijst naar onbekende of "
+                        f"ongeldige producten"
+                    ),
+                    "record": missing_products,
+                }
+            )
+
+        if not resolved_items:
+            continue
+
+        scenarios.append(
+            {
+                "id": scenario_id,
+                "name": row.get(
+                    "name",
+                    scenario_id,
+                ),
+                "category": row.get(
+                    "category",
+                    "",
+                ),
+                "description": row.get(
+                    "description",
+                    "",
+                ),
+                "items": resolved_items,
+            }
+        )
+
+    return scenarios, problems
+
+
+def expand_scenario_items(
+    items: List[Dict[str, Any]],
+) -> List[Product]:
+
+    """
+    Zet [{product, quantity}, ...] om naar een platte
+    lijst van Product-instanties (elk artikel zoveel keer
+    herhaald als de gevraagde hoeveelheid), zodat alle
+    exemplaren SAMEN in één verpakking getest worden.
+    """
+
+    expanded = []
+
+    for entry in items:
+
+        expanded.extend(
+            [entry["product"]] * entry["quantity"]
+        )
+
+    return expanded
+
+
+def run_scenario_across_packages(
+    scenario: Dict[str, Any],
+    packages: List[Package],
+) -> Dict[str, Any]:
+
+    """
+    Test een volledig scenario (alle items + aantallen
+    samen) tegen elke verpakking, en bepaalt de kleinste
+    passende verpakking.
+    """
+
+    combination_products = expand_scenario_items(
+        scenario["items"]
+    )
+
+    per_package_results = []
+
+    for package in sorted(
+        packages,
+        key=lambda p: p.volume,
+    ):
+
+        result = test_products_together(
+            combination_products,
+            package,
+        )
+
+        per_package_results.append(
+            result
+        )
+
+    fitting = [
+        result
+        for result in per_package_results
+        if result["status"] == "PASS"
+    ]
+
+    fitting.sort(
+        key=lambda result: result.get(
+            "package_volume_cm3",
+            float("inf"),
+        )
+    )
+
+    items_summary = [
+        {
+            "product_id": entry["product"].product_id,
+            "product_name": entry["product"].name,
+            "quantity": entry["quantity"],
+            "note": entry["note"],
+        }
+        for entry in scenario["items"]
+    ]
+
+    total_quantity = sum(
+        entry["quantity"]
+        for entry in scenario["items"]
+    )
+
+    return {
+        "scenario_id": scenario["id"],
+        "scenario_name": scenario["name"],
+        "category": scenario["category"],
+        "description": scenario["description"],
+
+        "items": items_summary,
+        "distinct_articles": len(
+            items_summary
+        ),
+        "total_quantity": total_quantity,
+
+        "fits_any_package": len(fitting) > 0,
+
+        "smallest_fitting_package": (
+            fitting[0]["package"]
+            if fitting
+            else None
+        ),
+
+        "packages_that_fit": [
+            result["package"]
+            for result in fitting
+        ],
+
+        "packages_that_do_not_fit": [
+            result["package"]
+            for result in per_package_results
+            if result["status"] != "PASS"
+        ],
+
+        "results_per_package": per_package_results,
+    }
 
 
 # ============================================================================
@@ -1298,7 +1610,28 @@ def main() -> None:
         nargs="+",
         help=(
             "Test geselecteerde producten "
-            "samen in verpakkingen."
+            "samen in verpakkingen. "
+            "Bijvoorbeeld: 3552520:6,3552528:1"
+        ),
+    )
+
+    parser.add_argument(
+        "--scenarios",
+        help=(
+            "Lokaal combination_scenarios.json met "
+            "benoemde service-set samenstellingen "
+            "(artikelen + aantallen). Standaard: "
+            f"{DEFAULT_SCENARIOS_PATH} indien aanwezig, "
+            "anders GitHub."
+        ),
+    )
+
+    parser.add_argument(
+        "--no-scenarios",
+        action="store_true",
+        help=(
+            "Sla het testen van combinatie-scenario's "
+            "over."
         ),
     )
 
@@ -1588,8 +1921,98 @@ def main() -> None:
     )
 
     # ------------------------------------------------------------------
-    # COMBINATIONS
+    # COMBINATIONS / SERVICE-SET SCENARIO'S
     # ------------------------------------------------------------------
+    #
+    # Twee bronnen worden hier samengevoegd tot één bestand
+    # (combination_results.json), zodat het dashboard maar
+    # één format hoeft te lezen:
+    #
+    #   1) Benoemde scenario's uit data/combination_scenarios.json
+    #      (herhaalbaar, bv. "Koffie service-set", "Limonade-set").
+    #   2) Een eventuele ad-hoc combinatie via --combination.
+    #
+    # Bij elk scenario worden ALLE items + aantallen SAMEN
+    # in één verpakking getest (niet los na elkaar), zodat
+    # zichtbaar wordt of bv. 6x "Stick Limonade" samen met de
+    # rest van de set nog past.
+
+    scenario_problems: List[Dict[str, Any]] = []
+    combination_results: List[Dict[str, Any]] = []
+
+    if not args.no_scenarios:
+
+        print(
+            "\nCombinatie-scenario's laden..."
+        )
+
+        scenario_data = None
+
+        scenarios_path = (
+            Path(args.scenarios)
+            if args.scenarios
+            else DEFAULT_SCENARIOS_PATH
+        )
+
+        try:
+
+            if args.scenarios:
+                scenario_data = load_json_file(
+                    scenarios_path
+                )
+
+            elif scenarios_path.exists():
+                scenario_data = load_json_file(
+                    scenarios_path
+                )
+
+            else:
+                scenario_data = download_json(
+                    SCENARIOS_URL
+                )
+
+        except Exception as exc:
+
+            print(
+                f"  ⚠ Geen scenario's geladen: {exc}"
+            )
+
+        if scenario_data is not None:
+
+            scenarios, scenario_problems = (
+                load_scenarios(
+                    scenario_data,
+                    products,
+                )
+            )
+
+            print(
+                f"  ✓ {len(scenarios)} scenario('s) "
+                f"geladen"
+            )
+
+            if scenario_problems:
+
+                print(
+                    f"  ⚠ {len(scenario_problems)} "
+                    f"scenario-problemen "
+                    f"(zie data_problems.json)"
+                )
+
+            print(
+                "\nScenario's testen "
+                "(items + aantallen samen "
+                "per verpakking)..."
+            )
+
+            for scenario in scenarios:
+
+                combination_results.append(
+                    run_scenario_across_packages(
+                        scenario,
+                        packages,
+                    )
+                )
 
     if args.combination:
 
@@ -1600,40 +2023,54 @@ def main() -> None:
             ),
         )
 
-        combination_products = []
-
-        for product, amount in (
-            combination_selection
-        ):
-
-            combination_products.extend(
-                [product] * amount
+        adhoc_items = [
+            {
+                "product": product,
+                "quantity": amount,
+                "note": "",
+            }
+            for product, amount in (
+                combination_selection
             )
-
-        combination_results = []
+        ]
 
         print(
-            "\nCombinaties testen..."
+            "\nAd-hoc combinatie testen..."
         )
 
-        for package in sorted(
-            packages,
-            key=lambda p: p.volume,
-        ):
-
-            result = test_products_together(
-                combination_products,
-                package,
+        combination_results.append(
+            run_scenario_across_packages(
+                {
+                    "id": "adhoc",
+                    "name": "Ad-hoc combinatie (--combination)",
+                    "category": "adhoc",
+                    "description": (
+                        "Handmatig opgegeven via "
+                        "--combination."
+                    ),
+                    "items": adhoc_items,
+                },
+                packages,
             )
+        )
 
-            combination_results.append(
-                result
-            )
+    if combination_results:
 
         save_json(
             output_dir
             / "combination_results.json",
             combination_results,
+        )
+
+    if scenario_problems:
+
+        data_problems.extend(
+            scenario_problems
+        )
+
+        save_json(
+            output_dir / "data_problems.json",
+            data_problems,
         )
 
     # ------------------------------------------------------------------
@@ -1717,10 +2154,18 @@ def main() -> None:
         f"  ✓ {output_dir / 'data_problems.json'}"
     )
 
-    if args.combination:
+    if combination_results:
+
+        scenarios_fit = sum(
+            1
+            for r in combination_results
+            if r["fits_any_package"]
+        )
 
         print(
-            f"  ✓ {output_dir / 'combination_results.json'}"
+            f"  ✓ {output_dir / 'combination_results.json'} "
+            f"({len(combination_results)} scenario('s), "
+            f"{scenarios_fit} passen ergens)"
         )
 
     print(
