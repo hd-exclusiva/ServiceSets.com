@@ -1,11 +1,11 @@
 ﻿package,tests,pass,fail,pass_pct,average_volume_pct
-5 CM,96,51,45,53.1,256.7
-Coffee set box,96,47,49,49.0,371.6
-Doosje Hoog,96,76,20,79.2,59.5
-LW,96,48,48,50.0,206.4
-Large paper bag,96,83,13,86.5,36.0
-Medium paper bag,96,76,20,79.2,51.6
-Mini,96,22,74,22.9,1136.9
-Small paper bag,96,61,35,63.5,90.1
-The smart cup,96,32,64,33.3,497.4
-Wave,96,69,27,71.9,99.1
+5 CM,5,3,2,60.0,71.4
+Coffee set box,5,3,2,60.0,103.4
+Doosje Hoog,5,5,0,100.0,16.5
+LW,5,3,2,60.0,57.4
+Large paper bag,5,5,0,100.0,10.0
+Medium paper bag,5,3,2,60.0,14.4
+Mini,5,0,5,0.0,316.2
+Small paper bag,5,3,2,60.0,25.0
+The smart cup,5,0,5,0.0,138.4
+Wave,5,5,0,100.0,27.5

@@ -1,82 +1,82 @@
 [
   {
     "package": "5 CM",
-    "tests": 96,
-    "pass": 51,
-    "fail": 45,
-    "pass_pct": 53.1,
-    "average_volume_pct": 256.7
+    "tests": 5,
+    "pass": 3,
+    "fail": 2,
+    "pass_pct": 60.0,
+    "average_volume_pct": 71.4
   },
   {
     "package": "Coffee set box",
-    "tests": 96,
-    "pass": 47,
-    "fail": 49,
-    "pass_pct": 49.0,
-    "average_volume_pct": 371.6
+    "tests": 5,
+    "pass": 3,
+    "fail": 2,
+    "pass_pct": 60.0,
+    "average_volume_pct": 103.4
   },
   {
     "package": "Doosje Hoog",
-    "tests": 96,
-    "pass": 76,
-    "fail": 20,
-    "pass_pct": 79.2,
-    "average_volume_pct": 59.5
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "pass_pct": 100.0,
+    "average_volume_pct": 16.5
   },
   {
     "package": "LW",
-    "tests": 96,
-    "pass": 48,
-    "fail": 48,
-    "pass_pct": 50.0,
-    "average_volume_pct": 206.4
+    "tests": 5,
+    "pass": 3,
+    "fail": 2,
+    "pass_pct": 60.0,
+    "average_volume_pct": 57.4
   },
   {
     "package": "Large paper bag",
-    "tests": 96,
-    "pass": 83,
-    "fail": 13,
-    "pass_pct": 86.5,
-    "average_volume_pct": 36.0
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "pass_pct": 100.0,
+    "average_volume_pct": 10.0
   },
   {
     "package": "Medium paper bag",
-    "tests": 96,
-    "pass": 76,
-    "fail": 20,
-    "pass_pct": 79.2,
-    "average_volume_pct": 51.6
+    "tests": 5,
+    "pass": 3,
+    "fail": 2,
+    "pass_pct": 60.0,
+    "average_volume_pct": 14.4
   },
   {
     "package": "Mini",
-    "tests": 96,
-    "pass": 22,
-    "fail": 74,
-    "pass_pct": 22.9,
-    "average_volume_pct": 1136.9
+    "tests": 5,
+    "pass": 0,
+    "fail": 5,
+    "pass_pct": 0.0,
+    "average_volume_pct": 316.2
   },
   {
     "package": "Small paper bag",
-    "tests": 96,
-    "pass": 61,
-    "fail": 35,
-    "pass_pct": 63.5,
-    "average_volume_pct": 90.1
+    "tests": 5,
+    "pass": 3,
+    "fail": 2,
+    "pass_pct": 60.0,
+    "average_volume_pct": 25.0
   },
   {
     "package": "The smart cup",
-    "tests": 96,
-    "pass": 32,
-    "fail": 64,
-    "pass_pct": 33.3,
-    "average_volume_pct": 497.4
+    "tests": 5,
+    "pass": 0,
+    "fail": 5,
+    "pass_pct": 0.0,
+    "average_volume_pct": 138.4
   },
   {
     "package": "Wave",
-    "tests": 96,
-    "pass": 69,
-    "fail": 27,
-    "pass_pct": 71.9,
-    "average_volume_pct": 99.1
+    "tests": 5,
+    "pass": 5,
+    "fail": 0,
+    "pass_pct": 100.0,
+    "average_volume_pct": 27.5
   }
 ]
