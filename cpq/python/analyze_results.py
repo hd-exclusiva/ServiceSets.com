@@ -1,1654 +1,1091 @@
 #!/usr/bin/env python3
-
 """
-analyze_results.py
-==================
-
-Analyseert de resultaten van tester.py en maakt:
-
-    test_results/
-        analysis/
-            dashboard.html
-            all_results.csv
-            product_summary.csv
-            package_summary.csv
-            failures.csv
-            counterexamples.csv
-            report.txt
+ServiceSets.com - Packing Analysis Dashboard
 
 Gebruik:
+    streamlit run analyze_results.py
 
-    python analyze_results.py
+Verwachte bestanden:
+    test_results/all_results.json
 
-Of:
+Optioneel:
+    test_results/summary.json
+    test_results/recommendations.json
+    test_results/failures.json
+    test_results/passes.json
 
-    python analyze_results.py --input test_results
-    python analyze_results.py --open
-
-De analyzer probeert automatisch te werken met:
-
-    summary.json
-    failures.json
-    counterexamples.json
-    warnings.json
-    all_results.json
-
-all_results.json is het meest waardevol omdat daarin iedere
-product x verpakking-test staat.
+Het dashboard toont:
+- Productnummer + productnaam
+- Productafmetingen L x B x H
+- Productvolume en gewicht
+- Verpakking + verpakkingsafmetingen
+- PASS / FAIL
+- Concrete foutreden
+- Rotatie waarin een product past
+- Volume-benutting
+- Kleinste passende verpakking
+- Filters en zoekfunctie
+- Grafieken
+- Detailtabel
+- Servicesets.com-achtige huisstijl
 """
 
 from __future__ import annotations
 
-import argparse
-import csv
-import html
 import json
-import math
-import os
-import platform
-import subprocess
-import sys
-import webbrowser
-from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any
+
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+import streamlit as st
 
 
-# ============================================================================
-# CONFIG
-# ============================================================================
+# ============================================================
+# CONFIG / HUISSTIJL
+# ============================================================
 
-DEFAULT_INPUT = Path("test_results")
-DEFAULT_OUTPUT = Path("test_results") / "analysis"
+APP_TITLE = "Servicesets Packing Analysis"
+RESULTS_DIR = Path("test_results")
+
+# De website gebruikt een frisse, eigentijdse uitstraling.
+# Deze kleuren zijn bewust als dashboard-thema gekozen:
+# donkergroen voor merk/headers, warm accent voor highlights.
+BRAND_GREEN = "#173F35"
+BRAND_GREEN_2 = "#245C4D"
+BRAND_LIGHT = "#EAF3EF"
+BRAND_ACCENT = "#D6A85F"
+BRAND_DARK = "#14201D"
+WHITE = "#FFFFFF"
+GREY = "#66736F"
+LIGHT_GREY = "#F5F7F6"
+RED = "#B94A48"
+GREEN = "#287A57"
+
+st.set_page_config(
+    page_title=APP_TITLE,
+    page_icon="📦",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
 
 
-# ============================================================================
-# IO
-# ============================================================================
+# ============================================================
+# CSS
+# ============================================================
 
-def load_json(path: Path, default: Any) -> Any:
+st.markdown(
+    f"""
+<style>
+    .stApp {{
+        background: #F7F8F7;
+    }}
+
+    [data-testid="stSidebar"] {{
+        background: {BRAND_GREEN};
+    }}
+
+    [data-testid="stSidebar"] * {{
+        color: white !important;
+    }}
+
+    .brand-header {{
+        background: linear-gradient(
+            135deg,
+            {BRAND_GREEN} 0%,
+            {BRAND_GREEN_2} 100%
+        );
+        padding: 28px 34px;
+        border-radius: 18px;
+        margin-bottom: 22px;
+        color: white;
+        box-shadow: 0 8px 25px rgba(23,63,53,.14);
+    }}
+
+    .brand-header h1 {{
+        margin: 0;
+        font-size: 2.25rem;
+        font-weight: 750;
+        letter-spacing: -0.03em;
+    }}
+
+    .brand-header p {{
+        margin: 7px 0 0;
+        opacity: .86;
+        font-size: 1rem;
+    }}
+
+    .metric-card {{
+        background: white;
+        border: 1px solid #E4EAE7;
+        border-radius: 16px;
+        padding: 18px 20px;
+        min-height: 115px;
+        box-shadow: 0 4px 15px rgba(20,32,29,.05);
+    }}
+
+    .metric-label {{
+        color: {GREY};
+        font-size: .83rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        font-weight: 700;
+    }}
+
+    .metric-value {{
+        color: {BRAND_GREEN};
+        font-size: 2rem;
+        font-weight: 800;
+        margin-top: 5px;
+    }}
+
+    .section-title {{
+        color: {BRAND_GREEN};
+        font-weight: 800;
+        font-size: 1.35rem;
+        margin: 28px 0 10px;
+    }}
+
+    .pass-badge {{
+        display: inline-block;
+        background: #E3F2EA;
+        color: {GREEN};
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-weight: 750;
+    }}
+
+    .fail-badge {{
+        display: inline-block;
+        background: #F9E7E6;
+        color: {RED};
+        border-radius: 999px;
+        padding: 4px 10px;
+        font-weight: 750;
+    }}
+
+    .info-box {{
+        background: {BRAND_LIGHT};
+        border-left: 5px solid {BRAND_ACCENT};
+        padding: 14px 18px;
+        border-radius: 8px;
+        color: {BRAND_DARK};
+        margin: 10px 0 18px;
+    }}
+
+    div[data-testid="stDataFrame"] {{
+        border-radius: 12px;
+        overflow: hidden;
+    }}
+
+    .small-note {{
+        color: {GREY};
+        font-size: .82rem;
+    }}
+
+    button[kind="primary"] {{
+        background: {BRAND_GREEN};
+    }}
+</style>
+""",
+    unsafe_allow_html=True,
+)
+
+
+# ============================================================
+# HELPERS
+# ============================================================
+
+def load_json(path: Path, default: Any = None) -> Any:
     if not path.exists():
         return default
 
     try:
         with path.open("r", encoding="utf-8") as f:
             return json.load(f)
-    except Exception as exc:
-        print(f"⚠ Kon {path} niet lezen: {exc}")
+    except Exception:
         return default
 
 
-def save_json(path: Path, data: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    with path.open("w", encoding="utf-8") as f:
-        json.dump(
-            data,
-            f,
-            ensure_ascii=False,
-            indent=2,
-        )
-
-
-def write_csv(
-    path: Path,
-    rows: List[Dict[str, Any]],
-) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-
-    if not rows:
-        path.write_text("", encoding="utf-8")
-        return
-
-    # Verzamel alle keys.
-    keys = []
-
-    for row in rows:
-        for key in row:
-            if key not in keys:
-                keys.append(key)
-
-    with path.open(
-        "w",
-        encoding="utf-8-sig",
-        newline="",
-    ) as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=keys,
-            extrasaction="ignore",
-        )
-
-        writer.writeheader()
-
-        for row in rows:
-            writer.writerow(row)
-
-
-# ============================================================================
-# HELPERS
-# ============================================================================
-
-def safe_float(value: Any) -> Optional[float]:
-    if value is None:
-        return None
+def fmt_num(value: Any, decimals: int = 1) -> str:
+    if value is None or value == "":
+        return "—"
 
     try:
-        return float(value)
-    except (TypeError, ValueError):
-        return None
+        value = float(value)
+        if decimals == 0:
+            return f"{value:,.0f}".replace(",", ".")
+        return f"{value:,.{decimals}f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    except Exception:
+        return str(value)
 
 
-def percentage(part: int, total: int) -> float:
-    if total == 0:
-        return 0.0
+def dimensions_text(value: Any) -> str:
+    if isinstance(value, dict):
+        l = value.get("lengte", value.get("l"))
+        w = value.get("breedte", value.get("w"))
+        h = value.get("hoogte", value.get("h"))
 
-    return round((part / total) * 100, 1)
+        if l is not None and w is not None and h is not None:
+            return (
+                f"{fmt_num(l)} × "
+                f"{fmt_num(w)} × "
+                f"{fmt_num(h)} cm"
+            )
 
+    if isinstance(value, (list, tuple)) and len(value) == 3:
+        return " × ".join(fmt_num(x) for x in value) + " cm"
 
-def first_value(
-    row: Dict[str, Any],
-    keys: List[str],
-    default: Any = None,
-) -> Any:
-    for key in keys:
-        if key in row and row[key] not in (None, ""):
-            return row[key]
-
-    return default
-
-
-def escape(value: Any) -> str:
-    return html.escape(str(value))
+    return "—"
 
 
-def fmt(value: Any, decimals: int = 1) -> str:
-    number = safe_float(value)
+def reason_text(row: pd.Series) -> str:
+    reason = row.get("reason")
 
-    if number is None:
-        return "-"
+    mapping = {
+        "PRODUCT_TOO_LARGE": "Product is te groot voor deze verpakking",
+        "WEIGHT_LIMIT": "Gewichtslimiet van verpakking",
+        "PACKING_ENGINE_REJECTED": "3D packing engine kon het product niet plaatsen",
+        "ITEMS_DID_NOT_ALL_FIT": "Niet alle items passen",
+        "PACKING_ENGINE_ERROR": "Fout in packing engine",
+        "UNKNOWN_PACKING_FAILURE": "Onbekende packing failure",
+    }
 
-    return f"{number:.{decimals}f}"
+    if pd.isna(reason) or reason in ("", None):
+        return ""
+
+    return mapping.get(str(reason), str(reason))
 
 
-# ============================================================================
-# RESULT NORMALIZATION
-# ============================================================================
+def normalize_results(raw: Any) -> pd.DataFrame:
+    if isinstance(raw, dict):
+        for key in ("all_results", "results", "data"):
+            if isinstance(raw.get(key), list):
+                raw = raw[key]
+                break
 
-def normalize_result(row: Dict[str, Any]) -> Dict[str, Any]:
+    if not isinstance(raw, list):
+        return pd.DataFrame()
+
+    rows = []
+
+    for r in raw:
+        if not isinstance(r, dict):
+            continue
+
+        product_dims = r.get("product_dimensions_cm", {})
+        package_dims = r.get("package_dimensions_cm", {})
+
+        row = {
+            "product": r.get("product", ""),
+            "product_name": r.get("product_name", ""),
+            "product_dimensions": dimensions_text(product_dims),
+            "product_volume_cm3": r.get("product_volume_cm3"),
+            "product_weight_g": r.get("product_weight_g"),
+            "package": r.get("package", ""),
+            "package_dimensions": dimensions_text(package_dims),
+            "package_volume_cm3": r.get("package_volume_cm3"),
+            "package_max_weight_g": r.get("package_max_weight_g"),
+            "status": str(r.get("status", "")).upper(),
+            "fits": r.get("fits"),
+            "reason": r.get("reason"),
+            "reason_text": "",
+            "volume_pct": r.get("volume_pct"),
+            "rotation": dimensions_text(r.get("rotation")),
+            "quantity_instance": r.get("quantity_instance"),
+            "requested_quantity": r.get("requested_quantity"),
+        }
+
+        rows.append(row)
+
+    df = pd.DataFrame(rows)
+
+    if df.empty:
+        return df
+
+    # Fallbacks voor oudere result-formaten.
+    if "status" not in df:
+        df["status"] = df["fits"].apply(
+            lambda x: "PASS" if x is True else "FAIL"
+        )
+
+    df["status"] = df["status"].fillna("").astype(str).str.upper()
+
+    df["reason_text"] = df.apply(
+        reason_text,
+        axis=1,
+    )
+
+    for col in [
+        "product_volume_cm3",
+        "product_weight_g",
+        "package_volume_cm3",
+        "package_max_weight_g",
+        "volume_pct",
+    ]:
+        if col in df:
+            df[col] = pd.to_numeric(
+                df[col],
+                errors="coerce",
+            )
+
+    df["product_label"] = (
+        df["product"].fillna("").astype(str)
+        + " — "
+        + df["product_name"].fillna("").astype(str)
+    )
+
+    return df
+
+
+def metric_card(label: str, value: str) -> None:
+    st.markdown(
+        f"""
+        <div class="metric-card">
+            <div class="metric-label">{label}</div>
+            <div class="metric-value">{value}</div>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+# ============================================================
+# HEADER
+# ============================================================
+
+st.markdown(
     """
-    Probeert verschillende mogelijke formaten van all_results.json
-    te normaliseren naar één intern formaat.
-    """
+    <div class="brand-header">
+        <h1>Servicesets Packing Analysis</h1>
+        <p>
+            Analyse van productafmetingen, verpakkingen en 3D packing-resultaten
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
-    product = first_value(
-        row,
-        [
-            "product",
-            "product_id",
-            "artikelnummer",
-            "product_num",
-        ],
+
+# ============================================================
+# DATA
+# ============================================================
+
+all_results_path = RESULTS_DIR / "all_results.json"
+
+raw_results = load_json(all_results_path)
+
+if raw_results is None:
+    st.error(
+        f"Geen resultaten gevonden: `{all_results_path}`"
+    )
+    st.info(
+        "Voer eerst `python tester.py --all` uit."
+    )
+    st.stop()
+
+df = normalize_results(raw_results)
+
+if df.empty:
+    st.error("all_results.json bevat geen bruikbare resultaten.")
+    st.stop()
+
+
+# ============================================================
+# SIDEBAR FILTERS
+# ============================================================
+
+st.sidebar.markdown("## Filters")
+
+search = st.sidebar.text_input(
+    "Zoek product",
+    placeholder="Naam of artikelnummer...",
+)
+
+statuses = st.sidebar.multiselect(
+    "Resultaat",
+    options=["PASS", "FAIL", "ERROR"],
+    default=["PASS", "FAIL"],
+)
+
+products = sorted(
+    [
+        x
+        for x in df["product_name"].dropna().unique()
+        if str(x).strip()
+    ]
+)
+
+selected_products = st.sidebar.multiselect(
+    "Producten",
+    options=products,
+)
+
+packages = sorted(
+    [
+        x
+        for x in df["package"].dropna().unique()
+        if str(x).strip()
+    ]
+)
+
+selected_packages = st.sidebar.multiselect(
+    "Verpakkingen",
+    options=packages,
+)
+
+min_volume, max_volume = st.sidebar.slider(
+    "Volume-benutting (%)",
+    min_value=0,
+    max_value=100,
+    value=(0, 100),
+)
+
+filtered = df.copy()
+
+if search:
+    needle = search.lower()
+    filtered = filtered[
+        filtered["product_name"].fillna("").str.lower().str.contains(
+            needle,
+            regex=False,
+        )
+        | filtered["product"].fillna("").astype(str).str.lower().str.contains(
+            needle,
+            regex=False,
+        )
+    ]
+
+if statuses:
+    filtered = filtered[
+        filtered["status"].isin(statuses)
+    ]
+
+if selected_products:
+    filtered = filtered[
+        filtered["product_name"].isin(selected_products)
+    ]
+
+if selected_packages:
+    filtered = filtered[
+        filtered["package"].isin(selected_packages)
+    ]
+
+filtered = filtered[
+    filtered["volume_pct"].fillna(0).between(
+        min_volume,
+        max_volume,
+    )
+]
+
+
+# ============================================================
+# KPI
+# ============================================================
+
+total = len(filtered)
+passes = int((filtered["status"] == "PASS").sum())
+fails = int((filtered["status"] == "FAIL").sum())
+errors = int((filtered["status"] == "ERROR").sum())
+
+pass_rate = (
+    passes / total * 100
+    if total
+    else 0
+)
+
+c1, c2, c3, c4 = st.columns(4)
+
+with c1:
+    metric_card("Tests", f"{total:,}".replace(",", "."))
+
+with c2:
+    metric_card("PASS", f"{passes:,}".replace(",", "."))
+
+with c3:
+    metric_card("FAIL", f"{fails:,}".replace(",", "."))
+
+with c4:
+    metric_card("Passpercentage", f"{pass_rate:.1f}%".replace(".", ","))
+
+
+# ============================================================
+# INFO
+# ============================================================
+
+st.markdown(
+    f"""
+    <div class="info-box">
+        <strong>{len(filtered):,} tests geselecteerd.</strong>
+        Gebruik links de filters om bijvoorbeeld één product,
+        één verpakking of alleen failures te bekijken.
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
+
+
+# ============================================================
+# TABBLADEN
+# ============================================================
+
+tab_overview, tab_products, tab_packages, tab_failures, tab_details = st.tabs(
+    [
+        "Overzicht",
+        "Per product",
+        "Per verpakking",
+        "Failures",
+        "Alle resultaten",
+    ]
+)
+
+
+# ============================================================
+# OVERVIEW
+# ============================================================
+
+with tab_overview:
+    st.markdown(
+        '<div class="section-title">Resultaat per verpakking</div>',
+        unsafe_allow_html=True,
     )
 
-    package = first_value(
-        row,
-        [
-            "package",
-            "verpakking",
-            "package_name",
-        ],
+    if not filtered.empty:
+        package_stats = (
+            filtered.groupby(["package", "status"])
+            .size()
+            .reset_index(name="tests")
+        )
+
+        fig = px.bar(
+            package_stats,
+            x="package",
+            y="tests",
+            color="status",
+            barmode="group",
+            text="tests",
+            title="PASS / FAIL per verpakking",
+            color_discrete_map={
+                "PASS": GREEN,
+                "FAIL": RED,
+                "ERROR": BRAND_ACCENT,
+            },
+        )
+
+        fig.update_layout(
+            template="plotly_white",
+            height=430,
+            margin=dict(l=20, r=20, t=65, b=20),
+            font=dict(color=BRAND_DARK),
+            legend_title_text="Resultaat",
+        )
+
+        st.plotly_chart(
+            fig,
+            use_container_width=True,
+        )
+
+    st.markdown(
+        '<div class="section-title">Verdeling van failure-redenen</div>',
+        unsafe_allow_html=True,
     )
 
-    fits = first_value(
-        row,
-        [
-            "fits",
-            "passed",
-            "pass",
-        ],
-    )
+    failures = filtered[
+        filtered["status"] != "PASS"
+    ].copy()
 
-    result = first_value(
-        row,
-        [
-            "result",
-            "status",
-        ],
-    )
-
-    reason = first_value(
-        row,
-        [
-            "reason",
-            "failure_reason",
-            "reden",
-            "message",
-        ],
-    )
-
-    volume_pct = first_value(
-        row,
-        [
-            "volume_pct",
-            "used_volume_pct",
-            "gebruikt_volume_pct",
-            "utilization_pct",
-        ],
-    )
-
-    if isinstance(fits, str):
-        fits_lower = fits.lower()
-
-        if fits_lower in (
-            "true",
-            "yes",
-            "pass",
-            "passed",
-            "1",
-        ):
-            fits = True
-
-        elif fits_lower in (
-            "false",
-            "no",
-            "fail",
-            "failed",
-            "0",
-        ):
-            fits = False
-
-    if fits is True:
-        status = "PASS"
-
-    elif fits is False:
-        status = "FAIL"
-
-    elif result:
-        status = str(result).upper()
+    if failures.empty:
+        st.success("Geen failures in de huidige selectie.")
 
     else:
-        status = "UNKNOWN"
-
-    return {
-        "product": str(product) if product is not None else "",
-        "package": str(package) if package is not None else "",
-        "status": status,
-        "fits": fits,
-        "reason": str(reason) if reason is not None else "",
-        "volume_pct": safe_float(volume_pct),
-        "raw": row,
-    }
-
-
-# ============================================================================
-# LOAD DATA
-# ============================================================================
-
-def load_data(input_dir: Path) -> Dict[str, Any]:
-
-    summary = load_json(
-        input_dir / "summary.json",
-        {},
-    )
-
-    failures = load_json(
-        input_dir / "failures.json",
-        [],
-    )
-
-    counterexamples = load_json(
-        input_dir / "counterexamples.json",
-        [],
-    )
-
-    warnings = load_json(
-        input_dir / "warnings.json",
-        [],
-    )
-
-    all_results = load_json(
-        input_dir / "all_results.json",
-        [],
-    )
-
-    return {
-        "summary": summary,
-        "failures": failures,
-        "counterexamples": counterexamples,
-        "warnings": warnings,
-        "all_results": all_results,
-    }
-
-
-# ============================================================================
-# BUILD FULL RESULTS
-# ============================================================================
-
-def build_results(data: Dict[str, Any]) -> List[Dict[str, Any]]:
-
-    all_results = data["all_results"]
-
-    if isinstance(all_results, list) and all_results:
-        print(
-            f"✓ all_results.json gevonden: "
-            f"{len(all_results)} resultaten"
+        reason_counts = (
+            failures["reason_text"]
+            .replace("", "Onbekend")
+            .value_counts()
+            .reset_index()
         )
 
-        return [
-            normalize_result(row)
-            for row in all_results
-            if isinstance(row, dict)
+        reason_counts.columns = [
+            "reden",
+            "aantal",
         ]
 
-    print(
-        "⚠ all_results.json niet gevonden of leeg."
-    )
-
-    print(
-        "  De analyse wordt uitgevoerd op de beschikbare "
-        "failures/counterexamples."
-    )
-
-    results = []
-
-    # Failures.
-    for row in data["failures"]:
-        if not isinstance(row, dict):
-            continue
-
-        products = row.get("product_ids", [])
-        package = row.get("package", "")
-
-        for product in products:
-            results.append(
-                {
-                    "product": str(product),
-                    "package": str(package),
-                    "status": "FAIL",
-                    "fits": False,
-                    "reason": row.get(
-                        "category",
-                        row.get("message", ""),
-                    ),
-                    "volume_pct": None,
-                    "raw": row,
-                }
-            )
-
-    # Counterexamples.
-    for row in data["counterexamples"]:
-        if not isinstance(row, dict):
-            continue
-
-        products = row.get("product_ids", [])
-        package = row.get("package", "")
-
-        for product in products:
-            results.append(
-                {
-                    "product": str(product),
-                    "package": str(package),
-                    "status": "COUNTEREXAMPLE",
-                    "fits": False,
-                    "reason": row.get(
-                        "category",
-                        row.get("message", ""),
-                    ),
-                    "volume_pct": None,
-                    "raw": row,
-                }
-            )
-
-    return results
-
-
-# ============================================================================
-# PRODUCT ANALYSIS
-# ============================================================================
-
-def analyze_products(
-    results: List[Dict[str, Any]],
-) -> List[Dict[str, Any]]:
-
-    grouped: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
-
-    for result in results:
-        product = result["product"]
-
-        if product:
-            grouped[product].append(result)
-
-    output = []
-
-    for product, rows in sorted(grouped.items()):
-
-        total = len(rows)
-
-        passes = sum(
-            1
-            for row in rows
-            if row["status"] == "PASS"
+        fig = px.bar(
+            reason_counts,
+            x="aantal",
+            y="reden",
+            orientation="h",
+            text="aantal",
+            title="Waarom producten niet passen",
         )
 
-        fails = sum(
-            1
-            for row in rows
-            if row["status"] == "FAIL"
+        fig.update_traces(
+            marker_color=RED
         )
 
-        counterexamples = sum(
-            1
-            for row in rows
-            if row["status"] == "COUNTEREXAMPLE"
+        fig.update_layout(
+            template="plotly_white",
+            height=max(
+                320,
+                55 * len(reason_counts),
+            ),
+            margin=dict(l=20, r=20, t=65, b=20),
         )
 
-        packages_that_fit = sorted(
-            {
-                row["package"]
-                for row in rows
-                if row["status"] == "PASS"
-            }
+        st.plotly_chart(
+            fig,
+            use_container_width=True,
         )
 
-        packages_that_fail = sorted(
-            {
-                row["package"]
-                for row in rows
-                if row["status"] != "PASS"
-            }
-        )
 
-        output.append(
-            {
-                "product": product,
-                "tests": total,
-                "pass": passes,
-                "fail": fails,
-                "counterexamples": counterexamples,
-                "pass_pct": percentage(
-                    passes,
-                    total,
-                ),
-                "packages_that_fit": ", ".join(
-                    packages_that_fit
-                ),
-                "packages_that_fail": ", ".join(
-                    packages_that_fail
-                ),
-                "number_of_passing_packages": len(
-                    packages_that_fit
-                ),
-                "number_of_failing_packages": len(
-                    packages_that_fail
-                ),
-            }
-        )
+# ============================================================
+# PER PRODUCT
+# ============================================================
 
-    return output
-
-
-# ============================================================================
-# PACKAGE ANALYSIS
-# ============================================================================
-
-def analyze_packages(
-    results: List[Dict[str, Any]],
-) -> List[Dict[str, Any]]:
-
-    grouped: Dict[str, List[Dict[str, Any]]] = defaultdict(list)
-
-    for result in results:
-        package = result["package"]
-
-        if package:
-            grouped[package].append(result)
-
-    output = []
-
-    for package, rows in sorted(grouped.items()):
-
-        total = len(rows)
-
-        passes = sum(
-            1
-            for row in rows
-            if row["status"] == "PASS"
-        )
-
-        fails = sum(
-            1
-            for row in rows
-            if row["status"] != "PASS"
-        )
-
-        utilization_values = [
-            row["volume_pct"]
-            for row in rows
-            if row["volume_pct"] is not None
-        ]
-
-        average_utilization = (
-            sum(utilization_values)
-            / len(utilization_values)
-            if utilization_values
-            else None
-        )
-
-        output.append(
-            {
-                "package": package,
-                "tests": total,
-                "pass": passes,
-                "fail": fails,
-                "pass_pct": percentage(
-                    passes,
-                    total,
-                ),
-                "average_volume_pct": (
-                    round(average_utilization, 1)
-                    if average_utilization is not None
-                    else None
-                ),
-            }
-        )
-
-    return output
-
-
-# ============================================================================
-# PASS / FAIL LISTS
-# ============================================================================
-
-def build_pass_list(
-    results: List[Dict[str, Any]],
-) -> List[Dict[str, Any]]:
-
-    return [
-        {
-            "product": row["product"],
-            "package": row["package"],
-            "status": row["status"],
-            "volume_pct": row["volume_pct"],
-        }
-        for row in results
-        if row["status"] == "PASS"
-    ]
-
-
-def build_fail_list(
-    results: List[Dict[str, Any]],
-) -> List[Dict[str, Any]]:
-
-    return [
-        {
-            "product": row["product"],
-            "package": row["package"],
-            "reason": row["reason"],
-            "status": row["status"],
-        }
-        for row in results
-        if row["status"] != "PASS"
-    ]
-
-
-# ============================================================================
-# REASON ANALYSIS
-# ============================================================================
-
-def analyze_failure_reasons(
-    results: List[Dict[str, Any]],
-) -> List[Dict[str, Any]]:
-
-    counter = Counter()
-
-    for row in results:
-        if row["status"] == "PASS":
-            continue
-
-        reason = row["reason"] or "UNKNOWN"
-
-        counter[reason] += 1
-
-    return [
-        {
-            "reason": reason,
-            "count": count,
-        }
-        for reason, count in counter.most_common()
-    ]
-
-
-# ============================================================================
-# HTML HELPERS
-# ============================================================================
-
-def html_table(
-    headers: List[str],
-    rows: List[List[Any]],
-    max_rows: Optional[int] = None,
-) -> str:
-
-    if max_rows is not None:
-        rows = rows[:max_rows]
-
-    output = [
-        "<table>",
-        "<thead>",
-        "<tr>",
-    ]
-
-    for header in headers:
-        output.append(
-            f"<th>{escape(header)}</th>"
-        )
-
-    output.extend(
-        [
-            "</tr>",
-            "</thead>",
-            "<tbody>",
-        ]
+with tab_products:
+    st.markdown(
+        '<div class="section-title">Productanalyse</div>',
+        unsafe_allow_html=True,
     )
 
-    for row in rows:
-        output.append("<tr>")
-
-        for value in row:
-            output.append(
-                f"<td>{escape(value)}</td>"
-            )
-
-        output.append("</tr>")
-
-    output.extend(
-        [
-            "</tbody>",
-            "</table>",
-        ]
-    )
-
-    return "\n".join(output)
-
-
-# ============================================================================
-# HTML DASHBOARD
-# ============================================================================
-
-def build_dashboard(
-    output_dir: Path,
-    data: Dict[str, Any],
-    results: List[Dict[str, Any]],
-    product_summary: List[Dict[str, Any]],
-    package_summary: List[Dict[str, Any]],
-    pass_list: List[Dict[str, Any]],
-    fail_list: List[Dict[str, Any]],
-    reason_summary: List[Dict[str, Any]],
-) -> None:
-
-    total = len(results)
-
-    passes = sum(
-        1
-        for row in results
-        if row["status"] == "PASS"
-    )
-
-    failures = total - passes
-
-    pass_pct = percentage(
-        passes,
-        total,
-    )
-
-    fail_pct = percentage(
-        failures,
-        total,
-    )
-
-    counterexamples = len(
-        data["counterexamples"]
-    )
-
-    data_problems = len(
-        load_json(
-            DEFAULT_INPUT / "data_problems.json",
-            [],
-        )
-    )
-
-    # ------------------------------------------------------------------
-    # JS data
-    # ------------------------------------------------------------------
-
-    package_chart = [
-        {
-            "name": row["package"],
-            "pass": row["pass"],
-            "fail": row["fail"],
-        }
-        for row in package_summary
-    ]
-
-    reason_chart = [
-        {
-            "name": row["reason"],
-            "count": row["count"],
-        }
-        for row in reason_summary[:15]
-    ]
-
-    product_chart = sorted(
-        [
-            {
-                "name": row["product"],
-                "pass_pct": row["pass_pct"],
-            }
-            for row in product_summary
-        ],
-        key=lambda x: x["pass_pct"],
-    )
-
-    package_chart_json = json.dumps(
-        package_chart,
-        ensure_ascii=False,
-    )
-
-    reason_chart_json = json.dumps(
-        reason_chart,
-        ensure_ascii=False,
-    )
-
-    product_chart_json = json.dumps(
-        product_chart,
-        ensure_ascii=False,
-    )
-
-    # ------------------------------------------------------------------
-    # Tables
-    # ------------------------------------------------------------------
-
-    package_rows = [
-        [
-            row["package"],
-            row["tests"],
-            row["pass"],
-            row["fail"],
-            f'{row["pass_pct"]}%',
-            fmt(row["average_volume_pct"]),
-        ]
-        for row in package_summary
-    ]
-
-    product_rows = [
-        [
-            row["product"],
-            row["tests"],
-            row["pass"],
-            row["fail"],
-            f'{row["pass_pct"]}%',
-            row["number_of_passing_packages"],
-        ]
-        for row in product_summary
-    ]
-
-    fail_rows = [
-        [
-            row["product"],
-            row["package"],
-            row["status"],
-            row["reason"],
-        ]
-        for row in fail_list
-    ]
-
-    # ------------------------------------------------------------------
-    # HTML
-    # ------------------------------------------------------------------
-
-    page = f"""
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>ServiceSets Packing Analysis</title>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-<style>
-
-* {{
-    box-sizing: border-box;
-}}
-
-body {{
-    margin: 0;
-    padding: 30px;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-    background: #f5f6f8;
-    color: #222;
-}}
-
-h1 {{
-    margin-bottom: 5px;
-}}
-
-h2 {{
-    margin-top: 40px;
-}}
-
-.subtitle {{
-    color: #666;
-    margin-bottom: 30px;
-}}
-
-.grid {{
-    display: grid;
-    grid-template-columns:
-        repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-}}
-
-.card {{
-    background: white;
-    border-radius: 12px;
-    padding: 22px;
-    box-shadow:
-        0 2px 8px rgba(0,0,0,.06);
-}}
-
-.metric {{
-    font-size: 32px;
-    font-weight: 700;
-}}
-
-.label {{
-    color: #666;
-    margin-top: 5px;
-}}
-
-.chart {{
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    margin-top: 20px;
-}}
-
-table {{
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}}
-
-th {{
-    background: #eee;
-    text-align: left;
-}}
-
-th, td {{
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-}}
-
-tr:hover {{
-    background: #f8f8f8;
-}}
-
-.pass {{
-    color: #16803c;
-    font-weight: 600;
-}}
-
-.fail {{
-    color: #b42318;
-    font-weight: 600;
-}}
-
-.small {{
-    color: #777;
-    font-size: 13px;
-}}
-
-.section {{
-    margin-top: 40px;
-}}
-
-.scroll {{
-    overflow-x: auto;
-}}
-
-</style>
-</head>
-
-<body>
-
-<h1>ServiceSets Packing Analysis</h1>
-
-<div class="subtitle">
-Automatische analyse van de resultaten van tester.py
-</div>
-
-<div class="grid">
-
-<div class="card">
-    <div class="metric">{total:,}</div>
-    <div class="label">Tests</div>
-</div>
-
-<div class="card">
-    <div class="metric">{passes:,}</div>
-    <div class="label">PASS</div>
-</div>
-
-<div class="card">
-    <div class="metric">{failures:,}</div>
-    <div class="label">FAIL</div>
-</div>
-
-<div class="card">
-    <div class="metric">{pass_pct}%</div>
-    <div class="label">Pass percentage</div>
-</div>
-
-<div class="card">
-    <div class="metric">{counterexamples:,}</div>
-    <div class="label">Counterexamples</div>
-</div>
-
-<div class="card">
-    <div class="metric">{data_problems:,}</div>
-    <div class="label">Data problems</div>
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>PASS versus FAIL</h2>
-
-<div class="chart">
-<canvas id="passFailChart"></canvas>
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Resultaten per verpakking</h2>
-
-<div class="chart">
-<canvas id="packageChart"></canvas>
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Pass percentage per product</h2>
-
-<div class="chart">
-<canvas id="productChart"></canvas>
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Meest voorkomende failure redenen</h2>
-
-<div class="chart">
-<canvas id="reasonChart"></canvas>
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Verpakkingen</h2>
-
-<div class="scroll">
-
-{html_table(
-    [
-        "Verpakking",
-        "Tests",
-        "PASS",
-        "FAIL",
-        "PASS %",
-        "Gem. volume %",
-    ],
-    package_rows,
-)}
-
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Producten</h2>
-
-<div class="scroll">
-
-{html_table(
-    [
-        "Product",
-        "Tests",
-        "PASS",
-        "FAIL",
-        "PASS %",
-        "# passende verpakkingen",
-    ],
-    product_rows,
-)}
-
-</div>
-
-</div>
-
-
-<div class="section">
-
-<h2>Wat past niet?</h2>
-
-<div class="scroll">
-
-{html_table(
-    [
-        "Product",
-        "Verpakking",
-        "Status",
-        "Reden",
-    ],
-    fail_rows,
-)}
-
-</div>
-
-</div>
-
-
-<script>
-
-const packageData =
-    {package_chart_json};
-
-const reasonData =
-    {reason_chart_json};
-
-const productData =
-    {product_chart_json};
-
-
-new Chart(
-    document.getElementById("passFailChart"),
-    {{
-        type: "doughnut",
-
-        data: {{
-            labels: [
-                "PASS",
-                "FAIL"
+    product_stats = (
+        filtered.groupby(
+            [
+                "product",
+                "product_name",
+                "product_dimensions",
             ],
-
-            datasets: [{{
-                data: [
-                    {passes},
-                    {failures}
-                ]
-            }}]
-        }},
-
-        options: {{
-            responsive: true
-        }}
-    }}
-);
-
-
-new Chart(
-    document.getElementById("packageChart"),
-    {{
-        type: "bar",
-
-        data: {{
-            labels:
-                packageData.map(x => x.name),
-
-            datasets: [
-                {{
-                    label: "PASS",
-                    data:
-                        packageData.map(x => x.pass)
-                }},
-                {{
-                    label: "FAIL",
-                    data:
-                        packageData.map(x => x.fail)
-                }}
-            ]
-        }},
-
-        options: {{
-            responsive: true,
-
-            scales: {{
-                y: {{
-                    beginAtZero: true
-                }}
-            }}
-        }}
-    }}
-);
-
-
-new Chart(
-    document.getElementById("productChart"),
-    {{
-        type: "bar",
-
-        data: {{
-            labels:
-                productData.map(x => x.name),
-
-            datasets: [{{
-                label: "Pass percentage",
-
-                data:
-                    productData.map(
-                        x => x.pass_pct
-                    )
-            }}]
-        }},
-
-        options: {{
-            indexAxis: "y",
-
-            responsive: true,
-
-            scales: {{
-                x: {{
-                    beginAtZero: true,
-                    max: 100
-                }}
-            }}
-        }}
-    }}
-);
-
-
-new Chart(
-    document.getElementById("reasonChart"),
-    {{
-        type: "bar",
-
-        data: {{
-            labels:
-                reasonData.map(x => x.name),
-
-            datasets: [{{
-                label: "Aantal",
-
-                data:
-                    reasonData.map(
-                        x => x.count
-                    )
-            }}]
-        }},
-
-        options: {{
-            indexAxis: "y",
-
-            responsive: true,
-
-            scales: {{
-                x: {{
-                    beginAtZero: true
-                }}
-            }}
-        }}
-    }}
-);
-
-</script>
-
-</body>
-</html>
-"""
-
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True,
+            dropna=False,
+        )
+        .agg(
+            tests=("status", "size"),
+            passen=("status", lambda x: (x == "PASS").sum()),
+            failures=("status", lambda x: (x != "PASS").sum()),
+            beste_benutting=(
+                "volume_pct",
+                "min",
+            ),
+        )
+        .reset_index()
     )
 
-    dashboard = output_dir / "dashboard.html"
-
-    dashboard.write_text(
-        page,
-        encoding="utf-8",
+    product_stats["passpercentage"] = (
+        product_stats["passen"]
+        / product_stats["tests"]
+        * 100
     )
 
-    print(
-        f"✓ Dashboard: {dashboard}"
-    )
+    product_stats["product"] = product_stats[
+        "product"
+    ].astype(str)
 
-
-# ============================================================================
-# TEXT REPORT
-# ============================================================================
-
-def write_text_report(
-    path: Path,
-    data: Dict[str, Any],
-    results: List[Dict[str, Any]],
-    product_summary: List[Dict[str, Any]],
-    package_summary: List[Dict[str, Any]],
-    fail_list: List[Dict[str, Any]],
-) -> None:
-
-    total = len(results)
-
-    passes = sum(
-        1
-        for row in results
-        if row["status"] == "PASS"
-    )
-
-    fails = total - passes
-
-    with path.open(
-        "w",
-        encoding="utf-8",
-    ) as f:
-
-        f.write(
-            "SERVICESETS PACKING ANALYSIS\n"
-        )
-
-        f.write(
-            "============================\n\n"
-        )
-
-        f.write(
-            f"Tests: {total}\n"
-        )
-
-        f.write(
-            f"PASS: {passes}\n"
-        )
-
-        f.write(
-            f"FAIL: {fails}\n"
-        )
-
-        f.write(
-            f"PASS percentage: "
-            f"{percentage(passes, total)}%\n\n"
-        )
-
-        f.write(
-            "VERPAKKINGEN\n"
-            "------------\n"
-        )
-
-        for row in package_summary:
-            f.write(
-                f"{row['package']}: "
-                f"{row['pass']} PASS / "
-                f"{row['fail']} FAIL "
-                f"({row['pass_pct']}%)\n"
-            )
-
-        f.write(
-            "\nPRODUCTEN\n"
-            "---------\n"
-        )
-
-        for row in product_summary:
-            f.write(
-                f"{row['product']}: "
-                f"{row['pass']} PASS / "
-                f"{row['fail']} FAIL "
-                f"({row['pass_pct']}%)\n"
-            )
-
-            f.write(
-                f"  Past in: "
-                f"{row['packages_that_fit'] or '-'}\n"
-            )
-
-            f.write(
-                f"  Past niet in: "
-                f"{row['packages_that_fail'] or '-'}\n"
-            )
-
-        f.write(
-            "\nNIET PASSENDE COMBINATIES\n"
-            "-------------------------\n"
-        )
-
-        for row in fail_list:
-            f.write(
-                f"- Product: {row['product']}\n"
-                f"  Verpakking: {row['package']}\n"
-                f"  Status: {row['status']}\n"
-                f"  Reden: {row['reason']}\n\n"
-            )
-
-
-# ============================================================================
-# OPEN BROWSER
-# ============================================================================
-
-def open_dashboard(path: Path) -> None:
-
-    url = path.resolve().as_uri()
-
-    try:
-        webbrowser.open(url)
-        return
-    except Exception:
-        pass
-
-    # Linux fallback.
-    if platform.system() == "Linux":
-        try:
-            subprocess.Popen(
-                ["xdg-open", str(path.resolve())]
-            )
-        except Exception:
-            pass
-
-
-# ============================================================================
-# MAIN
-# ============================================================================
-
-def main() -> None:
-
-    parser = argparse.ArgumentParser(
-        description=(
-            "Analyseer de resultaten van "
-            "ServiceSets tester.py."
-        )
-    )
-
-    parser.add_argument(
-        "--input",
-        default=str(DEFAULT_INPUT),
-        help=(
-            "Map met resultaten van tester.py "
-            "(standaard: test_results)"
-        ),
-    )
-
-    parser.add_argument(
-        "--output",
-        default=str(DEFAULT_OUTPUT),
-        help=(
-            "Map voor analyse-output "
-            "(standaard: test_results/analysis)"
-        ),
-    )
-
-    parser.add_argument(
-        "--open",
-        action="store_true",
-        help="Open dashboard.html automatisch.",
-    )
-
-    args = parser.parse_args()
-
-    input_dir = Path(args.input)
-    output_dir = Path(args.output)
-
-    if not input_dir.exists():
-        sys.exit(
-            f"Inputmap bestaat niet: {input_dir}"
-        )
-
-    print("=" * 70)
-    print(" ServiceSets Packing Results Analyzer")
-    print("=" * 70)
-
-    print(
-        f"\nResultaten lezen uit:\n"
-        f"  {input_dir.resolve()}"
-    )
-
-    data = load_data(input_dir)
-
-    results = build_results(data)
-
-    if not results:
-        print(
-            "\n⚠ Geen testresultaten gevonden."
-        )
-
-        print(
-            "\nJe tester.py moet minimaal "
-            "all_results.json maken."
-        )
-
-        print(
-            "\nVerwacht formaat:"
-        )
-
-        print(
-            """
-[
-  {
-    "product": "3560000",
-    "package": "LW",
-    "fits": true,
-    "volume_pct": 63.2
-  }
-]
-"""
-        )
-
-        sys.exit(1)
-
-    print(
-        f"\n{len(results):,} resultaten analyseren..."
-    )
-
-    product_summary = analyze_products(
-        results
-    )
-
-    package_summary = analyze_packages(
-        results
-    )
-
-    pass_list = build_pass_list(
-        results
-    )
-
-    fail_list = build_fail_list(
-        results
-    )
-
-    reason_summary = analyze_failure_reasons(
-        results
-    )
-
-    # ------------------------------------------------------------------
-    # CSV
-    # ------------------------------------------------------------------
-
-    write_csv(
-        output_dir / "all_results.csv",
+    product_stats = product_stats.sort_values(
         [
-            {
-                "product": row["product"],
-                "package": row["package"],
-                "status": row["status"],
-                "fits": row["fits"],
-                "reason": row["reason"],
-                "volume_pct": row["volume_pct"],
-            }
-            for row in results
+            "passpercentage",
+            "product_name",
+        ]
+    )
+
+    display_products = product_stats.rename(
+        columns={
+            "product": "Artikelnummer",
+            "product_name": "Productnaam",
+            "product_dimensions": "Afmetingen L × B × H",
+            "tests": "Tests",
+            "passen": "Past",
+            "failures": "Past niet",
+            "passpercentage": "Pass %",
+            "beste_benutting": "Beste volume %",
+        }
+    )
+
+    display_products["Pass %"] = display_products[
+        "Pass %"
+    ].round(1)
+
+    display_products["Beste volume %"] = display_products[
+        "Beste volume %"
+    ].round(1)
+
+    st.dataframe(
+        display_products[
+            [
+                "Artikelnummer",
+                "Productnaam",
+                "Afmetingen L × B × H",
+                "Tests",
+                "Past",
+                "Past niet",
+                "Pass %",
+                "Beste volume %",
+            ]
         ],
+        use_container_width=True,
+        hide_index=True,
     )
 
-    write_csv(
-        output_dir / "product_summary.csv",
-        product_summary,
+    st.markdown(
+        '<div class="section-title">Passpercentage per product</div>',
+        unsafe_allow_html=True,
     )
 
-    write_csv(
-        output_dir / "package_summary.csv",
-        package_summary,
+    chart_df = product_stats.head(50).copy()
+
+    chart_df["label"] = (
+        chart_df["product_name"]
+        + " ("
+        + chart_df["product"].astype(str)
+        + ")"
     )
 
-    write_csv(
-        output_dir / "passes.csv",
-        pass_list,
+    fig = px.bar(
+        chart_df.sort_values("passpercentage"),
+        x="passpercentage",
+        y="label",
+        orientation="h",
+        text="passpercentage",
+        title="Producten met laagste passpercentage",
     )
 
-    write_csv(
-        output_dir / "failures.csv",
-        fail_list,
+    fig.update_traces(
+        marker_color=BRAND_GREEN_2,
+        texttemplate="%{text:.1f}%",
     )
 
-    write_csv(
-        output_dir / "failure_reasons.csv",
-        reason_summary,
+    fig.update_layout(
+        template="plotly_white",
+        height=max(
+            420,
+            28 * len(chart_df),
+        ),
+        xaxis_title="Passpercentage",
+        yaxis_title="",
+        margin=dict(l=20, r=20, t=65, b=20),
     )
 
-    # ------------------------------------------------------------------
-    # JSON
-    # ------------------------------------------------------------------
-
-    save_json(
-        output_dir / "product_summary.json",
-        product_summary,
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
     )
 
-    save_json(
-        output_dir / "package_summary.json",
-        package_summary,
+
+# ============================================================
+# PER PACKAGE
+# ============================================================
+
+with tab_packages:
+    st.markdown(
+        '<div class="section-title">Verpakkingsanalyse</div>',
+        unsafe_allow_html=True,
     )
 
-    save_json(
-        output_dir / "failure_reasons.json",
-        reason_summary,
+    package_stats = (
+        filtered.groupby(
+            [
+                "package",
+                "package_dimensions",
+            ],
+            dropna=False,
+        )
+        .agg(
+            tests=("status", "size"),
+            passen=("status", lambda x: (x == "PASS").sum()),
+            failures=("status", lambda x: (x != "PASS").sum()),
+            gemiddelde_benutting=(
+                "volume_pct",
+                "mean",
+            ),
+        )
+        .reset_index()
     )
 
-    # ------------------------------------------------------------------
-    # Report
-    # ------------------------------------------------------------------
-
-    write_text_report(
-        output_dir / "report.txt",
-        data,
-        results,
-        product_summary,
-        package_summary,
-        fail_list,
+    package_stats["passpercentage"] = (
+        package_stats["passen"]
+        / package_stats["tests"]
+        * 100
     )
 
-    # ------------------------------------------------------------------
-    # Dashboard
-    # ------------------------------------------------------------------
-
-    build_dashboard(
-        output_dir,
-        data,
-        results,
-        product_summary,
-        package_summary,
-        pass_list,
-        fail_list,
-        reason_summary,
+    package_display = package_stats.rename(
+        columns={
+            "package": "Verpakking",
+            "package_dimensions": "Afmetingen L × B × H",
+            "tests": "Tests",
+            "passen": "Past",
+            "failures": "Past niet",
+            "passpercentage": "Pass %",
+            "gemiddelde_benutting": "Gem. volume %",
+        }
     )
 
-    # ------------------------------------------------------------------
-    # Console
-    # ------------------------------------------------------------------
+    package_display["Pass %"] = package_display[
+        "Pass %"
+    ].round(1)
 
-    total = len(results)
+    package_display["Gem. volume %"] = package_display[
+        "Gem. volume %"
+    ].round(1)
 
-    passes = sum(
-        1
-        for row in results
-        if row["status"] == "PASS"
+    st.dataframe(
+        package_display[
+            [
+                "Verpakking",
+                "Afmetingen L × B × H",
+                "Tests",
+                "Past",
+                "Past niet",
+                "Pass %",
+                "Gem. volume %",
+            ]
+        ],
+        use_container_width=True,
+        hide_index=True,
     )
 
-    fails = total - passes
-
-    print("\n" + "=" * 70)
-    print(" RESULTAAT")
-    print("=" * 70)
-
-    print(
-        f"\nTests:       {total:,}"
+    st.markdown(
+        '<div class="section-title">Verpakkingen vergelijken</div>',
+        unsafe_allow_html=True,
     )
 
-    print(
-        f"PASS:        {passes:,}"
+    fig = px.bar(
+        package_stats.sort_values("passpercentage"),
+        x="package",
+        y="passpercentage",
+        text="passpercentage",
+        title="Passpercentage per verpakking",
     )
 
-    print(
-        f"FAIL:        {fails:,}"
+    fig.update_traces(
+        marker_color=BRAND_GREEN,
+        texttemplate="%{text:.1f}%",
     )
 
-    print(
-        f"PASS ratio:  {percentage(passes, total)}%"
+    fig.update_layout(
+        template="plotly_white",
+        height=430,
+        yaxis_title="Passpercentage",
+        xaxis_title="",
+        margin=dict(l=20, r=20, t=65, b=20),
     )
 
-    print(
-        "\nBestanden:"
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
     )
 
-    print(
-        f"  {output_dir / 'dashboard.html'}"
+
+# ============================================================
+# FAILURES
+# ============================================================
+
+with tab_failures:
+    st.markdown(
+        '<div class="section-title">Concrete lijst van producten die niet passen</div>',
+        unsafe_allow_html=True,
     )
 
-    print(
-        f"  {output_dir / 'product_summary.csv'}"
-    )
+    failure_df = filtered[
+        filtered["status"] != "PASS"
+    ].copy()
 
-    print(
-        f"  {output_dir / 'package_summary.csv'}"
-    )
+    if failure_df.empty:
+        st.success(
+            "Geen failures in de huidige selectie."
+        )
 
-    print(
-        f"  {output_dir / 'passes.csv'}"
-    )
+    else:
+        failure_display = failure_df[
+            [
+                "product",
+                "product_name",
+                "product_dimensions",
+                "package",
+                "package_dimensions",
+                "status",
+                "reason_text",
+                "volume_pct",
+                "rotation",
+            ]
+        ].copy()
 
-    print(
-        f"  {output_dir / 'failures.csv'}"
-    )
+        failure_display.columns = [
+            "Artikelnummer",
+            "Productnaam",
+            "Productafmetingen",
+            "Verpakking",
+            "Verpakkingsafmetingen",
+            "Status",
+            "Waarom?",
+            "Volume %",
+            "Rotatie",
+        ]
 
-    print(
-        f"  {output_dir / 'report.txt'}"
-    )
+        failure_display["Volume %"] = (
+            pd.to_numeric(
+                failure_display["Volume %"],
+                errors="coerce",
+            ).round(1)
+        )
 
-    print("\n" + "=" * 70)
+        st.dataframe(
+            failure_display,
+            use_container_width=True,
+            hide_index=True,
+            height=620,
+        )
 
-    if args.open:
-        open_dashboard(
-            output_dir / "dashboard.html"
+        st.download_button(
+            "Download failures als CSV",
+            data=failure_display.to_csv(
+                index=False
+            ).encode("utf-8"),
+            file_name="servicesets_failures.csv",
+            mime="text/csv",
         )
 
 
-if __name__ == "__main__":
-    main()
+# ============================================================
+# ALL DETAILS
+# ============================================================
+
+with tab_details:
+    st.markdown(
+        '<div class="section-title">Alle testresultaten</div>',
+        unsafe_allow_html=True,
+    )
+
+    detail_display = filtered[
+        [
+            "product",
+            "product_name",
+            "product_dimensions",
+            "product_volume_cm3",
+            "product_weight_g",
+            "package",
+            "package_dimensions",
+            "package_volume_cm3",
+            "status",
+            "reason_text",
+            "volume_pct",
+            "rotation",
+        ]
+    ].copy()
+
+    detail_display.columns = [
+        "Artikelnummer",
+        "Productnaam",
+        "Productafmetingen",
+        "Productvolume cm³",
+        "Gewicht g",
+        "Verpakking",
+        "Verpakkingsafmetingen",
+        "Verpakkingsvolume cm³",
+        "Resultaat",
+        "Reden",
+        "Volume %",
+        "Rotatie",
+    ]
+
+    st.dataframe(
+        detail_display,
+        use_container_width=True,
+        hide_index=True,
+        height=700,
+    )
+
+    st.download_button(
+        "Download huidige selectie als CSV",
+        data=detail_display.to_csv(
+            index=False
+        ).encode("utf-8"),
+        file_name="servicesets_analysis.csv",
+        mime="text/csv",
+    )
+
+
+# ============================================================
+# PRODUCT DETAIL / BESTE VERPAKKING
+# ============================================================
+
+st.markdown(
+    '<div class="section-title">Beste verpakking per product</div>',
+    unsafe_allow_html=True,
+)
+
+passes_df = filtered[
+    filtered["status"] == "PASS"
+].copy()
+
+if not passes_df.empty:
+
+    best = (
+        passes_df.sort_values(
+            [
+                "product",
+                "package_volume_cm3",
+            ]
+        )
+        .groupby(
+            [
+                "product",
+                "product_name",
+                "product_dimensions",
+            ],
+            as_index=False,
+        )
+        .first()
+    )
+
+    best_display = best[
+        [
+            "product",
+            "product_name",
+            "product_dimensions",
+            "package",
+            "package_dimensions",
+            "volume_pct",
+            "rotation",
+        ]
+    ].copy()
+
+    best_display.columns = [
+        "Artikelnummer",
+        "Productnaam",
+        "Productafmetingen",
+        "Kleinste passende verpakking",
+        "Verpakkingsafmetingen",
+        "Volume %",
+        "Rotatie",
+    ]
+
+    best_display["Volume %"] = best_display[
+        "Volume %"
+    ].round(1)
+
+    st.dataframe(
+        best_display,
+        use_container_width=True,
+        hide_index=True,
+    )
+
+else:
+    st.info(
+        "Er zijn geen passende verpakkingen gevonden in de huidige selectie."
+    )
+
+
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.markdown(
+    f"""
+    <hr style="border:0;border-top:1px solid #E1E7E4;margin-top:35px;">
+    <div style="text-align:center;color:{GREY};padding:10px 0 25px;">
+        <strong style="color:{BRAND_GREEN};">ServiceSets.com</strong>
+        · Packing Analysis
+        · gebaseerd op de testresultaten uit <code>all_results.json</code>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
