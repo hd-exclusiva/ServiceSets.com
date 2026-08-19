@@ -1663,8 +1663,8 @@
     "reason_details": [],
     "rotation": [
       15.2,
-      3.07,
-      6.85
+      6.85,
+      3.07
     ],
     "volume_pct": 13.3,
     "product_volume_cm3": 319.65,
@@ -1693,8 +1693,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.07,
       6.85,
+      3.07,
       15.2
     ],
     "volume_pct": 12.1,
@@ -1724,9 +1724,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.07,
+      15.2,
       6.85,
-      15.2
+      3.07
     ],
     "volume_pct": 8.0,
     "product_volume_cm3": 319.65,
@@ -1755,9 +1755,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.07,
+      15.2,
       6.85,
-      15.2
+      3.07
     ],
     "volume_pct": 6.9,
     "product_volume_cm3": 319.65,
@@ -1786,9 +1786,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.07,
+      15.2,
       6.85,
-      15.2
+      3.07
     ],
     "volume_pct": 4.8,
     "product_volume_cm3": 319.65,
@@ -2012,8 +2012,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.5,
+      3.5,
       13.0
     ],
     "volume_pct": 11.2,
@@ -2043,8 +2043,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.5,
+      3.5,
       13.0
     ],
     "volume_pct": 7.4,
@@ -2074,8 +2074,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.5,
+      3.5,
       13.0
     ],
     "volume_pct": 6.4,
@@ -2105,8 +2105,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.5,
+      3.5,
       13.0
     ],
     "volume_pct": 4.5,
@@ -2308,8 +2308,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      1.0,
-      10.0
+      10.0,
+      1.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -2369,9 +2369,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -2431,9 +2431,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -2634,8 +2634,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      1.0,
-      10.0
+      10.0,
+      1.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -2695,9 +2695,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -2757,9 +2757,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -2960,8 +2960,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      1.0,
-      10.0
+      10.0,
+      1.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -3021,9 +3021,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -3083,9 +3083,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -3286,8 +3286,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      1.0,
-      10.0
+      10.0,
+      1.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -3347,9 +3347,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -3409,9 +3409,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.0,
+      15.0,
       10.0,
-      15.0
+      1.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -3984,9 +3984,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      10.7,
       7.6,
-      10.7
+      0.8
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 65.06,
@@ -4015,9 +4015,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      10.7,
       7.6,
-      10.7
+      0.8
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 65.06,
@@ -4046,9 +4046,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      10.7,
       7.6,
-      10.7
+      0.8
     ],
     "volume_pct": 1.6,
     "product_volume_cm3": 65.06,
@@ -4077,9 +4077,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      10.7,
       7.6,
-      10.7
+      0.8
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 65.06,
@@ -4108,9 +4108,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      10.7,
       7.6,
-      10.7
+      0.8
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 65.06,
@@ -4139,9 +4139,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 7.6,
     "product_volume_cm3": 15.96,
@@ -4170,9 +4170,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 15.96,
@@ -4201,9 +4201,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 15.96,
@@ -4232,9 +4232,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 15.96,
@@ -4263,9 +4263,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 15.96,
@@ -4294,9 +4294,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 15.96,
@@ -4325,9 +4325,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 15.96,
@@ -4356,9 +4356,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 15.96,
@@ -4387,9 +4387,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 15.96,
@@ -4418,9 +4418,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
@@ -4449,9 +4449,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -4480,9 +4480,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -4511,9 +4511,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -4542,9 +4542,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -4573,9 +4573,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -4604,9 +4604,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -4635,9 +4635,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -4666,9 +4666,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -4697,9 +4697,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -4728,9 +4728,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -4759,9 +4759,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -4790,9 +4790,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -4821,9 +4821,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -4852,9 +4852,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -4883,9 +4883,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -4914,9 +4914,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -4945,9 +4945,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -4976,9 +4976,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -5007,9 +5007,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -5038,9 +5038,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -5069,9 +5069,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 8.3,
     "product_volume_cm3": 17.34,
@@ -5100,9 +5100,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 3.6,
     "product_volume_cm3": 17.34,
@@ -5131,9 +5131,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 17.34,
@@ -5162,9 +5162,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 1.9,
     "product_volume_cm3": 17.34,
@@ -5193,9 +5193,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 1.5,
     "product_volume_cm3": 17.34,
@@ -5224,9 +5224,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 17.34,
@@ -5255,9 +5255,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 17.34,
@@ -5286,9 +5286,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 17.34,
@@ -5317,9 +5317,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 17.34,
@@ -5348,9 +5348,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      3.91,
       1.92,
-      2.31,
-      3.91
+      2.31
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 17.34,
@@ -5379,9 +5379,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -5410,9 +5410,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -5441,9 +5441,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -5472,9 +5472,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -5503,9 +5503,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -5534,9 +5534,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -5565,9 +5565,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -5596,9 +5596,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -5627,9 +5627,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -5658,9 +5658,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -5689,9 +5689,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -5720,9 +5720,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -5751,9 +5751,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -5782,9 +5782,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -5813,9 +5813,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -5844,9 +5844,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -5875,9 +5875,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -5906,9 +5906,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -5937,9 +5937,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -5968,9 +5968,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -5999,9 +5999,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -6030,9 +6030,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -6061,9 +6061,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -6092,9 +6092,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -6123,9 +6123,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -6154,9 +6154,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -6185,9 +6185,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -6216,9 +6216,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -6247,9 +6247,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -6278,9 +6278,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -6309,9 +6309,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -6340,9 +6340,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -6371,9 +6371,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -6402,9 +6402,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -6433,9 +6433,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -6464,9 +6464,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -6495,9 +6495,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -6526,9 +6526,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -6557,9 +6557,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -6588,9 +6588,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -6619,9 +6619,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 19.69,
@@ -6650,9 +6650,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 19.69,
@@ -6681,9 +6681,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 19.69,
@@ -6712,9 +6712,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 19.69,
@@ -6743,9 +6743,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 19.69,
@@ -6774,9 +6774,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 19.69,
@@ -6805,9 +6805,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 19.69,
@@ -6836,9 +6836,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 19.69,
@@ -6867,9 +6867,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 19.69,
@@ -6898,9 +6898,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.53,
+      2.97,
       2.62,
-      2.97
+      2.53
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 19.69,
@@ -11208,8 +11208,8 @@
     "reason_details": [],
     "rotation": [
       9.0,
-      0.5,
-      4.5
+      4.5,
+      0.5
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 20.25,
@@ -11526,8 +11526,8 @@
     "reason_details": [],
     "rotation": [
       20.0,
-      3.5,
-      6.0
+      6.0,
+      3.5
     ],
     "volume_pct": 36.5,
     "product_volume_cm3": 420.0,
@@ -11557,8 +11557,8 @@
     "reason_details": [],
     "rotation": [
       20.0,
-      3.5,
-      6.0
+      6.0,
+      3.5
     ],
     "volume_pct": 17.5,
     "product_volume_cm3": 420.0,
@@ -11587,8 +11587,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.0,
+      3.5,
       20.0
     ],
     "volume_pct": 15.9,
@@ -11618,9 +11618,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
+      20.0,
       6.0,
-      20.0
+      3.5
     ],
     "volume_pct": 10.5,
     "product_volume_cm3": 420.0,
@@ -11649,8 +11649,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.0,
+      3.5,
       20.0
     ],
     "volume_pct": 9.1,
@@ -11680,9 +11680,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
+      20.0,
       6.0,
-      20.0
+      3.5
     ],
     "volume_pct": 6.4,
     "product_volume_cm3": 420.0,
@@ -11844,8 +11844,8 @@
     "reason_details": [],
     "rotation": [
       22.0,
-      3.5,
-      6.0
+      6.0,
+      3.5
     ],
     "volume_pct": 40.1,
     "product_volume_cm3": 462.0,
@@ -11907,8 +11907,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.0,
+      3.5,
       22.0
     ],
     "volume_pct": 17.5,
@@ -11971,8 +11971,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       6.0,
+      3.5,
       22.0
     ],
     "volume_pct": 10.0,
@@ -12002,9 +12002,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
+      22.0,
       6.0,
-      22.0
+      3.5
     ],
     "volume_pct": 7.0,
     "product_volume_cm3": 462.0,
@@ -14703,9 +14703,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 17.7,
     "product_volume_cm3": 84.7,
@@ -14796,9 +14796,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 7.4,
     "product_volume_cm3": 84.7,
@@ -14827,9 +14827,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 3.5,
     "product_volume_cm3": 84.7,
@@ -14858,9 +14858,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 3.2,
     "product_volume_cm3": 84.7,
@@ -14889,9 +14889,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 84.7,
@@ -14920,9 +14920,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 84.7,
@@ -14951,9 +14951,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.8,
       5.5,
-      5.5
+      5.5,
+      2.8
     ],
     "volume_pct": 1.3,
     "product_volume_cm3": 84.7,
@@ -15483,9 +15483,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.1,
+      12.0,
       10.0,
-      12.0
+      0.1
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 12.0,
@@ -15545,9 +15545,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.1,
+      12.0,
       10.0,
-      12.0
+      0.1
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 12.0,
@@ -15607,9 +15607,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.1,
+      12.0,
       10.0,
-      12.0
+      0.1
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 12.0,
@@ -15975,9 +15975,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 12.6,
     "product_volume_cm3": 26.25,
@@ -16006,9 +16006,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 5.5,
     "product_volume_cm3": 26.25,
@@ -16037,9 +16037,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 26.25,
@@ -16068,9 +16068,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 2.8,
     "product_volume_cm3": 26.25,
@@ -16099,9 +16099,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 26.25,
@@ -16130,9 +16130,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 26.25,
@@ -16161,9 +16161,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 26.25,
@@ -16192,9 +16192,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 26.25,
@@ -16223,9 +16223,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 26.25,
@@ -16254,9 +16254,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      5.0,
       3.5,
-      5.0
+      1.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 26.25,
@@ -17641,8 +17641,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 16.4,
@@ -17672,8 +17672,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 10.8,
@@ -17703,8 +17703,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 9.4,
@@ -17734,8 +17734,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 6.5,
@@ -17962,8 +17962,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 16.4,
@@ -17993,8 +17993,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 10.8,
@@ -18024,8 +18024,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 9.4,
@@ -18055,8 +18055,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 6.5,
@@ -18283,8 +18283,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 16.4,
@@ -18314,8 +18314,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 10.8,
@@ -18345,8 +18345,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 9.4,
@@ -18376,8 +18376,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      4.5,
       6.0,
+      4.5,
       16.0
     ],
     "volume_pct": 6.5,
@@ -18566,9 +18566,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      12.0,
       1.0,
-      1.0,
-      12.0
+      1.0
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 12.0,
@@ -18628,9 +18628,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      12.0,
       1.0,
-      1.0,
-      12.0
+      1.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 12.0,
@@ -18659,9 +18659,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      12.0,
       1.0,
-      1.0,
-      12.0
+      1.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 12.0,
@@ -18690,9 +18690,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      12.0,
       1.0,
-      1.0,
-      12.0
+      1.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 12.0,
@@ -19341,9 +19341,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 7.6,
     "product_volume_cm3": 15.96,
@@ -19372,9 +19372,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 15.96,
@@ -19403,9 +19403,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 15.96,
@@ -19434,9 +19434,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 15.96,
@@ -19465,9 +19465,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 15.96,
@@ -19496,9 +19496,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 15.96,
@@ -19527,9 +19527,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 15.96,
@@ -19558,9 +19558,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 15.96,
@@ -19589,9 +19589,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 15.96,
@@ -19620,9 +19620,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
@@ -19651,9 +19651,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 7.6,
     "product_volume_cm3": 15.96,
@@ -19682,9 +19682,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 15.96,
@@ -19713,9 +19713,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 15.96,
@@ -19744,9 +19744,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 15.96,
@@ -19775,9 +19775,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 15.96,
@@ -19806,9 +19806,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 15.96,
@@ -19837,9 +19837,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 15.96,
@@ -19868,9 +19868,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 15.96,
@@ -19899,9 +19899,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 15.96,
@@ -19930,9 +19930,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      3.8,
       2.8,
-      3.8
+      1.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
@@ -20133,8 +20133,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      1.5,
-      10.0
+      10.0,
+      1.5
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 225.0,
@@ -20194,9 +20194,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      15.0,
       10.0,
-      15.0
+      1.5
     ],
     "volume_pct": 5.6,
     "product_volume_cm3": 225.0,
@@ -20256,9 +20256,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      15.0,
       10.0,
-      15.0
+      1.5
     ],
     "volume_pct": 3.4,
     "product_volume_cm3": 225.0,
@@ -20529,9 +20529,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      15.0,
       6.6,
-      8.0,
-      15.0
+      8.0
     ],
     "volume_pct": 19.8,
     "product_volume_cm3": 792.0,
@@ -20560,9 +20560,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      15.0,
       6.6,
-      8.0,
-      15.0
+      8.0
     ],
     "volume_pct": 17.2,
     "product_volume_cm3": 792.0,
@@ -20591,9 +20591,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      15.0,
       6.6,
-      8.0,
-      15.0
+      8.0
     ],
     "volume_pct": 12.0,
     "product_volume_cm3": 792.0,
@@ -21526,9 +21526,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      18.0,
       2.0,
-      2.0,
-      18.0
+      2.0
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 72.0,
@@ -21588,9 +21588,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      18.0,
       2.0,
-      2.0,
-      18.0
+      2.0
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 72.0,
@@ -22214,9 +22214,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      20.0,
       1.5,
-      20.0
+      15.0
     ],
     "volume_pct": 11.2,
     "product_volume_cm3": 450.0,
@@ -22276,9 +22276,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      20.0,
       1.5,
-      20.0
+      15.0
     ],
     "volume_pct": 6.8,
     "product_volume_cm3": 450.0,
@@ -22548,9 +22548,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.9,
     "product_volume_cm3": 195.0,
@@ -22579,9 +22579,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.2,
     "product_volume_cm3": 195.0,
@@ -22610,9 +22610,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 3.0,
     "product_volume_cm3": 195.0,
@@ -22999,8 +22999,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 22.9,
@@ -23030,8 +23030,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 10.0,
@@ -23061,8 +23061,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 7.5,
@@ -23092,8 +23092,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 5.2,
@@ -23123,8 +23123,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 4.2,
@@ -23154,8 +23154,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 2.0,
@@ -23185,8 +23185,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 1.8,
@@ -23216,8 +23216,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 1.2,
@@ -23247,8 +23247,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 1.0,
@@ -23278,8 +23278,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.0,
       4.0,
+      2.0,
       6.0
     ],
     "volume_pct": 0.7,
@@ -23473,9 +23473,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      9.0,
       7.0,
-      9.0
+      2.5
     ],
     "volume_pct": 6.6,
     "product_volume_cm3": 157.5,
@@ -23504,9 +23504,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      9.0,
       7.0,
-      9.0
+      2.5
     ],
     "volume_pct": 6.0,
     "product_volume_cm3": 157.5,
@@ -23535,9 +23535,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      9.0,
       7.0,
-      9.0
+      2.5
     ],
     "volume_pct": 3.9,
     "product_volume_cm3": 157.5,
@@ -23566,9 +23566,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      9.0,
       7.0,
-      9.0
+      2.5
     ],
     "volume_pct": 3.4,
     "product_volume_cm3": 157.5,
@@ -23597,9 +23597,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      9.0,
       7.0,
-      9.0
+      2.5
     ],
     "volume_pct": 2.4,
     "product_volume_cm3": 157.5,
@@ -23800,8 +23800,8 @@
     "reason_details": [],
     "rotation": [
       14.0,
-      2.5,
-      9.0
+      9.0,
+      2.5
     ],
     "volume_pct": 13.1,
     "product_volume_cm3": 315.0,
@@ -23861,9 +23861,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      14.0,
       9.0,
-      14.0
+      2.5
     ],
     "volume_pct": 7.9,
     "product_volume_cm3": 315.0,
@@ -23923,9 +23923,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.5,
+      14.0,
       9.0,
-      14.0
+      2.5
     ],
     "volume_pct": 4.8,
     "product_volume_cm3": 315.0,
@@ -23987,8 +23987,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
       6.0,
+      2.1,
       8.5
     ],
     "volume_pct": 22.4,
@@ -24081,8 +24081,8 @@
     "reason_details": [],
     "rotation": [
       8.5,
-      2.1,
-      6.0
+      6.0,
+      2.1
     ],
     "volume_pct": 9.3,
     "product_volume_cm3": 107.1,
@@ -24111,9 +24111,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.5,
       6.0,
-      8.5
+      2.1
     ],
     "volume_pct": 4.5,
     "product_volume_cm3": 107.1,
@@ -24142,9 +24142,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.5,
       6.0,
-      8.5
+      2.1
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 107.1,
@@ -24173,9 +24173,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.5,
       6.0,
-      8.5
+      2.1
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 107.1,
@@ -24204,9 +24204,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.5,
       6.0,
-      8.5
+      2.1
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 107.1,
@@ -24235,9 +24235,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.5,
       6.0,
-      8.5
+      2.1
     ],
     "volume_pct": 1.6,
     "product_volume_cm3": 107.1,
@@ -24395,8 +24395,8 @@
     "reason_details": [],
     "rotation": [
       8.7,
-      2.1,
-      6.0
+      6.0,
+      2.1
     ],
     "volume_pct": 9.5,
     "product_volume_cm3": 109.62,
@@ -24425,9 +24425,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.7,
       6.0,
-      8.7
+      2.1
     ],
     "volume_pct": 4.6,
     "product_volume_cm3": 109.62,
@@ -24456,9 +24456,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.7,
       6.0,
-      8.7
+      2.1
     ],
     "volume_pct": 4.2,
     "product_volume_cm3": 109.62,
@@ -24487,9 +24487,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.7,
       6.0,
-      8.7
+      2.1
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 109.62,
@@ -24518,9 +24518,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.7,
       6.0,
-      8.7
+      2.1
     ],
     "volume_pct": 2.4,
     "product_volume_cm3": 109.62,
@@ -24549,9 +24549,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      2.1,
+      8.7,
       6.0,
-      8.7
+      2.1
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 109.62,
@@ -24580,8 +24580,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
       3.5,
+      0.8,
       7.5
     ],
     "volume_pct": 10.0,
@@ -24611,9 +24611,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 4.4,
     "product_volume_cm3": 21.0,
@@ -24642,9 +24642,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 21.0,
@@ -24673,9 +24673,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 21.0,
@@ -24704,9 +24704,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 21.0,
@@ -24735,9 +24735,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 0.9,
     "product_volume_cm3": 21.0,
@@ -24766,9 +24766,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 21.0,
@@ -24797,9 +24797,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.0,
@@ -24828,9 +24828,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.0,
@@ -24859,9 +24859,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.8,
+      7.5,
       3.5,
-      7.5
+      0.8
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 21.0,
@@ -24890,9 +24890,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 1.5,
@@ -24921,9 +24921,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 1.5,
@@ -24952,9 +24952,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 1.5,
@@ -24983,9 +24983,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 1.5,
@@ -25014,9 +25014,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 1.5,
@@ -25045,9 +25045,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 1.5,
@@ -25076,9 +25076,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 1.5,
@@ -25107,9 +25107,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 1.5,
@@ -25138,9 +25138,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 1.5,
@@ -25169,9 +25169,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.2,
+      5.0,
       1.5,
-      5.0
+      0.2
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 1.5,
@@ -25544,9 +25544,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 10.4,
     "product_volume_cm3": 21.66,
@@ -25575,9 +25575,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 4.5,
     "product_volume_cm3": 21.66,
@@ -25606,9 +25606,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 3.4,
     "product_volume_cm3": 21.66,
@@ -25637,9 +25637,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 21.66,
@@ -25668,9 +25668,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 1.9,
     "product_volume_cm3": 21.66,
@@ -25699,9 +25699,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 0.9,
     "product_volume_cm3": 21.66,
@@ -25730,9 +25730,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 21.66,
@@ -25761,9 +25761,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.66,
@@ -25792,9 +25792,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.66,
@@ -25823,9 +25823,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       3.8,
-      3.8
+      3.8,
+      1.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 21.66,
@@ -25887,9 +25887,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -26011,9 +26011,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26042,9 +26042,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26073,9 +26073,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -26104,9 +26104,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -26135,9 +26135,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -26199,9 +26199,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -26323,9 +26323,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26354,9 +26354,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26385,9 +26385,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -26416,9 +26416,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -26447,9 +26447,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -26511,9 +26511,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -26635,9 +26635,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26666,9 +26666,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26697,9 +26697,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -26728,9 +26728,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -26759,9 +26759,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -26823,9 +26823,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -26947,9 +26947,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -26978,9 +26978,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -27009,9 +27009,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -27040,9 +27040,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -27071,9 +27071,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -27343,9 +27343,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.9,
     "product_volume_cm3": 195.0,
@@ -27374,9 +27374,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.2,
     "product_volume_cm3": 195.0,
@@ -27405,9 +27405,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 3.0,
     "product_volume_cm3": 195.0,
@@ -27806,9 +27806,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.2,
       6.2,
-      6.2
+      6.2,
+      1.2
     ],
     "volume_pct": 9.6,
     "product_volume_cm3": 46.13,
@@ -27930,9 +27930,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.2,
       6.2,
-      6.2
+      6.2,
+      1.2
     ],
     "volume_pct": 1.9,
     "product_volume_cm3": 46.13,
@@ -27961,9 +27961,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.2,
       6.2,
-      6.2
+      6.2,
+      1.2
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 46.13,
@@ -27992,9 +27992,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.2,
       6.2,
-      6.2
+      6.2,
+      1.2
     ],
     "volume_pct": 1.2,
     "product_volume_cm3": 46.13,
@@ -28023,9 +28023,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.2,
       6.2,
-      6.2
+      6.2,
+      1.2
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 46.13,
@@ -28054,9 +28054,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.2,
       6.2,
-      6.2
+      6.2,
+      1.2
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 46.13,
@@ -28151,9 +28151,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 1.2,
     "product_volume_cm3": 7.5,
@@ -28182,9 +28182,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 7.5,
@@ -28214,8 +28214,8 @@
     "reason_details": [],
     "rotation": [
       10.0,
-      0.5,
-      1.5
+      1.5,
+      0.5
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 7.5,
@@ -28244,9 +28244,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 7.5,
@@ -28275,9 +28275,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 7.5,
@@ -28306,9 +28306,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 7.5,
@@ -28337,9 +28337,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 7.5,
@@ -28368,9 +28368,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.5,
-      10.0
+      0.5
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 7.5,
@@ -28465,9 +28465,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 9.0,
@@ -28496,9 +28496,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 9.0,
@@ -28528,8 +28528,8 @@
     "reason_details": [],
     "rotation": [
       10.0,
-      0.5,
-      1.8
+      1.8,
+      0.5
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 9.0,
@@ -28558,9 +28558,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 9.0,
@@ -28589,9 +28589,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 9.0,
@@ -28620,9 +28620,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 9.0,
@@ -28651,9 +28651,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 9.0,
@@ -28682,9 +28682,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.5,
+      10.0,
       1.8,
-      10.0
+      0.5
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 9.0,
@@ -28713,9 +28713,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 2.25,
@@ -28744,9 +28744,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 2.25,
@@ -28775,9 +28775,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 2.25,
@@ -28806,9 +28806,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 2.25,
@@ -28837,9 +28837,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 2.25,
@@ -28868,9 +28868,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 2.25,
@@ -28899,9 +28899,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 2.25,
@@ -28930,9 +28930,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 2.25,
@@ -28961,9 +28961,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 2.25,
@@ -28992,9 +28992,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      5.0,
       1.5,
-      5.0
+      0.3
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 2.25,
@@ -29937,9 +29937,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.9,
     "product_volume_cm3": 195.0,
@@ -29968,9 +29968,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.2,
     "product_volume_cm3": 195.0,
@@ -29999,9 +29999,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 3.0,
     "product_volume_cm3": 195.0,
@@ -30271,9 +30271,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.9,
     "product_volume_cm3": 195.0,
@@ -30302,9 +30302,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 4.2,
     "product_volume_cm3": 195.0,
@@ -30333,9 +30333,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      13.0,
+      15.0,
       1.0,
-      15.0
+      13.0
     ],
     "volume_pct": 3.0,
     "product_volume_cm3": 195.0,
@@ -30532,9 +30532,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 10.9,
     "product_volume_cm3": 262.5,
@@ -30563,9 +30563,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 9.9,
     "product_volume_cm3": 262.5,
@@ -30594,9 +30594,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 6.6,
     "product_volume_cm3": 262.5,
@@ -30625,9 +30625,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 5.7,
     "product_volume_cm3": 262.5,
@@ -30656,9 +30656,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 4.0,
     "product_volume_cm3": 262.5,
@@ -30855,9 +30855,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 10.9,
     "product_volume_cm3": 262.5,
@@ -30886,9 +30886,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 9.9,
     "product_volume_cm3": 262.5,
@@ -30917,9 +30917,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 6.6,
     "product_volume_cm3": 262.5,
@@ -30948,9 +30948,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 5.7,
     "product_volume_cm3": 262.5,
@@ -30979,9 +30979,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      10.5,
       5.0,
-      5.0,
-      10.5
+      5.0
     ],
     "volume_pct": 4.0,
     "product_volume_cm3": 262.5,
@@ -31043,9 +31043,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -31167,9 +31167,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -31198,9 +31198,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -31229,9 +31229,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -31260,9 +31260,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -31291,9 +31291,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -31355,9 +31355,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -31479,9 +31479,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -31510,9 +31510,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -31541,9 +31541,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -31572,9 +31572,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -31603,9 +31603,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      0.3,
+      7.5,
       6.5,
-      7.5
+      0.3
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -31667,8 +31667,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
       5.5,
+      1.5,
       8.5
     ],
     "volume_pct": 14.7,
@@ -31761,8 +31761,8 @@
     "reason_details": [],
     "rotation": [
       8.5,
-      1.5,
-      5.5
+      5.5,
+      1.5
     ],
     "volume_pct": 6.1,
     "product_volume_cm3": 70.12,
@@ -31791,9 +31791,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      8.5,
       5.5,
-      8.5
+      1.5
     ],
     "volume_pct": 2.9,
     "product_volume_cm3": 70.12,
@@ -31822,9 +31822,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      8.5,
       5.5,
-      8.5
+      1.5
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 70.12,
@@ -31853,9 +31853,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      8.5,
       5.5,
-      8.5
+      1.5
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 70.12,
@@ -31884,9 +31884,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      8.5,
       5.5,
-      8.5
+      1.5
     ],
     "volume_pct": 1.5,
     "product_volume_cm3": 70.12,
@@ -31915,9 +31915,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      1.5,
+      8.5,
       5.5,
-      8.5
+      1.5
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 70.12,
