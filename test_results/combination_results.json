@@ -1,1 +1,2865 @@
-[]
+[
+  {
+    "scenario_id": "koffie_basis",
+    "scenario_name": "Koffie service-set (basis)",
+    "category": "koffie",
+    "description": "Standaard koffiebeleving voor 2 kopjes: sachet, cups, suiker- en creamersticks, filter.",
+    "items": [
+      {
+        "product_id": "3552200",
+        "product_name": "Koffie sachet 60gr (+-8 kops)",
+        "quantity": 1,
+        "note": "Koffie sachet 60gr (+-8 kops)"
+      },
+      {
+        "product_id": "3552235",
+        "product_name": "Koffie cup Lungo nr6 aluminium",
+        "quantity": 2,
+        "note": "Koffie cup Lungo nr6 aluminium"
+      },
+      {
+        "product_id": "3552400",
+        "product_name": "Stick Welcome Suiker coffee",
+        "quantity": 2,
+        "note": "Stick Welcome Suiker coffee"
+      },
+      {
+        "product_id": "3552500",
+        "product_name": "Stick Welcome Creamer coffee",
+        "quantity": 2,
+        "note": "Stick Welcome Creamer coffee"
+      },
+      {
+        "product_id": "3552600",
+        "product_name": "Koffiefilter los",
+        "quantity": 1,
+        "note": "Koffiefilter los"
+      }
+    ],
+    "distinct_articles": 5,
+    "total_quantity": 8,
+    "fits_any_package": true,
+    "smallest_fitting_package": "Doosje Hoog",
+    "packages_that_fit": [
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup",
+      "Coffee set box",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552200#0",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ],
+          "fitted_items": []
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 0,
+        "unfitted_count": 8
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552200#0",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ],
+          "fitted_items": []
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 100.0,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 0,
+        "unfitted_count": 8
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#2",
+            "3552200#0"
+          ],
+          "fitted_items": [
+            "3552235#1",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 6,
+        "unfitted_count": 2
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#2"
+          ],
+          "fitted_items": [
+            "3552235#1",
+            "3552200#0",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 98.2,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 7,
+        "unfitted_count": 1
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#2",
+            "3552200#0",
+            "3552600#7"
+          ],
+          "fitted_items": [
+            "3552235#1",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 78.9,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 5,
+        "unfitted_count": 3
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552200#0"
+          ],
+          "fitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 37.9,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 7,
+        "unfitted_count": 1
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552200#0"
+          ],
+          "fitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 34.4,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 7,
+        "unfitted_count": 1
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552200#0",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 22.7,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 8,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552200#0",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 19.7,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 8,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3552235#1",
+            "3552235#2",
+            "3552200#0",
+            "3552600#7",
+            "3552500#5",
+            "3552500#6",
+            "3552400#3",
+            "3552400#4"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 909.3,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 13.8,
+        "total_weight_g": 86.0,
+        "package_max_weight_g": null,
+        "number_of_products": 8,
+        "fitted_count": 8,
+        "unfitted_count": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": "koffie_thee_mix",
+    "scenario_name": "Koffie & thee mix-set",
+    "category": "koffie",
+    "description": "Variatieset met 4 theesmaken, koffiepads en koekjes.",
+    "items": [
+      {
+        "product_id": "3552305",
+        "product_name": "Thee Quiero Earl Grey",
+        "quantity": 1,
+        "note": "Thee Quiero Earl Grey"
+      },
+      {
+        "product_id": "3552317",
+        "product_name": "Thee Quiero Green Lemon",
+        "quantity": 1,
+        "note": "Thee Quiero Green Lemon"
+      },
+      {
+        "product_id": "3552316",
+        "product_name": "Thee Quiero Green tea",
+        "quantity": 1,
+        "note": "Thee Quiero Green tea"
+      },
+      {
+        "product_id": "3552315",
+        "product_name": "Thee Quiero Rooibos Orange",
+        "quantity": 1,
+        "note": "Thee Quiero Rooibos Orange"
+      },
+      {
+        "product_id": "3558300",
+        "product_name": "Koffie pad regular",
+        "quantity": 3,
+        "note": "Koffie pad regular"
+      },
+      {
+        "product_id": "3552660",
+        "product_name": "Koffiekoekje per st verpakt",
+        "quantity": 2,
+        "note": "Koffiekoekje per st verpakt"
+      }
+    ],
+    "distinct_articles": 6,
+    "total_quantity": 9,
+    "fits_any_package": true,
+    "smallest_fitting_package": "Coffee set box",
+    "packages_that_fit": [
+      "Coffee set box",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ],
+          "fitted_items": [
+            "3552660#7",
+            "3552660#8"
+          ]
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 2,
+        "unfitted_count": 7
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6"
+          ]
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 50.0,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 3,
+        "unfitted_count": 6
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 37.3,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 25.8,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 20.7,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 10.0,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 9.0,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 6.0,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 5.2,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3558300#4",
+            "3558300#5",
+            "3558300#6",
+            "3552660#7",
+            "3552660#8",
+            "3552305#0",
+            "3552317#1",
+            "3552316#2",
+            "3552315#3"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 238.88,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 3.6,
+        "total_weight_g": 41.0,
+        "package_max_weight_g": null,
+        "number_of_products": 9,
+        "fitted_count": 9,
+        "unfitted_count": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": "limonade_drank_set",
+    "scenario_name": "Limonade & drank-set",
+    "category": "koffie",
+    "description": "Meerdere-aantallen scenario: sticks limonade + kruiden + water + bekers. Test expliciet 'meerdere van hetzelfde artikel samen'.",
+    "items": [
+      {
+        "product_id": "3552520",
+        "product_name": "Stick Limonade",
+        "quantity": 6,
+        "note": "Stick Limonade (6x)"
+      },
+      {
+        "product_id": "3552522",
+        "product_name": "Stick Peper 0.2gram",
+        "quantity": 2,
+        "note": "Stick Peper 0.2gram"
+      },
+      {
+        "product_id": "3552523",
+        "product_name": "Stick Zout 1gram",
+        "quantity": 2,
+        "note": "Stick Zout 1gram"
+      },
+      {
+        "product_id": "3552528",
+        "product_name": "Flesje water",
+        "quantity": 1,
+        "note": "Flesje water"
+      },
+      {
+        "product_id": "3554350",
+        "product_name": "Beker 180cc Future",
+        "quantity": 2,
+        "note": "Beker 180cc Future"
+      }
+    ],
+    "distinct_articles": 5,
+    "total_quantity": 13,
+    "fits_any_package": false,
+    "smallest_fitting_package": null,
+    "packages_that_fit": [],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup",
+      "Coffee set box",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#0",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 4,
+        "unfitted_count": 9
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#0",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 4,
+        "unfitted_count": 9
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552520#0",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 5,
+        "unfitted_count": 8
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552520#0",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 5,
+        "unfitted_count": 8
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552520#0",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 5,
+        "unfitted_count": 8
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3552520#0",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3554350#11",
+            "3554350#12",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 6,
+        "unfitted_count": 7
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3554350#12",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3552520#0",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 7,
+        "unfitted_count": 6
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552528#10",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3554350#11",
+            "3554350#12",
+            "3552520#0",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 89.2,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 10,
+        "unfitted_count": 3
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#0",
+            "3552520#1",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 77.5,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 9,
+        "unfitted_count": 4
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552520#5"
+          ],
+          "fitted_items": [
+            "3552528#10",
+            "3554350#11",
+            "3554350#12",
+            "3552520#0",
+            "3552520#1",
+            "3552520#2",
+            "3552520#3",
+            "3552520#4",
+            "3552523#8",
+            "3552523#9",
+            "3552522#6",
+            "3552522#7"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 3569.87,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 54.1,
+        "total_weight_g": 585.74,
+        "package_max_weight_g": null,
+        "number_of_products": 13,
+        "fitted_count": 12,
+        "unfitted_count": 1
+      }
+    ]
+  },
+  {
+    "scenario_id": "hotel_welcome_bad_douche",
+    "scenario_name": "Hotel welkomstset (bad/douche)",
+    "category": "bad_douche",
+    "description": "Welcome-lijn 30ml miniaturen plus zeep, vanity kit en slippers.",
+    "items": [
+      {
+        "product_id": "3559820",
+        "product_name": "Welcome 30ml Body wash",
+        "quantity": 1,
+        "note": "Welcome 30ml Body wash"
+      },
+      {
+        "product_id": "3559830",
+        "product_name": "Welcome 30ml Shampoo",
+        "quantity": 1,
+        "note": "Welcome 30ml Shampoo"
+      },
+      {
+        "product_id": "3559850",
+        "product_name": "Welcome 30ml Bodylotion",
+        "quantity": 1,
+        "note": "Welcome 30ml Bodylotion"
+      },
+      {
+        "product_id": "3559860",
+        "product_name": "Welcome 30ml Conditioner",
+        "quantity": 1,
+        "note": "Welcome 30ml Conditioner"
+      },
+      {
+        "product_id": "3559920",
+        "product_name": "Welcome Zeepje rond",
+        "quantity": 1,
+        "note": "Welcome Zeepje rond"
+      },
+      {
+        "product_id": "3559980",
+        "product_name": "Welcome Vanity kit",
+        "quantity": 1,
+        "note": "Welcome Vanity kit"
+      },
+      {
+        "product_id": "3559955",
+        "product_name": "Welcome Slippers dichte neus",
+        "quantity": 1,
+        "note": "Welcome Slippers dichte neus"
+      }
+    ],
+    "distinct_articles": 7,
+    "total_quantity": 7,
+    "fits_any_package": true,
+    "smallest_fitting_package": "Small paper bag",
+    "packages_that_fit": [
+      "Small paper bag",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup",
+      "Coffee set box",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Doosje Hoog"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6",
+            "3559980#5"
+          ],
+          "fitted_items": [
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 5,
+        "unfitted_count": 2
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6"
+          ],
+          "fitted_items": [
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 99.2,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 6,
+        "unfitted_count": 1
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6"
+          ],
+          "fitted_items": [
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 74.1,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 6,
+        "unfitted_count": 1
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6"
+          ],
+          "fitted_items": [
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 51.2,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 6,
+        "unfitted_count": 1
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6"
+          ],
+          "fitted_items": [
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 41.2,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 6,
+        "unfitted_count": 1
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6"
+          ],
+          "fitted_items": [
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 19.8,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 6,
+        "unfitted_count": 1
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3559955#6",
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 18.0,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 7,
+        "unfitted_count": 0
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3559955#6"
+          ],
+          "fitted_items": [
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 11.9,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 6,
+        "unfitted_count": 1
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3559955#6",
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 10.3,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 7,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3559955#6",
+            "3559980#5",
+            "3559820#0",
+            "3559830#1",
+            "3559850#2",
+            "3559860#3",
+            "3559920#4"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 474.21,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 7.2,
+        "total_weight_g": 242.0,
+        "package_max_weight_g": null,
+        "number_of_products": 7,
+        "fitted_count": 7,
+        "unfitted_count": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": "schoonmaakset_basis",
+    "scenario_name": "Schoonmaakset (basis)",
+    "category": "schoonmaak",
+    "description": "Vaatwastabletten, reinigers, doeken/sponzen en afvalzakken — meerdere aantallen per artikel.",
+    "items": [
+      {
+        "product_id": "3551250",
+        "product_name": "Vaatwastablet 5in1",
+        "quantity": 5,
+        "note": "Vaatwastablet 5in1 (5x)"
+      },
+      {
+        "product_id": "3550260",
+        "product_name": "Allesreiniger tube 25ml",
+        "quantity": 1,
+        "note": "Allesreiniger tube 25ml"
+      },
+      {
+        "product_id": "3550201",
+        "product_name": "Afwasmiddel tube 25ml",
+        "quantity": 1,
+        "note": "Afwasmiddel tube 25ml"
+      },
+      {
+        "product_id": "3610450",
+        "product_name": "Microvezel Doek 35x35cm TmH",
+        "quantity": 2,
+        "note": "Microvezel Doek 35x35cm TmH"
+      },
+      {
+        "product_id": "3612255",
+        "product_name": "Schuurspons viscose bl 9x14cm",
+        "quantity": 2,
+        "note": "Schuurspons viscose bl 9x14cm"
+      },
+      {
+        "product_id": "3551400",
+        "product_name": "Afvalzak HDPE 60x80",
+        "quantity": 3,
+        "note": "Afvalzak HDPE 60x80 (3x)"
+      }
+    ],
+    "distinct_articles": 6,
+    "total_quantity": 14,
+    "fits_any_package": true,
+    "smallest_fitting_package": "Small paper bag",
+    "packages_that_fit": [
+      "Small paper bag",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup",
+      "Coffee set box",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Doosje Hoog"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8",
+            "3551250#4"
+          ],
+          "fitted_items": [
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3"
+          ]
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 6,
+        "unfitted_count": 8
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8"
+          ],
+          "fitted_items": [
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 100.0,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 7,
+        "unfitted_count": 7
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3612255#10",
+            "3551400#12",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ],
+          "fitted_items": [
+            "3612255#9",
+            "3551400#11"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 2,
+        "unfitted_count": 12
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3612255#10",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ],
+          "fitted_items": [
+            "3612255#9",
+            "3551400#11",
+            "3551400#12",
+            "3551250#0",
+            "3551250#1"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 100.0,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 5,
+        "unfitted_count": 9
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 9,
+        "unfitted_count": 5
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 56.0,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 12,
+        "unfitted_count": 2
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 50.9,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 14,
+        "unfitted_count": 0
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3610450#7",
+            "3610450#8"
+          ],
+          "fitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 33.6,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 12,
+        "unfitted_count": 2
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 29.1,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 14,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3612255#9",
+            "3612255#10",
+            "3551400#11",
+            "3551400#12",
+            "3551400#13",
+            "3610450#7",
+            "3610450#8",
+            "3550260#5",
+            "3550201#6",
+            "3551250#0",
+            "3551250#1",
+            "3551250#2",
+            "3551250#3",
+            "3551250#4"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 1343.17,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 20.4,
+        "total_weight_g": 295.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 14,
+        "unfitted_count": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": "recreatie_huisdier_set",
+    "scenario_name": "Recreatieset (huisdier/buiten)",
+    "category": "recreatie",
+    "description": "Kleine, lichte set voor recreatiepark: hondenpoepzakjes, snacks, tennisbal.",
+    "items": [
+      {
+        "product_id": "3562285",
+        "product_name": "Hondenpoepzakje papier",
+        "quantity": 1,
+        "note": "Hondenpoepzakje papier (rol)"
+      },
+      {
+        "product_id": "3562290",
+        "product_name": "Munchy Stick voor hond",
+        "quantity": 3,
+        "note": "Munchy Stick voor hond (3x)"
+      },
+      {
+        "product_id": "3562270",
+        "product_name": "Tennisbal 2e leven:)",
+        "quantity": 1,
+        "note": "Tennisbal 2e leven"
+      }
+    ],
+    "distinct_articles": 3,
+    "total_quantity": 5,
+    "fits_any_package": true,
+    "smallest_fitting_package": "Wave",
+    "packages_that_fit": [
+      "Wave",
+      "Small paper bag",
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup",
+      "Coffee set box",
+      "5 CM",
+      "LW"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3562270#4",
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ],
+          "fitted_items": []
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 0,
+        "unfitted_count": 5
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ],
+          "fitted_items": [
+            "3562270#4"
+          ]
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 79.6,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 1,
+        "unfitted_count": 4
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3562270#4",
+            "3562285#0"
+          ],
+          "fitted_items": [
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 59.5,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 3,
+        "unfitted_count": 2
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3562270#4",
+            "3562285#0"
+          ],
+          "fitted_items": [
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 41.1,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 3,
+        "unfitted_count": 2
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3562270#4",
+            "3562285#0"
+          ],
+          "fitted_items": [
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 33.1,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 3,
+        "unfitted_count": 2
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3562270#4",
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 15.9,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 5,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3562270#4",
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 14.4,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 5,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3562270#4",
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 9.5,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 5,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3562270#4",
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 8.3,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 5,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3562270#4",
+            "3562285#0",
+            "3562290#1",
+            "3562290#2",
+            "3562290#3"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 380.76,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 5.8,
+        "total_weight_g": 112.75,
+        "package_max_weight_g": null,
+        "number_of_products": 5,
+        "fitted_count": 5,
+        "unfitted_count": 0
+      }
+    ]
+  },
+  {
+    "scenario_id": "gecombineerde_set_bad_koffie_schoonmaak",
+    "scenario_name": "Gecombineerde set (bad + koffie + schoonmaak)",
+    "category": "gecombineerd",
+    "description": "Fit-Gap #20 'voeg samen': meerdere deel-sets in één pakket voor één levermoment. Verwacht grotere verpakking nodig of mogelijk geen enkele fit — goede testcase voor de Maatwerk-behoefte 3D fit-check.",
+    "items": [
+      {
+        "product_id": "3559820",
+        "product_name": "Welcome 30ml Body wash",
+        "quantity": 1,
+        "note": "Welcome 30ml Body wash"
+      },
+      {
+        "product_id": "3559830",
+        "product_name": "Welcome 30ml Shampoo",
+        "quantity": 1,
+        "note": "Welcome 30ml Shampoo"
+      },
+      {
+        "product_id": "3559920",
+        "product_name": "Welcome Zeepje rond",
+        "quantity": 1,
+        "note": "Welcome Zeepje rond"
+      },
+      {
+        "product_id": "3552200",
+        "product_name": "Koffie sachet 60gr (+-8 kops)",
+        "quantity": 1,
+        "note": "Koffie sachet 60gr"
+      },
+      {
+        "product_id": "3552235",
+        "product_name": "Koffie cup Lungo nr6 aluminium",
+        "quantity": 2,
+        "note": "Koffie cup Lungo nr6 aluminium"
+      },
+      {
+        "product_id": "3552400",
+        "product_name": "Stick Welcome Suiker coffee",
+        "quantity": 2,
+        "note": "Stick Welcome Suiker coffee"
+      },
+      {
+        "product_id": "3551250",
+        "product_name": "Vaatwastablet 5in1",
+        "quantity": 3,
+        "note": "Vaatwastablet 5in1 (3x)"
+      },
+      {
+        "product_id": "3550260",
+        "product_name": "Allesreiniger tube 25ml",
+        "quantity": 1,
+        "note": "Allesreiniger tube 25ml"
+      },
+      {
+        "product_id": "3551400",
+        "product_name": "Afvalzak HDPE 60x80",
+        "quantity": 2,
+        "note": "Afvalzak HDPE 60x80 (2x)"
+      }
+    ],
+    "distinct_articles": 9,
+    "total_quantity": 14,
+    "fits_any_package": true,
+    "smallest_fitting_package": "Doosje Hoog",
+    "packages_that_fit": [
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
+    "packages_that_do_not_fit": [
+      "Mini",
+      "The smart cup",
+      "Coffee set box",
+      "5 CM",
+      "LW",
+      "Wave",
+      "Small paper bag"
+    ],
+    "results_per_package": [
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13",
+            "3552400#6",
+            "3552400#7"
+          ],
+          "fitted_items": [
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10"
+          ]
+        },
+        "package": "Mini",
+        "package_dimensions_cm": {
+          "lengte": 6.0,
+          "breedte": 4.2,
+          "hoogte": 8.3
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 209.16,
+        "volume_pct": 100.0,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 7,
+        "unfitted_count": 7
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13",
+            "3552400#6",
+            "3552400#7"
+          ],
+          "fitted_items": [
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10"
+          ]
+        },
+        "package": "The smart cup",
+        "package_dimensions_cm": {
+          "lengte": 7.5,
+          "breedte": 7.5,
+          "hoogte": 8.5
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 478.12,
+        "volume_pct": 100.0,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 7,
+        "unfitted_count": 7
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3552235#4",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "Coffee set box",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 4.0,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 640.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 10,
+        "unfitted_count": 4
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#5",
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3552235#4",
+            "3552200#3",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "5 CM",
+        "package_dimensions_cm": {
+          "lengte": 19.3,
+          "breedte": 4.8,
+          "hoogte": 10.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 926.4,
+        "volume_pct": 100.0,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 11,
+        "unfitted_count": 3
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3552235#4",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "LW",
+        "package_dimensions_cm": {
+          "lengte": 24.0,
+          "breedte": 6.0,
+          "hoogte": 8.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 1152.0,
+        "volume_pct": 100.0,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 10,
+        "unfitted_count": 4
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552200#3",
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "Wave",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 12.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 2400.0,
+        "volume_pct": 54.3,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 11,
+        "unfitted_count": 3
+      },
+      {
+        "fits": false,
+        "status": "FAIL",
+        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "reason_details": {
+          "unfitted_items": [
+            "3552200#3",
+            "3551400#12",
+            "3551400#13"
+          ],
+          "fitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "Small paper bag",
+        "package_dimensions_cm": {
+          "lengte": 11.0,
+          "breedte": 8.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 2640.0,
+        "volume_pct": 49.4,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 11,
+        "unfitted_count": 3
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "Doosje Hoog",
+        "package_dimensions_cm": {
+          "lengte": 20.0,
+          "breedte": 10.0,
+          "hoogte": 20.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 4000.0,
+        "volume_pct": 32.6,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 14,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "Medium paper bag",
+        "package_dimensions_cm": {
+          "lengte": 16.0,
+          "breedte": 8.0,
+          "hoogte": 36.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 4608.0,
+        "volume_pct": 28.3,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 14,
+        "unfitted_count": 0
+      },
+      {
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
+        "reason_details": {
+          "unfitted_items": [],
+          "fitted_items": [
+            "3552235#4",
+            "3552235#5",
+            "3552200#3",
+            "3551400#12",
+            "3551400#13",
+            "3559820#0",
+            "3559830#1",
+            "3550260#11",
+            "3559920#2",
+            "3551250#8",
+            "3551250#9",
+            "3551250#10",
+            "3552400#6",
+            "3552400#7"
+          ]
+        },
+        "package": "Large paper bag",
+        "package_dimensions_cm": {
+          "lengte": 22.0,
+          "breedte": 10.0,
+          "hoogte": 30.0
+        },
+        "total_product_volume_cm3": 1303.58,
+        "package_volume_cm3": 6600.0,
+        "volume_pct": 19.8,
+        "total_weight_g": 303.0,
+        "package_max_weight_g": null,
+        "number_of_products": 14,
+        "fitted_count": 14,
+        "unfitted_count": 0
+      }
+    ]
+  }
+]
