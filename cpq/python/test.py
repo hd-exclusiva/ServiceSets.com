@@ -868,6 +868,92 @@ def dimension_failure_reason(
 # SINGLE PRODUCT TEST
 # ============================================================================
 
+def _extract_placements(
+    bin_result: Any,
+    id_to_name: Optional[Dict[str, str]] = None,
+) -> List[Dict[str, Any]]:
+
+    """
+    Zet de py3dbp bin_result.items (na packing) om naar
+    een platte, JSON-vriendelijke lijst met per item de
+    werkelijke positie (x, y, z) en de werkelijk gebruikte
+    afmetingen ná rotatie — dit is de basis voor een 3D
+    plaatsingstekening.
+
+    Itemnamen zijn opgebouwd als "{product_id}#{index}"
+    (zie test_products_together), zodat meerdere
+    exemplaren van hetzelfde artikel uit elkaar te houden
+    zijn.
+    """
+
+    id_to_name = id_to_name or {}
+
+    placements = []
+
+    for item in bin_result.items:
+
+        # Werkelijke, gedraaide afmetingen. py3dbp had in
+        # oudere voorbeelden "getDimension" (camelCase) —
+        # de geïnstalleerde versie heeft "get_dimension"
+        # (snake_case). Beide worden geprobeerd zodat dit
+        # ook op oudere/nieuwere py3dbp-versies werkt.
+        try:
+            dims = item.get_dimension()
+
+        except AttributeError:
+
+            try:
+                dims = item.getDimension()
+
+            except Exception:
+                dims = [
+                    item.width,
+                    item.height,
+                    item.depth,
+                ]
+
+        try:
+            position = [
+                float(coord)
+                for coord in item.position
+            ]
+
+        except Exception:
+            position = [0.0, 0.0, 0.0]
+
+        try:
+            dimension = [
+                float(dim)
+                for dim in dims
+            ]
+
+        except Exception:
+            dimension = [
+                float(item.width),
+                float(item.height),
+                float(item.depth),
+            ]
+
+        raw_name = str(item.name)
+        product_id = raw_name.split("#")[0]
+
+        placements.append(
+            {
+                "item_name": raw_name,
+                "product_id": product_id,
+                "product_name": id_to_name.get(
+                    product_id,
+                    product_id,
+                ),
+                "position": position,
+                "dimensions": dimension,
+                "rotation_type": item.rotation_type,
+            }
+        )
+
+    return placements
+
+
 def test_product_in_package(
     product: Product,
     package: Package,
@@ -1090,15 +1176,12 @@ def test_product_in_package(
         if fitted_item is not None:
 
             try:
-                rotation = [
-                    round(
-                        float(
-                            x
-                        ),
-                        3,
-                    )
-                    for x in fitted_item.getDimension()
-                ]
+                rotation = _extract_placements(
+                    bin_result,
+                    {
+                        product.product_id: product.name
+                    },
+                )[0]["dimensions"]
 
             except Exception:
                 rotation = list(
@@ -1275,6 +1358,11 @@ def test_products_together(
             ],
         }
 
+    id_to_name = {
+        product.product_id: product.name
+        for product in products
+    }
+
     bin_result = packer.bins[0]
 
     unfitted = [
@@ -1315,6 +1403,11 @@ def test_products_together(
             "unfitted_items": unfitted,
             "fitted_items": fitted,
         },
+
+        "placements": _extract_placements(
+            bin_result,
+            id_to_name,
+        ),
 
         "package": package.naam,
 

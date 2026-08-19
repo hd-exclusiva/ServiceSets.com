@@ -423,6 +423,7 @@ def normalize_combinations(
                     "package_dimensions": dimensions_text(
                         r.get("package_dimensions_cm", {})
                     ),
+                    "package_dimensions_raw": r.get("package_dimensions_cm", {}),
                     "status": str(r.get("status", "")).upper(),
                     "fits": r.get("fits"),
                     "volume_pct": r.get("volume_pct"),
@@ -432,6 +433,7 @@ def normalize_combinations(
                     "fitted_count": r.get("fitted_count"),
                     "unfitted_count": r.get("unfitted_count"),
                     "number_of_products": r.get("number_of_products"),
+                    "placements": r.get("placements", []),
                 }
             )
 
@@ -443,6 +445,162 @@ def normalize_combinations(
             detail_df[col] = pd.to_numeric(detail_df[col], errors="coerce")
 
     return scenario_df, detail_df
+
+
+def _cuboid_mesh(
+    x0: float,
+    y0: float,
+    z0: float,
+    dx: float,
+    dy: float,
+    dz: float,
+    color: str,
+    name: str,
+    opacity: float = 0.85,
+) -> go.Mesh3d:
+
+    """
+    Bouwt één massieve kubus (Mesh3d) op positie
+    (x0, y0, z0) met afmetingen (dx, dy, dz) — dit
+    stelt één geplaatst artikel in de verpakking voor.
+    """
+
+    x = [x0, x0, x0 + dx, x0 + dx, x0, x0, x0 + dx, x0 + dx]
+    y = [y0, y0 + dy, y0 + dy, y0, y0, y0 + dy, y0 + dy, y0]
+    z = [z0, z0, z0, z0, z0 + dz, z0 + dz, z0 + dz, z0 + dz]
+
+    # 12 driehoeken = 6 zijden van de kubus
+    i = [7, 0, 0, 0, 4, 4, 6, 6, 4, 0, 3, 2]
+    j = [3, 4, 1, 2, 5, 6, 5, 2, 0, 1, 6, 3]
+    k = [0, 7, 2, 3, 6, 7, 1, 1, 5, 5, 7, 6]
+
+    return go.Mesh3d(
+        x=x,
+        y=y,
+        z=z,
+        i=i,
+        j=j,
+        k=k,
+        color=color,
+        opacity=opacity,
+        name=name,
+        showlegend=True,
+        flatshading=True,
+        hovertext=name,
+        hoverinfo="text",
+    )
+
+
+def _package_wireframe(
+    lengte: float,
+    breedte: float,
+    hoogte: float,
+) -> go.Scatter3d:
+
+    """
+    Tekent de buitenranden van de verpakking als dunne
+    zwarte lijnen, zodat duidelijk is waar de grenzen
+    van de doos liggen.
+    """
+
+    corners = [
+        (0, 0, 0), (lengte, 0, 0), (lengte, breedte, 0), (0, breedte, 0),
+        (0, 0, 0), (0, 0, hoogte), (lengte, 0, hoogte), (lengte, 0, 0),
+        (lengte, 0, hoogte), (lengte, breedte, hoogte), (lengte, breedte, 0),
+        (lengte, breedte, hoogte), (0, breedte, hoogte), (0, breedte, 0),
+        (0, breedte, hoogte), (0, 0, hoogte),
+    ]
+
+    xs, ys, zs = zip(*corners)
+
+    return go.Scatter3d(
+        x=xs,
+        y=ys,
+        z=zs,
+        mode="lines",
+        line=dict(color="black", width=4),
+        name="Verpakking (buitenrand)",
+        showlegend=True,
+        hoverinfo="skip",
+    )
+
+
+PLACEMENT_COLORS = [
+    "#4C78A8", "#F58518", "#54A24B", "#E45756", "#72B7B2",
+    "#EECA3B", "#B279A2", "#FF9DA6", "#9D755D", "#BAB0AC",
+    "#1B9E77", "#D95F02", "#7570B3", "#E7298A", "#66A61E",
+]
+
+
+def render_3d_packing(
+    package_dimensions_cm: dict,
+    placements: list,
+    title: str = "",
+) -> go.Figure:
+
+    """
+    Bouwt een interactieve 3D-tekening van hoe de
+    artikelen daadwerkelijk in de verpakking liggen
+    (op basis van de x/y/z-plaatsing die py3dbp
+    tijdens het pakken heeft berekend).
+    """
+
+    lengte = package_dimensions_cm.get("lengte", 0)
+    breedte = package_dimensions_cm.get("breedte", 0)
+    hoogte = package_dimensions_cm.get("hoogte", 0)
+
+    fig = go.Figure()
+
+    fig.add_trace(
+        _package_wireframe(lengte, breedte, hoogte)
+    )
+
+    # Consistente kleur per artikel (product_id), zodat
+    # meerdere exemplaren van hetzelfde artikel dezelfde
+    # kleur krijgen.
+    seen_ids: dict[str, str] = {}
+    color_cursor = 0
+
+    for placement in placements:
+
+        product_id = placement.get("product_id", "?")
+
+        if product_id not in seen_ids:
+            seen_ids[product_id] = PLACEMENT_COLORS[
+                color_cursor % len(PLACEMENT_COLORS)
+            ]
+            color_cursor += 1
+
+        x0, y0, z0 = placement.get("position", [0, 0, 0])
+        dx, dy, dz = placement.get("dimensions", [0, 0, 0])
+
+        fig.add_trace(
+            _cuboid_mesh(
+                x0, y0, z0,
+                dx, dy, dz,
+                color=seen_ids[product_id],
+                name=placement.get(
+                    "product_name",
+                    product_id,
+                ),
+            )
+        )
+
+    fig.update_layout(
+        title=title,
+        template="plotly_white",
+        scene=dict(
+            xaxis_title="Lengte (cm)",
+            yaxis_title="Breedte (cm)",
+            zaxis_title="Hoogte (cm)",
+            aspectmode="data",
+        ),
+        height=560,
+        margin=dict(l=0, r=0, t=45, b=0),
+        legend=dict(itemsizing="constant"),
+    )
+
+    return fig
 
 
 def metric_card(label: str, value: str) -> None:
@@ -1226,6 +1384,79 @@ with tab_combinations:
                 hide_index=True,
                 height=min(70 + 40 * len(picked_display), 450),
             )
+
+            # ---- 3D plaatsingstekening ----
+            st.markdown(
+                '<div class="section-title">3D-tekening: hoe passen de artikelen?</div>',
+                unsafe_allow_html=True,
+            )
+
+            passing_packages = picked[
+                picked["status"] == "PASS"
+            ]["package"].tolist()
+
+            all_tested_packages = picked["package"].tolist()
+
+            if not all_tested_packages:
+                st.info("Geen verpakkingen getest voor deze combinatie.")
+
+            else:
+
+                default_pkg = (
+                    passing_packages[0]
+                    if passing_packages
+                    else all_tested_packages[0]
+                )
+
+                package_pick = st.selectbox(
+                    "Kies een verpakking om te visualiseren "
+                    "(✓ = artikelen passen samen)",
+                    options=all_tested_packages,
+                    index=all_tested_packages.index(default_pkg),
+                    format_func=lambda pkg: (
+                        f"✓ {pkg}"
+                        if pkg in passing_packages
+                        else f"✗ {pkg} (past niet)"
+                    ),
+                    key="combo_3d_package_pick",
+                )
+
+                pkg_row = picked[
+                    picked["package"] == package_pick
+                ].iloc[0]
+
+                placements = pkg_row["placements"]
+
+                if not placements:
+                    st.warning(
+                        "Voor deze combinatie/verpakking zijn geen "
+                        "artikelen geplaatst (0 stuks passen) — "
+                        "er is dus niets te tekenen."
+                    )
+
+                else:
+                    fig_3d = render_3d_packing(
+                        pkg_row["package_dimensions_raw"],
+                        placements,
+                        title=(
+                            f"{scenario_pick} in {package_pick} "
+                            f"({pkg_row['package_dimensions']} cm) — "
+                            f"{len(placements)} van de "
+                            f"{pkg_row['fitted_count'] + pkg_row['unfitted_count']} "
+                            f"stuks geplaatst"
+                        ),
+                    )
+
+                    st.plotly_chart(fig_3d, width="stretch")
+
+                    if pkg_row["unfitted_count"]:
+                        st.markdown(
+                            f"<span class='small-note'>⚠ "
+                            f"{pkg_row['unfitted_count']} stuk(s) "
+                            f"passen niet meer en zijn dus niet "
+                            f"getekend — zie de reden hierboven.</span>",
+                            unsafe_allow_html=True,
+                        )
 
 
 # ============================================================
