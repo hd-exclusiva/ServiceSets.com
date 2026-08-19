@@ -1947,34 +1947,90 @@ def main() -> None:
         )
 
         scenario_data = None
+        scenario_source = None
 
-        scenarios_path = (
-            Path(args.scenarios)
-            if args.scenarios
-            else DEFAULT_SCENARIOS_PATH
-        )
+        if args.scenarios:
 
-        try:
+            candidate_paths = [Path(args.scenarios)]
 
-            if args.scenarios:
-                scenario_data = load_json_file(
-                    scenarios_path
-                )
+        else:
 
-            elif scenarios_path.exists():
-                scenario_data = load_json_file(
-                    scenarios_path
-                )
+            # Meerdere logische locaties proberen, zodat het
+            # niet uitmaakt vanuit welke map je het script
+            # start.
+            candidate_paths = [
+                DEFAULT_SCENARIOS_PATH,
+                Path("combination_scenarios.json"),
+                Path(__file__).resolve().parent
+                / "data"
+                / "combination_scenarios.json",
+                Path(__file__).resolve().parent
+                / "combination_scenarios.json",
+            ]
 
-            else:
+        for candidate in candidate_paths:
+
+            if candidate.exists():
+
+                try:
+                    scenario_data = load_json_file(
+                        candidate
+                    )
+                    scenario_source = str(
+                        candidate
+                    )
+                    break
+
+                except Exception as exc:
+                    print(
+                        f"  ⚠ Kon {candidate} niet "
+                        f"lezen: {exc}"
+                    )
+
+        if scenario_data is None:
+
+            try:
                 scenario_data = download_json(
                     SCENARIOS_URL
                 )
+                scenario_source = SCENARIOS_URL
 
-        except Exception as exc:
+            except Exception as exc:
+
+                print(
+                    "\n"
+                    "  ╔═══════════════════════════════"
+                    "══════════════════════════════╗"
+                )
+                print(
+                    "  ⚠ GEEN COMBINATIE-SCENARIO'S "
+                    "GELADEN — service-sets/aantallen "
+                    "worden NIET getest."
+                )
+                print(
+                    "  Gezocht op: "
+                    + ", ".join(
+                        str(p) for p in candidate_paths
+                    )
+                )
+                print(
+                    f"  GitHub-fallback ({SCENARIOS_URL}) "
+                    f"gaf: {exc}"
+                )
+                print(
+                    "  Los op met: "
+                    "--scenarios pad/naar/"
+                    "combination_scenarios.json"
+                )
+                print(
+                    "  ╚═══════════════════════════════"
+                    "══════════════════════════════╝"
+                )
+
+        if scenario_data is not None:
 
             print(
-                f"  ⚠ Geen scenario's geladen: {exc}"
+                f"  Bron: {scenario_source}"
             )
 
         if scenario_data is not None:
@@ -2054,12 +2110,17 @@ def main() -> None:
             )
         )
 
-    if combination_results:
+    save_json(
+        output_dir
+        / "combination_results.json",
+        combination_results,
+    )
 
-        save_json(
-            output_dir
-            / "combination_results.json",
-            combination_results,
+    if not combination_results:
+
+        print(
+            "\n  ⚠ combination_results.json is LEEG "
+            "(0 scenario's/combinaties getest)."
         )
 
     if scenario_problems:
@@ -2154,19 +2215,18 @@ def main() -> None:
         f"  ✓ {output_dir / 'data_problems.json'}"
     )
 
-    if combination_results:
+    scenarios_fit = sum(
+        1
+        for r in combination_results
+        if r["fits_any_package"]
+    )
 
-        scenarios_fit = sum(
-            1
-            for r in combination_results
-            if r["fits_any_package"]
-        )
-
-        print(
-            f"  ✓ {output_dir / 'combination_results.json'} "
-            f"({len(combination_results)} scenario('s), "
-            f"{scenarios_fit} passen ergens)"
-        )
+    print(
+        f"  {'✓' if combination_results else '⚠'} "
+        f"{output_dir / 'combination_results.json'} "
+        f"({len(combination_results)} scenario('s), "
+        f"{scenarios_fit} passen ergens)"
+    )
 
     print(
         "\nAnalyse uitvoeren met:"
