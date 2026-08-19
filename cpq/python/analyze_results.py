@@ -694,7 +694,7 @@ with tab_overview:
 
         st.plotly_chart(
             fig,
-            use_container_width=True,
+            width=True,
         )
 
     st.markdown(
@@ -746,7 +746,7 @@ with tab_overview:
 
         st.plotly_chart(
             fig,
-            use_container_width=True,
+            width=True,
         )
 
 
@@ -832,7 +832,7 @@ with tab_products:
                 "Beste volume %",
             ]
         ],
-        use_container_width=True,
+        width=True,
         hide_index=True,
     )
 
@@ -877,7 +877,7 @@ with tab_products:
 
     st.plotly_chart(
         fig,
-        use_container_width=True,
+        width=True,
     )
 
 
@@ -949,7 +949,7 @@ with tab_packages:
                 "Gem. volume %",
             ]
         ],
-        use_container_width=True,
+        width=True,
         hide_index=True,
     )
 
@@ -981,7 +981,7 @@ with tab_packages:
 
     st.plotly_chart(
         fig,
-        use_container_width=True,
+        width=True,
     )
 
 
@@ -1093,7 +1093,7 @@ with tab_combinations:
 
         st.dataframe(
             overview_display,
-            use_container_width=True,
+            width=True,
             hide_index=True,
             height=min(70 + 45 * len(overview_display), 600),
         )
@@ -1136,7 +1136,7 @@ with tab_combinations:
             legend_title_text="Categorie",
         )
 
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width=True)
 
         # ---- Combinaties die nergens passen ----
         no_fit_df = scenario_view[
@@ -1222,7 +1222,7 @@ with tab_combinations:
 
             st.dataframe(
                 picked_display,
-                use_container_width=True,
+                width=True,
                 hide_index=True,
                 height=min(70 + 40 * len(picked_display), 450),
             )
@@ -1283,7 +1283,7 @@ with tab_failures:
 
         st.dataframe(
             failure_display,
-            use_container_width=True,
+            width=True,
             hide_index=True,
             height=620,
         )
@@ -1342,7 +1342,7 @@ with tab_details:
 
     st.dataframe(
         detail_display,
-        use_container_width=True,
+        width=True,
         hide_index=True,
         height=700,
     )
@@ -1418,7 +1418,7 @@ if not passes_df.empty:
 
     st.dataframe(
         best_display,
-        use_container_width=True,
+        width=True,
         hide_index=True,
     )
 
