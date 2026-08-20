@@ -1,107 +1,75 @@
+
 #!/usr/bin/env python3
-
 """
-ServiceSets.com - Packing Tester
+tester.py
+=========
+Automatische diagnose/tester voor de verpakkingslogica van ServiceSets.com.
 
-Leest automatisch:
+De tool haalt standaard de actuele data rechtstreeks uit GitHub:
+
     https://github.com/hd-exclusiva/ServiceSets.com
 
-Data:
+Bestanden:
     data/products.json
     data/package_dimensions.json
-    data/combination_scenarios.json   (benoemde service-sets)
 
-Output:
-    test_results/
-        all_results.json
-        passes.json
-        failures.json
-        summary.json
-        data_problems.json
-        recommendations.json
-        combination_results.json      (scenario's + ad-hoc combinatie)
+Installatie:
+    pip install py3dbp
 
-Voorbeeld:
-
+Gebruik:
     python tester.py
+    python tester.py --quick
+    python tester.py --deep
+    python tester.py --combinations 500
+    python tester.py --seed 12345
 
-Alles testen:
-
-    python tester.py --all
-
-Specifieke producten:
-
-    python tester.py --select 3560000,3552520
-
-Aantal meegeven:
-
-    python tester.py --select 3560000:2,3552520:3
-
-Lokale JSON-bestanden gebruiken:
-
-    python tester.py \
-        --products products.json \
-        --packages package_dimensions.json
-
-Benoemde service-set scenario's testen (standaard aan,
-leest data/combination_scenarios.json indien aanwezig,
-anders van GitHub):
-
-    python tester.py --all
-
-Scenario's overslaan:
-
-    python tester.py --all --no-scenarios
-
-Eigen scenario-bestand:
-
-    python tester.py --all --scenarios mijn_scenarios.json
-
-Ad-hoc combinatie los van scenario's (items + aantallen
-SAMEN in één verpakking testen, bv. 6x limonade + 1x water):
-
-    python tester.py --all --combination 3552520:6,3552528:1
+Rapporten:
+    test_results/summary.json
+    test_results/data_problems.json
+    test_results/failures.json
+    test_results/counterexamples.json
+    test_results/reproducible_cases.txt
 """
 
 from __future__ import annotations
 
 import argparse
+import itertools
 import json
+import math
+import random
 import sys
-import urllib.request
-from dataclasses import dataclass, asdict
+import time
+from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+from urllib.request import Request, urlopen
+
+
+# ============================================================================
+# CONFIGURATIE
+# ============================================================================
+
+REPO_RAW = (
+    "https://raw.githubusercontent.com/"
+    "hd-exclusiva/ServiceSets.com/main/data"
+)
+
+PRODUCTS_URL = f"{REPO_RAW}/products.json"
+PACKAGES_URL = f"{REPO_RAW}/package_dimensions.json"
+
+DEFAULT_OUTPUT_DIR = Path("test_results")
 
 try:
     from py3dbp import Packer, Bin, Item
 except ImportError:
-    sys.exit(
-        "De library 'py3dbp' is niet geïnstalleerd.\n\n"
-        "Installeer met:\n"
-        "    pip install py3dbp --break-system-packages"
-    )
+    Packer = None
+    Bin = None
+    Item = None
 
 
 # ============================================================================
-# CONFIG
-# ============================================================================
-
-GITHUB_RAW_BASE = (
-    "https://raw.githubusercontent.com/"
-    "hd-exclusiva/ServiceSets.com/main/data/"
-)
-
-PRODUCTS_URL = GITHUB_RAW_BASE + "products.json"
-PACKAGES_URL = GITHUB_RAW_BASE + "package_dimensions.json"
-SCENARIOS_URL = GITHUB_RAW_BASE + "combination_scenarios.json"
-
-DEFAULT_OUTPUT_DIR = Path("test_results")
-DEFAULT_SCENARIOS_PATH = Path("data/combination_scenarios.json")
-
-
-# ============================================================================
-# DATA MODELS
+# DATAMODELLEN
 # ============================================================================
 
 @dataclass
@@ -112,14 +80,27 @@ class Product:
     breedte: float
     hoogte: float
     gewicht: float = 0.0
+    stackable: bool = False
+    stack_increment_h: float = 0.0
+    foldable: bool = False
+    folded_dimensions: Optional[List[Tuple[float, float, float]]] = None
+    raw: Dict[str, Any] = field(default_factory=dict)
 
     @property
     def volume(self) -> float:
-        return (
-            self.lengte
-            * self.breedte
-            * self.hoogte
-        )
+        return self.lengte * self.breedte * self.hoogte
+
+    @property
+    def dimensions(self) -> Tuple[float, float, float]:
+        return self.lengte, self.breedte, self.hoogte
+
+    @property
+    def behavior(self) -> str:
+        if self.foldable and self.folded_dimensions:
+            return "foldable"
+        if self.stackable:
+            return "stackable"
+        return "rigid"
 
 
 @dataclass
@@ -129,979 +110,431 @@ class Package:
     breedte: float
     hoogte: float
     max_gewicht: Optional[float] = None
+    raw: Dict[str, Any] = field(default_factory=dict)
 
     @property
     def volume(self) -> float:
-        return (
-            self.lengte
-            * self.breedte
-            * self.hoogte
-        )
+        return self.lengte * self.breedte * self.hoogte
+
+    @property
+    def dimensions(self) -> Tuple[float, float, float]:
+        return self.lengte, self.breedte, self.hoogte
+
+
+@dataclass
+class TestCase:
+    case_id: str
+    category: str
+    product_ids: List[str]
+    package: str
+    quantity: Dict[str, int]
+    message: str
+    details: Dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class TestStats:
+    total: int = 0
+    passed: int = 0
+    failed: int = 0
+    skipped: int = 0
+    warnings: int = 0
+    errors: int = 0
+
+    def record(self, result: str) -> None:
+        self.total += 1
+        if result == "PASS":
+            self.passed += 1
+        elif result == "FAIL":
+            self.failed += 1
+        elif result == "SKIP":
+            self.skipped += 1
+        elif result == "WARNING":
+            self.warnings += 1
+        elif result == "ERROR":
+            self.errors += 1
 
 
 # ============================================================================
 # JSON / HTTP
 # ============================================================================
 
-def load_json_file(path: Path) -> Any:
-    with path.open(
-        "r",
-        encoding="utf-8",
-    ) as f:
-        return json.load(f)
-
-
-def download_json(url: str) -> Any:
-    print(f"  Download: {url}")
-
-    request = urllib.request.Request(
+def download_json(url: str, timeout: int = 30) -> Any:
+    """Download JSON from GitHub Raw."""
+    request = Request(
         url,
         headers={
-            "User-Agent": "ServiceSets-Packing-Tester/1.0"
+            "User-Agent": "ServiceSets-Packing-Tester/1.0",
+            "Accept": "application/json",
         },
     )
 
-    try:
-        with urllib.request.urlopen(
-            request,
-            timeout=30,
-        ) as response:
-            content = response.read().decode(
-                "utf-8"
-            )
+    with urlopen(request, timeout=timeout) as response:
+        content = response.read()
 
-        return json.loads(content)
-
-    except Exception as exc:
-        raise RuntimeError(
-            f"Kan GitHub-data niet ophalen:\n"
-            f"{url}\n\n"
-            f"Fout: {exc}"
-        ) from exc
+    return json.loads(content.decode("utf-8"))
 
 
-def unwrap_list(
-    data: Any,
-    possible_keys: List[str],
-) -> List[Dict[str, Any]]:
+def unwrap_list(data: Any, preferred_keys: Sequence[str]) -> List[Dict[str, Any]]:
+    """
+    Ondersteunt zowel:
 
+        [...]
+    
+    als:
+
+        {"products": [...]}
+
+    en:
+
+        {"package_dimensions": [...]}
+    """
     if isinstance(data, list):
         return data
 
     if isinstance(data, dict):
-
-        for key in possible_keys:
-
+        for key in preferred_keys:
             value = data.get(key)
-
             if isinstance(value, list):
                 return value
 
-    raise ValueError(
-        "JSON bevat geen lijst met records."
-    )
-
-
-# ============================================================================
-# PRODUCT LOADING
-# ============================================================================
-
-def detect_product(
-    row: Dict[str, Any],
-    index: int,
-) -> Product:
-
-    """
-    Verwacht:
-
-        num
-        name
-        l
-        w
-        h
-        weight_g
-    """
-
-    required = [
-        "num",
-        "name",
-        "l",
-        "w",
-        "h",
-    ]
-
-    missing = [
-        key
-        for key in required
-        if row.get(key) in (None, "")
-    ]
-
-    if missing:
-        raise ValueError(
-            f"Ontbrekende velden: "
-            f"{', '.join(missing)}"
-        )
-
-    try:
-        return Product(
-            product_id=str(row["num"]),
-            name=str(row["name"]),
-            lengte=float(row["l"]),
-            breedte=float(row["w"]),
-            hoogte=float(row["h"]),
-            gewicht=float(
-                row.get("weight_g", 0) or 0
-            ),
-        )
-
-    except (TypeError, ValueError) as exc:
-
-        raise ValueError(
-            f"Ongeldige numerieke afmeting: "
-            f"{exc}"
-        ) from exc
-
-
-def load_products(
-    data: Any,
-) -> Tuple[
-    List[Product],
-    List[Dict[str, Any]],
-]:
-
-    rows = unwrap_list(
-        data,
-        ["products"],
-    )
-
-    products = []
-    problems = []
-
-    for index, row in enumerate(
-        rows,
-        start=1,
-    ):
-
-        if not isinstance(row, dict):
-            problems.append(
-                {
-                    "type": "INVALID_PRODUCT",
-                    "index": index,
-                    "error": "Record is geen object",
-                    "record": row,
-                }
-            )
-            continue
-
-        try:
-            product = detect_product(
-                row,
-                index,
-            )
-
-            # Basisvalidatie.
-            if (
-                product.lengte <= 0
-                or product.breedte <= 0
-                or product.hoogte <= 0
+        # Fallback: zoek eerste list met dicts.
+        for value in data.values():
+            if isinstance(value, list) and all(
+                isinstance(x, dict) for x in value
             ):
-                raise ValueError(
-                    "Afmetingen moeten groter dan 0 zijn"
-                )
+                return value
 
-            if product.gewicht < 0:
-                raise ValueError(
-                    "Gewicht mag niet negatief zijn"
-                )
-
-            products.append(product)
-
-        except Exception as exc:
-
-            problems.append(
-                {
-                    "type": "INVALID_PRODUCT",
-                    "index": index,
-                    "error": str(exc),
-                    "record": row,
-                }
-            )
-
-    return products, problems
+    raise ValueError("Kon geen lijst met records vinden in JSON.")
 
 
 # ============================================================================
-# PACKAGE LOADING
+# FLEXIBELE VELDHERKENNING
 # ============================================================================
 
-def detect_package(
+def first_value(
     row: Dict[str, Any],
-    index: int,
-) -> Package:
+    candidates: Sequence[str],
+    default: Any = None,
+) -> Any:
+    for key in candidates:
+        if key in row and row[key] not in (None, ""):
+            return row[key]
+    return default
 
-    """
-    Verwacht:
 
-        naam
-        lengte_cm
-        hoogte_cm
-        breedte_cm
+def to_float(value: Any, default: float = 0.0) -> float:
+    if value in (None, ""):
+        return default
 
-    max_gewicht is optioneel.
-    """
+    if isinstance(value, bool):
+        return float(value)
 
-    required = [
-        "naam",
-        "lengte_cm",
-        "breedte_cm",
-        "hoogte_cm",
-    ]
+    if isinstance(value, (int, float)):
+        return float(value)
 
-    missing = [
-        key
-        for key in required
-        if row.get(key) in (None, "")
-    ]
-
-    if missing:
-        raise ValueError(
-            f"Ontbrekende velden: "
-            f"{', '.join(missing)}"
-        )
-
-    max_gewicht = row.get(
-        "max_gewicht"
-    )
-
-    if max_gewicht in (
-        None,
-        "",
-    ):
-        max_gewicht = None
-
-    else:
-        max_gewicht = float(
-            max_gewicht
-        )
+    text = str(value).strip().replace(",", ".")
 
     try:
-        package = Package(
-            naam=str(row["naam"]),
-            lengte=float(
-                row["lengte_cm"]
-            ),
-            breedte=float(
-                row["breedte_cm"]
-            ),
-            hoogte=float(
-                row["hoogte_cm"]
-            ),
-            max_gewicht=max_gewicht,
-        )
-
-    except (TypeError, ValueError) as exc:
-
-        raise ValueError(
-            f"Ongeldige verpakking: {exc}"
-        ) from exc
-
-    if (
-        package.lengte <= 0
-        or package.breedte <= 0
-        or package.hoogte <= 0
-    ):
-        raise ValueError(
-            "Afmetingen moeten groter dan 0 zijn"
-        )
-
-    return package
+        return float(text)
+    except ValueError:
+        return default
 
 
-def load_packages(
-    data: Any,
-) -> Tuple[
-    List[Package],
-    List[Dict[str, Any]],
-]:
+def to_bool(value: Any, default: bool = False) -> bool:
+    if value is None or value == "": return default
+    if isinstance(value, bool): return value
+    if isinstance(value, (int, float)): return bool(value)
+    return str(value).strip().lower() in {"1", "true", "yes", "ja", "y", "on"}
 
-    rows = unwrap_list(
-        data,
+
+def parse_folded_dimensions(row: Dict[str, Any]) -> Optional[List[Tuple[float, float, float]]]:
+    raw = row.get("folded_dimensions")
+    if isinstance(raw, dict): raw = [raw]
+    candidates = []
+    for item in raw if isinstance(raw, list) else []:
+        if isinstance(item, dict):
+            l=first_value(item,["l","lengte","lengte_cm","length","length_cm"]); w=first_value(item,["w","breedte","breedte_cm","width","width_cm"]); h=first_value(item,["h","hoogte","hoogte_cm","height","height_cm"])
+            if None not in (l,w,h):
+                dims=(to_float(l),to_float(w),to_float(h))
+                if all(x>0 for x in dims): candidates.append(dims)
+        elif isinstance(item,(list,tuple)) and len(item)==3:
+            dims=tuple(to_float(x) for x in item)
+            if all(x>0 for x in dims): candidates.append(dims)
+    l=first_value(row,["folded_l","folded_lengte","folded_length","folded_length_cm"]); w=first_value(row,["folded_w","folded_breedte","folded_width","folded_width_cm"]); h=first_value(row,["folded_h","folded_hoogte","folded_height","folded_height_cm"])
+    if None not in (l,w,h):
+        dims=(to_float(l),to_float(w),to_float(h))
+        if all(x>0 for x in dims): candidates.append(dims)
+    return candidates or None
+
+
+def effective_dimensions(product: Product, quantity: int = 1) -> Tuple[Tuple[float,float,float], Dict[str,Any]]:
+    quantity=max(1,int(quantity))
+    if product.foldable and product.folded_dimensions:
+        dims=min(product.folded_dimensions,key=lambda d:d[0]*d[1]*d[2])
+        return dims,{"mode":"foldable","quantity":quantity,"original_dimensions_cm":list(product.dimensions),"effective_dimensions_cm":list(dims),"folded_options_cm":[list(x) for x in product.folded_dimensions]}
+    if product.stackable and quantity>1:
+        inc=max(0.0,product.stack_increment_h); dims=(product.lengte,product.breedte,product.hoogte+(quantity-1)*inc)
+        return dims,{"mode":"stacked","quantity":quantity,"original_dimensions_cm":list(product.dimensions),"effective_dimensions_cm":list(dims),"stack_increment_h_cm":inc}
+    return product.dimensions,{"mode":"rigid","quantity":quantity,"original_dimensions_cm":list(product.dimensions),"effective_dimensions_cm":list(product.dimensions)}
+
+
+def effective_volume(product: Product, quantity: int = 1) -> float:
+    dims,_=effective_dimensions(product,quantity); return dims[0]*dims[1]*dims[2]
+
+
+def pack_units_from_products(products: Sequence[Product]):
+    grouped={}; order=[]
+    for product in products:
+        if product.product_id not in grouped: grouped[product.product_id]=(product,0); order.append(product.product_id)
+        p,q=grouped[product.product_id]; grouped[product.product_id]=(p,q+1)
+    units=[]
+    for pid in order:
+        product,quantity=grouped[pid]; dims,meta=effective_dimensions(product,quantity); units.append((product,quantity,dims,meta))
+    return units
+
+
+def detect_product(row: Dict[str, Any], index: int) -> Product:
+    product_id = first_value(
+        row,
         [
-            "package_dimensions",
-            "packages",
-        ],
-    )
-
-    packages = []
-    problems = []
-
-    for index, row in enumerate(
-        rows,
-        start=1,
-    ):
-
-        if not isinstance(row, dict):
-            problems.append(
-                {
-                    "type": "INVALID_PACKAGE",
-                    "index": index,
-                    "error": "Record is geen object",
-                    "record": row,
-                }
-            )
-            continue
-
-        try:
-            packages.append(
-                detect_package(
-                    row,
-                    index,
-                )
-            )
-
-        except Exception as exc:
-
-            problems.append(
-                {
-                    "type": "INVALID_PACKAGE",
-                    "index": index,
-                    "error": str(exc),
-                    "record": row,
-                }
-            )
-
-    return packages, problems
-
-
-# ============================================================================
-# COMBINATION SCENARIOS (benoemde service-set samenstellingen)
-# ============================================================================
-
-def load_scenarios(
-    data: Any,
-    products: List[Product],
-) -> Tuple[
-    List[Dict[str, Any]],
-    List[Dict[str, Any]],
-]:
-
-    """
-    Laadt benoemde combinatie-scenario's ("service-sets") uit JSON.
-
-    Verwacht per scenario:
-
-        id
-        name
-        items: [{product_id, quantity}, ...]
-
-    category en description zijn optioneel.
-    """
-
-    rows = unwrap_list(
-        data,
-        ["scenarios"],
-    )
-
-    lookup = {
-        product.product_id: product
-        for product in products
-    }
-
-    scenarios = []
-    problems = []
-
-    for index, row in enumerate(
-        rows,
-        start=1,
-    ):
-
-        if not isinstance(row, dict):
-            problems.append(
-                {
-                    "type": "INVALID_SCENARIO",
-                    "index": index,
-                    "error": "Record is geen object",
-                    "record": row,
-                }
-            )
-            continue
-
-        scenario_id = row.get(
+            "artikelnummer",
+            "product_id",
+            "productnummer",
             "id",
-            f"scenario_{index}",
-        )
-
-        items_raw = row.get("items")
-
-        if not isinstance(
-            items_raw,
-            list,
-        ) or not items_raw:
-
-            problems.append(
-                {
-                    "type": "INVALID_SCENARIO",
-                    "index": index,
-                    "error": (
-                        f"Scenario '{scenario_id}' "
-                        f"heeft geen (geldige) items-lijst"
-                    ),
-                    "record": row,
-                }
-            )
-            continue
-
-        resolved_items = []
-        missing_products = []
-
-        for item in items_raw:
-
-            if not isinstance(item, dict):
-                continue
-
-            product_id = str(
-                item.get(
-                    "product_id",
-                    "",
-                )
-            )
-
-            quantity = item.get(
-                "quantity",
-                1,
-            )
-
-            try:
-                quantity = int(quantity)
-
-            except (TypeError, ValueError):
-                quantity = 0
-
-            product = lookup.get(
-                product_id
-            )
-
-            if product is None:
-                missing_products.append(
-                    product_id
-                )
-                continue
-
-            if quantity <= 0:
-                missing_products.append(
-                    f"{product_id} "
-                    f"(ongeldig aantal: "
-                    f"{item.get('quantity')})"
-                )
-                continue
-
-            resolved_items.append(
-                {
-                    "product": product,
-                    "quantity": quantity,
-                    "note": item.get(
-                        "note",
-                        "",
-                    ),
-                }
-            )
-
-        if missing_products:
-            problems.append(
-                {
-                    "type": "SCENARIO_MISSING_PRODUCTS",
-                    "index": index,
-                    "error": (
-                        f"Scenario '{scenario_id}' "
-                        f"verwijst naar onbekende of "
-                        f"ongeldige producten"
-                    ),
-                    "record": missing_products,
-                }
-            )
-
-        if not resolved_items:
-            continue
-
-        scenarios.append(
-            {
-                "id": scenario_id,
-                "name": row.get(
-                    "name",
-                    scenario_id,
-                ),
-                "category": row.get(
-                    "category",
-                    "",
-                ),
-                "description": row.get(
-                    "description",
-                    "",
-                ),
-                "items": resolved_items,
-            }
-        )
-
-    return scenarios, problems
-
-
-def expand_scenario_items(
-    items: List[Dict[str, Any]],
-) -> List[Product]:
-
-    """
-    Zet [{product, quantity}, ...] om naar een platte
-    lijst van Product-instanties (elk artikel zoveel keer
-    herhaald als de gevraagde hoeveelheid), zodat alle
-    exemplaren SAMEN in één verpakking getest worden.
-    """
-
-    expanded = []
-
-    for entry in items:
-
-        expanded.extend(
-            [entry["product"]] * entry["quantity"]
-        )
-
-    return expanded
-
-
-def run_scenario_across_packages(
-    scenario: Dict[str, Any],
-    packages: List[Package],
-) -> Dict[str, Any]:
-
-    """
-    Test een volledig scenario (alle items + aantallen
-    samen) tegen elke verpakking, en bepaalt de kleinste
-    passende verpakking.
-    """
-
-    combination_products = expand_scenario_items(
-        scenario["items"]
-    )
-
-    per_package_results = []
-
-    for package in sorted(
-        packages,
-        key=lambda p: p.volume,
-    ):
-
-        result = test_products_together(
-            combination_products,
-            package,
-        )
-
-        per_package_results.append(
-            result
-        )
-
-    fitting = [
-        result
-        for result in per_package_results
-        if result["status"] == "PASS"
-    ]
-
-    fitting.sort(
-        key=lambda result: result.get(
-            "package_volume_cm3",
-            float("inf"),
-        )
-    )
-
-    items_summary = [
-        {
-            "product_id": entry["product"].product_id,
-            "product_name": entry["product"].name,
-            "quantity": entry["quantity"],
-            "note": entry["note"],
-        }
-        for entry in scenario["items"]
-    ]
-
-    total_quantity = sum(
-        entry["quantity"]
-        for entry in scenario["items"]
-    )
-
-    return {
-        "scenario_id": scenario["id"],
-        "scenario_name": scenario["name"],
-        "category": scenario["category"],
-        "description": scenario["description"],
-
-        "items": items_summary,
-        "distinct_articles": len(
-            items_summary
-        ),
-        "total_quantity": total_quantity,
-
-        "fits_any_package": len(fitting) > 0,
-
-        "smallest_fitting_package": (
-            fitting[0]["package"]
-            if fitting
-            else None
-        ),
-
-        "packages_that_fit": [
-            result["package"]
-            for result in fitting
+            "sku",
+            "code",
+            "num",
         ],
+        default=f"ROW-{index}",
+    )
 
-        "packages_that_do_not_fit": [
-            result["package"]
-            for result in per_package_results
-            if result["status"] != "PASS"
+    name = first_value(
+        row,
+        [
+            "artikelnaam",
+            "productnaam",
+            "name",
+            "naam",
+            "title",
         ],
+        default=str(product_id),
+    )
 
-        "results_per_package": per_package_results,
-    }
+    lengte = to_float(
+        first_value(
+            row,
+            [
+                "lengte",
+                "lengte_cm",
+                "length",
+                "l",
+                "product_length_cm",
+            ],
+        )
+    )
+
+    breedte = to_float(
+        first_value(
+            row,
+            [
+                "breedte",
+                "breedte_cm",
+                "w",
+                "width_cm",
+                "product_width_cm",
+            ],
+        )
+    )
+
+    hoogte = to_float(
+        first_value(
+            row,
+            [
+                "hoogte",
+                "h",
+                "height",
+                "height_cm",
+                "product_height_cm",
+            ],
+        )
+    )
+
+    gewicht = to_float(
+        first_value(
+            row,
+            [
+                "gewicht",
+                "gewicht_g",
+                "weight",
+                "weight_g",
+                "product_weight_g",
+            ],
+        ),
+        default=0.0,
+    )
+
+    return Product(
+        product_id=str(product_id),
+        name=str(name),
+        lengte=lengte,
+        breedte=breedte,
+        hoogte=hoogte,
+        gewicht=gewicht,
+        stackable=to_bool(row.get("stackable", False)),
+        stack_increment_h=to_float(first_value(row, ["stack_increment_h", "stack_increment_h_cm", "stapel_increment_h"]), default=0.0),
+        foldable=to_bool(row.get("foldable", False)),
+        folded_dimensions=parse_folded_dimensions(row),
+        raw=row,
+    )
+
+
+def detect_package(row: Dict[str, Any], index: int) -> Package:
+    naam = first_value(
+        row,
+        [
+            "naam",
+            "name",
+            "package_name",
+            "verpakking",
+            "id",
+        ],
+        default=f"PACKAGE-{index}",
+    )
+
+    lengte = to_float(
+        first_value(
+            row,
+            [
+                "lengte",
+                "lengte_cm",
+                "length",
+                "length_cm",
+            ],
+        )
+    )
+
+    breedte = to_float(
+        first_value(
+            row,
+            [
+                "breedte",
+                "breedte_cm",
+                "width",
+                "width_cm",
+            ],
+        )
+    )
+
+    hoogte = to_float(
+        first_value(
+            row,
+            [
+                "hoogte",
+                "hoogte_cm",
+                "height",
+                "height_cm",
+            ],
+        )
+    )
+
+    max_gewicht_raw = first_value(
+        row,
+        [
+            "max_gewicht",
+            "max_gewicht_g",
+            "max_weight",
+            "max_weight_g",
+            "maximum_weight",
+        ],
+        default=None,
+    )
+
+    max_gewicht = (
+        None
+        if max_gewicht_raw in (None, "")
+        else to_float(max_gewicht_raw)
+    )
+
+    return Package(
+        naam=str(naam),
+        lengte=lengte,
+        breedte=breedte,
+        hoogte=hoogte,
+        max_gewicht=max_gewicht,
+        raw=row,
+    )
 
 
 # ============================================================================
-# ROTATION / DIMENSION CHECK
+# GEOMETRIE
 # ============================================================================
 
-def find_possible_rotations(
-    product: Product,
-    package: Package,
+def unique_rotations(
+    dimensions: Tuple[float, float, float]
 ) -> List[Tuple[float, float, float]]:
-
     """
-    Bepaal alle unieke rotaties waarbij het product
-    als rechthoekig blok in de verpakking past.
+    Alle unieke oriëntaties van een rechthoekig blok.
     """
+    return list(set(itertools.permutations(dimensions, 3)))
 
-    dimensions = [
-        product.lengte,
-        product.breedte,
-        product.hoogte,
-    ]
 
-    rotations = set()
+def fits_with_rotation(
+    product: Product,
+    package: Package,
+    tolerance: float = 1e-9,
+) -> Tuple[bool, Optional[Tuple[float, float, float]]]:
+    """
+    Pure geometrische test.
 
-    import itertools
+    Dit is bewust onafhankelijk van py3dbp.
+    """
+    box = package.dimensions
 
-    for rotation in itertools.permutations(
-        dimensions
-    ):
-
-        if (
-            rotation[0] <= package.lengte
-            and rotation[1] <= package.breedte
-            and rotation[2] <= package.hoogte
+    for rotation in unique_rotations(product.dimensions):
+        if all(
+            rotation[i] <= box[i] + tolerance
+            for i in range(3)
         ):
-            rotations.add(
-                tuple(
-                    round(x, 3)
-                    for x in rotation
-                )
-            )
+            return True, rotation
 
-    return sorted(rotations)
+    return False, None
 
 
-def dimension_failure_reason(
-    product: Product,
-    package: Package,
-) -> Dict[str, Any]:
-
-    """
-    Probeert uit te leggen waarom een product
-    niet in een verpakking past.
-    """
-
-    product_dims = sorted(
-        [
-            product.lengte,
-            product.breedte,
-            product.hoogte,
-        ],
-        reverse=True,
-    )
-
-    package_dims = sorted(
-        [
-            package.lengte,
-            package.breedte,
-            package.hoogte,
-        ],
-        reverse=True,
-    )
-
-    failures = []
-
-    for product_dim, package_dim in zip(
-        product_dims,
-        package_dims,
-    ):
-
-        if product_dim > package_dim:
-            failures.append(
-                {
-                    "product_dimension_cm": product_dim,
-                    "package_dimension_cm": package_dim,
-                    "difference_cm": round(
-                        product_dim - package_dim,
-                        3,
-                    ),
-                }
-            )
-
-    if failures:
-
-        return {
-            "reason": "PRODUCT_TOO_LARGE",
-            "details": failures,
-        }
-
-    return {
-        "reason": "UNKNOWN_PACKING_FAILURE",
-        "details": [],
-    }
+def volume_fit(products: Sequence[Product], package: Package) -> bool:
+    total = sum(p.volume for p in products)
+    return total <= package.volume + 1e-9
 
 
 # ============================================================================
-# SINGLE PRODUCT TEST
+# PY3DBP
 # ============================================================================
 
-def _extract_placements(
-    bin_result: Any,
-    id_to_name: Optional[Dict[str, str]] = None,
-) -> List[Dict[str, Any]]:
-
-    """
-    Zet de py3dbp bin_result.items (na packing) om naar
-    een platte, JSON-vriendelijke lijst met per item de
-    werkelijke positie (x, y, z) en de werkelijk gebruikte
-    afmetingen ná rotatie — dit is de basis voor een 3D
-    plaatsingstekening.
-
-    Itemnamen zijn opgebouwd als "{product_id}#{index}"
-    (zie test_products_together), zodat meerdere
-    exemplaren van hetzelfde artikel uit elkaar te houden
-    zijn.
-    """
-
-    id_to_name = id_to_name or {}
-
-    placements = []
-
-    for item in bin_result.items:
-
-        # Werkelijke, gedraaide afmetingen. py3dbp had in
-        # oudere voorbeelden "getDimension" (camelCase) —
-        # de geïnstalleerde versie heeft "get_dimension"
-        # (snake_case). Beide worden geprobeerd zodat dit
-        # ook op oudere/nieuwere py3dbp-versies werkt.
-        try:
-            dims = item.get_dimension()
-
-        except AttributeError:
-
-            try:
-                dims = item.getDimension()
-
-            except Exception:
-                dims = [
-                    item.width,
-                    item.height,
-                    item.depth,
-                ]
-
-        try:
-            position = [
-                float(coord)
-                for coord in item.position
-            ]
-
-        except Exception:
-            position = [0.0, 0.0, 0.0]
-
-        try:
-            dimension = [
-                float(dim)
-                for dim in dims
-            ]
-
-        except Exception:
-            dimension = [
-                float(item.width),
-                float(item.height),
-                float(item.depth),
-            ]
-
-        raw_name = str(item.name)
-        product_id = raw_name.split("#")[0]
-
-        placements.append(
-            {
-                "item_name": raw_name,
-                "product_id": product_id,
-                "product_name": id_to_name.get(
-                    product_id,
-                    product_id,
-                ),
-                "position": position,
-                "dimensions": dimension,
-                "rotation_type": item.rotation_type,
-            }
-        )
-
-    return placements
+def py3dbp_available() -> bool:
+    return Packer is not None
 
 
-def test_product_in_package(
-    product: Product,
+def pack_with_py3dbp(
+    products: Sequence[Product],
     package: Package,
+    decimals: int = 2,
 ) -> Dict[str, Any]:
+    """
+    Test een combinatie met py3dbp.
 
-    rotations = find_possible_rotations(
-        product,
-        package,
-    )
-
-    # Eerst simpele geometrische check.
-    if not rotations:
-
-        dimension_reason = (
-            dimension_failure_reason(
-                product,
-                package,
-            )
-        )
-
+    Retourneert een uitgebreid diagnose-object.
+    """
+    if not py3dbp_available():
         return {
-            "product": product.product_id,
-            "product_name": product.name,
-
-            "product_dimensions_cm": {
-                "lengte": product.lengte,
-                "breedte": product.breedte,
-                "hoogte": product.hoogte,
-            },
-
-            "package": package.naam,
-
-            "package_dimensions_cm": {
-                "lengte": package.lengte,
-                "breedte": package.breedte,
-                "hoogte": package.hoogte,
-            },
-
-            "product_weight_g": product.gewicht,
-
-            "package_max_weight_g": (
-                package.max_gewicht
-            ),
-
-            "fits": False,
-            "status": "FAIL",
-
-            "reason": dimension_reason[
-                "reason"
-            ],
-
-            "reason_details": dimension_reason[
-                "details"
-            ],
-
-            "rotation": None,
-
-            "volume_pct": round(
-                (
-                    product.volume
-                    / package.volume
-                ) * 100,
-                1,
-            ),
-
-            "product_volume_cm3": round(
-                product.volume,
-                2,
-            ),
-
-            "package_volume_cm3": round(
-                package.volume,
-                2,
-            ),
+            "available": False,
+            "error": "py3dbp is niet geïnstalleerd.",
         }
-
-    # Gewicht controleren.
-    if (
-        package.max_gewicht is not None
-        and product.gewicht
-        > package.max_gewicht
-    ):
-
-        return {
-            "product": product.product_id,
-            "product_name": product.name,
-
-            "product_dimensions_cm": {
-                "lengte": product.lengte,
-                "breedte": product.breedte,
-                "hoogte": product.hoogte,
-            },
-
-            "package": package.naam,
-
-            "package_dimensions_cm": {
-                "lengte": package.lengte,
-                "breedte": package.breedte,
-                "hoogte": package.hoogte,
-            },
-
-            "product_weight_g": product.gewicht,
-
-            "package_max_weight_g": (
-                package.max_gewicht
-            ),
-
-            "fits": False,
-            "status": "FAIL",
-
-            "reason": "WEIGHT_LIMIT",
-
-            "reason_details": [
-                {
-                    "product_weight_g": product.gewicht,
-                    "max_weight_g": package.max_gewicht,
-                }
-            ],
-
-            "rotation": list(
-                rotations[0]
-            ),
-
-            "volume_pct": round(
-                (
-                    product.volume
-                    / package.volume
-                ) * 100,
-                1,
-            ),
-
-            "product_volume_cm3": round(
-                product.volume,
-                2,
-            ),
-
-            "package_volume_cm3": round(
-                package.volume,
-                2,
-            ),
-        }
-
-    # ------------------------------------------------------------------
-    # py3dbp
-    # ------------------------------------------------------------------
 
     packer = Packer()
 
+    # py3dbp verwacht een maximumgewicht.
+    # Wanneer er geen maximumgewicht in de data staat,
+    # gebruiken we een zeer hoge waarde.
     max_weight = (
         package.max_gewicht
         if package.max_gewicht is not None
@@ -1118,453 +551,625 @@ def test_product_in_package(
         )
     )
 
-    packer.add_item(
-        Item(
-            product.product_id,
-            product.lengte,
-            product.breedte,
-            product.hoogte,
-            product.gewicht,
-        )
-    )
-
-    try:
-
-        packer.pack(
-            bigger_first=True,
-            distribute_items=False,
-            number_of_decimals=2,
-        )
-
-    except Exception as exc:
-
-        return {
-            "product": product.product_id,
-            "product_name": product.name,
-            "package": package.naam,
-            "fits": False,
-            "status": "ERROR",
-            "reason": "PACKING_ENGINE_ERROR",
-            "reason_details": [
-                str(exc)
-            ],
-        }
-
-    bin_result = packer.bins[0]
-
-    unfitted = len(
-        bin_result.unfitted_items
-    )
-
-    if unfitted == 0:
-
-        used_pct = (
-            product.volume
-            / package.volume
-        ) * 100
-
-        # py3dbp kan positie/dimensies bevatten.
-        fitted_item = None
-
-        if bin_result.items:
-            fitted_item = (
-                bin_result.items[0]
-            )
-
-        rotation = None
-
-        if fitted_item is not None:
-
-            try:
-                rotation = _extract_placements(
-                    bin_result,
-                    {
-                        product.product_id: product.name
-                    },
-                )[0]["dimensions"]
-
-            except Exception:
-                rotation = list(
-                    rotations[0]
-                )
-
-        if rotation is None:
-            rotation = list(
-                rotations[0]
-            )
-
-        return {
-            "product": product.product_id,
-            "product_name": product.name,
-
-            "product_dimensions_cm": {
-                "lengte": product.lengte,
-                "breedte": product.breedte,
-                "hoogte": product.hoogte,
-            },
-
-            "package": package.naam,
-
-            "package_dimensions_cm": {
-                "lengte": package.lengte,
-                "breedte": package.breedte,
-                "hoogte": package.hoogte,
-            },
-
-            "product_weight_g": product.gewicht,
-
-            "package_max_weight_g": (
-                package.max_gewicht
-            ),
-
-            "fits": True,
-            "status": "PASS",
-
-            "reason": None,
-            "reason_details": [],
-
-            "rotation": rotation,
-
-            "volume_pct": round(
-                min(
-                    used_pct,
-                    100.0,
-                ),
-                1,
-            ),
-
-            "product_volume_cm3": round(
-                product.volume,
-                2,
-            ),
-
-            "package_volume_cm3": round(
-                package.volume,
-                2,
-            ),
-        }
-
-    # py3dbp zegt dat het niet past.
-    return {
-        "product": product.product_id,
-        "product_name": product.name,
-
-        "product_dimensions_cm": {
-            "lengte": product.lengte,
-            "breedte": product.breedte,
-            "hoogte": product.hoogte,
-        },
-
-        "package": package.naam,
-
-        "package_dimensions_cm": {
-            "lengte": package.lengte,
-            "breedte": package.breedte,
-            "hoogte": package.hoogte,
-        },
-
-        "product_weight_g": product.gewicht,
-
-        "package_max_weight_g": (
-            package.max_gewicht
-        ),
-
-        "fits": False,
-        "status": "FAIL",
-
-        "reason": "PACKING_ENGINE_REJECTED",
-
-        "reason_details": [],
-
-        "rotation": None,
-
-        "volume_pct": round(
-            (
-                product.volume
-                / package.volume
-            ) * 100,
-            1,
-        ),
-
-        "product_volume_cm3": round(
-            product.volume,
-            2,
-        ),
-
-        "package_volume_cm3": round(
-            package.volume,
-            2,
-        ),
-    }
-
-
-# ============================================================================
-# MULTI ITEM TEST
-# ============================================================================
-
-def test_products_together(
-    products: List[Product],
-    package: Package,
-) -> Dict[str, Any]:
-
-    packer = Packer()
-
-    max_weight = (
-        package.max_gewicht
-        if package.max_gewicht is not None
-        else 1_000_000_000
-    )
-
-    packer.add_bin(
-        Bin(
-            package.naam,
-            package.lengte,
-            package.breedte,
-            package.hoogte,
-            max_weight,
-        )
-    )
-
-    for index, product in enumerate(
-        products
-    ):
-
+    for index, (product, quantity, dims, behavior) in enumerate(pack_units_from_products(products)):
         packer.add_item(
-            Item(
-                f"{product.product_id}#{index}",
-                product.lengte,
-                product.breedte,
-                product.hoogte,
-                product.gewicht,
-            )
+            Item(f"{product.product_id}#{index}", dims[0], dims[1], dims[2], product.gewicht * quantity)
         )
 
     try:
-
         packer.pack(
             bigger_first=True,
             distribute_items=False,
-            number_of_decimals=2,
+            number_of_decimals=decimals,
         )
-
     except Exception as exc:
-
         return {
-            "fits": False,
-            "status": "ERROR",
-            "reason": "PACKING_ENGINE_ERROR",
-            "reason_details": [
-                str(exc)
-            ],
+            "available": True,
+            "error": repr(exc),
         }
 
-    id_to_name = {
-        product.product_id: product.name
-        for product in products
-    }
-
     bin_result = packer.bins[0]
-
-    unfitted = [
-        item.name
-        for item in bin_result.unfitted_items
-    ]
 
     fitted = [
-        item.name
+        getattr(item, "name", str(item))
         for item in bin_result.items
     ]
 
-    total_volume = sum(
-        product.volume
-        for product in products
-    )
+    unfitted = [
+        getattr(item, "name", str(item))
+        for item in bin_result.unfitted_items
+    ]
 
-    total_weight = sum(
-        product.gewicht
-        for product in products
-    )
-
+    units = pack_units_from_products(products)
     return {
-        "fits": len(unfitted) == 0,
-        "status": (
-            "PASS"
-            if len(unfitted) == 0
-            else "FAIL"
-        ),
-
-        "reason": (
-            None
-            if len(unfitted) == 0
-            else "ITEMS_DID_NOT_ALL_FIT"
-        ),
-
-        "reason_details": {
-            "unfitted_items": unfitted,
-            "fitted_items": fitted,
-        },
-
-        "placements": _extract_placements(
-            bin_result,
-            id_to_name,
-        ),
-
-        "package": package.naam,
-
-        "package_dimensions_cm": {
-            "lengte": package.lengte,
-            "breedte": package.breedte,
-            "hoogte": package.hoogte,
-        },
-
-        "total_product_volume_cm3": round(
-            total_volume,
-            2,
-        ),
-
-        "package_volume_cm3": round(
-            package.volume,
-            2,
-        ),
-
-        "volume_pct": round(
-            min(
-                (
-                    total_volume
-                    / package.volume
-                ) * 100,
-                100.0,
-            ),
-            1,
-        ),
-
-        "total_weight_g": round(
-            total_weight,
-            2,
-        ),
-
-        "package_max_weight_g": (
-            package.max_gewicht
-        ),
-
-        "number_of_products": len(
-            products
-        ),
-
-        "fitted_count": len(
-            fitted
-        ),
-
-        "unfitted_count": len(
-            unfitted
-        ),
+        "available": True, "passed": len(unfitted) == 0,
+        "fitted": fitted, "unfitted": unfitted,
+        "fitted_count": len(fitted), "unfitted_count": len(unfitted),
+        "packing_units": [{"product_id": p.product_id, "product_name": p.name, "quantity": q, "behavior": meta["mode"], **meta} for p,q,dims,meta in units],
     }
 
 
 # ============================================================================
-# SELECTIE
+# DATA VALIDATIE
 # ============================================================================
 
-def select_products(
-    products: List[Product],
-    selection: Optional[str],
-) -> List[Tuple[Product, int]]:
+def validate_products(products: Sequence[Product]) -> List[Dict[str, Any]]:
+    problems: List[Dict[str, Any]] = []
 
-    if not selection:
-        return [
-            (
-                product,
-                1,
-            )
-            for product in products
+    seen: Dict[str, int] = {}
+
+    for product in products:
+        seen[product.product_id] = seen.get(product.product_id, 0) + 1
+
+        dimensions = product.dimensions
+
+        if any(math.isnan(x) for x in dimensions):
+            problems.append({
+                "type": "NAN_DIMENSION",
+                "product": product.product_id,
+                "dimensions": dimensions,
+            })
+
+        if any(math.isinf(x) for x in dimensions):
+            problems.append({
+                "type": "INFINITE_DIMENSION",
+                "product": product.product_id,
+                "dimensions": dimensions,
+            })
+
+        if any(x < 0 for x in dimensions):
+            problems.append({
+                "type": "NEGATIVE_DIMENSION",
+                "product": product.product_id,
+                "dimensions": dimensions,
+            })
+
+        if any(x == 0 for x in dimensions):
+            problems.append({
+                "type": "ZERO_DIMENSION",
+                "product": product.product_id,
+                "dimensions": dimensions,
+            })
+
+        if product.gewicht < 0:
+            problems.append({
+                "type": "NEGATIVE_WEIGHT",
+                "product": product.product_id,
+                "weight": product.gewicht,
+            })
+
+        if product.stackable and product.stack_increment_h < 0:
+            problems.append({"type":"NEGATIVE_STACK_INCREMENT","product":product.product_id,"stack_increment_h":product.stack_increment_h})
+        if product.foldable and not product.folded_dimensions:
+            problems.append({"type":"FOLDABLE_WITHOUT_FOLDED_DIMENSIONS","product":product.product_id,"message":"foldable=true maar geen folded_dimensions/folded_l/w/h opgegeven."})
+        for dims in product.folded_dimensions or []:
+            if any(x <= 0 for x in dims): problems.append({"type":"INVALID_FOLDED_DIMENSION","product":product.product_id,"dimensions":dims})
+
+    for product_id, count in seen.items():
+        if count > 1:
+            problems.append({
+                "type": "DUPLICATE_PRODUCT_ID",
+                "product": product_id,
+                "count": count,
+            })
+
+    return problems
+
+
+def validate_packages(packages: Sequence[Package]) -> List[Dict[str, Any]]:
+    problems: List[Dict[str, Any]] = []
+
+    seen: Dict[str, int] = {}
+
+    for package in packages:
+        seen[package.naam] = seen.get(package.naam, 0) + 1
+
+        dimensions = package.dimensions
+
+        if any(math.isnan(x) for x in dimensions):
+            problems.append({
+                "type": "NAN_DIMENSION",
+                "package": package.naam,
+                "dimensions": dimensions,
+            })
+
+        if any(math.isinf(x) for x in dimensions):
+            problems.append({
+                "type": "INFINITE_DIMENSION",
+                "package": package.naam,
+                "dimensions": dimensions,
+            })
+
+        if any(x < 0 for x in dimensions):
+            problems.append({
+                "type": "NEGATIVE_DIMENSION",
+                "package": package.naam,
+                "dimensions": dimensions,
+            })
+
+        if any(x == 0 for x in dimensions):
+            problems.append({
+                "type": "ZERO_DIMENSION",
+                "package": package.naam,
+                "dimensions": dimensions,
+            })
+
+        if (
+            package.max_gewicht is not None
+            and package.max_gewicht < 0
+        ):
+            problems.append({
+                "type": "NEGATIVE_MAX_WEIGHT",
+                "package": package.naam,
+                "max_weight": package.max_gewicht,
+            })
+
+    for name, count in seen.items():
+        if count > 1:
+            problems.append({
+                "type": "DUPLICATE_PACKAGE_NAME",
+                "package": name,
+                "count": count,
+            })
+
+    return problems
+
+
+# ============================================================================
+# TEST ENGINE
+# ============================================================================
+
+class PackingTester:
+    def __init__(
+        self,
+        products: List[Product],
+        packages: List[Package],
+        seed: int = 12345,
+        decimals: int = 2,
+    ):
+        self.products = products
+        self.packages = packages
+        self.random = random.Random(seed)
+        self.seed = seed
+        self.decimals = decimals
+
+        self.stats = TestStats()
+
+        self.failures: List[TestCase] = []
+        self.counterexamples: List[TestCase] = []
+        self.warnings: List[TestCase] = []
+
+    # ------------------------------------------------------------------
+    # individuele producttests
+    # ------------------------------------------------------------------
+
+    def test_individual_products(self) -> None:
+        print("\n[1] Individuele producten testen...")
+
+        for product in self.products:
+            for package in self.packages:
+                self.stats.record("PASS")
+
+                geometric_fit, rotation = fits_with_rotation(
+                    product,
+                    package,
+                )
+
+                volume_fit_result = volume_fit(
+                    [product],
+                    package,
+                )
+
+                pack_result = pack_with_py3dbp(
+                    [product],
+                    package,
+                    decimals=self.decimals,
+                )
+
+                if not geometric_fit:
+                    if volume_fit_result:
+                        self.counterexamples.append(
+                            TestCase(
+                                case_id=self.make_case_id(),
+                                category="VOLUME_BUT_GEOMETRY_FAIL",
+                                product_ids=[product.product_id],
+                                package=package.naam,
+                                quantity={product.product_id: 1},
+                                message=(
+                                    "Volume zegt PASS, maar geen enkele "
+                                    "oriëntatie past."
+                                ),
+                                details={
+                                    "product_dimensions": product.dimensions,
+                                    "package_dimensions": package.dimensions,
+                                    "product_volume": product.volume,
+                                    "package_volume": package.volume,
+                                },
+                            )
+                        )
+
+                if pack_result.get("available") and not pack_result.get(
+                    "passed",
+                    False,
+                ):
+                    self.failures.append(
+                        TestCase(
+                            case_id=self.make_case_id(),
+                            category="SINGLE_PRODUCT_PY3DBP_FAIL",
+                            product_ids=[product.product_id],
+                            package=package.naam,
+                            quantity={product.product_id: 1},
+                            message="Product past niet volgens py3dbp.",
+                            details={
+                                "geometric_fit": geometric_fit,
+                                "rotation": rotation,
+                                "volume_fit": volume_fit_result,
+                                "py3dbp": pack_result,
+                            },
+                        )
+                    )
+
+    # ------------------------------------------------------------------
+    # aantalstests
+    # ------------------------------------------------------------------
+
+    def test_quantities(self, max_quantity: int = 5) -> None:
+        print(
+            f"\n[2] Aantallen 1..{max_quantity} testen..."
+        )
+
+        for product in self.products:
+            for package in self.packages:
+                previous_pass = True
+
+                for quantity in range(1, max_quantity + 1):
+                    products = [product] * quantity
+
+                    pack_result = pack_with_py3dbp(
+                        products,
+                        package,
+                        decimals=self.decimals,
+                    )
+
+                    if not pack_result.get("available"):
+                        continue
+
+                    passed = bool(pack_result.get("passed"))
+
+                    if not passed and previous_pass:
+                        self.warnings.append(
+                            TestCase(
+                                case_id=self.make_case_id(),
+                                category="CAPACITY_THRESHOLD",
+                                product_ids=[product.product_id],
+                                package=package.naam,
+                                quantity={product.product_id: quantity},
+                                message=(
+                                    f"{quantity - 1} exemplaar(s) passen, "
+                                    f"{quantity} niet."
+                                ),
+                                details={
+                                    "previous_quantity": quantity - 1,
+                                    "current_quantity": quantity,
+                                    "py3dbp": pack_result,
+                                },
+                            )
+                        )
+
+                    previous_pass = passed
+
+    # ------------------------------------------------------------------
+    # gewicht
+    # ------------------------------------------------------------------
+
+    def test_weights(self) -> None:
+        print("\n[3] Gewichtsbeperkingen testen...")
+
+        packages_with_weight = [
+            p
+            for p in self.packages
+            if p.max_gewicht is not None
         ]
 
-    lookup = {
-        product.product_id: product
-        for product in products
-    }
+        if not packages_with_weight:
+            print("    Geen verpakkingen met max_gewicht gevonden.")
+            return
 
-    selected = []
+        for package in packages_with_weight:
+            for product in self.products:
+                if product.gewicht <= 0:
+                    continue
 
-    for part in selection.split(","):
+                if product.gewicht > package.max_gewicht:
+                    self.failures.append(
+                        TestCase(
+                            case_id=self.make_case_id(),
+                            category="WEIGHT_LIMIT",
+                            product_ids=[product.product_id],
+                            package=package.naam,
+                            quantity={product.product_id: 1},
+                            message=(
+                                "Productgewicht overschrijdt "
+                                "maximaal verpakkingsgewicht."
+                            ),
+                            details={
+                                "product_weight": product.gewicht,
+                                "max_weight": package.max_gewicht,
+                            },
+                        )
+                    )
 
-        part = part.strip()
+    # ------------------------------------------------------------------
+    # willekeurige combinaties
+    # ------------------------------------------------------------------
 
-        if not part:
-            continue
+    def generate_random_combination(
+        self,
+        max_items: int = 5,
+    ) -> List[Product]:
+        if not self.products:
+            return []
 
-        if ":" in part:
-            product_id, amount = (
-                part.split(
-                    ":",
-                    1,
-                )
+        count = self.random.randint(2, max_items)
+
+        return [
+            self.random.choice(self.products)
+            for _ in range(count)
+        ]
+
+    def test_random_combinations(
+        self,
+        number_of_combinations: int = 250,
+        max_items: int = 5,
+    ) -> None:
+        print(
+            f"\n[4] {number_of_combinations} willekeurige "
+            "combinaties testen..."
+        )
+
+        if not self.products or not self.packages:
+            return
+
+        for _ in range(number_of_combinations):
+            products = self.generate_random_combination(max_items)
+
+            package = self.random.choice(self.packages)
+
+            volume_pass = volume_fit(products, package)
+
+            geometric_pass = all(
+                fits_with_rotation(product, package)[0]
+                for product in products
             )
 
-            try:
-                amount = int(amount)
+            py_result = pack_with_py3dbp(
+                products,
+                package,
+                decimals=self.decimals,
+            )
 
-            except ValueError:
-                print(
-                    f"⚠ Ongeldig aantal: {part}"
-                )
+            if not py_result.get("available"):
                 continue
 
-        else:
-            product_id = part
-            amount = 1
+            py_pass = bool(py_result.get("passed"))
 
-        product = lookup.get(
-            product_id
+            product_ids = [p.product_id for p in products]
+
+            quantities: Dict[str, int] = {}
+            for product in products:
+                quantities[product.product_id] = (
+                    quantities.get(product.product_id, 0) + 1
+                )
+
+            # Volume PASS maar py3dbp FAIL.
+            if volume_pass and not py_pass:
+                self.counterexamples.append(
+                    TestCase(
+                        case_id=self.make_case_id(),
+                        category="VOLUME_PASS_PY3DBP_FAIL",
+                        product_ids=product_ids,
+                        package=package.naam,
+                        quantity=quantities,
+                        message=(
+                            "Totaal volume past in de verpakking, "
+                            "maar de 3D-packer krijgt niet alles geplaatst."
+                        ),
+                        details={
+                            "volume_pass": volume_pass,
+                            "geometric_individual_pass": geometric_pass,
+                            "py3dbp": py_result,
+                            "total_product_volume": sum(
+                                p.volume for p in products
+                            ),
+                            "package_volume": package.volume,
+                        },
+                    )
+                )
+
+            # Pure geometrie zegt PASS maar py3dbp FAIL.
+            if geometric_pass and not py_pass:
+                self.counterexamples.append(
+                    TestCase(
+                        case_id=self.make_case_id(),
+                        category="GEOMETRY_PASS_PY3DBP_FAIL",
+                        product_ids=product_ids,
+                        package=package.naam,
+                        quantity=quantities,
+                        message=(
+                            "Alle individuele producten passen geometrisch, "
+                            "maar de combinatie past niet."
+                        ),
+                        details={
+                            "py3dbp": py_result,
+                            "total_product_volume": sum(
+                                p.volume for p in products
+                            ),
+                            "package_volume": package.volume,
+                        },
+                    )
+                )
+
+    # ------------------------------------------------------------------
+    # volledige productparen
+    # ------------------------------------------------------------------
+
+    def test_product_pairs(
+        self,
+        limit: int = 1000,
+    ) -> None:
+        print("\n[5] Productparen testen...")
+
+        pairs = list(itertools.combinations_with_replacement(
+            self.products,
+            2,
+        ))
+
+        if len(pairs) > limit:
+            pairs = self.random.sample(pairs, limit)
+
+        for a, b in pairs:
+            for package in self.packages:
+                products = [a, b]
+
+                volume_pass = volume_fit(products, package)
+
+                py_result = pack_with_py3dbp(
+                    products,
+                    package,
+                    decimals=self.decimals,
+                )
+
+                if not py_result.get("available"):
+                    continue
+
+                py_pass = bool(py_result.get("passed"))
+
+                if volume_pass and not py_pass:
+                    quantities = {
+                        a.product_id: 1,
+                        b.product_id: (
+                            2 if a.product_id == b.product_id else 1
+                        ),
+                    }
+
+                    self.counterexamples.append(
+                        TestCase(
+                            case_id=self.make_case_id(),
+                            category="PAIR_VOLUME_PASS_3DBP_FAIL",
+                            product_ids=[
+                                a.product_id,
+                                b.product_id,
+                            ],
+                            package=package.naam,
+                            quantity=quantities,
+                            message=(
+                                "Productpaar heeft voldoende volume, "
+                                "maar kan niet worden geplaatst."
+                            ),
+                            details={
+                                "py3dbp": py_result,
+                                "volume_products": [
+                                    a.volume,
+                                    b.volume,
+                                ],
+                                "package_volume": package.volume,
+                            },
+                        )
+                    )
+
+    # ------------------------------------------------------------------
+    # grensgevallen
+    # ------------------------------------------------------------------
+
+    def test_boundaries(self) -> None:
+        print("\n[6] Grensgevallen testen...")
+
+        for product in self.products:
+            for package in self.packages:
+                geometric, rotation = fits_with_rotation(
+                    product,
+                    package,
+                )
+
+                if geometric:
+                    max_difference = max(
+                        abs(rotation[i] - package.dimensions[i])
+                        for i in range(3)
+                    )
+
+                    if max_difference < 0.01:
+                        self.warnings.append(
+                            TestCase(
+                                case_id=self.make_case_id(),
+                                category="BOUNDARY_DIMENSION",
+                                product_ids=[product.product_id],
+                                package=package.naam,
+                                quantity={product.product_id: 1},
+                                message=(
+                                    "Productafmeting ligt zeer dicht "
+                                    "bij verpakkingsafmeting."
+                                ),
+                                details={
+                                    "rotation": rotation,
+                                    "package_dimensions": package.dimensions,
+                                    "difference": max_difference,
+                                },
+                            )
+                        )
+
+    # ------------------------------------------------------------------
+    # reproduceerbare cases
+    # ------------------------------------------------------------------
+
+    def make_case_id(self) -> str:
+        return f"CASE-{len(self.failures) + len(self.counterexamples) + len(self.warnings) + 1:05d}"
+
+    # ------------------------------------------------------------------
+    # run
+    # ------------------------------------------------------------------
+
+    def run(
+        self,
+        quick: bool = False,
+        deep: bool = False,
+        combinations: int = 250,
+    ) -> None:
+        self.test_individual_products()
+
+        if quick:
+            self.test_quantities(max_quantity=3)
+            self.test_weights()
+            self.test_boundaries()
+            return
+
+        self.test_quantities(
+            max_quantity=10 if deep else 5
         )
 
-        if product is None:
+        self.test_weights()
 
-            print(
-                f"⚠ Product niet gevonden: "
-                f"{product_id}"
-            )
-
-            continue
-
-        if amount <= 0:
-
-            print(
-                f"⚠ Aantal moet > 0 zijn: "
-                f"{part}"
-            )
-
-            continue
-
-        selected.append(
-            (
-                product,
-                amount,
-            )
+        self.test_random_combinations(
+            number_of_combinations=(
+                combinations * 5 if deep else combinations
+            ),
+            max_items=8 if deep else 5,
         )
 
-    return selected
+        self.test_product_pairs(
+            limit=5000 if deep else 1000,
+        )
+
+        self.test_boundaries()
 
 
 # ============================================================================
-# OUTPUT
+# RAPPORTAGE
 # ============================================================================
 
-def save_json(
-    path: Path,
-    data: Any,
-) -> None:
+def save_json(path: Path, data: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
 
-    path.parent.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
-
-    with path.open(
-        "w",
-        encoding="utf-8",
-    ) as f:
-
+    with path.open("w", encoding="utf-8") as f:
         json.dump(
             data,
             f,
@@ -1573,72 +1178,154 @@ def save_json(
         )
 
 
-def write_summary(
-    output_dir: Path,
-    results: List[Dict[str, Any]],
-    data_problems: List[Dict[str, Any]],
+def case_to_dict(case: TestCase) -> Dict[str, Any]:
+    return asdict(case)
+
+
+def write_reproducible_cases(
+    path: Path,
+    tester: PackingTester,
 ) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
 
-    total = len(results)
-
-    passes = sum(
-        1
-        for result in results
-        if result.get("status") == "PASS"
+    cases = (
+        tester.failures
+        + tester.counterexamples
+        + tester.warnings
     )
 
-    failures = sum(
-        1
-        for result in results
-        if result.get("status") == "FAIL"
-    )
+    with path.open("w", encoding="utf-8") as f:
+        f.write(
+            "SERVICESETS PACKING TESTER\n"
+            "===========================\n\n"
+        )
 
-    errors = sum(
-        1
-        for result in results
-        if result.get("status") == "ERROR"
-    )
+        f.write(
+            f"Random seed: {tester.seed}\n"
+            f"Cases: {len(cases)}\n\n"
+        )
 
-    products = len(
-        {
-            result.get("product")
-            for result in results
-            if result.get("product")
-        }
-    )
-
-    packages = len(
-        {
-            result.get("package")
-            for result in results
-            if result.get("package")
-        }
-    )
-
-    summary = {
-        "total_tests": total,
-        "pass": passes,
-        "fail": failures,
-        "errors": errors,
-        "pass_percentage": round(
-            (
-                passes / total * 100
+        for case in cases:
+            f.write("=" * 80 + "\n")
+            f.write(f"{case.case_id}\n")
+            f.write(f"Type: {case.category}\n")
+            f.write(f"Package: {case.package}\n")
+            f.write(
+                "Products: "
+                + ", ".join(case.product_ids)
+                + "\n"
             )
-            if total
-            else 0,
-            1,
-        ),
-        "products_tested": products,
-        "packages_tested": packages,
-        "data_problems": len(
-            data_problems
-        ),
-    }
+            f.write(
+                "Quantity: "
+                + json.dumps(
+                    case.quantity,
+                    ensure_ascii=False,
+                )
+                + "\n"
+            )
+            f.write(f"Message: {case.message}\n")
 
-    save_json(
-        output_dir / "summary.json",
-        summary,
-    )
+            if case.details:
+                f.write("\nDetails:\n")
+                f.write(
+                    json.dumps(
+                        case.details,
+                        ensure_ascii=False,
+                        indent=2,
+                    )
+                )
+                f.write("\n")
+
+            f.write("\n")
+
+
+def print_summary(
+    products: List[Product],
+    packages: List[Package],
+    data_problems: List[Dict[str, Any]],
+    tester: PackingTester,
+    duration: float,
+) -> None:
+    print("\n")
+    print("=" * 72)
+    print(" SERVICESETS PACKING DIAGNOSTIC REPORT")
+    print("=" * 72)
+
+    print(f"\nProducten:        {len(products)}")
+    print(f"Verpakkingen:     {len(packages)}")
+    print(f"Data-problemen:   {len(data_problems)}")
+
+    print("\nTests:")
+    print(f"  Counterexamples: {len(tester.counterexamples)}")
+    print(f"  Failures:        {len(tester.failures)}")
+    print(f"  Warnings:        {len(tester.warnings)}")
+
+    print(f"\nDuur: {duration:.2f} seconden")
+
+    if not py3dbp_available():
+        print("\n⚠ py3dbp NIET geïnstalleerd.")
+        print("  Installeer met:")
+        print("  pip install py3dbp")
+
+    if data_problems:
+        print("\n⚠ DATA-PROBLEMEN")
+        for problem in data_problems[:15]:
+            print(
+                "  - "
+                + problem.get("type", "UNKNOWN")
+                + ": "
+                + json.dumps(
+                    problem,
+                    ensure_ascii=False,
+                )
+            )
+
+        if len(data_problems) > 15:
+            print(
+                f"  ... en nog {len(data_problems) - 15}"
+            )
+
+    if tester.counterexamples:
+        print("\n⚠ INTERESSANTE TEGENVOORBEELDEN")
+
+        categories: Dict[str, int] = {}
+
+        for case in tester.counterexamples:
+            categories[case.category] = (
+                categories.get(case.category, 0) + 1
+            )
+
+        for category, count in sorted(
+            categories.items(),
+            key=lambda x: (-x[1], x[0]),
+        ):
+            print(f"  - {category}: {count}")
+
+    if tester.failures:
+        print("\n❌ FAILURES")
+
+        for case in tester.failures[:10]:
+            print(
+                f"  - {case.case_id}: "
+                f"{case.category} - {case.message}"
+            )
+
+        if len(tester.failures) > 10:
+            print(
+                f"  ... en nog {len(tester.failures) - 10}"
+            )
+
+    print("\nRapporten staan in:")
+    print("  test_results/")
+
+    print("\nBelangrijkste bestanden:")
+    print("  summary.json")
+    print("  data_problems.json")
+    print("  failures.json")
+    print("  counterexamples.json")
+    print("  reproducible_cases.txt")
+
+    print("\n" + "=" * 72)
 
 
 # ============================================================================
@@ -1646,185 +1333,191 @@ def write_summary(
 # ============================================================================
 
 def main() -> None:
-
     parser = argparse.ArgumentParser(
         description=(
-            "Test ServiceSets producten "
-            "tegen alle verpakkingen."
+            "Automatische diagnose- en stresstest voor "
+            "ServiceSets 3D-verpakkingslogica."
         )
     )
 
     parser.add_argument(
-        "--products",
-        help=(
-            "Lokaal products.json. "
-            "Als dit ontbreekt wordt GitHub gebruikt."
-        ),
+        "--products-url",
+        default=PRODUCTS_URL,
+        help="URL van products.json",
     )
 
     parser.add_argument(
-        "--packages",
-        help=(
-            "Lokaal package_dimensions.json. "
-            "Als dit ontbreekt wordt GitHub gebruikt."
-        ),
-    )
-
-    parser.add_argument(
-        "--select",
-        help=(
-            "Producten testen. "
-            "Bijvoorbeeld: 3560000,3552520:2"
-        ),
-    )
-
-    parser.add_argument(
-        "--all",
-        action="store_true",
-        help=(
-            "Alle producten individueel "
-            "tegen alle verpakkingen testen."
-        ),
+        "--packages-url",
+        default=PACKAGES_URL,
+        help="URL van package_dimensions.json",
     )
 
     parser.add_argument(
         "--output",
-        default=str(
-            DEFAULT_OUTPUT_DIR
-        ),
-        help=(
-            "Outputmap. "
-            "Standaard: test_results"
-        ),
+        default=str(DEFAULT_OUTPUT_DIR),
+        help="Map voor testresultaten.",
     )
 
     parser.add_argument(
-        "--combination",
-        nargs="+",
-        help=(
-            "Test geselecteerde producten "
-            "samen in verpakkingen. "
-            "Bijvoorbeeld: 3552520:6,3552528:1"
-        ),
-    )
-
-    parser.add_argument(
-        "--scenarios",
-        help=(
-            "Lokaal combination_scenarios.json met "
-            "benoemde service-set samenstellingen "
-            "(artikelen + aantallen). Standaard: "
-            f"{DEFAULT_SCENARIOS_PATH} indien aanwezig, "
-            "anders GitHub."
-        ),
-    )
-
-    parser.add_argument(
-        "--no-scenarios",
+        "--quick",
         action="store_true",
-        help=(
-            "Sla het testen van combinatie-scenario's "
-            "over."
-        ),
+        help="Snelle testset.",
+    )
+
+    parser.add_argument(
+        "--deep",
+        action="store_true",
+        help="Uitgebreide testset.",
+    )
+
+    parser.add_argument(
+        "--combinations",
+        type=int,
+        default=250,
+        help="Aantal random combinaties.",
+    )
+
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=12345,
+        help="Random seed voor reproduceerbare tests.",
+    )
+
+    parser.add_argument(
+        "--decimals",
+        type=int,
+        default=2,
+        help="Aantal decimalen voor py3dbp.",
     )
 
     args = parser.parse_args()
 
-    output_dir = Path(
-        args.output
-    )
+    output_dir = Path(args.output)
 
-    output_dir.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
+    print("=" * 72)
+    print(" ServiceSets Packing Tester")
+    print("=" * 72)
 
-    print()
-    print("=" * 70)
-    print(
-        " ServiceSets.com Packing Tester"
-    )
-    print("=" * 70)
-
-    # ------------------------------------------------------------------
-    # PRODUCTS
-    # ------------------------------------------------------------------
-
-    print("\nProductdata laden...")
+    print("\nData ophalen uit GitHub...")
 
     try:
-
-        if args.products:
-
-            product_data = load_json_file(
-                Path(args.products)
-            )
-
-        else:
-
-            product_data = download_json(
-                PRODUCTS_URL
-            )
-
-        products, product_problems = (
-            load_products(
-                product_data
-            )
-        )
-
+        products_raw = download_json(args.products_url)
     except Exception as exc:
-
         sys.exit(
-            f"\n❌ Productdata fout:\n{exc}"
+            f"Kan products.json niet ophalen:\n{exc}"
         )
-
-    print(
-        f"  ✓ {len(products):,} producten geladen"
-    )
-
-    # ------------------------------------------------------------------
-    # PACKAGES
-    # ------------------------------------------------------------------
-
-    print("\nVerpakkingsdata laden...")
 
     try:
-
-        if args.packages:
-
-            package_data = load_json_file(
-                Path(args.packages)
-            )
-
-        else:
-
-            package_data = download_json(
-                PACKAGES_URL
-            )
-
-        packages, package_problems = (
-            load_packages(
-                package_data
-            )
-        )
-
+        packages_raw = download_json(args.packages_url)
     except Exception as exc:
-
         sys.exit(
-            f"\n❌ Verpakkingsdata fout:\n{exc}"
+            f"Kan package_dimensions.json niet ophalen:\n{exc}"
         )
 
-    print(
-        f"  ✓ {len(packages)} verpakkingen geladen"
-    )
+    try:
+        product_rows = unwrap_list(
+            products_raw,
+            [
+                "products",
+                "artikelen",
+                "articles",
+            ],
+        )
 
-    # ------------------------------------------------------------------
-    # DATA PROBLEMS
-    # ------------------------------------------------------------------
+        package_rows = unwrap_list(
+            packages_raw,
+            [
+                "package_dimensions",
+                "packages",
+                "verpakkingen",
+            ],
+        )
+    except ValueError as exc:
+        sys.exit(
+            f"JSON-structuur wordt niet herkend:\n{exc}"
+        )
+
+    products = [
+        detect_product(row, index)
+        for index, row in enumerate(product_rows, start=1)
+    ]
+
+    packages = [
+        detect_package(row, index)
+        for index, row in enumerate(package_rows, start=1)
+    ]
+
+    print(f"  Producten gevonden:    {len(products)}")
+    print(f"  Verpakkingen gevonden: {len(packages)}")
+
+    print("\nData valideren...")
 
     data_problems = (
-        product_problems
-        + package_problems
+        validate_products(products)
+        + validate_packages(packages)
+    )
+
+    tester = PackingTester(
+        products=products,
+        packages=packages,
+        seed=args.seed,
+        decimals=args.decimals,
+    )
+
+    start = time.perf_counter()
+
+    try:
+        tester.run(
+            quick=args.quick,
+            deep=args.deep,
+            combinations=args.combinations,
+        )
+    except KeyboardInterrupt:
+        print("\n\nTest onderbroken door gebruiker.")
+    except Exception as exc:
+        print(
+            "\n❌ Onverwachte fout tijdens testen:"
+        )
+        print(f"   {type(exc).__name__}: {exc}")
+
+        import traceback
+
+        traceback.print_exc()
+
+    duration = time.perf_counter() - start
+
+    # ------------------------------------------------------------------
+    # Rapporten
+    # ------------------------------------------------------------------
+
+    summary = {
+        "repository": "hd-exclusiva/ServiceSets.com",
+        "products_url": args.products_url,
+        "packages_url": args.packages_url,
+        "seed": args.seed,
+        "decimals": args.decimals,
+        "mode": (
+            "deep"
+            if args.deep
+            else "quick"
+            if args.quick
+            else "normal"
+        ),
+        "products": len(products),
+        "packages": len(packages),
+        "data_problems": len(data_problems),
+        "failures": len(tester.failures),
+        "counterexamples": len(tester.counterexamples),
+        "warnings": len(tester.warnings),
+        "duration_seconds": round(duration, 3),
+        "py3dbp_available": py3dbp_available(),
+        "behavior": {"stackable_products": sum(1 for p in products if p.stackable), "foldable_products": sum(1 for p in products if p.foldable), "rigid_products": sum(1 for p in products if not p.stackable and not p.foldable)},
+    }
+
+    save_json(
+        output_dir / "summary.json",
+        summary,
     )
 
     save_json(
@@ -1832,506 +1525,44 @@ def main() -> None:
         data_problems,
     )
 
-    if data_problems:
-
-        print(
-            f"\n⚠ {len(data_problems)} "
-            f"dataproblemen gevonden."
-        )
-
-        print(
-            f"  Zie: "
-            f"{output_dir / 'data_problems.json'}"
-        )
-
-    # ------------------------------------------------------------------
-    # SELECT PRODUCTS
-    # ------------------------------------------------------------------
-
-    selected = select_products(
-        products,
-        args.select,
-    )
-
-    if not selected:
-
-        sys.exit(
-            "\nGeen geldige producten geselecteerd."
-        )
-
-    # --all betekent alle producten.
-    if args.all:
-
-        selected = [
-            (
-                product,
-                1,
-            )
-            for product in products
-        ]
-
-    # ------------------------------------------------------------------
-    # INDIVIDUAL PRODUCT × PACKAGE
-    # ------------------------------------------------------------------
-
-    print(
-        "\nIndividuele packing-tests uitvoeren..."
-    )
-
-    all_results = []
-
-    for product, amount in selected:
-
-        for package in sorted(
-            packages,
-            key=lambda p: p.volume,
-        ):
-
-            # Test ieder exemplaar apart.
-            #
-            # Bij amount > 1 wordt ieder exemplaar
-            # afzonderlijk getest.
-            for instance in range(
-                amount
-            ):
-
-                result = (
-                    test_product_in_package(
-                        product,
-                        package,
-                    )
-                )
-
-                result[
-                    "quantity_instance"
-                ] = instance + 1
-
-                result[
-                    "requested_quantity"
-                ] = amount
-
-                all_results.append(
-                    result
-                )
-
-    # ------------------------------------------------------------------
-    # SAVE ALL RESULTS
-    # ------------------------------------------------------------------
-
-    save_json(
-        output_dir / "all_results.json",
-        all_results,
-    )
-
-    passes = [
-        result
-        for result in all_results
-        if result["status"] == "PASS"
-    ]
-
-    failures = [
-        result
-        for result in all_results
-        if result["status"] != "PASS"
-    ]
-
-    save_json(
-        output_dir / "passes.json",
-        passes,
-    )
-
     save_json(
         output_dir / "failures.json",
-        failures,
+        [
+            case_to_dict(case)
+            for case in tester.failures
+        ],
     )
 
-    write_summary(
-        output_dir,
-        all_results,
+    save_json(
+        output_dir / "counterexamples.json",
+        [
+            case_to_dict(case)
+            for case in tester.counterexamples
+        ],
+    )
+
+    save_json(
+        output_dir / "warnings.json",
+        [
+            case_to_dict(case)
+            for case in tester.warnings
+        ],
+    )
+
+    write_reproducible_cases(
+        output_dir / "reproducible_cases.txt",
+        tester,
+    )
+
+    print_summary(
+        products,
+        packages,
         data_problems,
+        tester,
+        duration,
     )
-
-    # ------------------------------------------------------------------
-    # BEST PACKAGE PER PRODUCT
-    # ------------------------------------------------------------------
-
-    recommendations = []
-
-    for product, amount in selected:
-
-        product_results = [
-            result
-            for result in all_results
-            if result["product"]
-            == product.product_id
-        ]
-
-        fitting = [
-            result
-            for result in product_results
-            if result["status"]
-            == "PASS"
-        ]
-
-        fitting.sort(
-            key=lambda result:
-                result.get(
-                    "package_volume_cm3",
-                    float("inf"),
-                )
-        )
-
-        recommendations.append(
-            {
-                "product": product.product_id,
-                "product_name": product.name,
-                "requested_quantity": amount,
-
-                "smallest_package": (
-                    fitting[0]["package"]
-                    if fitting
-                    else None
-                ),
-
-                "packages_that_fit": [
-                    result["package"]
-                    for result in fitting
-                ],
-
-                "packages_that_do_not_fit": [
-                    result["package"]
-                    for result in product_results
-                    if result["status"]
-                    != "PASS"
-                ],
-            }
-        )
-
-    save_json(
-        output_dir
-        / "recommendations.json",
-        recommendations,
-    )
-
-    # ------------------------------------------------------------------
-    # COMBINATIONS / SERVICE-SET SCENARIO'S
-    # ------------------------------------------------------------------
-    #
-    # Twee bronnen worden hier samengevoegd tot één bestand
-    # (combination_results.json), zodat het dashboard maar
-    # één format hoeft te lezen:
-    #
-    #   1) Benoemde scenario's uit data/combination_scenarios.json
-    #      (herhaalbaar, bv. "Koffie service-set", "Limonade-set").
-    #   2) Een eventuele ad-hoc combinatie via --combination.
-    #
-    # Bij elk scenario worden ALLE items + aantallen SAMEN
-    # in één verpakking getest (niet los na elkaar), zodat
-    # zichtbaar wordt of bv. 6x "Stick Limonade" samen met de
-    # rest van de set nog past.
-
-    scenario_problems: List[Dict[str, Any]] = []
-    combination_results: List[Dict[str, Any]] = []
-
-    if not args.no_scenarios:
-
-        print(
-            "\nCombinatie-scenario's laden..."
-        )
-
-        scenario_data = None
-        scenario_source = None
-
-        if args.scenarios:
-
-            candidate_paths = [Path(args.scenarios)]
-
-        else:
-
-            # Meerdere logische locaties proberen, zodat het
-            # niet uitmaakt vanuit welke map je het script
-            # start.
-            candidate_paths = [
-                DEFAULT_SCENARIOS_PATH,
-                Path("combination_scenarios.json"),
-                Path(__file__).resolve().parent
-                / "data"
-                / "combination_scenarios.json",
-                Path(__file__).resolve().parent
-                / "combination_scenarios.json",
-            ]
-
-        for candidate in candidate_paths:
-
-            if candidate.exists():
-
-                try:
-                    scenario_data = load_json_file(
-                        candidate
-                    )
-                    scenario_source = str(
-                        candidate
-                    )
-                    break
-
-                except Exception as exc:
-                    print(
-                        f"  ⚠ Kon {candidate} niet "
-                        f"lezen: {exc}"
-                    )
-
-        if scenario_data is None:
-
-            try:
-                scenario_data = download_json(
-                    SCENARIOS_URL
-                )
-                scenario_source = SCENARIOS_URL
-
-            except Exception as exc:
-
-                print(
-                    "\n"
-                    "  ╔═══════════════════════════════"
-                    "══════════════════════════════╗"
-                )
-                print(
-                    "  ⚠ GEEN COMBINATIE-SCENARIO'S "
-                    "GELADEN — service-sets/aantallen "
-                    "worden NIET getest."
-                )
-                print(
-                    "  Gezocht op: "
-                    + ", ".join(
-                        str(p) for p in candidate_paths
-                    )
-                )
-                print(
-                    f"  GitHub-fallback ({SCENARIOS_URL}) "
-                    f"gaf: {exc}"
-                )
-                print(
-                    "  Los op met: "
-                    "--scenarios pad/naar/"
-                    "combination_scenarios.json"
-                )
-                print(
-                    "  ╚═══════════════════════════════"
-                    "══════════════════════════════╝"
-                )
-
-        if scenario_data is not None:
-
-            print(
-                f"  Bron: {scenario_source}"
-            )
-
-        if scenario_data is not None:
-
-            scenarios, scenario_problems = (
-                load_scenarios(
-                    scenario_data,
-                    products,
-                )
-            )
-
-            print(
-                f"  ✓ {len(scenarios)} scenario('s) "
-                f"geladen"
-            )
-
-            if scenario_problems:
-
-                print(
-                    f"  ⚠ {len(scenario_problems)} "
-                    f"scenario-problemen "
-                    f"(zie data_problems.json)"
-                )
-
-            print(
-                "\nScenario's testen "
-                "(items + aantallen samen "
-                "per verpakking)..."
-            )
-
-            for scenario in scenarios:
-
-                combination_results.append(
-                    run_scenario_across_packages(
-                        scenario,
-                        packages,
-                    )
-                )
-
-    if args.combination:
-
-        combination_selection = select_products(
-            products,
-            ",".join(
-                args.combination
-            ),
-        )
-
-        adhoc_items = [
-            {
-                "product": product,
-                "quantity": amount,
-                "note": "",
-            }
-            for product, amount in (
-                combination_selection
-            )
-        ]
-
-        print(
-            "\nAd-hoc combinatie testen..."
-        )
-
-        combination_results.append(
-            run_scenario_across_packages(
-                {
-                    "id": "adhoc",
-                    "name": "Ad-hoc combinatie (--combination)",
-                    "category": "adhoc",
-                    "description": (
-                        "Handmatig opgegeven via "
-                        "--combination."
-                    ),
-                    "items": adhoc_items,
-                },
-                packages,
-            )
-        )
-
-    save_json(
-        output_dir
-        / "combination_results.json",
-        combination_results,
-    )
-
-    if not combination_results:
-
-        print(
-            "\n  ⚠ combination_results.json is LEEG "
-            "(0 scenario's/combinaties getest)."
-        )
-
-    if scenario_problems:
-
-        data_problems.extend(
-            scenario_problems
-        )
-
-        save_json(
-            output_dir / "data_problems.json",
-            data_problems,
-        )
-
-    # ------------------------------------------------------------------
-    # CONSOLE SUMMARY
-    # ------------------------------------------------------------------
-
-    total = len(
-        all_results
-    )
-
-    pass_count = len(
-        passes
-    )
-
-    fail_count = len(
-        failures
-    )
-
-    print()
-    print("=" * 70)
-    print(" RESULTAAT")
-    print("=" * 70)
-
-    print(
-        f"\nProducten:        "
-        f"{len(selected):,}"
-    )
-
-    print(
-        f"Verpakkingen:     "
-        f"{len(packages):,}"
-    )
-
-    print(
-        f"Tests:            "
-        f"{total:,}"
-    )
-
-    print(
-        f"PASS:             "
-        f"{pass_count:,}"
-    )
-
-    print(
-        f"FAIL:             "
-        f"{fail_count:,}"
-    )
-
-    print(
-        f"Pass percentage:  "
-        f"{(
-            pass_count / total * 100
-        ) if total else 0:.1f}%"
-    )
-
-    print(
-        "\nOutput:"
-    )
-
-    print(
-        f"  ✓ {output_dir / 'all_results.json'}"
-    )
-
-    print(
-        f"  ✓ {output_dir / 'passes.json'}"
-    )
-
-    print(
-        f"  ✓ {output_dir / 'failures.json'}"
-    )
-
-    print(
-        f"  ✓ {output_dir / 'recommendations.json'}"
-    )
-
-    print(
-        f"  ✓ {output_dir / 'summary.json'}"
-    )
-
-    print(
-        f"  ✓ {output_dir / 'data_problems.json'}"
-    )
-
-    scenarios_fit = sum(
-        1
-        for r in combination_results
-        if r["fits_any_package"]
-    )
-
-    print(
-        f"  {'✓' if combination_results else '⚠'} "
-        f"{output_dir / 'combination_results.json'} "
-        f"({len(combination_results)} scenario('s), "
-        f"{scenarios_fit} passen ergens)"
-    )
-
-    print(
-        "\nAnalyse uitvoeren met:"
-    )
-
-    print(
-        "  python analyze_results.py --open"
-    )
-
-    print()
-    print("=" * 70)
 
 
 if __name__ == "__main__":
     main()
+
