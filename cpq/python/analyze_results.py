@@ -388,6 +388,44 @@ def normalize_combinations(
             else 0.0
         )
 
+        # Stapelbare/vouwbare artikelen zijn een statische
+        # eigenschap van het artikel, dus onafhankelijk van
+        # de verpakking — we lezen ze uit het eerste
+        # per-package resultaat (indien aanwezig).
+        reference_result = (
+            per_package[0] if per_package else {}
+        )
+
+        stacked_ref = (
+            reference_result.get("stacked_articles", {})
+            .get("details", [])
+        )
+
+        folded_ref = (
+            reference_result.get("folded_articles", {})
+            .get("details", [])
+        )
+
+        stack_summary_text = "; ".join(
+            f"{d['product_name']}: {d['stacked_count']}× "
+            f"gestapeld ({d['effective_height_cm']:.1f}cm "
+            f"i.p.v. {d['unit_height_cm'] * d['stacked_count']:.1f}cm)"
+            for d in stacked_ref
+        )
+
+        fold_summary_text = "; ".join(
+            f"{d['product_name']}: gevouwen "
+            f"({d['original_dimensions_cm']['l']:.0f}×"
+            f"{d['original_dimensions_cm']['w']:.0f}×"
+            f"{d['original_dimensions_cm']['h']:.0f} → "
+            f"{d['folded_dimensions_cm']['l']:.0f}×"
+            f"{d['folded_dimensions_cm']['w']:.0f}×"
+            f"{d['folded_dimensions_cm']['h']:.0f}cm)"
+            for d in {
+                d["product_id"]: d for d in folded_ref
+            }.values()
+        )
+
         scenario_rows.append(
             {
                 "scenario_id": scenario.get("scenario_id", ""),
@@ -407,10 +445,25 @@ def normalize_combinations(
                 "packages_fit": packages_fit,
                 "packages_total": packages_total,
                 "pass_rate": round(pass_rate, 1),
+                "has_stacked": len(stacked_ref) > 0,
+                "has_folded": len(folded_ref) > 0,
+                "stack_summary_text": stack_summary_text,
+                "fold_summary_text": fold_summary_text,
             }
         )
 
         for r in per_package:
+
+            stacked_details = (
+                r.get("stacked_articles", {})
+                .get("details", [])
+            )
+
+            folded_details = (
+                r.get("folded_articles", {})
+                .get("details", [])
+            )
+
             detail_rows.append(
                 {
                     "scenario_id": scenario.get("scenario_id", ""),
@@ -434,6 +487,8 @@ def normalize_combinations(
                     "unfitted_count": r.get("unfitted_count"),
                     "number_of_products": r.get("number_of_products"),
                     "placements": r.get("placements", []),
+                    "stacked_details": stacked_details,
+                    "folded_details": folded_details,
                 }
             )
 
@@ -532,6 +587,59 @@ PLACEMENT_COLORS = [
 ]
 
 
+def _expand_stack_layers(
+    placement: dict,
+) -> list:
+
+    """
+    Eén 'stack'-plaatsing (bv. 6 bekers samen als 1
+    bounding box) wordt teruggerekend naar N losse,
+    licht overlappende laagjes — zodat je in de 3D-tekening
+    daadwerkelijk de individuele, in elkaar geneste
+    artikelen ziet in plaats van 1 ondoorzichtige blok.
+    """
+
+    dims = list(
+        placement.get("dimensions", [0, 0, 0])
+    )
+    pos = list(
+        placement.get("position", [0, 0, 0])
+    )
+
+    count = placement.get("represented_count", 1)
+    unit_h = placement.get("stack_unit_h")
+    increment = placement.get("stack_increment_h")
+
+    if not count or not unit_h or increment is None:
+        return [(pos, dims)]
+
+    expected_total = unit_h + (count - 1) * increment
+
+    # Bepaal langs welke as (na eventuele rotatie) de
+    # stapel-richting ligt, door te zoeken welke van de
+    # 3 (gedraaide) afmetingen overeenkomt met de
+    # verwachte totale stapelhoogte.
+    axis = 0
+    best_diff = float("inf")
+
+    for idx, d in enumerate(dims):
+        diff = abs(d - expected_total)
+        if diff < best_diff:
+            best_diff = diff
+            axis = idx
+
+    layers = []
+
+    for i in range(count):
+        layer_pos = list(pos)
+        layer_dims = list(dims)
+        layer_dims[axis] = unit_h
+        layer_pos[axis] = pos[axis] + i * increment
+        layers.append((layer_pos, layer_dims))
+
+    return layers
+
+
 def render_3d_packing(
     package_dimensions_cm: dict,
     placements: list,
@@ -543,6 +651,14 @@ def render_3d_packing(
     artikelen daadwerkelijk in de verpakking liggen
     (op basis van de x/y/z-plaatsing die py3dbp
     tijdens het pakken heeft berekend).
+
+    Houdt rekening met:
+    - "stack": meerdere in elkaar geneste artikelen
+      (bv. bekers) worden als losse, licht overlappende
+      laagjes getekend in plaats van 1 blok.
+    - "folded": vouwbare artikelen (bv. vuilniszakken)
+      worden getekend op hun GEVOUWEN afmetingen, met een
+      label dat dit aangeeft.
     """
 
     lengte = package_dimensions_cm.get("lengte", 0)
@@ -571,20 +687,72 @@ def render_3d_packing(
             ]
             color_cursor += 1
 
-        x0, y0, z0 = placement.get("position", [0, 0, 0])
-        dx, dy, dz = placement.get("dimensions", [0, 0, 0])
-
-        fig.add_trace(
-            _cuboid_mesh(
-                x0, y0, z0,
-                dx, dy, dz,
-                color=seen_ids[product_id],
-                name=placement.get(
-                    "product_name",
-                    product_id,
-                ),
-            )
+        color = seen_ids[product_id]
+        base_name = placement.get(
+            "product_name",
+            product_id,
         )
+        kind = placement.get("kind", "normal")
+
+        if kind == "stack":
+
+            layers = _expand_stack_layers(placement)
+            n_layers = len(layers)
+
+            for layer_index, (layer_pos, layer_dims) in enumerate(layers):
+
+                x0, y0, z0 = layer_pos
+                dx, dy, dz = layer_dims
+
+                fig.add_trace(
+                    _cuboid_mesh(
+                        x0, y0, z0,
+                        dx, dy, dz,
+                        color=color,
+                        name=(
+                            f"{base_name} — gestapeld "
+                            f"({layer_index + 1}/{n_layers})"
+                        ),
+                        opacity=0.55,
+                    )
+                )
+
+        elif kind == "folded":
+
+            x0, y0, z0 = placement.get(
+                "position", [0, 0, 0]
+            )
+            dx, dy, dz = placement.get(
+                "dimensions", [0, 0, 0]
+            )
+
+            fig.add_trace(
+                _cuboid_mesh(
+                    x0, y0, z0,
+                    dx, dy, dz,
+                    color=color,
+                    name=f"{base_name} — gevouwen",
+                    opacity=0.85,
+                )
+            )
+
+        else:
+
+            x0, y0, z0 = placement.get(
+                "position", [0, 0, 0]
+            )
+            dx, dy, dz = placement.get(
+                "dimensions", [0, 0, 0]
+            )
+
+            fig.add_trace(
+                _cuboid_mesh(
+                    x0, y0, z0,
+                    dx, dy, dz,
+                    color=color,
+                    name=base_name,
+                )
+            )
 
     fig.update_layout(
         title=title,
@@ -1233,6 +1401,8 @@ with tab_combinations:
                 "packages_total",
                 "pass_rate",
                 "fits_any_package",
+                "has_stacked",
+                "has_folded",
             ]
         ].rename(
             columns={
@@ -1246,6 +1416,8 @@ with tab_combinations:
                 "packages_total": "Verpakkingen getest",
                 "pass_rate": "Pass %",
                 "fits_any_package": "Past ergens?",
+                "has_stacked": "📦 Stapelbaar",
+                "has_folded": "📄 Vouwbaar",
             }
         )
 
@@ -1262,6 +1434,56 @@ with tab_combinations:
             file_name="servicesets_combinaties_overzicht.csv",
             mime="text/csv",
         )
+
+        # ---- Toelichting stapelen/vouwen ----
+        stack_fold_scenarios = scenario_view[
+            scenario_view["has_stacked"]
+            | scenario_view["has_folded"]
+        ]
+
+        if not stack_fold_scenarios.empty:
+
+            st.markdown(
+                '<div class="section-title">📦📄 Stapel- en vouweffecten</div>',
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+                <div class="info-box">
+                    Sommige artikelen zijn <strong>stapelbaar</strong>
+                    (bv. bekers die in elkaar nesten — bij N stuks
+                    samen is de hoogte niet N × hoogte, maar slechts
+                    een kleine toename per extra stuk) of
+                    <strong>vouwbaar</strong> (bv. vuilniszakken, die
+                    plat gevouwen veel minder ruimte innemen dan hun
+                    volledige afmetingen). Dit is meegenomen in de
+                    fit-berekening hieronder.
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+            for _, row in stack_fold_scenarios.iterrows():
+
+                lines = []
+
+                if row["has_stacked"]:
+                    lines.append(
+                        f"📦 <strong>{row['scenario_name']}</strong>: "
+                        f"{row['stack_summary_text']}"
+                    )
+
+                if row["has_folded"]:
+                    lines.append(
+                        f"📄 <strong>{row['scenario_name']}</strong>: "
+                        f"{row['fold_summary_text']}"
+                    )
+
+                st.markdown(
+                    "<br>".join(lines),
+                    unsafe_allow_html=True,
+                )
 
         # ---- Passpercentage per scenario (chart) ----
         st.markdown(
@@ -1363,7 +1585,34 @@ with tab_combinations:
                     "fitted_count",
                     "unfitted_count",
                 ]
-            ].rename(
+            ].copy()
+
+            picked_display["stapel_vouw"] = [
+                " · ".join(
+                    filter(
+                        None,
+                        [
+                            (
+                                f"📦 {len(stacked)}× gestapeld"
+                                if stacked
+                                else ""
+                            ),
+                            (
+                                f"📄 {len(folded)}× gevouwen"
+                                if folded
+                                else ""
+                            ),
+                        ],
+                    )
+                )
+                or "—"
+                for stacked, folded in zip(
+                    picked["stacked_details"],
+                    picked["folded_details"],
+                )
+            ]
+
+            picked_display = picked_display.rename(
                 columns={
                     "package": "Verpakking",
                     "package_dimensions": "Afmetingen L × B × H",
@@ -1373,6 +1622,7 @@ with tab_combinations:
                     "reason_text": "Waarom (niet)?",
                     "fitted_count": "Items die passen",
                     "unfitted_count": "Items die niet passen",
+                    "stapel_vouw": "📦📄 Stapelen/vouwen",
                 }
             )
 

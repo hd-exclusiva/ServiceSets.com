@@ -39,7 +39,7 @@
         { "product_id": "3552522", "quantity": 2, "note": "Stick Peper 0.2gram" },
         { "product_id": "3552523", "quantity": 2, "note": "Stick Zout 1gram" },
         { "product_id": "3552528", "quantity": 1, "note": "Flesje water" },
-        { "product_id": "3554350", "quantity": 2, "note": "Beker 180cc Future" }
+        { "product_id": "3554350", "quantity": 6, "note": "Beker 180cc Future (6x, stapelbaar)" }
       ]
     },
     {
@@ -68,7 +68,8 @@
         { "product_id": "3550201", "quantity": 1, "note": "Afwasmiddel tube 25ml" },
         { "product_id": "3610450", "quantity": 2, "note": "Microvezel Doek 35x35cm TmH" },
         { "product_id": "3612255", "quantity": 2, "note": "Schuurspons viscose bl 9x14cm" },
-        { "product_id": "3551400", "quantity": 3, "note": "Afvalzak HDPE 60x80 (3x)" }
+        { "product_id": "3551400", "quantity": 3, "note": "Afvalzak HDPE 60x80 (3x)" },
+        { "product_id": "3551467", "quantity": 4, "note": "Afvalzak trekband 65x85cm gs (4x, vouwbaar)" }
       ]
     },
     {

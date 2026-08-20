@@ -22,7 +22,7 @@
 <body>
 
 <!-- ====== BANNER (prototype) ====== -->
-<div class="proto-banner">Klikbaar concept — <strong>customer journey</strong> voor Servicesets.com · nog geen koppeling met Odoo</div>
+<div class="proto-banner">Klikbaar concept — <strong>customer journey</strong> voor Servicesets.com</div>
 
 <!-- ====== HEADER ====== -->
 <header class="site">
@@ -108,19 +108,6 @@
             <button class="sscpq-btn secondary small" id="sscpq-loadCatalogBtn">↻ Servicesets-catalogus herladen</button>
             <span class="sscpq-dz-sub" id="sscpq-catalogStatus" style="align-self:center;"></span>
           </div>
-          <div class="sscpq-dropzone" id="sscpq-dropZone">
-            <input type="file" id="sscpq-fileInput" accept=".xlsx,.xls,.csv" />
-            <div class="sscpq-dz-title">Of sleep je eigen Excel hierheen</div>
-            <div class="sscpq-dz-sub">Kolom A–E: artikelnummer, naam, lengte, breedte, hoogte</div>
-          </div>
-          <div class="sscpq-manual-add">
-            <input type="text" id="sscpq-manNum" placeholder="artikelnr" />
-            <input type="text" id="sscpq-manName" placeholder="naam" style="width:140px" />
-            <input type="number" id="sscpq-manL" placeholder="L" />
-            <input type="number" id="sscpq-manW" placeholder="B" />
-            <input type="number" id="sscpq-manH" placeholder="H" />
-            <button class="sscpq-btn secondary small" id="sscpq-addManualBtn">+ Toevoegen</button>
-          </div>
           <div id="sscpq-productTableWrap" style="margin-top:14px;"></div>
         </div>
 
@@ -146,16 +133,7 @@
           </div>
         </div>
 
-        <!-- Panel 4: Berekening -->
-        <div class="sscpq-panel">
-          <div class="sscpq-panel-title">04 · Berekening <span class="num">draait als Python (Pyodide)</span></div>
-          <button class="sscpq-btn" id="sscpq-calcBtn" style="width:100%;" disabled>Python laadt nog…</button>
-          <div id="sscpq-resultWrap" style="margin-top:16px;"></div>
-        </div>
-      </div>
-    </div>
-
-  </div> <!-- einde .ssets-cpq-configurator -->
+<!-- einde .ssets-cpq-configurator -->
 </main>
 
 <!-- ====== FOOTER ====== -->
