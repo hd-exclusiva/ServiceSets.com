@@ -455,8 +455,8 @@
     "reason_details": [],
     "rotation": [
       15.2,
-      6.85,
-      3.07
+      3.07,
+      6.85
     ],
     "volume_pct": 13.3,
     "product_volume_cm3": 319.65,
@@ -485,8 +485,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.85,
       3.07,
+      6.85,
       15.2
     ],
     "volume_pct": 12.1,
@@ -516,9 +516,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.2,
+      3.07,
       6.85,
-      3.07
+      15.2
     ],
     "volume_pct": 8.0,
     "product_volume_cm3": 319.65,
@@ -547,9 +547,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.2,
+      3.07,
       6.85,
-      3.07
+      15.2
     ],
     "volume_pct": 6.9,
     "product_volume_cm3": 319.65,
@@ -578,9 +578,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.2,
+      3.07,
       6.85,
-      3.07
+      15.2
     ],
     "volume_pct": 4.8,
     "product_volume_cm3": 319.65,
@@ -733,8 +733,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.5,
       3.5,
+      6.5,
       13.0
     ],
     "volume_pct": 11.2,
@@ -764,8 +764,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.5,
       3.5,
+      6.5,
       13.0
     ],
     "volume_pct": 7.4,
@@ -795,8 +795,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.5,
       3.5,
+      6.5,
       13.0
     ],
     "volume_pct": 6.4,
@@ -826,8 +826,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.5,
       3.5,
+      6.5,
       13.0
     ],
     "volume_pct": 4.5,
@@ -920,8 +920,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      10.0,
-      1.0
+      1.0,
+      10.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -981,9 +981,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -1043,9 +1043,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -1137,8 +1137,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      10.0,
-      1.0
+      1.0,
+      10.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -1198,9 +1198,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -1260,9 +1260,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -1354,8 +1354,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      10.0,
-      1.0
+      1.0,
+      10.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -1415,9 +1415,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -1477,9 +1477,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -1571,8 +1571,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      10.0,
-      1.0
+      1.0,
+      10.0
     ],
     "volume_pct": 6.2,
     "product_volume_cm3": 150.0,
@@ -1632,9 +1632,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 3.8,
     "product_volume_cm3": 150.0,
@@ -1694,9 +1694,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.0,
       10.0,
-      1.0
+      15.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 150.0,
@@ -1818,9 +1818,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.7,
+      0.8,
       7.6,
-      0.8
+      10.7
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 65.06,
@@ -1849,9 +1849,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.7,
+      0.8,
       7.6,
-      0.8
+      10.7
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 65.06,
@@ -1880,9 +1880,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.7,
+      0.8,
       7.6,
-      0.8
+      10.7
     ],
     "volume_pct": 1.6,
     "product_volume_cm3": 65.06,
@@ -1911,9 +1911,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.7,
+      0.8,
       7.6,
-      0.8
+      10.7
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 65.06,
@@ -1942,9 +1942,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.7,
+      0.8,
       7.6,
-      0.8
+      10.7
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 65.06,
@@ -1973,9 +1973,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 7.6,
     "product_volume_cm3": 15.96,
@@ -2004,9 +2004,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 15.96,
@@ -2035,9 +2035,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 15.96,
@@ -2066,9 +2066,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 15.96,
@@ -2097,9 +2097,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 15.96,
@@ -2128,9 +2128,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 15.96,
@@ -2159,9 +2159,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 15.96,
@@ -2190,9 +2190,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 15.96,
@@ -2221,9 +2221,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 15.96,
@@ -2252,2492 +2252,12 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550201",
-    "product_name": "Afwasmiddel tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3550260",
-    "product_name": "Allesreiniger tube 25ml",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 8.3,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 3.6,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 2.7,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 1.9,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 1.5,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559920",
-    "product_name": "Welcome Zeepje rond",
-    "product_dimensions_cm": {
-      "lengte": 3.91,
-      "breedte": 1.92,
-      "hoogte": 2.31
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 32.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      3.91,
-      1.92,
-      2.31
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 17.34,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559820",
-    "product_name": "Welcome 30ml Body wash",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559830",
-    "product_name": "Welcome 30ml Shampoo",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559850",
-    "product_name": "Welcome 30ml Bodylotion",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559840",
-    "product_name": "Welcome 30ml Hair&Body",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 9.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 4.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 3.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 2.1,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 1.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.8,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.5,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 19.69,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3559860",
-    "product_name": "Welcome 30ml Conditioner",
-    "product_dimensions_cm": {
-      "lengte": 2.97,
-      "breedte": 2.62,
-      "hoogte": 2.53
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 35.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.97,
-      2.62,
-      2.53
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 19.69,
     "package_volume_cm3": 6600.0,
     "quantity_instance": 1,
     "requested_quantity": 1
@@ -4826,8 +2346,8 @@
     "reason_details": [],
     "rotation": [
       9.0,
-      4.5,
-      0.5
+      0.5,
+      4.5
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 20.25,
@@ -5012,8 +2532,8 @@
     "reason_details": [],
     "rotation": [
       20.0,
-      6.0,
-      3.5
+      3.5,
+      6.0
     ],
     "volume_pct": 36.5,
     "product_volume_cm3": 420.0,
@@ -5043,8 +2563,8 @@
     "reason_details": [],
     "rotation": [
       20.0,
-      6.0,
-      3.5
+      3.5,
+      6.0
     ],
     "volume_pct": 17.5,
     "product_volume_cm3": 420.0,
@@ -5073,8 +2593,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       3.5,
+      6.0,
       20.0
     ],
     "volume_pct": 15.9,
@@ -5104,9 +2624,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      20.0,
+      3.5,
       6.0,
-      3.5
+      20.0
     ],
     "volume_pct": 10.5,
     "product_volume_cm3": 420.0,
@@ -5135,8 +2655,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       3.5,
+      6.0,
       20.0
     ],
     "volume_pct": 9.1,
@@ -5166,9 +2686,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      20.0,
+      3.5,
       6.0,
-      3.5
+      20.0
     ],
     "volume_pct": 6.4,
     "product_volume_cm3": 420.0,
@@ -5198,8 +2718,8 @@
     "reason_details": [],
     "rotation": [
       22.0,
-      6.0,
-      3.5
+      3.5,
+      6.0
     ],
     "volume_pct": 40.1,
     "product_volume_cm3": 462.0,
@@ -5228,8 +2748,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       3.5,
+      6.0,
       22.0
     ],
     "volume_pct": 17.5,
@@ -5259,8 +2779,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       3.5,
+      6.0,
       22.0
     ],
     "volume_pct": 10.0,
@@ -5290,9 +2810,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      22.0,
+      3.5,
       6.0,
-      3.5
+      22.0
     ],
     "volume_pct": 7.0,
     "product_volume_cm3": 462.0,
@@ -6530,9 +4050,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 17.7,
     "product_volume_cm3": 84.7,
@@ -6623,9 +4143,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 7.4,
     "product_volume_cm3": 84.7,
@@ -6654,9 +4174,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 3.5,
     "product_volume_cm3": 84.7,
@@ -6685,9 +4205,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 3.2,
     "product_volume_cm3": 84.7,
@@ -6716,9 +4236,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 2.1,
     "product_volume_cm3": 84.7,
@@ -6747,9 +4267,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 84.7,
@@ -6778,9 +4298,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      2.8,
       5.5,
-      5.5,
-      2.8
+      5.5
     ],
     "volume_pct": 1.3,
     "product_volume_cm3": 84.7,
@@ -7026,9 +4546,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
+      0.1,
       10.0,
-      0.1
+      12.0
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 12.0,
@@ -7088,9 +4608,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
+      0.1,
       10.0,
-      0.1
+      12.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 12.0,
@@ -7150,9 +4670,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
+      0.1,
       10.0,
-      0.1
+      12.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 12.0,
@@ -7305,9 +4825,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 12.6,
     "product_volume_cm3": 26.25,
@@ -7336,9 +4856,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 5.5,
     "product_volume_cm3": 26.25,
@@ -7367,9 +4887,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 26.25,
@@ -7398,9 +4918,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 2.8,
     "product_volume_cm3": 26.25,
@@ -7429,9 +4949,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 26.25,
@@ -7460,9 +4980,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 26.25,
@@ -7491,9 +5011,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 26.25,
@@ -7522,9 +5042,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 26.25,
@@ -7553,9 +5073,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 26.25,
@@ -7584,9 +5104,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      1.5,
       3.5,
-      1.5
+      5.0
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 26.25,
@@ -7801,8 +5321,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 16.4,
@@ -7832,8 +5352,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 10.8,
@@ -7863,8 +5383,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 9.4,
@@ -7894,8 +5414,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 6.5,
@@ -8018,8 +5538,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 16.4,
@@ -8049,8 +5569,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 10.8,
@@ -8080,8 +5600,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 9.4,
@@ -8111,8 +5631,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 6.5,
@@ -8235,8 +5755,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 16.4,
@@ -8266,8 +5786,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 10.8,
@@ -8297,8 +5817,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 9.4,
@@ -8328,8 +5848,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       4.5,
+      6.0,
       16.0
     ],
     "volume_pct": 6.5,
@@ -8452,9 +5972,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
       1.0,
-      1.0
+      1.0,
+      12.0
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 12.0,
@@ -8514,9 +6034,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
       1.0,
-      1.0
+      1.0,
+      12.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 12.0,
@@ -8545,9 +6065,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
       1.0,
-      1.0
+      1.0,
+      12.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 12.0,
@@ -8576,9 +6096,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      12.0,
       1.0,
-      1.0
+      1.0,
+      12.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 12.0,
@@ -9227,9 +6747,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 7.6,
     "product_volume_cm3": 15.96,
@@ -9258,9 +6778,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 15.96,
@@ -9289,9 +6809,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 15.96,
@@ -9320,9 +6840,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 15.96,
@@ -9351,9 +6871,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 15.96,
@@ -9382,9 +6902,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 15.96,
@@ -9413,9 +6933,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 15.96,
@@ -9444,9 +6964,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 15.96,
@@ -9475,9 +6995,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 15.96,
@@ -9506,9 +7026,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
@@ -9537,9 +7057,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 7.6,
     "product_volume_cm3": 15.96,
@@ -9568,9 +7088,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 15.96,
@@ -9599,9 +7119,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 2.5,
     "product_volume_cm3": 15.96,
@@ -9630,9 +7150,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 15.96,
@@ -9661,9 +7181,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 15.96,
@@ -9692,9 +7212,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 15.96,
@@ -9723,9 +7243,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 15.96,
@@ -9754,9 +7274,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 15.96,
@@ -9785,9 +7305,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 15.96,
@@ -9816,9 +7336,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.8,
+      1.5,
       2.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 15.96,
@@ -9910,8 +7430,8 @@
     "reason_details": [],
     "rotation": [
       15.0,
-      10.0,
-      1.5
+      1.5,
+      10.0
     ],
     "volume_pct": 9.4,
     "product_volume_cm3": 225.0,
@@ -9971,9 +7491,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.5,
       10.0,
-      1.5
+      15.0
     ],
     "volume_pct": 5.6,
     "product_volume_cm3": 225.0,
@@ -10033,9 +7553,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
+      1.5,
       10.0,
-      1.5
+      15.0
     ],
     "volume_pct": 3.4,
     "product_volume_cm3": 225.0,
@@ -10126,9 +7646,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
       6.6,
-      8.0
+      8.0,
+      15.0
     ],
     "volume_pct": 19.8,
     "product_volume_cm3": 792.0,
@@ -10157,9 +7677,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
       6.6,
-      8.0
+      8.0,
+      15.0
     ],
     "volume_pct": 17.2,
     "product_volume_cm3": 792.0,
@@ -10188,9 +7708,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      15.0,
       6.6,
-      8.0
+      8.0,
+      15.0
     ],
     "volume_pct": 12.0,
     "product_volume_cm3": 792.0,
@@ -10416,838 +7936,125 @@
     "requested_quantity": 1
   },
   {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
+    "product": "3558807",
+    "product_name": "Organzazakje zwart 12x17cm",
     "product_dimensions_cm": {
-      "lengte": 18.0,
+      "lengte": 12.0,
       "breedte": 2.0,
-      "hoogte": 2.0
+      "hoogte": 17.0
     },
-    "package": "5 CM",
+    "package": "Wave",
     "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
     },
-    "product_weight_g": 25.0,
+    "product_weight_g": 1.5,
     "package_max_weight_g": null,
     "fits": true,
     "status": "PASS",
     "reason": null,
     "reason_details": [],
     "rotation": [
-      18.0,
+      17.0,
       2.0,
-      2.0
+      12.0
     ],
-    "volume_pct": 7.8,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 926.4,
+    "volume_pct": 17.0,
+    "product_volume_cm3": 408.0,
+    "package_volume_cm3": 2400.0,
     "quantity_instance": 1,
     "requested_quantity": 1
   },
   {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
+    "product": "3558807",
+    "product_name": "Organzazakje zwart 12x17cm",
     "product_dimensions_cm": {
-      "lengte": 18.0,
+      "lengte": 12.0,
       "breedte": 2.0,
-      "hoogte": 2.0
+      "hoogte": 17.0
     },
-    "package": "LW",
+    "package": "Doosje Hoog",
     "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
     },
-    "product_weight_g": 25.0,
+    "product_weight_g": 1.5,
     "package_max_weight_g": null,
     "fits": true,
     "status": "PASS",
     "reason": null,
     "reason_details": [],
     "rotation": [
-      18.0,
+      12.0,
       2.0,
-      2.0
+      17.0
+    ],
+    "volume_pct": 10.2,
+    "product_volume_cm3": 408.0,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558807",
+    "product_name": "Organzazakje zwart 12x17cm",
+    "product_dimensions_cm": {
+      "lengte": 12.0,
+      "breedte": 2.0,
+      "hoogte": 17.0
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 1.5,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      12.0,
+      2.0,
+      17.0
+    ],
+    "volume_pct": 8.9,
+    "product_volume_cm3": 408.0,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3558807",
+    "product_name": "Organzazakje zwart 12x17cm",
+    "product_dimensions_cm": {
+      "lengte": 12.0,
+      "breedte": 2.0,
+      "hoogte": 17.0
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 1.5,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      12.0,
+      2.0,
+      17.0
     ],
     "volume_pct": 6.2,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 18.0,
-      "breedte": 2.0,
-      "hoogte": 2.0
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      18.0,
-      2.0,
-      2.0
-    ],
-    "volume_pct": 3.0,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 18.0,
-      "breedte": 2.0,
-      "hoogte": 2.0
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.0,
-      2.0,
-      18.0
-    ],
-    "volume_pct": 2.7,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 18.0,
-      "breedte": 2.0,
-      "hoogte": 2.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      18.0,
-      2.0,
-      2.0
-    ],
-    "volume_pct": 1.8,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 18.0,
-      "breedte": 2.0,
-      "hoogte": 2.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      2.0,
-      2.0,
-      18.0
-    ],
-    "volume_pct": 1.6,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610450",
-    "product_name": "Microvezel Doek 35x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 18.0,
-      "breedte": 2.0,
-      "hoogte": 2.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      18.0,
-      2.0,
-      2.0
-    ],
-    "volume_pct": 1.1,
-    "product_volume_cm3": 72.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610460",
-    "product_name": "Microvezel Dweil  55x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 15.0,
-      "hoogte": 2.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 45.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      2.0,
-      20.0
-    ],
-    "volume_pct": 15.0,
-    "product_volume_cm3": 600.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610460",
-    "product_name": "Microvezel Dweil  55x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 15.0,
-      "hoogte": 2.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 45.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      2.0,
-      20.0
-    ],
-    "volume_pct": 13.0,
-    "product_volume_cm3": 600.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3610460",
-    "product_name": "Microvezel Dweil  55x35cm TmH",
-    "product_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 15.0,
-      "hoogte": 2.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 45.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      2.0,
-      20.0
-    ],
-    "volume_pct": 9.1,
-    "product_volume_cm3": 600.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551050",
-    "product_name": "Theedoek 45x60cm gewassen",
-    "product_dimensions_cm": {
-      "lengte": 15.0,
-      "breedte": 20.0,
-      "hoogte": 1.5
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 65.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      20.0,
-      1.5,
-      15.0
-    ],
-    "volume_pct": 11.2,
-    "product_volume_cm3": 450.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551050",
-    "product_name": "Theedoek 45x60cm gewassen",
-    "product_dimensions_cm": {
-      "lengte": 15.0,
-      "breedte": 20.0,
-      "hoogte": 1.5
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 65.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.5,
-      20.0
-    ],
-    "volume_pct": 9.8,
-    "product_volume_cm3": 450.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551050",
-    "product_name": "Theedoek 45x60cm gewassen",
-    "product_dimensions_cm": {
-      "lengte": 15.0,
-      "breedte": 20.0,
-      "hoogte": 1.5
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 65.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      20.0,
-      1.5,
-      15.0
-    ],
-    "volume_pct": 6.8,
-    "product_volume_cm3": 450.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551467",
-    "product_name": "Afvalzak trekband 65x85cm gs",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 12.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.9,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551467",
-    "product_name": "Afvalzak trekband 65x85cm gs",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 12.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.2,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551467",
-    "product_name": "Afvalzak trekband 65x85cm gs",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 12.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 3.0,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3554400",
-    "product_name": "Bord rond 22cm wit",
-    "product_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 22.0,
-      "hoogte": 0.5
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 10.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      22.0,
-      0.5,
-      22.0
-    ],
-    "volume_pct": 3.7,
-    "product_volume_cm3": 242.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 22.9,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 10.0,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 7.5,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 5.2,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 4.2,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 2.0,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 1.8,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 1.2,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 1.0,
-    "product_volume_cm3": 48.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3558807",
-    "product_name": "Organzazakje zwart 12x17cm",
-    "product_dimensions_cm": {
-      "lengte": 4.0,
-      "breedte": 2.0,
-      "hoogte": 6.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 1.5,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      4.0,
-      2.0,
-      6.0
-    ],
-    "volume_pct": 0.7,
-    "product_volume_cm3": 48.0,
+    "product_volume_cm3": 408.0,
     "package_volume_cm3": 6600.0,
     "quantity_instance": 1,
     "requested_quantity": 1
@@ -11366,9 +8173,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      9.0,
+      2.5,
       7.0,
-      2.5
+      9.0
     ],
     "volume_pct": 6.6,
     "product_volume_cm3": 157.5,
@@ -11397,9 +8204,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      9.0,
+      2.5,
       7.0,
-      2.5
+      9.0
     ],
     "volume_pct": 6.0,
     "product_volume_cm3": 157.5,
@@ -11428,9 +8235,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      9.0,
+      2.5,
       7.0,
-      2.5
+      9.0
     ],
     "volume_pct": 3.9,
     "product_volume_cm3": 157.5,
@@ -11459,9 +8266,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      9.0,
+      2.5,
       7.0,
-      2.5
+      9.0
     ],
     "volume_pct": 3.4,
     "product_volume_cm3": 157.5,
@@ -11490,9 +8297,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      9.0,
+      2.5,
       7.0,
-      2.5
+      9.0
     ],
     "volume_pct": 2.4,
     "product_volume_cm3": 157.5,
@@ -11584,8 +8391,8 @@
     "reason_details": [],
     "rotation": [
       14.0,
-      9.0,
-      2.5
+      2.5,
+      9.0
     ],
     "volume_pct": 13.1,
     "product_volume_cm3": 315.0,
@@ -11645,9 +8452,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      14.0,
+      2.5,
       9.0,
-      2.5
+      14.0
     ],
     "volume_pct": 7.9,
     "product_volume_cm3": 315.0,
@@ -11707,9 +8514,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      14.0,
+      2.5,
       9.0,
-      2.5
+      14.0
     ],
     "volume_pct": 4.8,
     "product_volume_cm3": 315.0,
@@ -11738,8 +8545,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      6.0,
       2.1,
+      6.0,
       8.5
     ],
     "volume_pct": 22.4,
@@ -11832,8 +8639,8 @@
     "reason_details": [],
     "rotation": [
       8.5,
-      6.0,
-      2.1
+      2.1,
+      6.0
     ],
     "volume_pct": 9.3,
     "product_volume_cm3": 107.1,
@@ -11862,9 +8669,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      2.1,
       6.0,
-      2.1
+      8.5
     ],
     "volume_pct": 4.5,
     "product_volume_cm3": 107.1,
@@ -11893,9 +8700,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      2.1,
       6.0,
-      2.1
+      8.5
     ],
     "volume_pct": 4.1,
     "product_volume_cm3": 107.1,
@@ -11924,9 +8731,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      2.1,
       6.0,
-      2.1
+      8.5
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 107.1,
@@ -11955,9 +8762,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      2.1,
       6.0,
-      2.1
+      8.5
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 107.1,
@@ -11986,9 +8793,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      2.1,
       6.0,
-      2.1
+      8.5
     ],
     "volume_pct": 1.6,
     "product_volume_cm3": 107.1,
@@ -12080,8 +8887,8 @@
     "reason_details": [],
     "rotation": [
       8.7,
-      6.0,
-      2.1
+      2.1,
+      6.0
     ],
     "volume_pct": 9.5,
     "product_volume_cm3": 109.62,
@@ -12110,9 +8917,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.7,
+      2.1,
       6.0,
-      2.1
+      8.7
     ],
     "volume_pct": 4.6,
     "product_volume_cm3": 109.62,
@@ -12141,9 +8948,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.7,
+      2.1,
       6.0,
-      2.1
+      8.7
     ],
     "volume_pct": 4.2,
     "product_volume_cm3": 109.62,
@@ -12172,9 +8979,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.7,
+      2.1,
       6.0,
-      2.1
+      8.7
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 109.62,
@@ -12203,9 +9010,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.7,
+      2.1,
       6.0,
-      2.1
+      8.7
     ],
     "volume_pct": 2.4,
     "product_volume_cm3": 109.62,
@@ -12234,9 +9041,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.7,
+      2.1,
       6.0,
-      2.1
+      8.7
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 109.62,
@@ -12265,8 +9072,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      3.5,
       0.8,
+      3.5,
       7.5
     ],
     "volume_pct": 10.0,
@@ -12296,9 +9103,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 4.4,
     "product_volume_cm3": 21.0,
@@ -12327,9 +9134,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 3.3,
     "product_volume_cm3": 21.0,
@@ -12358,9 +9165,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 21.0,
@@ -12389,9 +9196,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 21.0,
@@ -12420,9 +9227,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 0.9,
     "product_volume_cm3": 21.0,
@@ -12451,9 +9258,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 21.0,
@@ -12482,9 +9289,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.0,
@@ -12513,9 +9320,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.0,
@@ -12544,9 +9351,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.8,
       3.5,
-      0.8
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 21.0,
@@ -12575,9 +9382,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 1.5,
@@ -12606,9 +9413,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 1.5,
@@ -12637,9 +9444,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 1.5,
@@ -12668,9 +9475,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 1.5,
@@ -12699,9 +9506,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 1.5,
@@ -12730,9 +9537,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 1.5,
@@ -12761,9 +9568,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 1.5,
@@ -12792,9 +9599,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 1.5,
@@ -12823,9 +9630,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 1.5,
@@ -12854,9 +9661,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.2,
       1.5,
-      0.2
+      5.0
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 1.5,
@@ -12978,9 +9785,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 10.4,
     "product_volume_cm3": 21.66,
@@ -13009,9 +9816,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 4.5,
     "product_volume_cm3": 21.66,
@@ -13040,9 +9847,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 3.4,
     "product_volume_cm3": 21.66,
@@ -13071,9 +9878,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 2.3,
     "product_volume_cm3": 21.66,
@@ -13102,9 +9909,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 1.9,
     "product_volume_cm3": 21.66,
@@ -13133,9 +9940,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.9,
     "product_volume_cm3": 21.66,
@@ -13164,9 +9971,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 21.66,
@@ -13195,9 +10002,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.66,
@@ -13226,9 +10033,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 21.66,
@@ -13257,9 +10064,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.5,
       3.8,
-      3.8,
-      1.5
+      3.8
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 21.66,
@@ -13288,9 +10095,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -13412,9 +10219,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -13443,9 +10250,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -13474,9 +10281,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -13505,9 +10312,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -13536,9 +10343,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -13567,9 +10374,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -13691,9 +10498,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -13722,9 +10529,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -13753,9 +10560,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -13784,9 +10591,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -13815,9 +10622,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -13846,9 +10653,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -13970,9 +10777,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -14001,9 +10808,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -14032,9 +10839,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -14063,9 +10870,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -14094,9 +10901,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -14125,9 +10932,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -14249,9 +11056,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -14280,9 +11087,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -14311,9 +11118,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -14342,9 +11149,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -14373,229 +11180,12 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551010",
-    "product_name": "Dweil",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.9,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551010",
-    "product_name": "Dweil",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.2,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551010",
-    "product_name": "Dweil",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 3.0,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551110",
-    "product_name": "Vaatdoek",
-    "product_dimensions_cm": {
-      "lengte": 19.0,
-      "breedte": 12.0,
-      "hoogte": 2.0
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      19.0,
-      2.0,
-      12.0
-    ],
-    "volume_pct": 19.0,
-    "product_volume_cm3": 456.0,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551110",
-    "product_name": "Vaatdoek",
-    "product_dimensions_cm": {
-      "lengte": 19.0,
-      "breedte": 12.0,
-      "hoogte": 2.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      12.0,
-      2.0,
-      19.0
-    ],
-    "volume_pct": 11.4,
-    "product_volume_cm3": 456.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551110",
-    "product_name": "Vaatdoek",
-    "product_dimensions_cm": {
-      "lengte": 19.0,
-      "breedte": 12.0,
-      "hoogte": 2.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      12.0,
-      2.0,
-      19.0
-    ],
-    "volume_pct": 9.9,
-    "product_volume_cm3": 456.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551110",
-    "product_name": "Vaatdoek",
-    "product_dimensions_cm": {
-      "lengte": 19.0,
-      "breedte": 12.0,
-      "hoogte": 2.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 25.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      12.0,
-      2.0,
-      19.0
-    ],
-    "volume_pct": 6.9,
-    "product_volume_cm3": 456.0,
     "package_volume_cm3": 6600.0,
     "quantity_instance": 1,
     "requested_quantity": 1
@@ -14621,9 +11211,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.2,
       6.2,
-      6.2,
-      1.2
+      6.2
     ],
     "volume_pct": 9.6,
     "product_volume_cm3": 46.13,
@@ -14745,9 +11335,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.2,
       6.2,
-      6.2,
-      1.2
+      6.2
     ],
     "volume_pct": 1.9,
     "product_volume_cm3": 46.13,
@@ -14776,9 +11366,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.2,
       6.2,
-      6.2,
-      1.2
+      6.2
     ],
     "volume_pct": 1.7,
     "product_volume_cm3": 46.13,
@@ -14807,9 +11397,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.2,
       6.2,
-      6.2,
-      1.2
+      6.2
     ],
     "volume_pct": 1.2,
     "product_volume_cm3": 46.13,
@@ -14838,9 +11428,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.2,
       6.2,
-      6.2,
-      1.2
+      6.2
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 46.13,
@@ -14869,9 +11459,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
+      1.2,
       6.2,
-      6.2,
-      1.2
+      6.2
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 46.13,
@@ -14900,9 +11490,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 1.2,
     "product_volume_cm3": 7.5,
@@ -14931,9 +11521,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 7.5,
@@ -14963,8 +11553,8 @@
     "reason_details": [],
     "rotation": [
       10.0,
-      1.5,
-      0.5
+      0.5,
+      1.5
     ],
     "volume_pct": 0.7,
     "product_volume_cm3": 7.5,
@@ -14993,9 +11583,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 7.5,
@@ -15024,9 +11614,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 7.5,
@@ -15055,9 +11645,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 7.5,
@@ -15086,9 +11676,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 7.5,
@@ -15117,9 +11707,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.5,
-      0.5
+      10.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 7.5,
@@ -15148,9 +11738,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 1.4,
     "product_volume_cm3": 9.0,
@@ -15179,9 +11769,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 1.0,
     "product_volume_cm3": 9.0,
@@ -15211,8 +11801,8 @@
     "reason_details": [],
     "rotation": [
       10.0,
-      1.8,
-      0.5
+      0.5,
+      1.8
     ],
     "volume_pct": 0.8,
     "product_volume_cm3": 9.0,
@@ -15241,9 +11831,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 9.0,
@@ -15272,9 +11862,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 9.0,
@@ -15303,9 +11893,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 9.0,
@@ -15334,9 +11924,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 9.0,
@@ -15365,9 +11955,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.0,
+      0.5,
       1.8,
-      0.5
+      10.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 9.0,
@@ -15396,9 +11986,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 2.25,
@@ -15427,9 +12017,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.5,
     "product_volume_cm3": 2.25,
@@ -15458,9 +12048,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 2.25,
@@ -15489,9 +12079,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 2.25,
@@ -15520,9 +12110,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 2.25,
@@ -15551,9 +12141,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 2.25,
@@ -15582,9 +12172,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 2.25,
@@ -15613,9 +12203,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.1,
     "product_volume_cm3": 2.25,
@@ -15644,9 +12234,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 2.25,
@@ -15675,539 +12265,12 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.0,
+      0.3,
       1.5,
-      0.3
+      5.0
     ],
     "volume_pct": 0.0,
     "product_volume_cm3": 2.25,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551900",
-    "product_name": "Keukenrol",
-    "product_dimensions_cm": {
-      "lengte": 10.0,
-      "breedte": 10.0,
-      "hoogte": 22.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 19.6,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      10.0,
-      10.0,
-      22.0
-    ],
-    "volume_pct": 33.3,
-    "product_volume_cm3": 2200.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Mini",
-    "package_dimensions_cm": {
-      "lengte": 6.0,
-      "breedte": 4.2,
-      "hoogte": 8.3
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.9,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 209.16,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "The smart cup",
-    "package_dimensions_cm": {
-      "lengte": 7.5,
-      "breedte": 7.5,
-      "hoogte": 8.5
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.4,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 478.12,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Coffee set box",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 4.0,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.3,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "5 CM",
-    "package_dimensions_cm": {
-      "lengte": 19.3,
-      "breedte": 4.8,
-      "hoogte": 10.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.2,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 926.4,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "LW",
-    "package_dimensions_cm": {
-      "lengte": 24.0,
-      "breedte": 6.0,
-      "hoogte": 8.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.2,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 1152.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Wave",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 12.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.1,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 2400.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Small paper bag",
-    "package_dimensions_cm": {
-      "lengte": 11.0,
-      "breedte": 8.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.1,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 2640.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.0,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.0,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551780",
-    "product_name": "Chloortablet Apesin per stuk",
-    "product_dimensions_cm": {
-      "lengte": 1.05,
-      "breedte": 1.05,
-      "hoogte": 1.65
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 60.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      1.05,
-      1.05,
-      1.65
-    ],
-    "volume_pct": 0.0,
-    "product_volume_cm3": 1.82,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551450",
-    "product_name": "Afvalzak LDPE 60x80 gr DIK",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 15.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.9,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551450",
-    "product_name": "Afvalzak LDPE 60x80 gr DIK",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 15.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.2,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551450",
-    "product_name": "Afvalzak LDPE 60x80 gr DIK",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 15.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 3.0,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 6600.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551320",
-    "product_name": "Afvalzak HDPE \"Der Gelbe Sack\"",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Doosje Hoog",
-    "package_dimensions_cm": {
-      "lengte": 20.0,
-      "breedte": 10.0,
-      "hoogte": 20.0
-    },
-    "product_weight_g": 15.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.9,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4000.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551320",
-    "product_name": "Afvalzak HDPE \"Der Gelbe Sack\"",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Medium paper bag",
-    "package_dimensions_cm": {
-      "lengte": 16.0,
-      "breedte": 8.0,
-      "hoogte": 36.0
-    },
-    "product_weight_g": 15.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 4.2,
-    "product_volume_cm3": 195.0,
-    "package_volume_cm3": 4608.0,
-    "quantity_instance": 1,
-    "requested_quantity": 1
-  },
-  {
-    "product": "3551320",
-    "product_name": "Afvalzak HDPE \"Der Gelbe Sack\"",
-    "product_dimensions_cm": {
-      "lengte": 13.0,
-      "breedte": 15.0,
-      "hoogte": 1.0
-    },
-    "package": "Large paper bag",
-    "package_dimensions_cm": {
-      "lengte": 22.0,
-      "breedte": 10.0,
-      "hoogte": 30.0
-    },
-    "product_weight_g": 15.0,
-    "package_max_weight_g": null,
-    "fits": true,
-    "status": "PASS",
-    "reason": null,
-    "reason_details": [],
-    "rotation": [
-      15.0,
-      1.0,
-      13.0
-    ],
-    "volume_pct": 3.0,
-    "product_volume_cm3": 195.0,
     "package_volume_cm3": 6600.0,
     "quantity_instance": 1,
     "requested_quantity": 1
@@ -16264,9 +12327,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 10.9,
     "product_volume_cm3": 262.5,
@@ -16295,9 +12358,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 9.9,
     "product_volume_cm3": 262.5,
@@ -16326,9 +12389,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 6.6,
     "product_volume_cm3": 262.5,
@@ -16357,9 +12420,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 5.7,
     "product_volume_cm3": 262.5,
@@ -16388,9 +12451,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 4.0,
     "product_volume_cm3": 262.5,
@@ -16450,9 +12513,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 10.9,
     "product_volume_cm3": 262.5,
@@ -16481,9 +12544,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 9.9,
     "product_volume_cm3": 262.5,
@@ -16512,9 +12575,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 6.6,
     "product_volume_cm3": 262.5,
@@ -16543,9 +12606,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 5.7,
     "product_volume_cm3": 262.5,
@@ -16574,9 +12637,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      10.5,
       5.0,
-      5.0
+      5.0,
+      10.5
     ],
     "volume_pct": 4.0,
     "product_volume_cm3": 262.5,
@@ -16605,9 +12668,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -16729,9 +12792,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -16760,9 +12823,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -16791,9 +12854,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -16822,9 +12885,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -16853,9 +12916,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -16884,9 +12947,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 3.1,
     "product_volume_cm3": 14.62,
@@ -17008,9 +13071,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -17039,9 +13102,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.6,
     "product_volume_cm3": 14.62,
@@ -17070,9 +13133,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.4,
     "product_volume_cm3": 14.62,
@@ -17101,9 +13164,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.3,
     "product_volume_cm3": 14.62,
@@ -17132,9 +13195,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      7.5,
+      0.3,
       6.5,
-      0.3
+      7.5
     ],
     "volume_pct": 0.2,
     "product_volume_cm3": 14.62,
@@ -17163,8 +13226,8 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      5.5,
       1.5,
+      5.5,
       8.5
     ],
     "volume_pct": 14.7,
@@ -17257,8 +13320,8 @@
     "reason_details": [],
     "rotation": [
       8.5,
-      5.5,
-      1.5
+      1.5,
+      5.5
     ],
     "volume_pct": 6.1,
     "product_volume_cm3": 70.12,
@@ -17287,9 +13350,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      1.5,
       5.5,
-      1.5
+      8.5
     ],
     "volume_pct": 2.9,
     "product_volume_cm3": 70.12,
@@ -17318,9 +13381,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      1.5,
       5.5,
-      1.5
+      8.5
     ],
     "volume_pct": 2.7,
     "product_volume_cm3": 70.12,
@@ -17349,9 +13412,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      1.5,
       5.5,
-      1.5
+      8.5
     ],
     "volume_pct": 1.8,
     "product_volume_cm3": 70.12,
@@ -17380,9 +13443,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      1.5,
       5.5,
-      1.5
+      8.5
     ],
     "volume_pct": 1.5,
     "product_volume_cm3": 70.12,
@@ -17411,9 +13474,9 @@
     "reason": null,
     "reason_details": [],
     "rotation": [
-      8.5,
+      1.5,
       5.5,
-      1.5
+      8.5
     ],
     "volume_pct": 1.1,
     "product_volume_cm3": 70.12,
