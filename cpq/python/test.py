@@ -2690,7 +2690,7 @@ def main() -> None:
     )
 
     print(
-        "  python analyze_results.py --open"
+        "  streamlit run  cpq/python/analyze_results.py "
     )
 
     print()

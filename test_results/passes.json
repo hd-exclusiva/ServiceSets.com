@@ -2263,6 +2263,2486 @@
     "requested_quantity": 1
   },
   {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550201",
+    "product_name": "Afwasmiddel tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3550260",
+    "product_name": "Allesreiniger tube 25ml",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 8.3,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 3.6,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 2.7,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 1.9,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 1.5,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559920",
+    "product_name": "Welcome Zeepje rond",
+    "product_dimensions_cm": {
+      "lengte": 3.91,
+      "breedte": 1.92,
+      "hoogte": 2.31
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 32.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.92,
+      2.31,
+      3.91
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 17.34,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559820",
+    "product_name": "Welcome 30ml Body wash",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559830",
+    "product_name": "Welcome 30ml Shampoo",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559850",
+    "product_name": "Welcome 30ml Bodylotion",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559840",
+    "product_name": "Welcome 30ml Hair&Body",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 9.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 4.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 3.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 2.1,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 1.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.8,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.7,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.5,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3559860",
+    "product_name": "Welcome 30ml Conditioner",
+    "product_dimensions_cm": {
+      "lengte": 2.97,
+      "breedte": 2.62,
+      "hoogte": 2.53
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 35.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      2.53,
+      2.62,
+      2.97
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 19.69,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
     "product": "3550280",
     "product_name": "Afwasmiddel sachet 10ml",
     "product_dimensions_cm": {
@@ -7931,6 +10411,37 @@
     ],
     "volume_pct": 4.6,
     "product_volume_cm3": 300.76,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3554400",
+    "product_name": "Bord rond 22cm wit",
+    "product_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 22.0,
+      "hoogte": 1.0
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 10.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      22.0,
+      1.0,
+      22.0
+    ],
+    "volume_pct": 7.3,
+    "product_volume_cm3": 484.0,
     "package_volume_cm3": 6600.0,
     "quantity_instance": 1,
     "requested_quantity": 1

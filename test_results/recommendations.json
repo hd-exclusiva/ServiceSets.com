@@ -260,9 +260,8 @@
     "product": "3550201",
     "product_name": "Afwasmiddel tube 25ml",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -273,15 +272,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3550260",
     "product_name": "Allesreiniger tube 25ml",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -292,15 +291,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3559920",
     "product_name": "Welcome Zeepje rond",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -311,15 +310,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3559820",
     "product_name": "Welcome 30ml Body wash",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -330,15 +329,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3559830",
     "product_name": "Welcome 30ml Shampoo",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -349,15 +348,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3559850",
     "product_name": "Welcome 30ml Bodylotion",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -368,15 +367,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3559840",
     "product_name": "Welcome 30ml Hair&Body",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -387,15 +386,15 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3559860",
     "product_name": "Welcome 30ml Conditioner",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -406,7 +405,8 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "2213100",
@@ -1290,8 +1290,10 @@
     "product": "3554400",
     "product_name": "Bord rond 22cm wit",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
+    "smallest_package": "Large paper bag",
+    "packages_that_fit": [
+      "Large paper bag"
+    ],
     "packages_that_do_not_fit": [
       "Mini",
       "The smart cup",
@@ -1301,8 +1303,7 @@
       "Wave",
       "Small paper bag",
       "Doosje Hoog",
-      "Medium paper bag",
-      "Large paper bag"
+      "Medium paper bag"
     ]
   },
   {

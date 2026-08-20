@@ -5875,9 +5875,13 @@
     ],
     "distinct_articles": 7,
     "total_quantity": 7,
-    "fits_any_package": false,
-    "smallest_fitting_package": null,
-    "packages_that_fit": [],
+    "fits_any_package": true,
+    "smallest_fitting_package": "Small paper bag",
+    "packages_that_fit": [
+      "Small paper bag",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
     "packages_that_do_not_fit": [
       "Mini",
       "The smart cup",
@@ -5885,10 +5889,7 @@
       "5 CM",
       "LW",
       "Wave",
-      "Small paper bag",
-      "Doosje Hoog",
-      "Medium paper bag",
-      "Large paper bag"
+      "Doosje Hoog"
     ],
     "results_per_package": [
       {
@@ -5897,31 +5898,138 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0",
+            "3559980#0"
+          ],
+          "fitted_items": [
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0",
-            "3559980#0"
-          ],
-          "fitted_items": []
+            "3559920#0"
+          ]
         },
-        "placements": [],
+        "placements": [
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              0.0,
+              0.0,
+              2.53
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              2.97,
+              0.0,
+              2.53
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              0.0,
+              0.0,
+              5.06
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          }
+        ],
         "package": "Mini",
         "package_dimensions_cm": {
           "lengte": 6.0,
           "breedte": 4.2,
           "hoogte": 8.3
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 209.16,
         "volume_pct": 100.0,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 0,
-        "unfitted_count": 7,
+        "fitted_count": 5,
+        "unfitted_count": 2,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -5937,15 +6045,15 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0"
+          ],
+          "fitted_items": [
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0"
-          ],
-          "fitted_items": [
-            "3559980#0"
+            "3559920#0"
           ]
         },
         "placements": [
@@ -5964,6 +6072,111 @@
               8.5
             ],
             "rotation_type": 2,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              0.0,
+              1.5,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              1.5,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              0.0,
+              4.12,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              2.97,
+              4.12,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              0.0,
+              1.5,
+              2.53
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -5977,14 +6190,14 @@
           "breedte": 7.5,
           "hoogte": 8.5
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 478.12,
-        "volume_pct": 100.0,
+        "volume_pct": 99.2,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 1,
-        "unfitted_count": 6,
+        "fitted_count": 6,
+        "unfitted_count": 1,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6000,15 +6213,15 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0"
+          ],
+          "fitted_items": [
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0"
-          ],
-          "fitted_items": [
-            "3559980#0"
+            "3559920#0"
           ]
         },
         "placements": [
@@ -6027,6 +6240,111 @@
               8.5
             ],
             "rotation_type": 2,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              5.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              8.47,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              11.44,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              5.5,
+              0.0,
+              2.53
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              8.47,
+              0.0,
+              2.53
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -6040,14 +6358,14 @@
           "breedte": 4.0,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 640.0,
-        "volume_pct": 100.0,
+        "volume_pct": 74.1,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 1,
-        "unfitted_count": 6,
+        "fitted_count": 6,
+        "unfitted_count": 1,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6063,15 +6381,15 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0"
+          ],
+          "fitted_items": [
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0"
-          ],
-          "fitted_items": [
-            "3559980#0"
+            "3559920#0"
           ]
         },
         "placements": [
@@ -6095,6 +6413,111 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              5.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              8.47,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              11.44,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              14.41,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              17.38,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              1.92,
+              3.91,
+              2.31
+            ],
+            "rotation_type": 1,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           }
         ],
         "package": "5 CM",
@@ -6103,14 +6526,14 @@
           "breedte": 4.8,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 926.4,
-        "volume_pct": 100.0,
+        "volume_pct": 51.2,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 1,
-        "unfitted_count": 6,
+        "fitted_count": 6,
+        "unfitted_count": 1,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6126,15 +6549,15 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0"
+          ],
+          "fitted_items": [
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0"
-          ],
-          "fitted_items": [
-            "3559980#0"
+            "3559920#0"
           ]
         },
         "placements": [
@@ -6158,6 +6581,111 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              8.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              11.47,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              14.44,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              17.41,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              20.38,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              1.92,
+              3.91,
+              2.31
+            ],
+            "rotation_type": 1,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           }
         ],
         "package": "LW",
@@ -6166,14 +6694,14 @@
           "breedte": 6.0,
           "hoogte": 8.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 1152.0,
-        "volume_pct": 100.0,
+        "volume_pct": 41.2,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 1,
-        "unfitted_count": 6,
+        "fitted_count": 6,
+        "unfitted_count": 1,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6189,15 +6717,15 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0"
+          ],
+          "fitted_items": [
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0"
-          ],
-          "fitted_items": [
-            "3559980#0"
+            "3559920#0"
           ]
         },
         "placements": [
@@ -6214,6 +6742,111 @@
               8.5,
               5.5,
               1.5
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              8.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              11.47,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              14.44,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              17.41,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.53,
+              2.62,
+              2.97
+            ],
+            "rotation_type": 3,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              0.0,
+              5.5,
+              0.0
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
             ],
             "rotation_type": 0,
             "kind": "normal",
@@ -6229,14 +6862,14 @@
           "breedte": 10.0,
           "hoogte": 12.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 2400.0,
-        "volume_pct": 100.0,
+        "volume_pct": 19.8,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 1,
-        "unfitted_count": 6,
+        "fitted_count": 6,
+        "unfitted_count": 1,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6247,20 +6880,19 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
+          "unfitted_items": [],
+          "fitted_items": [
+            "3559955#0",
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
             "3559920#0"
-          ],
-          "fitted_items": [
-            "3559955#0",
-            "3559980#0"
           ]
         },
         "placements": [
@@ -6305,6 +6937,111 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              0.0,
+              1.0,
+              1.5
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              1.0,
+              1.5
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              5.94,
+              1.0,
+              1.5
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              0.0,
+              3.62,
+              1.5
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              8.91,
+              1.0,
+              1.5
+            ],
+            "dimensions": [
+              1.92,
+              3.91,
+              2.31
+            ],
+            "rotation_type": 1,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           }
         ],
         "package": "Small paper bag",
@@ -6313,14 +7050,14 @@
           "breedte": 8.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 2640.0,
-        "volume_pct": 100.0,
+        "volume_pct": 18.0,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 2,
-        "unfitted_count": 5,
+        "fitted_count": 7,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6336,15 +7073,15 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3559955#0"
+          ],
+          "fitted_items": [
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
-            "3559920#0",
-            "3559955#0"
-          ],
-          "fitted_items": [
-            "3559980#0"
+            "3559920#0"
           ]
         },
         "placements": [
@@ -6368,6 +7105,111 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              8.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              11.47,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              14.44,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              17.41,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.53,
+              2.62,
+              2.97
+            ],
+            "rotation_type": 3,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              0.0,
+              5.5,
+              0.0
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           }
         ],
         "package": "Doosje Hoog",
@@ -6376,14 +7218,14 @@
           "breedte": 10.0,
           "hoogte": 20.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 4000.0,
-        "volume_pct": 100.0,
+        "volume_pct": 11.9,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 1,
-        "unfitted_count": 6,
+        "fitted_count": 6,
+        "unfitted_count": 1,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6394,20 +7236,19 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
+          "unfitted_items": [],
+          "fitted_items": [
+            "3559955#0",
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
             "3559920#0"
-          ],
-          "fitted_items": [
-            "3559955#0",
-            "3559980#0"
           ]
         },
         "placements": [
@@ -6452,6 +7293,111 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              12.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              2.97,
+              1.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              5.94,
+              1.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              11.0,
+              5.5,
+              0.0
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           }
         ],
         "package": "Medium paper bag",
@@ -6460,14 +7406,14 @@
           "breedte": 8.0,
           "hoogte": 36.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 4608.0,
-        "volume_pct": 100.0,
+        "volume_pct": 10.3,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 2,
-        "unfitted_count": 5,
+        "fitted_count": 7,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6478,20 +7424,19 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
+          "unfitted_items": [],
+          "fitted_items": [
+            "3559955#0",
+            "3559980#0",
             "3559820#0",
             "3559830#0",
             "3559850#0",
             "3559860#0",
             "3559920#0"
-          ],
-          "fitted_items": [
-            "3559955#0",
-            "3559980#0"
           ]
         },
         "placements": [
@@ -6536,6 +7481,111 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
+          },
+          {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              0.0,
+              1.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              1.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559850#0",
+            "product_id": "3559850",
+            "product_name": "Welcome 30ml Bodylotion",
+            "position": [
+              5.94,
+              1.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559860#0",
+            "product_id": "3559860",
+            "product_name": "Welcome 30ml Conditioner",
+            "position": [
+              11.0,
+              5.5,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              19.5,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              1.92,
+              3.91,
+              2.31
+            ],
+            "rotation_type": 1,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           }
         ],
         "package": "Large paper bag",
@@ -6544,14 +7594,14 @@
           "breedte": 10.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 96467.52,
+        "total_product_volume_cm3": 474.21,
         "package_volume_cm3": 6600.0,
-        "volume_pct": 100.0,
+        "volume_pct": 7.2,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
-        "fitted_count": 2,
-        "unfitted_count": 5,
+        "fitted_count": 7,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -6614,9 +7664,12 @@
     ],
     "distinct_articles": 7,
     "total_quantity": 18,
-    "fits_any_package": false,
-    "smallest_fitting_package": null,
-    "packages_that_fit": [],
+    "fits_any_package": true,
+    "smallest_fitting_package": "Medium paper bag",
+    "packages_that_fit": [
+      "Medium paper bag",
+      "Large paper bag"
+    ],
     "packages_that_do_not_fit": [
       "Mini",
       "The smart cup",
@@ -6625,9 +7678,7 @@
       "LW",
       "Wave",
       "Small paper bag",
-      "Doosje Hoog",
-      "Medium paper bag",
-      "Large paper bag"
+      "Doosje Hoog"
     ],
     "results_per_package": [
       {
@@ -6636,44 +7687,86 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
             "3551467#folded0",
             "3551467#folded1",
             "3551467#folded2",
-            "3551467#folded3"
+            "3551467#folded3",
+            "3551250#4"
           ],
           "fitted_items": [
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
-            "3551250#3",
-            "3551250#4"
+            "3551250#3"
           ]
         },
         "placements": [
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
             "position": [
               0.0,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
+            "position": [
+              2.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              0.0,
+              2.62,
+              0.0
+            ],
+            "dimensions": [
+              2.8,
+              1.5,
+              3.8
+            ],
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -6685,16 +7778,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              0.0,
+              2.8,
+              2.62,
               0.0
             ],
             "dimensions": [
-              1.5,
               2.8,
+              1.5,
               3.8
             ],
-            "rotation_type": 3,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -6707,15 +7800,15 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               0.0,
-              0.0,
-              1.5
+              2.62,
+              3.8
             ],
             "dimensions": [
-              3.8,
               2.8,
-              1.5
+              1.5,
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -6727,37 +7820,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              0.0,
+              2.8,
+              2.62,
               3.8
             ],
             "dimensions": [
+              2.8,
               1.5,
-              2.8,
               3.8
             ],
-            "rotation_type": 3,
-            "kind": "normal",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": null
-          },
-          {
-            "item_name": "3551250#4",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
-            "position": [
-              0.0,
-              0.0,
-              3.0
-            ],
-            "dimensions": [
-              3.8,
-              2.8,
-              1.5
-            ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -6771,21 +7843,51 @@
           "breedte": 4.2,
           "hoogte": 8.3
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 209.16,
         "volume_pct": 100.0,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 5,
-        "unfitted_count": 13,
+        "fitted_count": 6,
+        "unfitted_count": 12,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -6900,12 +8002,10 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
@@ -6915,6 +8015,8 @@
             "3551467#folded3"
           ],
           "fitted_items": [
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -6924,20 +8026,62 @@
         },
         "placements": [
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
             "position": [
               0.0,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
+            "position": [
+              2.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              5.94,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              1.5,
+              2.8,
+              3.8
+            ],
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -6949,29 +8093,8 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
               0.0,
-              0.0
-            ],
-            "dimensions": [
-              2.8,
-              3.8,
-              1.5
-            ],
-            "rotation_type": 1,
-            "kind": "normal",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": null
-          },
-          {
-            "item_name": "3551250#2",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
-            "position": [
-              0.0,
-              2.8,
+              2.62,
               0.0
             ],
             "dimensions": [
@@ -6987,12 +8110,33 @@
             "original_dimensions": null
           },
           {
+            "item_name": "3551250#2",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              5.94,
+              2.8,
+              0.0
+            ],
+            "dimensions": [
+              1.5,
+              2.8,
+              3.8
+            ],
+            "rotation_type": 3,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#3",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              3.8,
+              0.0,
+              5.42,
               0.0
             ],
             "dimensions": [
@@ -7012,8 +8156,8 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
-              5.6,
+              2.8,
+              5.42,
               0.0
             ],
             "dimensions": [
@@ -7035,21 +8179,51 @@
           "breedte": 7.5,
           "hoogte": 8.5
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 478.12,
         "volume_pct": 100.0,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 5,
-        "unfitted_count": 13,
+        "fitted_count": 7,
+        "unfitted_count": 11,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -7164,17 +8338,17 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
             "3612255#1",
+            "3610450#folded1",
+            "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
             "3551467#folded0",
             "3551467#folded1",
             "3551467#folded2",
             "3551467#folded3",
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -7183,7 +8357,7 @@
           ],
           "fitted_items": [
             "3612255#0",
-            "3551400#folded0"
+            "3610450#folded0"
           ]
         },
         "placements": [
@@ -7209,9 +8383,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               2.5,
@@ -7228,8 +8402,8 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           }
@@ -7240,7 +8414,7 @@
           "breedte": 4.0,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 640.0,
         "volume_pct": 100.0,
         "total_weight_g": 775.0,
@@ -7253,8 +8427,38 @@
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -7268,7 +8472,7 @@
                 "w": 10.0,
                 "h": 1.0
               },
-              "fits": true
+              "fits": false
             },
             {
               "product_id": "3551400",
@@ -7369,24 +8573,24 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
             "3612255#1",
+            "3551400#folded0",
+            "3551400#folded1",
             "3551400#folded2",
             "3551467#folded0",
             "3551467#folded1",
             "3551467#folded2",
             "3551467#folded3",
+            "3550260#0",
+            "3550201#0",
             "3551250#2",
             "3551250#3",
             "3551250#4"
           ],
           "fitted_items": [
             "3612255#0",
-            "3551400#folded0",
-            "3551400#folded1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551250#0",
             "3551250#1"
           ]
@@ -7414,9 +8618,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               2.5,
@@ -7433,15 +8637,15 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded1",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded1",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               3.5,
@@ -7458,8 +8662,8 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
@@ -7512,7 +8716,7 @@
           "breedte": 4.8,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 926.4,
         "volume_pct": 100.0,
         "total_weight_g": 775.0,
@@ -7525,14 +8729,29 @@
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
             {
-              "product_id": "3551400",
-              "product_name": "Afvalzak HDPE 60x80",
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
               "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
                 "l": 15.0,
                 "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
                 "h": 1.0
               },
               "folded_dimensions_cm": {
@@ -7555,7 +8774,22 @@
                 "w": 10.0,
                 "h": 1.0
               },
-              "fits": true
+              "fits": false
+            },
+            {
+              "product_id": "3551400",
+              "product_name": "Afvalzak HDPE 60x80",
+              "original_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
             },
             {
               "product_id": "3551400",
@@ -7641,12 +8875,10 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
@@ -7656,6 +8888,8 @@
             "3551467#folded3"
           ],
           "fitted_items": [
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -7665,11 +8899,53 @@
         },
         "placements": [
           {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
+            "position": [
+              2.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
+              5.94,
               0.0,
               0.0
             ],
@@ -7690,7 +8966,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
+              9.74,
               0.0,
               0.0
             ],
@@ -7711,7 +8987,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
+              13.54,
               0.0,
               0.0
             ],
@@ -7732,7 +9008,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              11.4,
+              17.34,
               0.0,
               0.0
             ],
@@ -7753,16 +9029,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              15.2,
+              21.14,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
               2.8,
+              3.8,
               1.5
             ],
-            "rotation_type": 0,
+            "rotation_type": 1,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -7776,21 +9052,51 @@
           "breedte": 6.0,
           "hoogte": 8.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 1152.0,
         "volume_pct": 100.0,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 5,
-        "unfitted_count": 13,
+        "fitted_count": 7,
+        "unfitted_count": 11,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -7905,10 +9211,8 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
+            "3610450#folded1",
+            "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
             "3551467#folded0",
@@ -7919,7 +9223,9 @@
           "fitted_items": [
             "3612255#0",
             "3612255#1",
-            "3551400#folded0",
+            "3610450#folded0",
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -7971,9 +9277,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               9.0,
@@ -7990,10 +9296,52 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              14.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
+            "position": [
+              16.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           },
           {
             "item_name": "3551250#0",
@@ -8001,7 +9349,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               14.0,
-              0.0,
+              2.62,
               0.0
             ],
             "dimensions": [
@@ -8021,16 +9369,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              14.0,
-              0.0,
-              2.5
+              17.8,
+              2.62,
+              0.0
             ],
             "dimensions": [
-              3.8,
+              1.5,
               2.8,
-              1.5
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -8042,29 +9390,8 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              17.8,
-              0.0,
-              0.0
-            ],
-            "dimensions": [
-              1.5,
-              2.8,
-              3.8
-            ],
-            "rotation_type": 3,
-            "kind": "normal",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": null
-          },
-          {
-            "item_name": "3551250#3",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
-            "position": [
               14.0,
-              2.8,
+              5.42,
               0.0
             ],
             "dimensions": [
@@ -8080,12 +9407,12 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#4",
+            "item_name": "3551250#3",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
               17.8,
-              2.8,
+              5.42,
               0.0
             ],
             "dimensions": [
@@ -8094,6 +9421,27 @@
               3.8
             ],
             "rotation_type": 3,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#4",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              0.0,
+              0.0,
+              5.0
+            ],
+            "dimensions": [
+              3.8,
+              2.8,
+              1.5
+            ],
+            "rotation_type": 0,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -8107,21 +9455,51 @@
           "breedte": 10.0,
           "hoogte": 12.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 2400.0,
-        "volume_pct": 100.0,
+        "volume_pct": 87.5,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 8,
-        "unfitted_count": 10,
+        "fitted_count": 10,
+        "unfitted_count": 8,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -8135,7 +9513,7 @@
                 "w": 10.0,
                 "h": 1.0
               },
-              "fits": true
+              "fits": false
             },
             {
               "product_id": "3551400",
@@ -8237,13 +9615,13 @@
         "reason_details": {
           "unfitted_items": [
             "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1"
+            "3550201#0"
           ],
           "fitted_items": [
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
@@ -8302,9 +9680,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               5.0,
@@ -8321,15 +9699,15 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded1",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded1",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               6.0,
@@ -8346,13 +9724,13 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded2",
+            "item_name": "3551400#folded0",
             "product_id": "3551400",
             "product_name": "Afvalzak HDPE 60x80",
             "position": [
@@ -8377,57 +9755,57 @@
             }
           },
           {
+            "item_name": "3551400#folded1",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
+            "position": [
+              0.0,
+              0.0,
+              14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
+            }
+          },
+          {
+            "item_name": "3551400#folded2",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
+            "position": [
+              0.0,
+              1.0,
+              14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
+            }
+          },
+          {
             "item_name": "3551467#folded0",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
-            "position": [
-              0.0,
-              0.0,
-              14.0
-            ],
-            "dimensions": [
-              10.0,
-              1.0,
-              15.0
-            ],
-            "rotation_type": 2,
-            "kind": "folded",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
-            }
-          },
-          {
-            "item_name": "3551467#folded1",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
-            "position": [
-              0.0,
-              1.0,
-              14.0
-            ],
-            "dimensions": [
-              10.0,
-              1.0,
-              15.0
-            ],
-            "rotation_type": 2,
-            "kind": "folded",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
-            }
-          },
-          {
-            "item_name": "3551467#folded2",
             "product_id": "3551467",
             "product_name": "Afvalzak trekband 65x85cm gs",
             "position": [
@@ -8452,13 +9830,63 @@
             }
           },
           {
-            "item_name": "3551467#folded3",
+            "item_name": "3551467#folded1",
             "product_id": "3551467",
             "product_name": "Afvalzak trekband 65x85cm gs",
             "position": [
               0.0,
               3.0,
               14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 65.0,
+              "w": 85.0,
+              "h": 5.0
+            }
+          },
+          {
+            "item_name": "3551467#folded2",
+            "product_id": "3551467",
+            "product_name": "Afvalzak trekband 65x85cm gs",
+            "position": [
+              0.0,
+              4.0,
+              14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 65.0,
+              "w": 85.0,
+              "h": 5.0
+            }
+          },
+          {
+            "item_name": "3551467#folded3",
+            "product_id": "3551467",
+            "product_name": "Afvalzak trekband 65x85cm gs",
+            "position": [
+              0.0,
+              5.0,
+              15.0
             ],
             "dimensions": [
               10.0,
@@ -8503,15 +9931,15 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               0.0,
-              5.0,
+              6.0,
               15.0
             ],
             "dimensions": [
-              3.8,
               2.8,
-              1.5
+              1.5,
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -8523,16 +9951,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              5.0,
+              2.8,
+              6.0,
               15.0
             ],
             "dimensions": [
-              3.8,
               2.8,
-              1.5
+              1.5,
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -8544,8 +9972,8 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
-              5.0,
+              5.6,
+              6.0,
               15.0
             ],
             "dimensions": [
@@ -8565,16 +9993,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
-              6.5,
-              15.0
-            ],
-            "dimensions": [
-              2.8,
-              1.5,
+              9.0,
+              0.0,
               3.8
             ],
-            "rotation_type": 2,
+            "dimensions": [
+              1.5,
+              2.8,
+              3.8
+            ],
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -8588,21 +10016,51 @@
           "breedte": 8.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 2640.0,
-        "volume_pct": 100.0,
+        "volume_pct": 79.5,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 14,
-        "unfitted_count": 4,
+        "fitted_count": 16,
+        "unfitted_count": 2,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -8717,10 +10175,8 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1",
+            "3551400#folded2",
+            "3551467#folded0",
             "3551467#folded1",
             "3551467#folded2",
             "3551467#folded3"
@@ -8728,10 +10184,12 @@
           "fitted_items": [
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
-            "3551400#folded2",
-            "3551467#folded0",
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -8783,9 +10241,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               16.5,
               0.0,
@@ -8802,15 +10260,15 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded1",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded1",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               17.5,
               0.0,
@@ -8827,13 +10285,13 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded2",
+            "item_name": "3551400#folded0",
             "product_id": "3551400",
             "product_name": "Afvalzak HDPE 60x80",
             "position": [
@@ -8858,9 +10316,9 @@
             }
           },
           {
-            "item_name": "3551467#folded0",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
+            "item_name": "3551400#folded1",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
             "position": [
               0.0,
               9.0,
@@ -8877,17 +10335,59 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
             }
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              0.0,
+              2.5
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
+            "position": [
+              2.97,
+              0.0,
+              2.5
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
           },
           {
             "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
+              5.94,
               0.0,
               2.5
             ],
@@ -8908,7 +10408,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
+              9.74,
               0.0,
               2.5
             ],
@@ -8929,8 +10429,8 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
               0.0,
+              2.62,
               2.5
             ],
             "dimensions": [
@@ -8950,7 +10450,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
+              5.94,
               2.8,
               2.5
             ],
@@ -8971,7 +10471,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
+              9.74,
               2.8,
               2.5
             ],
@@ -8994,27 +10494,42 @@
           "breedte": 10.0,
           "hoogte": 20.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 4000.0,
-        "volume_pct": 100.0,
+        "volume_pct": 52.5,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 11,
-        "unfitted_count": 7,
+        "fitted_count": 13,
+        "unfitted_count": 5,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
             {
-              "product_id": "3551400",
-              "product_name": "Afvalzak HDPE 60x80",
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
               "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
                 "l": 15.0,
                 "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
                 "h": 1.0
               },
               "folded_dimensions_cm": {
@@ -9053,6 +10568,21 @@
                 "h": 1.0
               },
               "fits": true
+            },
+            {
+              "product_id": "3551400",
+              "product_name": "Afvalzak HDPE 60x80",
+              "original_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": false
             },
             {
               "product_id": "3551467",
@@ -9067,7 +10597,7 @@
                 "w": 10.0,
                 "h": 1.0
               },
-              "fits": true
+              "fits": false
             },
             {
               "product_id": "3551467",
@@ -9118,19 +10648,16 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1"
-          ],
+          "unfitted_items": [],
           "fitted_items": [
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
@@ -9138,6 +10665,8 @@
             "3551467#folded1",
             "3551467#folded2",
             "3551467#folded3",
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -9189,9 +10718,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               5.0,
@@ -9208,15 +10737,15 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded1",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded1",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               0.0,
               6.0,
@@ -9233,13 +10762,13 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded2",
+            "item_name": "3551400#folded0",
             "product_id": "3551400",
             "product_name": "Afvalzak HDPE 60x80",
             "position": [
@@ -9264,57 +10793,57 @@
             }
           },
           {
+            "item_name": "3551400#folded1",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
+            "position": [
+              0.0,
+              0.0,
+              14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
+            }
+          },
+          {
+            "item_name": "3551400#folded2",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
+            "position": [
+              0.0,
+              1.0,
+              14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
+            }
+          },
+          {
             "item_name": "3551467#folded0",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
-            "position": [
-              0.0,
-              0.0,
-              14.0
-            ],
-            "dimensions": [
-              10.0,
-              1.0,
-              15.0
-            ],
-            "rotation_type": 2,
-            "kind": "folded",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
-            }
-          },
-          {
-            "item_name": "3551467#folded1",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
-            "position": [
-              0.0,
-              1.0,
-              14.0
-            ],
-            "dimensions": [
-              10.0,
-              1.0,
-              15.0
-            ],
-            "rotation_type": 2,
-            "kind": "folded",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
-            }
-          },
-          {
-            "item_name": "3551467#folded2",
             "product_id": "3551467",
             "product_name": "Afvalzak trekband 65x85cm gs",
             "position": [
@@ -9339,7 +10868,7 @@
             }
           },
           {
-            "item_name": "3551467#folded3",
+            "item_name": "3551467#folded1",
             "product_id": "3551467",
             "product_name": "Afvalzak trekband 65x85cm gs",
             "position": [
@@ -9364,18 +10893,68 @@
             }
           },
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3551467#folded2",
+            "product_id": "3551467",
+            "product_name": "Afvalzak trekband 65x85cm gs",
+            "position": [
+              0.0,
+              4.0,
+              14.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 65.0,
+              "w": 85.0,
+              "h": 5.0
+            }
+          },
+          {
+            "item_name": "3551467#folded3",
+            "product_id": "3551467",
+            "product_name": "Afvalzak trekband 65x85cm gs",
+            "position": [
+              0.0,
+              5.0,
+              15.0
+            ],
+            "dimensions": [
+              10.0,
+              1.0,
+              15.0
+            ],
+            "rotation_type": 2,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 65.0,
+              "w": 85.0,
+              "h": 5.0
+            }
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
             "position": [
               9.0,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
             "kind": "normal",
@@ -9385,18 +10964,18 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#1",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
             "position": [
               10.0,
               5.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
             "kind": "normal",
@@ -9406,7 +10985,7 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#2",
+            "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
@@ -9427,7 +11006,7 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#3",
+            "item_name": "3551250#1",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
@@ -9448,20 +11027,62 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#4",
+            "item_name": "3551250#2",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              12.8,
+              11.97,
               0.0,
               0.0
             ],
             "dimensions": [
-              2.8,
               3.8,
+              2.8,
               1.5
             ],
-            "rotation_type": 1,
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#3",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              12.97,
+              5.0,
+              0.0
+            ],
+            "dimensions": [
+              2.8,
+              1.5,
+              3.8
+            ],
+            "rotation_type": 2,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#4",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              13.8,
+              0.0,
+              14.0
+            ],
+            "dimensions": [
+              1.5,
+              2.8,
+              3.8
+            ],
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -9475,21 +11096,51 @@
           "breedte": 8.0,
           "hoogte": 36.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 4608.0,
-        "volume_pct": 100.0,
+        "volume_pct": 45.6,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 14,
-        "unfitted_count": 4,
+        "fitted_count": 18,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -9599,19 +11250,16 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
-            "3550260#0",
-            "3550201#0",
-            "3610450#0",
-            "3610450#1"
-          ],
+          "unfitted_items": [],
           "fitted_items": [
             "3612255#0",
             "3612255#1",
+            "3610450#folded0",
+            "3610450#folded1",
             "3551400#folded0",
             "3551400#folded1",
             "3551400#folded2",
@@ -9619,6 +11267,8 @@
             "3551467#folded1",
             "3551467#folded2",
             "3551467#folded3",
+            "3550260#0",
+            "3550201#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -9670,9 +11320,9 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551400#folded0",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded0",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               16.5,
               0.0,
@@ -9689,15 +11339,15 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded1",
-            "product_id": "3551400",
-            "product_name": "Afvalzak HDPE 60x80",
+            "item_name": "3610450#folded1",
+            "product_id": "3610450",
+            "product_name": "Microvezel Doek 35x35cm TmH",
             "position": [
               17.5,
               0.0,
@@ -9714,13 +11364,13 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 15.0,
-              "w": 10.0,
+              "l": 35.0,
+              "w": 35.0,
               "h": 1.0
             }
           },
           {
-            "item_name": "3551400#folded2",
+            "item_name": "3551400#folded0",
             "product_id": "3551400",
             "product_name": "Afvalzak HDPE 60x80",
             "position": [
@@ -9745,9 +11395,9 @@
             }
           },
           {
-            "item_name": "3551467#folded0",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
+            "item_name": "3551400#folded1",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
             "position": [
               19.5,
               0.0,
@@ -9764,15 +11414,15 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
             }
           },
           {
-            "item_name": "3551467#folded1",
-            "product_id": "3551467",
-            "product_name": "Afvalzak trekband 65x85cm gs",
+            "item_name": "3551400#folded2",
+            "product_id": "3551400",
+            "product_name": "Afvalzak HDPE 60x80",
             "position": [
               20.5,
               0.0,
@@ -9789,13 +11439,13 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": {
-              "l": 65.0,
-              "w": 85.0,
-              "h": 5.0
+              "l": 15.0,
+              "w": 10.0,
+              "h": 1.0
             }
           },
           {
-            "item_name": "3551467#folded2",
+            "item_name": "3551467#folded0",
             "product_id": "3551467",
             "product_name": "Afvalzak trekband 65x85cm gs",
             "position": [
@@ -9820,7 +11470,7 @@
             }
           },
           {
-            "item_name": "3551467#folded3",
+            "item_name": "3551467#folded1",
             "product_id": "3551467",
             "product_name": "Afvalzak trekband 65x85cm gs",
             "position": [
@@ -9845,20 +11495,112 @@
             }
           },
           {
+            "item_name": "3551467#folded2",
+            "product_id": "3551467",
+            "product_name": "Afvalzak trekband 65x85cm gs",
+            "position": [
+              15.0,
+              0.0,
+              14.0
+            ],
+            "dimensions": [
+              1.0,
+              10.0,
+              15.0
+            ],
+            "rotation_type": 3,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 65.0,
+              "w": 85.0,
+              "h": 5.0
+            }
+          },
+          {
+            "item_name": "3551467#folded3",
+            "product_id": "3551467",
+            "product_name": "Afvalzak trekband 65x85cm gs",
+            "position": [
+              16.5,
+              0.0,
+              15.0
+            ],
+            "dimensions": [
+              1.0,
+              10.0,
+              15.0
+            ],
+            "rotation_type": 3,
+            "kind": "folded",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": {
+              "l": 65.0,
+              "w": 85.0,
+              "h": 5.0
+            }
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              17.5,
+              0.0,
+              15.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550201#0",
+            "product_id": "3550201",
+            "product_name": "Afwasmiddel tube 25ml",
+            "position": [
+              17.5,
+              2.62,
+              15.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
+              20.47,
               0.0,
-              0.0,
-              2.5
+              15.0
             ],
             "dimensions": [
-              3.8,
+              1.5,
               2.8,
-              1.5
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -9870,9 +11612,9 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              0.0,
-              2.5
+              17.5,
+              5.24,
+              15.0
             ],
             "dimensions": [
               3.8,
@@ -9891,16 +11633,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
-              0.0,
-              2.5
+              17.5,
+              8.04,
+              15.0
             ],
             "dimensions": [
-              3.8,
               2.8,
-              1.5
+              1.5,
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -9913,7 +11655,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               0.0,
-              2.8,
+              0.0,
               2.5
             ],
             "dimensions": [
@@ -9934,7 +11676,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               3.8,
-              2.8,
+              0.0,
               2.5
             ],
             "dimensions": [
@@ -9956,21 +11698,51 @@
           "breedte": 10.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 43583.68,
+        "total_product_volume_cm3": 2099.17,
         "package_volume_cm3": 6600.0,
-        "volume_pct": 100.0,
+        "volume_pct": 31.8,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
-        "fitted_count": 14,
-        "unfitted_count": 4,
+        "fitted_count": 18,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
         },
         "folded_articles": {
-          "count": 7,
+          "count": 9,
           "details": [
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
+            {
+              "product_id": "3610450",
+              "product_name": "Microvezel Doek 35x35cm TmH",
+              "original_dimensions_cm": {
+                "l": 35.0,
+                "w": 35.0,
+                "h": 1.0
+              },
+              "folded_dimensions_cm": {
+                "l": 15.0,
+                "w": 10.0,
+                "h": 1.0
+              },
+              "fits": true
+            },
             {
               "product_id": "3551400",
               "product_name": "Afvalzak HDPE 60x80",
@@ -11318,9 +13090,13 @@
     ],
     "distinct_articles": 9,
     "total_quantity": 14,
-    "fits_any_package": false,
-    "smallest_fitting_package": null,
-    "packages_that_fit": [],
+    "fits_any_package": true,
+    "smallest_fitting_package": "Doosje Hoog",
+    "packages_that_fit": [
+      "Doosje Hoog",
+      "Medium paper bag",
+      "Large paper bag"
+    ],
     "packages_that_do_not_fit": [
       "Mini",
       "The smart cup",
@@ -11328,10 +13104,7 @@
       "5 CM",
       "LW",
       "Wave",
-      "Small paper bag",
-      "Doosje Hoog",
-      "Medium paper bag",
-      "Large paper bag"
+      "Small paper bag"
     ],
     "results_per_package": [
       {
@@ -11340,10 +13113,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552235#0",
             "3552235#1",
             "3552200#0",
@@ -11353,6 +13122,10 @@
             "3552400#1"
           ],
           "fitted_items": [
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2"
@@ -11360,20 +13133,104 @@
         },
         "placements": [
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               0.0,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              0.0,
+              2.53
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              2.97,
+              0.0,
+              2.53
+            ],
+            "dimensions": [
+              1.92,
+              3.91,
+              2.31
+            ],
+            "rotation_type": 1,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              0.0,
+              2.62,
+              0.0
+            ],
+            "dimensions": [
+              2.8,
+              1.5,
+              3.8
+            ],
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11385,16 +13242,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
               0.0,
-              0.0
+              0.0,
+              5.06
             ],
             "dimensions": [
-              1.5,
+              3.8,
               2.8,
-              3.8
+              1.5
             ],
-            "rotation_type": 3,
+            "rotation_type": 0,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11406,16 +13263,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
+              3.8,
               0.0,
-              0.0,
-              1.5
+              5.06
             ],
             "dimensions": [
+              1.5,
               3.8,
-              2.8,
-              1.5
+              2.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 4,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11429,14 +13286,14 @@
           "breedte": 4.2,
           "hoogte": 8.3
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 209.16,
         "volume_pct": 100.0,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 3,
-        "unfitted_count": 11,
+        "fitted_count": 7,
+        "unfitted_count": 7,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -11483,10 +13340,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552235#0",
             "3552235#1",
             "3552200#0",
@@ -11496,6 +13349,10 @@
             "3552400#1"
           ],
           "fitted_items": [
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2"
@@ -11503,20 +13360,104 @@
         },
         "placements": [
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               0.0,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              2.62,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              2.97,
+              2.62,
+              0.0
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              0.0,
+              5.24,
+              0.0
+            ],
+            "dimensions": [
+              2.8,
+              1.5,
+              3.8
+            ],
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11528,16 +13469,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              0.0,
+              2.8,
+              5.24,
               0.0
             ],
             "dimensions": [
               2.8,
-              3.8,
-              1.5
+              1.5,
+              3.8
             ],
-            "rotation_type": 1,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11550,8 +13491,8 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               0.0,
-              2.8,
-              0.0
+              0.0,
+              2.53
             ],
             "dimensions": [
               3.8,
@@ -11572,14 +13513,14 @@
           "breedte": 7.5,
           "hoogte": 8.5
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 478.12,
         "volume_pct": 100.0,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 3,
-        "unfitted_count": 11,
+        "fitted_count": 7,
+        "unfitted_count": 7,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -11626,10 +13567,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552235#1",
             "3552200#0",
             "3551400#folded0",
@@ -11637,6 +13574,10 @@
           ],
           "fitted_items": [
             "3552235#0",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -11667,20 +13608,104 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               0.0,
               0.0,
               6.85
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              5.94,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              8.91,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              12.82,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              2.8,
+              3.8,
+              1.5
+            ],
+            "rotation_type": 1,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11692,16 +13717,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              0.0,
+              8.91,
+              1.92,
               6.85
             ],
             "dimensions": [
               3.8,
-              2.8,
-              1.5
+              1.5,
+              2.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 5,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11713,16 +13738,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
+              12.82,
               0.0,
-              6.85
+              8.35
             ],
             "dimensions": [
-              3.8,
               2.8,
+              3.8,
               1.5
             ],
-            "rotation_type": 0,
+            "rotation_type": 1,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11734,16 +13759,16 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              15.2,
               0.0,
+              3.07,
               0.0
             ],
             "dimensions": [
-              0.5,
               1.5,
+              0.5,
               10.0
             ],
-            "rotation_type": 3,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -11755,7 +13780,7 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              0.0,
+              1.5,
               3.07,
               0.0
             ],
@@ -11778,14 +13803,14 @@
           "breedte": 4.0,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 640.0,
         "volume_pct": 100.0,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 6,
-        "unfitted_count": 8,
+        "fitted_count": 10,
+        "unfitted_count": 4,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -11832,10 +13857,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552235#1",
             "3551400#folded0",
             "3551400#folded1"
@@ -11843,6 +13864,10 @@
           "fitted_items": [
             "3552235#0",
             "3552200#0",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -11894,18 +13919,18 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               15.2,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
             "kind": "normal",
@@ -11915,7 +13940,70 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#1",
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              0.0,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              2.97,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              5.94,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
@@ -11936,11 +14024,32 @@
             "original_dimensions": null
           },
           {
+            "item_name": "3551250#1",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              9.85,
+              0.0,
+              6.85
+            ],
+            "dimensions": [
+              3.8,
+              2.8,
+              1.5
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#2",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
+              13.65,
               0.0,
               6.85
             ],
@@ -11961,6 +14070,27 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
+              18.17,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              0.5,
+              1.5,
+              10.0
+            ],
+            "rotation_type": 3,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3552400#1",
+            "product_id": "3552400",
+            "product_name": "Stick Welcome Suiker coffee",
+            "position": [
               17.8,
               3.07,
               0.0
@@ -11976,27 +14106,6 @@
             "stack_unit_h": null,
             "stack_increment_h": null,
             "original_dimensions": null
-          },
-          {
-            "item_name": "3552400#1",
-            "product_id": "3552400",
-            "product_name": "Stick Welcome Suiker coffee",
-            "position": [
-              3.8,
-              0.0,
-              6.85
-            ],
-            "dimensions": [
-              10.0,
-              1.5,
-              0.5
-            ],
-            "rotation_type": 0,
-            "kind": "normal",
-            "represented_count": 1,
-            "stack_unit_h": null,
-            "stack_increment_h": null,
-            "original_dimensions": null
           }
         ],
         "package": "5 CM",
@@ -12005,14 +14114,14 @@
           "breedte": 4.8,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 926.4,
         "volume_pct": 100.0,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 7,
-        "unfitted_count": 7,
+        "fitted_count": 11,
+        "unfitted_count": 3,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -12059,10 +14168,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552235#1",
             "3552200#0",
             "3551400#folded0",
@@ -12070,6 +14175,10 @@
           ],
           "fitted_items": [
             "3552235#0",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -12100,12 +14209,96 @@
             "original_dimensions": null
           },
           {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              15.2,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              18.17,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              21.14,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              2.62,
+              2.97,
+              2.53
+            ],
+            "rotation_type": 1,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              0.0,
+              3.07,
+              0.0
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              15.2,
-              0.0,
+              3.91,
+              3.07,
               0.0
             ],
             "dimensions": [
@@ -12125,8 +14318,8 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              19.0,
-              0.0,
+              7.71,
+              3.07,
               0.0
             ],
             "dimensions": [
@@ -12146,7 +14339,7 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
+              11.51,
               3.07,
               0.0
             ],
@@ -12167,9 +14360,9 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              3.8,
-              3.07,
-              0.0
+              0.0,
+              0.0,
+              6.85
             ],
             "dimensions": [
               10.0,
@@ -12188,9 +14381,9 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              13.8,
-              3.07,
-              0.0
+              10.0,
+              0.0,
+              6.85
             ],
             "dimensions": [
               10.0,
@@ -12211,14 +14404,14 @@
           "breedte": 6.0,
           "hoogte": 8.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 1152.0,
         "volume_pct": 100.0,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 6,
-        "unfitted_count": 8,
+        "fitted_count": 10,
+        "unfitted_count": 4,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -12265,10 +14458,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552200#0",
             "3551400#folded0",
             "3551400#folded1"
@@ -12276,6 +14465,10 @@
           "fitted_items": [
             "3552235#0",
             "3552235#1",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -12327,20 +14520,104 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               15.2,
               0.0,
               0.0
             ],
             "dimensions": [
-              3.8,
-              2.8,
-              1.5
+              2.97,
+              2.62,
+              2.53
             ],
             "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              15.2,
+              6.85,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              15.2,
+              2.62,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              0.0,
+              0.0,
+              3.07
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              18.17,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              1.5,
+              2.8,
+              3.8
+            ],
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12352,16 +14629,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              15.2,
+              18.17,
               6.85,
               0.0
             ],
             "dimensions": [
-              3.8,
+              1.5,
               2.8,
-              1.5
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12373,9 +14650,9 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              15.2,
-              2.8,
-              0.0
+              3.91,
+              0.0,
+              3.07
             ],
             "dimensions": [
               3.8,
@@ -12394,16 +14671,16 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              19.0,
+              7.71,
               0.0,
-              0.0
+              3.07
             ],
             "dimensions": [
-              0.5,
+              10.0,
               1.5,
-              10.0
+              0.5
             ],
-            "rotation_type": 3,
+            "rotation_type": 0,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12415,16 +14692,16 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              19.0,
-              6.85,
+              15.2,
+              9.47,
               0.0
             ],
             "dimensions": [
-              0.5,
               1.5,
+              0.5,
               10.0
             ],
-            "rotation_type": 3,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12438,14 +14715,14 @@
           "breedte": 10.0,
           "hoogte": 12.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 2400.0,
-        "volume_pct": 100.0,
+        "volume_pct": 54.3,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 7,
-        "unfitted_count": 7,
+        "fitted_count": 11,
+        "unfitted_count": 3,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -12492,10 +14769,6 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0",
             "3552200#0",
             "3551400#folded0",
             "3551400#folded1"
@@ -12503,6 +14776,10 @@
           "fitted_items": [
             "3552235#0",
             "3552235#1",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -12554,13 +14831,97 @@
             "original_dimensions": null
           },
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               0.0,
               3.07,
               0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              3.07,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              0.0,
+              15.2
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              2.97,
+              0.0,
+              15.2
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              6.88,
+              0.0,
+              15.2
             ],
             "dimensions": [
               3.8,
@@ -12580,7 +14941,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               0.0,
-              5.87,
+              5.69,
               0.0
             ],
             "dimensions": [
@@ -12601,7 +14962,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               2.8,
-              5.87,
+              5.69,
               0.0
             ],
             "dimensions": [
@@ -12642,16 +15003,16 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              3.8,
-              3.07,
+              10.42,
+              0.0,
               0.0
             ],
             "dimensions": [
-              1.5,
               0.5,
+              1.5,
               10.0
             ],
-            "rotation_type": 2,
+            "rotation_type": 3,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12665,14 +15026,14 @@
           "breedte": 8.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 2640.0,
-        "volume_pct": 100.0,
+        "volume_pct": 49.4,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 7,
-        "unfitted_count": 7,
+        "fitted_count": 11,
+        "unfitted_count": 3,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -12714,22 +15075,21 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0"
-          ],
+          "unfitted_items": [],
           "fitted_items": [
             "3552235#0",
             "3552235#1",
             "3552200#0",
             "3551400#folded0",
             "3551400#folded1",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -12852,13 +15212,97 @@
             }
           },
           {
-            "item_name": "3551250#0",
-            "product_id": "3551250",
-            "product_name": "Vaatwastablet 5in1",
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
             "position": [
               10.0,
               6.85,
               0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              12.97,
+              6.85,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              0.0,
+              3.07
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              2.97,
+              0.0,
+              3.07
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3551250#0",
+            "product_id": "3551250",
+            "product_name": "Vaatwastablet 5in1",
+            "position": [
+              6.88,
+              0.0,
+              3.07
             ],
             "dimensions": [
               3.8,
@@ -12877,9 +15321,9 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              13.8,
-              6.85,
-              0.0
+              10.68,
+              0.0,
+              3.07
             ],
             "dimensions": [
               3.8,
@@ -12899,7 +15343,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               0.0,
-              0.0,
+              2.62,
               3.07
             ],
             "dimensions": [
@@ -12919,16 +15363,16 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              3.8,
-              0.0,
-              3.07
+              15.94,
+              6.85,
+              0.0
             ],
             "dimensions": [
-              10.0,
               1.5,
-              0.5
+              0.5,
+              10.0
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12963,14 +15407,14 @@
           "breedte": 10.0,
           "hoogte": 20.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 4000.0,
-        "volume_pct": 100.0,
+        "volume_pct": 32.6,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 10,
-        "unfitted_count": 4,
+        "fitted_count": 14,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -13012,22 +15456,21 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0"
-          ],
+          "unfitted_items": [],
           "fitted_items": [
             "3552235#0",
             "3552235#1",
             "3552200#0",
             "3551400#folded0",
             "3551400#folded1",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -13150,12 +15593,96 @@
             }
           },
           {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              10.0,
+              0.0,
+              6.14
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              12.97,
+              0.0,
+              6.14
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              0.0,
+              2.5,
+              6.14
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              2.97,
+              2.5,
+              6.14
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
               10.0,
-              0.0,
+              2.62,
               6.14
             ],
             "dimensions": [
@@ -13176,7 +15703,7 @@
             "product_name": "Vaatwastablet 5in1",
             "position": [
               13.8,
-              0.0,
+              2.62,
               6.14
             ],
             "dimensions": [
@@ -13196,16 +15723,16 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
-              2.5,
+              10.0,
+              5.42,
               6.14
             ],
             "dimensions": [
-              3.8,
               2.8,
-              1.5
+              1.5,
+              3.8
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -13217,9 +15744,9 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              10.0,
-              6.85,
-              0.0
+              6.88,
+              2.5,
+              6.14
             ],
             "dimensions": [
               1.5,
@@ -13239,7 +15766,7 @@
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
               15.3,
-              0.0,
+              2.62,
               6.14
             ],
             "dimensions": [
@@ -13261,14 +15788,14 @@
           "breedte": 8.0,
           "hoogte": 36.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 4608.0,
-        "volume_pct": 100.0,
+        "volume_pct": 28.3,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 10,
-        "unfitted_count": 4,
+        "fitted_count": 14,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
@@ -13310,22 +15837,21 @@
         }
       },
       {
-        "fits": false,
-        "status": "FAIL",
-        "reason": "ITEMS_DID_NOT_ALL_FIT",
+        "fits": true,
+        "status": "PASS",
+        "reason": null,
         "reason_details": {
-          "unfitted_items": [
-            "3559820#0",
-            "3559830#0",
-            "3550260#0",
-            "3559920#0"
-          ],
+          "unfitted_items": [],
           "fitted_items": [
             "3552235#0",
             "3552235#1",
             "3552200#0",
             "3551400#folded0",
             "3551400#folded1",
+            "3559820#0",
+            "3559830#0",
+            "3550260#0",
+            "3559920#0",
             "3551250#0",
             "3551250#1",
             "3551250#2",
@@ -13448,11 +15974,95 @@
             }
           },
           {
+            "item_name": "3559820#0",
+            "product_id": "3559820",
+            "product_name": "Welcome 30ml Body wash",
+            "position": [
+              0.0,
+              6.85,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559830#0",
+            "product_id": "3559830",
+            "product_name": "Welcome 30ml Shampoo",
+            "position": [
+              2.97,
+              6.85,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3550260#0",
+            "product_id": "3550260",
+            "product_name": "Allesreiniger tube 25ml",
+            "position": [
+              5.94,
+              6.85,
+              0.0
+            ],
+            "dimensions": [
+              2.97,
+              2.62,
+              2.53
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
+            "item_name": "3559920#0",
+            "product_id": "3559920",
+            "product_name": "Welcome Zeepje rond",
+            "position": [
+              8.91,
+              6.85,
+              0.0
+            ],
+            "dimensions": [
+              3.91,
+              1.92,
+              2.31
+            ],
+            "rotation_type": 0,
+            "kind": "normal",
+            "represented_count": 1,
+            "stack_unit_h": null,
+            "stack_increment_h": null,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3551250#0",
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              0.0,
+              12.82,
               6.85,
               0.0
             ],
@@ -13473,9 +16083,9 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              3.8,
-              6.85,
-              0.0
+              0.0,
+              0.0,
+              3.07
             ],
             "dimensions": [
               3.8,
@@ -13494,9 +16104,9 @@
             "product_id": "3551250",
             "product_name": "Vaatwastablet 5in1",
             "position": [
-              7.6,
-              6.85,
-              0.0
+              3.8,
+              0.0,
+              3.07
             ],
             "dimensions": [
               3.8,
@@ -13515,7 +16125,7 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              15.2,
+              16.62,
               6.85,
               0.0
             ],
@@ -13536,8 +16146,8 @@
             "product_id": "3552400",
             "product_name": "Stick Welcome Suiker coffee",
             "position": [
-              16.7,
-              6.85,
+              0.0,
+              9.47,
               0.0
             ],
             "dimensions": [
@@ -13559,14 +16169,14 @@
           "breedte": 10.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 77629.63,
+        "total_product_volume_cm3": 1303.58,
         "package_volume_cm3": 6600.0,
-        "volume_pct": 100.0,
+        "volume_pct": 19.8,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
-        "fitted_count": 10,
-        "unfitted_count": 4,
+        "fitted_count": 14,
+        "unfitted_count": 0,
         "stacked_articles": {
           "count": 0,
           "details": []
