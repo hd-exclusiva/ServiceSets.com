@@ -140,65 +140,65 @@
   {
     "num": "3550201",
     "name": "Afwasmiddel tube 25ml",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 32.0
   },
   {
     "num": "3550260",
     "name": "Allesreiniger tube 25ml",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 32.0
   },
   {
     "num": "3559920",
     "name": "Welcome Zeepje rond",
-    "l": 39.1,
-    "w": 19.2,
-    "h": 23.1,
+    "l": 3.91,
+    "w": 1.92,
+    "h": 2.31,
     "weight_g": 32.0
   },
   {
     "num": "3559820",
     "name": "Welcome 30ml Body wash",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559830",
     "name": "Welcome 30ml Shampoo",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559850",
     "name": "Welcome 30ml Bodylotion",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559840",
     "name": "Welcome 30ml Hair&Body",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
     "num": "3559860",
     "name": "Welcome 30ml Conditioner",
-    "l": 29.7,
-    "w": 26.2,
-    "h": 25.3,
+    "l": 2.97,
+    "w": 2.62,
+    "h": 2.53,
     "weight_g": 35.0
   },
   {
@@ -537,7 +537,15 @@
     "l": 35.0,
     "w": 35.0,
     "h": 1.0,
-    "weight_g": 25.0
+    "weight_g": 25.0,
+    "foldable": true,
+    "folded_dimensions": [
+      {
+        "l": 15,
+        "w": 10,
+        "h": 1
+      }
+    ]
   },
   {
     "num": "3610460",
@@ -545,7 +553,15 @@
     "l": 55.0,
     "w": 35.0,
     "h": 1.0,
-    "weight_g": 45.0
+    "weight_g": 45.0,
+    "foldable": true,
+    "folded_dimensions": [
+      {
+        "l": 15,
+        "w": 10,
+        "h": 1
+      }
+    ]
   },
   {
     "num": "3551050",
@@ -553,7 +569,15 @@
     "l": 45.0,
     "w": 60.0,
     "h": 1.0,
-    "weight_g": 65.0
+    "weight_g": 65.0,
+    "foldable": true,
+    "folded_dimensions": [
+      {
+        "l": 15,
+        "w": 10,
+        "h": 1
+      }
+    ]
   },
   {
     "num": "3551467",
@@ -576,7 +600,7 @@
     "name": "Bord rond 22cm wit",
     "l": 22.0,
     "w": 22.0,
-    "h": 22.0,
+    "h": 1.0,
     "weight_g": 10.0,
     "stackable": true,
     "stack_increment_h": 0.5
