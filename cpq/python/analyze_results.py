@@ -1067,7 +1067,7 @@ tab_overview, tab_products, tab_packages, tab_combinations, tab_live_demo, tab_f
         "Per product",
         "Per verpakking",
         "Combinaties",
-        "🖱️ Live demo",
+        "Zelf samenstellen",
         "Failures",
         "Alle resultaten",
     ]
