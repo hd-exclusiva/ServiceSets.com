@@ -32,7 +32,9 @@ Het dashboard toont:
 
 from __future__ import annotations
 
+import importlib.util
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -40,6 +42,99 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
+
+
+# ============================================================
+# PACKING ENGINE (test.py) ALS MODULE HERGEBRUIKEN
+# ============================================================
+#
+# Voor de live demo-tab hebben we dezelfde packing-logica
+# nodig als test.py (Product/Package-klassen, stapelen/
+# vouwen, py3dbp-aanroep). In plaats van dit te dupliceren,
+# laden we test.py zelf als module — via importlib op het
+# volledige bestandspad, zodat er geen naamsconflict kan
+# ontstaan met een eventueel geïnstalleerd "test"-package.
+
+@st.cache_resource(show_spinner=False)
+def _load_packing_engine():
+
+    engine_path = (
+        Path(__file__).resolve().parent / "test.py"
+    )
+
+    spec = importlib.util.spec_from_file_location(
+        "servicesets_packing_engine",
+        engine_path,
+    )
+
+    module = importlib.util.module_from_spec(spec)
+
+    # Moet vóór exec_module gebeuren: dataclasses (i.c.m.
+    # "from __future__ import annotations" in test.py)
+    # zoeken de module op via sys.modules tijdens het
+    # verwerken van de class-definities.
+    sys.modules[spec.name] = module
+
+    spec.loader.exec_module(module)
+
+    return module
+
+
+packing_engine = _load_packing_engine()
+
+
+@st.cache_data(
+    show_spinner="Productcatalogus laden...",
+    ttl=3600,
+)
+def load_catalog() -> tuple[list, list]:
+
+    """
+    Laadt de volledige product- en verpakkingscatalogus
+    (dezelfde bronnen als test.py: lokaal data/-bestand,
+    anders GitHub), zodat de live demo alle 96 artikelen
+    en 10 verpakkingen ter beschikking heeft.
+    """
+
+    def _load_first_available(
+        candidates: list,
+        url: str,
+    ):
+
+        for candidate in candidates:
+
+            if candidate.exists():
+                return packing_engine.load_json_file(
+                    candidate
+                )
+
+        return packing_engine.download_json(url)
+
+    products_raw = _load_first_available(
+        [
+            Path("data/products.json"),
+            Path("products.json"),
+        ],
+        packing_engine.PRODUCTS_URL,
+    )
+
+    packages_raw = _load_first_available(
+        [
+            Path("data/package_dimensions.json"),
+            Path("package_dimensions.json"),
+        ],
+        packing_engine.PACKAGES_URL,
+    )
+
+    products, _ = packing_engine.load_products(
+        products_raw
+    )
+
+    packages, _ = packing_engine.load_packages(
+        packages_raw
+    )
+
+    return products, packages
 
 
 # ============================================================
@@ -966,12 +1061,13 @@ st.markdown(
 # TABBLADEN
 # ============================================================
 
-tab_overview, tab_products, tab_packages, tab_combinations, tab_failures, tab_details = st.tabs(
+tab_overview, tab_products, tab_packages, tab_combinations, tab_live_demo, tab_failures, tab_details = st.tabs(
     [
         "Overzicht",
         "Per product",
         "Per verpakking",
         "Combinaties",
+        "🖱️ Live demo",
         "Failures",
         "Alle resultaten",
     ]
@@ -1705,6 +1801,320 @@ with tab_combinations:
                             f"{pkg_row['unfitted_count']} stuk(s) "
                             f"passen niet meer en zijn dus niet "
                             f"getekend — zie de reden hierboven.</span>",
+                            unsafe_allow_html=True,
+                        )
+
+
+# ============================================================
+# LIVE DEMO — zelf een samenstelling + aantal kiezen
+# ============================================================
+
+with tab_live_demo:
+
+    st.markdown(
+        '<div class="section-title">Stel zelf een service-set samen</div>',
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="info-box">
+            Testmenu voor artikelen en aantallen, en of deze passen in de huidige verpakkingen.
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    try:
+        demo_products, demo_packages = load_catalog()
+
+    except Exception as exc:
+
+        demo_products, demo_packages = [], []
+
+        st.error(
+            f"Kon productcatalogus niet laden: {exc}"
+        )
+
+    if not demo_products or not demo_packages:
+
+        st.warning(
+            "Geen producten/verpakkingen beschikbaar "
+            "voor de live demo."
+        )
+
+    else:
+
+        product_by_label = {
+            f"{p.name}  ({p.product_id})": p
+            for p in sorted(
+                demo_products,
+                key=lambda p: p.name,
+            )
+        }
+
+        if "demo_selection" not in st.session_state:
+            st.session_state.demo_selection = []
+
+        selected_labels = st.multiselect(
+            "Zoek en selecteer artikelen",
+            options=list(product_by_label.keys()),
+            key="demo_selection",
+            placeholder="Typ om te zoeken op naam...",
+        )
+
+        if not selected_labels:
+
+            st.info(
+                "Selecteer hierboven één of meer "
+                "artikelen om te beginnen."
+            )
+
+        else:
+
+            st.markdown(
+                '<div class="section-title">Aantallen</div>',
+                unsafe_allow_html=True,
+            )
+
+            demo_items: list[tuple] = []
+
+            n_cols = 3
+            cols = st.columns(n_cols)
+
+            for index, label in enumerate(selected_labels):
+
+                product = product_by_label[label]
+
+                with cols[index % n_cols]:
+
+                    badge = ""
+
+                    if getattr(product, "stackable", False):
+                        badge = " 📦"
+
+                    elif getattr(product, "foldable", False):
+                        badge = " 📄"
+
+                    qty = st.number_input(
+                        f"{product.name}{badge}",
+                        min_value=1,
+                        max_value=999,
+                        value=1,
+                        step=1,
+                        key=f"demo_qty_{product.product_id}",
+                    )
+
+                    demo_items.append((product, qty))
+
+            run_demo = st.button(
+                "📦 Test deze samenstelling",
+                type="primary",
+                width="stretch",
+            )
+
+            if run_demo:
+
+                expanded_products = []
+
+                for product, qty in demo_items:
+                    expanded_products.extend(
+                        [product] * int(qty)
+                    )
+
+                total_articles = len(expanded_products)
+                distinct_articles = len(demo_items)
+
+                with st.spinner(
+                    f"{total_articles} stuks over "
+                    f"{distinct_articles} artikelen testen "
+                    f"tegen {len(demo_packages)} verpakkingen..."
+                ):
+
+                    demo_results = [
+                        packing_engine.test_products_together(
+                            expanded_products,
+                            package,
+                        )
+                        for package in sorted(
+                            demo_packages,
+                            key=lambda p: p.volume,
+                        )
+                    ]
+
+                st.session_state.demo_results = demo_results
+                st.session_state.demo_items_snapshot = demo_items
+
+            if "demo_results" in st.session_state:
+
+                demo_results = st.session_state.demo_results
+                demo_items_snapshot = (
+                    st.session_state.demo_items_snapshot
+                )
+
+                items_summary_text = ", ".join(
+                    f"{p.name} ×{q}"
+                    for p, q in demo_items_snapshot
+                )
+
+                st.markdown(
+                    f"<span class='small-note'>Getest: "
+                    f"{items_summary_text}</span>",
+                    unsafe_allow_html=True,
+                )
+
+                passing = [
+                    r for r in demo_results
+                    if r["status"] == "PASS"
+                ]
+
+                # ---- KPI's ----
+                k1, k2, k3 = st.columns(3)
+
+                with k1:
+                    metric_card(
+                        "Verpakkingen die passen",
+                        f"{len(passing)} / {len(demo_results)}",
+                    )
+
+                with k2:
+                    metric_card(
+                        "Kleinste passende verpakking",
+                        (
+                            min(
+                                passing,
+                                key=lambda r: r[
+                                    "package_volume_cm3"
+                                ],
+                            )["package"]
+                            if passing
+                            else "— past nergens —"
+                        ),
+                    )
+
+                with k3:
+                    any_stack_fold = any(
+                        r.get("stacked_articles", {}).get("count", 0)
+                        or r.get("folded_articles", {}).get("count", 0)
+                        for r in demo_results
+                    )
+                    metric_card(
+                        "Stapelen/vouwen toegepast",
+                        "Ja" if any_stack_fold else "Nee",
+                    )
+
+                if not passing:
+
+                    st.markdown(
+                        """
+                        <div class="info-box">
+                            ⚠ Deze samenstelling past in <strong>geen
+                            enkele</strong> huidige verpakking. Goed
+                            demo-moment om te laten zien waarom
+                            Maatwerk (3D fit-check / andere
+                            verpakking) nodig is.
+                        </div>
+                        """,
+                        unsafe_allow_html=True,
+                    )
+
+                # ---- Resultatentabel ----
+                results_table = pd.DataFrame(
+                    [
+                        {
+                            "Verpakking": r["package"],
+                            "Afmetingen": dimensions_text(
+                                r["package_dimensions_cm"]
+                            ),
+                            "Resultaat": r["status"],
+                            "Volume %": r["volume_pct"],
+                            "Items passen": r["fitted_count"],
+                            "Items passen niet": r["unfitted_count"],
+                        }
+                        for r in demo_results
+                    ]
+                )
+
+                st.dataframe(
+                    results_table,
+                    width="stretch",
+                    hide_index=True,
+                    height=min(
+                        70 + 38 * len(results_table),
+                        420,
+                    ),
+                )
+
+                # ---- 3D-tekening ----
+                st.markdown(
+                    '<div class="section-title">3D-tekening</div>',
+                    unsafe_allow_html=True,
+                )
+
+                package_names = [
+                    r["package"] for r in demo_results
+                ]
+
+                passing_names = [
+                    r["package"] for r in passing
+                ]
+
+                default_index = (
+                    package_names.index(passing_names[0])
+                    if passing_names
+                    else 0
+                )
+
+                demo_package_pick = st.selectbox(
+                    "Kies een verpakking om te visualiseren "
+                    "(✓ = past)",
+                    options=package_names,
+                    index=default_index,
+                    format_func=lambda pkg: (
+                        f"✓ {pkg}"
+                        if pkg in passing_names
+                        else f"✗ {pkg} (past niet)"
+                    ),
+                    key="demo_package_pick",
+                )
+
+                demo_pkg_result = next(
+                    r for r in demo_results
+                    if r["package"] == demo_package_pick
+                )
+
+                if not demo_pkg_result["placements"]:
+
+                    st.warning(
+                        "Geen artikelen geplaatst in deze "
+                        "verpakking — niets te tekenen."
+                    )
+
+                else:
+
+                    fig_demo = render_3d_packing(
+                        demo_pkg_result[
+                            "package_dimensions_cm"
+                        ],
+                        demo_pkg_result["placements"],
+                        title=(
+                            f"{demo_package_pick} — "
+                            f"{demo_pkg_result['volume_pct']}% "
+                            f"volume gebruikt"
+                        ),
+                    )
+
+                    st.plotly_chart(
+                        fig_demo,
+                        width="stretch",
+                    )
+
+                    if demo_pkg_result["unfitted_count"]:
+                        st.markdown(
+                            f"<span class='small-note'>⚠ "
+                            f"{demo_pkg_result['unfitted_count']} "
+                            f"stuk(s) passen niet meer en zijn "
+                            f"niet getekend.</span>",
                             unsafe_allow_html=True,
                         )
 
