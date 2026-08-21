@@ -1703,9 +1703,8 @@
     "product": "3551780",
     "product_name": "Chloortablet Apesin per stuk",
     "requested_quantity": 1,
-    "smallest_package": null,
-    "packages_that_fit": [],
-    "packages_that_do_not_fit": [
+    "smallest_package": "Mini",
+    "packages_that_fit": [
       "Mini",
       "The smart cup",
       "Coffee set box",
@@ -1716,7 +1715,8 @@
       "Doosje Hoog",
       "Medium paper bag",
       "Large paper bag"
-    ]
+    ],
+    "packages_that_do_not_fit": []
   },
   {
     "product": "3551450",
