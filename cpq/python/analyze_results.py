@@ -191,5 +191,7 @@ with tab3:
             st.error(
                 f'Kon catalogus of packing engine niet laden: {exc}'
             )
+
+with tab4:
     st.dataframe(pd.DataFrame(problems),width='stretch',hide_index=True) if problems else st.success('Geen dataproblemen gevonden.')
 st.caption('ServiceSets.com · gebaseerd op all_results.json')
