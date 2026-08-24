@@ -118,210 +118,380 @@ with tab2:
         if row['gestapeld']:st.markdown('<div class="section">Gestapelde artikelen</div>',unsafe_allow_html=True);st.dataframe(pd.DataFrame(row['gestapeld']),width='stretch',hide_index=True)
         if row['gevouwen']:st.markdown('<div class="section">Gevouwen artikelen</div>',unsafe_allow_html=True);st.dataframe(pd.DataFrame(row['gevouwen']),width='stretch',hide_index=True)
 with tab3:
+    st.subheader("Zelf een combinatie testen")
+
     e = engine()
 
     if e is None:
         st.warning(
-            'Plaats test.py naast dit dashboard om zelf combinaties te testen.'
+            "Plaats test.py naast dit dashboard om zelf combinaties te testen."
         )
     else:
         try:
+            # ---------------------------------------------------------
+            # PRODUCTEN EN VERPAKKINGEN LADEN
+            # ---------------------------------------------------------
             pr = (
-                e.load_json_file(Path('data/products.json'))
-                if Path('data/products.json').exists()
+                e.load_json_file(Path("data/products.json"))
+                if Path("data/products.json").exists()
                 else e.download_json(e.PRODUCTS_URL)
             )
 
             pa = (
-                e.load_json_file(Path('data/package_dimensions.json'))
-                if Path('data/package_dimensions.json').exists()
+                e.load_json_file(Path("data/package_dimensions.json"))
+                if Path("data/package_dimensions.json").exists()
                 else e.download_json(e.PACKAGES_URL)
             )
 
             products, _ = e.load_products(pr)
             packages, _ = e.load_packages(pa)
 
-            labels = {
-                f'{p.name} ({p.product_id})': p
-                for p in products
-            }
+            # ---------------------------------------------------------
+            # PRODUCTEN PER CATEGORIE
+            # ---------------------------------------------------------
+            categories = {}
 
-            selected = st.multiselect(
-                'Artikelen',
-                sorted(labels)
+            for p in products:
+                category = getattr(p, "category", None)
+
+                if not category:
+                    category = "Overig"
+
+                categories.setdefault(category, []).append(p)
+
+            # Mooie vaste volgorde, overige categorieën daarna
+            preferred_order = [
+                "Koffie",
+                "Thee",
+                "Suiker & zoetstoffen",
+                "Kruiden & smaakmakers",
+                "Dranken",
+                "Toilet & sanitair",
+                "Schoonmaakmiddelen",
+                "Schoonmaakartikelen",
+                "Vaatwas",
+                "Badkamer & verzorging",
+                "Koken & keuken",
+                "Servies & bekers",
+                "Verpakking & doosjes",
+                "Cadeau & presentatie",
+                "Kantoor & papier",
+                "Vrije tijd & spellen",
+                "Huisdieren",
+                "Licht & vuur",
+                "Tape",
+                "Sauna",
+                "Afvalzakken",
+                "Welcome",
+                "Overig",
+            ]
+
+            ordered_categories = [
+                c for c in preferred_order if c in categories
+            ]
+
+            ordered_categories += sorted(
+                c for c in categories if c not in ordered_categories
             )
 
-            expanded = []
+            # ---------------------------------------------------------
+            # SELECTIE VAN PRODUCTEN
+            # ---------------------------------------------------------
+            selected_products = []
 
-            for label in selected:
-                p = labels[label]
-
-                count = st.number_input(
-                    label,
-                    min_value=1,
-                    max_value=999,
-                    value=1,
-                    key=f'amount_{p.product_id}'
-                )
-
-                expanded.extend([p] * int(count))
-
-            # -----------------------------------------
-            # COMBINATIE TESTEN
-            # -----------------------------------------
-
-            if st.button('Test combinatie', type='primary') and expanded:
-
-                results = [
-                    e.test_products_together(expanded, p)
-                    for p in sorted(packages, key=lambda x: x.volume)
-                ]
-
-                # Bewaar resultaten zodat ze beschikbaar blijven
-                # wanneer de gebruiker een andere verpakking selecteert.
-                st.session_state['custom_results'] = results
-
-            # -----------------------------------------
-            # BEWAARDE RESULTATEN OPHALEN
-            # -----------------------------------------
-
-            results = st.session_state.get(
-                'custom_results',
-                []
+            st.markdown(
+                "### Kies binnen deze categorie een of meerdere van deze artikelen"
             )
 
-            if results:
+            st.caption(
+                "Per categorie kun je één of meerdere artikelen kiezen. "
+                "Wil je niets uit een categorie? Kies dan 'Geen'."
+            )
 
-                # -----------------------------------------
-                # RESULTATENTABEL
-                # -----------------------------------------
-
-                result_rows = [
-                    {
-                        'Verpakking': r['package'],
-                        'Resultaat': r['status'],
-                        'Volume %': r['volume_pct'],
-                        'Items passen': r['fitted_count'],
-                        'Items passen niet': r['unfitted_count'],
-                    }
-                    for r in results
-                ]
-
-                st.dataframe(
-                    pd.DataFrame(result_rows),
-                    width='stretch',
-                    hide_index=True
+            for category in ordered_categories:
+                category_products = sorted(
+                    categories[category],
+                    key=lambda p: p.name.lower()
                 )
 
-                # -----------------------------------------
-                # 3D WEERGAVE
-                # -----------------------------------------
+                st.markdown(f"#### {category}")
 
-                st.markdown(
-                    '<div class="section">3D-weergave</div>',
-                    unsafe_allow_html=True
-                )
-
-                package_names = [
-                    r['package']
-                    for r in results
+                # "Geen" staat standaard geselecteerd.
+                options = ["Geen"] + [
+                    f"{p.name} ({p.product_id})"
+                    for p in category_products
                 ]
 
-                passing_packages = {
-                    r['package']
-                    for r in results
-                    if r.get('status') == 'PASS'
+                selected = st.multiselect(
+                    f"Artikelen uit {category}",
+                    options,
+                    default=["Geen"],
+                    key=f"category_{category}",
+                    label_visibility="collapsed",
+                )
+
+                # Geen = niets uit deze categorie
+                if "Geen" in selected:
+                    selected = [
+                        value for value in selected
+                        if value != "Geen"
+                    ]
+
+                product_lookup = {
+                    f"{p.name} ({p.product_id})": p
+                    for p in category_products
                 }
 
-                selected_package = st.selectbox(
-                    'Visualiseer verpakking',
-                    package_names,
-                    format_func=lambda x: (
-                        f'✓ {x}'
-                        if x in passing_packages
-                        else f'✗ {x} (past niet)'
-                    ),
-                    key='custom_combination_package'
-                )
+                for value in selected:
+                    product = product_lookup[value]
 
-                selected_result = next(
-                    r for r in results
-                    if r['package'] == selected_package
-                )
-
-                raw_dims = selected_result.get(
-                    'package_dimensions_cm',
-                    {}
-                )
-
-                placements = selected_result.get(
-                    'placements',
-                    []
-                )
-
-                if raw_dims and placements:
-                    st.plotly_chart(
-                        plot_packing(
-                            raw_dims,
-                            placements,
-                            f'Zelf samengestelde combinatie in {selected_package}'
-                        ),
-                        width='stretch'
+                    count = st.number_input(
+                        f"Aantal — {product.name}",
+                        min_value=1,
+                        max_value=999,
+                        value=1,
+                        step=1,
+                        key=f"amount_{product.product_id}_{category}",
                     )
-                elif raw_dims:
+
+                    selected_products.extend(
+                        [product] * int(count)
+                    )
+
+            # ---------------------------------------------------------
+            # SAMENVATTING
+            # ---------------------------------------------------------
+            st.divider()
+
+            if selected_products:
+                st.markdown("### Geselecteerde combinatie")
+
+                summary = {}
+
+                for product in selected_products:
+                    key = f"{product.name} ({product.product_id})"
+                    summary[key] = summary.get(key, 0) + 1
+
+                for name, count in summary.items():
+                    st.write(f"- **{count}×** {name}")
+
+            else:
+                st.info(
+                    "Er zijn nog geen artikelen geselecteerd."
+                )
+
+            # ---------------------------------------------------------
+            # VERPAKKING KIEZEN
+            # ---------------------------------------------------------
+            st.divider()
+
+            package_labels = {
+                (
+                    f"{package.naam} "
+                    f"({package.lengte} × {package.breedte} × "
+                    f"{package.hoogte} cm)"
+                ): package
+                for package in packages
+            }
+
+            selected_package_label = st.selectbox(
+                "Verpakking",
+                ["Kies een verpakking"] + sorted(package_labels),
+                key="test_package",
+            )
+
+            selected_package = None
+
+            if selected_package_label != "Kies een verpakking":
+                selected_package = package_labels[
+                    selected_package_label
+                ]
+
+            # ---------------------------------------------------------
+            # TESTEN
+            # ---------------------------------------------------------
+            if st.button(
+                "Test combinatie",
+                type="primary",
+                key="test_combination",
+            ):
+
+                if not selected_products:
                     st.warning(
-                        'Geen plaatsingen beschikbaar voor deze verpakking.'
+                        "Selecteer eerst minimaal één artikel."
+                    )
+
+                elif selected_package is None:
+                    st.warning(
+                        "Selecteer eerst een verpakking."
+                    )
+
+                else:
+                    try:
+                        result = e.test_products_together(
+                            selected_products,
+                            selected_package,
+                        )
+
+                        # Resultaat bewaren zodat de 3D-tekening
+                        # niet verdwijnt bij interactie met de pagina.
+                        st.session_state["tab3_result"] = result
+                        st.session_state["tab3_products"] = selected_products
+                        st.session_state["tab3_package"] = selected_package
+
+                    except Exception as exc:
+                        st.error(
+                            f"Kon combinatie niet testen: {exc}"
+                        )
+
+            # ---------------------------------------------------------
+            # LAATST BEREKENDE RESULTAAT
+            # ---------------------------------------------------------
+            result = st.session_state.get("tab3_result")
+
+            if result:
+                st.divider()
+                st.markdown("### Resultaat")
+
+                if result.get("fits"):
+                    st.success(
+                        f"De combinatie past in "
+                        f"**{result.get('package', '')}**."
                     )
                 else:
-                    st.warning(
-                        'Geen verpakkingsafmetingen beschikbaar.'
+                    st.error(
+                        "De combinatie past niet volledig in de gekozen verpakking."
                     )
 
-                # -----------------------------------------
-                # GESTAPELDE ARTIKELEN
-                # -----------------------------------------
+                # Basisinformatie
+                col1, col2, col3, col4 = st.columns(4)
 
-                stacked = (
-                    selected_result.get('stacked_articles') or {}
-                ).get('details') or []
-
-                if stacked:
-                    st.markdown(
-                        '<div class="section">Gestapelde artikelen</div>',
-                        unsafe_allow_html=True
+                with col1:
+                    st.metric(
+                        "Artikelen",
+                        result.get("number_of_products", 0),
                     )
 
-                    st.dataframe(
-                        pd.DataFrame(stacked),
-                        width='stretch',
-                        hide_index=True
+                with col2:
+                    st.metric(
+                        "Gewicht",
+                        f"{result.get('total_weight_g', 0):.1f} g",
                     )
 
-                # -----------------------------------------
+                with col3:
+                    st.metric(
+                        "Vulling",
+                        f"{result.get('volume_pct', 0):.1f}%",
+                    )
+
+                with col4:
+                    st.metric(
+                        "Status",
+                        result.get("status", "-"),
+                    )
+
+                # -----------------------------------------------------
+                # 3D TEKENING
+                # -----------------------------------------------------
+                placements = result.get("placements", [])
+
+                if placements:
+                    st.markdown("### 3D-weergave")
+
+                    # Gebruik hier jouw bestaande 3D-renderfunctie.
+                    # Bijvoorbeeld:
+                    #
+                    # fig = create_3d_plot(
+                    #     result,
+                    #     st.session_state["tab3_package"],
+                    # )
+                    # st.plotly_chart(fig, use_container_width=True)
+
+                    try:
+                        fig = e.create_3d_plot(
+                            result,
+                            st.session_state["tab3_package"],
+                        )
+
+                        if fig is not None:
+                            st.plotly_chart(
+                                fig,
+                                use_container_width=True,
+                            )
+                        else:
+                            st.info(
+                                "Er zijn plaatsingen berekend, "
+                                "maar de 3D-weergave kon niet worden gemaakt."
+                            )
+
+                    except AttributeError:
+                        st.info(
+                            "De packing is berekend. "
+                            "Koppel hier je bestaande 3D-renderfunctie."
+                        )
+
+                    except Exception as exc:
+                        st.warning(
+                            f"3D-weergave kon niet worden opgebouwd: {exc}"
+                        )
+
+                # -----------------------------------------------------
+                # PLAATSINGEN
+                # -----------------------------------------------------
+                if placements:
+                    with st.expander("Details van de plaatsingen"):
+                        for placement in placements:
+                            st.write(placement)
+
+                # -----------------------------------------------------
+                # NIET PASSENDE ARTIKELEN
+                # -----------------------------------------------------
+                reason_details = result.get("reason_details")
+
+                if isinstance(reason_details, dict):
+                    unfitted = reason_details.get(
+                        "unfitted_items",
+                        [],
+                    )
+
+                    if unfitted:
+                        with st.expander(
+                            "Artikelen die niet pasten"
+                        ):
+                            for item in unfitted:
+                                st.write(f"- {item}")
+
+                # -----------------------------------------------------
                 # GEVOUWEN ARTIKELEN
-                # -----------------------------------------
+                # -----------------------------------------------------
+                folded = result.get("folded_articles", {})
 
-                folded = (
-                    selected_result.get('folded_articles') or {}
-                ).get('details') or []
+                if folded.get("count", 0):
+                    with st.expander("Gevouwen artikelen"):
+                        for item in folded.get("details", []):
+                            st.write(
+                                f"**{item['product_name']}** — "
+                                f"{item['original_dimensions_cm']} → "
+                                f"{item['folded_dimensions_cm']}"
+                            )
 
-                if folded:
-                    st.markdown(
-                        '<div class="section">Gevouwen artikelen</div>',
-                        unsafe_allow_html=True
-                    )
+                # -----------------------------------------------------
+                # GESTAPELDE ARTIKELEN
+                # -----------------------------------------------------
+                stacked = result.get("stacked_articles", {})
 
-                    st.dataframe(
-                        pd.DataFrame(folded),
-                        width='stretch',
-                        hide_index=True
-                    )
+                if stacked.get("count", 0):
+                    with st.expander("Gestapelde artikelen"):
+                        for item in stacked.get("details", []):
+                            st.write(
+                                f"**{item['product_name']}** — "
+                                f"{item['stacked_count']} stuks"
+                            )
 
         except Exception as exc:
             st.error(
-                f'Kon catalogus of packing engine niet laden: {exc}'
+                f"Kon catalogus of packing engine niet laden: {exc}"
             )
-
 with tab4:
     st.dataframe(pd.DataFrame(problems),width='stretch',hide_index=True) if problems else st.success('Geen dataproblemen gevonden.')
 st.caption('ServiceSets.com · gebaseerd op all_results.json')
