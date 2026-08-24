@@ -79,10 +79,10 @@ def engine():
     module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module);return module
 
 st.markdown('<div class="header"><h1>ServiceSets – Combinatieanalyse</h1><p>Service-sets en ad-hoc combinaties, zonder individuele producttests.</p></div>',unsafe_allow_html=True)
-scenarios,details=normalise(load_json(RESULTS_DIR/'combination_results.json',[]))
+scenarios,details=normalise(load_json(RESULTS_DIR/'all_results.json',[]))
 problems=load_json(RESULTS_DIR/'data_problems.json',[])
 if scenarios.empty:
-    st.error('Geen resultaten in test_results/combination_results.json.');st.info('Voer eerst python tester_combinaties.py uit.');st.stop()
+    st.error('Geen resultaten in test_results/all_results.json.');st.info('Voer eerst python tester_combinaties.py uit.');st.stop()
 
 st.sidebar.markdown('## Filters')
 cats=sorted(scenarios['categorie'].unique()); chosen=st.sidebar.multiselect('Categorie',cats); query=st.sidebar.text_input('Zoek combinatie of artikel')
@@ -119,7 +119,7 @@ with tab2:
         if row['gevouwen']:st.markdown('<div class="section">Gevouwen artikelen</div>',unsafe_allow_html=True);st.dataframe(pd.DataFrame(row['gevouwen']),width='stretch',hide_index=True)
 with tab3:
     e=engine()
-    if e is None:st.warning('Plaats tester_combinaties.py naast dit dashboard om zelf combinaties te testen.')
+    if e is None:st.warning('Plaats test.py naast dit dashboard om zelf combinaties te testen.')
     else:
         try:
             pr=e.load_json_file(Path('data/products.json')) if Path('data/products.json').exists() else e.download_json(e.PRODUCTS_URL); pa=e.load_json_file(Path('data/package_dimensions.json')) if Path('data/package_dimensions.json').exists() else e.download_json(e.PACKAGES_URL); products,_=e.load_products(pr);packages,_=e.load_packages(pa)
@@ -131,4 +131,4 @@ with tab3:
         except Exception as exc:st.error(f'Kon catalogus of packing engine niet laden: {exc}')
 with tab4:
     st.dataframe(pd.DataFrame(problems),width='stretch',hide_index=True) if problems else st.success('Geen dataproblemen gevonden.')
-st.caption('ServiceSets.com · gebaseerd op combination_results.json')
+st.caption('ServiceSets.com · gebaseerd op all_results.json')
