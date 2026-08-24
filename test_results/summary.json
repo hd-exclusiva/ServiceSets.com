@@ -1,0 +1,21 @@
+{
+  "repository": "hd-exclusiva/ServiceSets.com",
+  "products_url": "https://raw.githubusercontent.com/hd-exclusiva/ServiceSets.com/main/data/products.json",
+  "packages_url": "https://raw.githubusercontent.com/hd-exclusiva/ServiceSets.com/main/data/package_dimensions.json",
+  "seed": 12345,
+  "decimals": 2,
+  "mode": "normal",
+  "products": 96,
+  "packages": 10,
+  "data_problems": 0,
+  "failures": 382,
+  "counterexamples": 1903,
+  "warnings": 382,
+  "duration_seconds": 0.59,
+  "py3dbp_available": true,
+  "behavior": {
+    "stackable_products": 3,
+    "foldable_products": 11,
+    "rigid_products": 82
+  }
+}
