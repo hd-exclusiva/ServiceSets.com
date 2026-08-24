@@ -1,0 +1,10 @@
+{
+  "total_tests": 960,
+  "pass": 519,
+  "fail": 441,
+  "errors": 0,
+  "pass_percentage": 54.1,
+  "products_tested": 96,
+  "packages_tested": 10,
+  "data_problems": 0
+}
