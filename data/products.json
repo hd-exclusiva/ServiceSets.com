@@ -723,7 +723,15 @@
     "l": 32.0,
     "w": 38.0,
     "h": 2.0,
-    "weight_g": 25.0
+    "weight_g": 25.0,
+     "foldable": true,
+    "folded_dimensions": [
+      {
+        "l": 15,
+        "w": 10,
+        "h": 1
+      }
+    ]
   },
   {
     "num": "3558300",
