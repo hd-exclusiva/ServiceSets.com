@@ -121,7 +121,9 @@ with tab3:
     e = engine()
 
     if e is None:
-        st.warning('Plaats test.py naast dit dashboard om zelf combinaties te testen.')
+        st.warning(
+            'Plaats test.py naast dit dashboard om zelf combinaties te testen.'
+        )
     else:
         try:
             pr = (
@@ -165,11 +167,14 @@ with tab3:
                 expanded.extend([p] * int(count))
 
             if st.button('Test combinatie', type='primary') and expanded:
+
+                # Test de combinatie in alle verpakkingen
                 results = [
                     e.test_products_together(expanded, p)
                     for p in sorted(packages, key=lambda x: x.volume)
                 ]
 
+                # Overzichtstabel
                 result_rows = [
                     {
                         'Verpakking': r['package'],
@@ -186,6 +191,112 @@ with tab3:
                     width='stretch',
                     hide_index=True
                 )
+
+                # -----------------------------------------
+                # 3D WEERGAVE
+                # -----------------------------------------
+
+                st.markdown(
+                    '<div class="section">3D-weergave</div>',
+                    unsafe_allow_html=True
+                )
+
+                package_names = [
+                    r['package']
+                    for r in results
+                ]
+
+                passing_packages = {
+                    r['package']
+                    for r in results
+                    if r.get('status') == 'PASS'
+                }
+
+                selected_package = st.selectbox(
+                    'Visualiseer verpakking',
+                    package_names,
+                    format_func=lambda x: (
+                        f'✓ {x}'
+                        if x in passing_packages
+                        else f'✗ {x} (past niet)'
+                    ),
+                    key='custom_combination_package'
+                )
+
+                selected_result = next(
+                    r for r in results
+                    if r['package'] == selected_package
+                )
+
+                raw_dims = selected_result.get(
+                    'package_dimensions_cm',
+                    {}
+                )
+
+                placements = selected_result.get(
+                    'placements',
+                    []
+                )
+
+                if raw_dims and placements:
+                    st.plotly_chart(
+                        plot_packing(
+                            raw_dims,
+                            placements,
+                            f'Zelf samengestelde combinatie in {selected_package}'
+                        ),
+                        width='stretch'
+                    )
+                elif raw_dims:
+                    st.warning(
+                        'De verpakking is beschikbaar, maar er zijn geen '
+                        'plaatsingen beschikbaar voor de 3D-weergave.'
+                    )
+                else:
+                    st.warning(
+                        'Geen verpakkingsafmetingen beschikbaar voor '
+                        'de 3D-weergave.'
+                    )
+
+                # -----------------------------------------
+                # GESTAPELDE ARTIKELEN
+                # -----------------------------------------
+
+                stacked = (
+                    selected_result.get('stacked_articles') or {}
+                ).get('details') or []
+
+                if stacked:
+                    st.markdown(
+                        '<div class="section">Gestapelde artikelen</div>',
+                        unsafe_allow_html=True
+                    )
+
+                    st.dataframe(
+                        pd.DataFrame(stacked),
+                        width='stretch',
+                        hide_index=True
+                    )
+
+                # -----------------------------------------
+                # GEVOUWEN ARTIKELEN
+                # -----------------------------------------
+
+                folded = (
+                    selected_result.get('folded_articles') or {}
+                ).get('details') or []
+
+                if folded:
+                    st.markdown(
+                        '<div class="section">Gevouwen artikelen</div>',
+                        unsafe_allow_html=True
+                    )
+
+                    st.dataframe(
+                        pd.DataFrame(folded),
+                        width='stretch',
+                        hide_index=True
+                    )
 
         except Exception as exc:
             st.error(
