@@ -14787,6 +14787,316 @@
     "requested_quantity": 1
   },
   {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Mini",
+    "package_dimensions_cm": {
+      "lengte": 6.0,
+      "breedte": 4.2,
+      "hoogte": 8.3
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.9,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 209.16,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "The smart cup",
+    "package_dimensions_cm": {
+      "lengte": 7.5,
+      "breedte": 7.5,
+      "hoogte": 8.5
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.4,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 478.12,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Coffee set box",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 4.0,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.3,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "5 CM",
+    "package_dimensions_cm": {
+      "lengte": 19.3,
+      "breedte": 4.8,
+      "hoogte": 10.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.2,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 926.4,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "LW",
+    "package_dimensions_cm": {
+      "lengte": 24.0,
+      "breedte": 6.0,
+      "hoogte": 8.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.2,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 1152.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Wave",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 12.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.1,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 2400.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Small paper bag",
+    "package_dimensions_cm": {
+      "lengte": 11.0,
+      "breedte": 8.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.1,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 2640.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Doosje Hoog",
+    "package_dimensions_cm": {
+      "lengte": 20.0,
+      "breedte": 10.0,
+      "hoogte": 20.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.0,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 4000.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Medium paper bag",
+    "package_dimensions_cm": {
+      "lengte": 16.0,
+      "breedte": 8.0,
+      "hoogte": 36.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.0,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 4608.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
+    "product": "3551780",
+    "product_name": "Chloortablet Apesin per stuk",
+    "product_dimensions_cm": {
+      "lengte": 1.05,
+      "breedte": 1.05,
+      "hoogte": 1.65
+    },
+    "package": "Large paper bag",
+    "package_dimensions_cm": {
+      "lengte": 22.0,
+      "breedte": 10.0,
+      "hoogte": 30.0
+    },
+    "product_weight_g": 900.0,
+    "package_max_weight_g": null,
+    "fits": true,
+    "status": "PASS",
+    "reason": null,
+    "reason_details": [],
+    "rotation": [
+      1.05,
+      1.05,
+      1.65
+    ],
+    "volume_pct": 0.0,
+    "product_volume_cm3": 1.82,
+    "package_volume_cm3": 6600.0,
+    "quantity_instance": 1,
+    "requested_quantity": 1
+  },
+  {
     "product": "4070100",
     "product_name": "Tape 50mmx66M PP Ulith tr 36R",
     "product_dimensions_cm": {
