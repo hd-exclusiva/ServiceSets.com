@@ -11876,10 +11876,16 @@
         "product_name": "Tennisbal 2e leven:)",
         "quantity": 1,
         "note": "Tennisbal 2e leven"
+      },
+      {
+        "product_id": "3554350",
+        "product_name": "Beker 180cc Future",
+        "quantity": 4,
+        "note": "Beker 180cc Future"
       }
     ],
-    "distinct_articles": 3,
-    "total_quantity": 5,
+    "distinct_articles": 4,
+    "total_quantity": 9,
     "fits_any_package": true,
     "smallest_fitting_package": "Wave",
     "packages_that_fit": [
@@ -11903,6 +11909,7 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0",
             "3562290#0",
@@ -11918,17 +11925,27 @@
           "breedte": 4.2,
           "hoogte": 8.3
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 209.16,
         "volume_pct": 100.0,
-        "total_weight_g": 112.75,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
+        "number_of_products": 9,
         "fitted_count": 0,
-        "unfitted_count": 5,
+        "unfitted_count": 9,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": false
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -11941,6 +11958,7 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3554350#stack",
             "3562285#0",
             "3562290#0",
             "3562290#1",
@@ -11979,17 +11997,27 @@
           "breedte": 7.5,
           "hoogte": 8.5
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 478.12,
-        "volume_pct": 79.6,
-        "total_weight_g": 112.75,
+        "volume_pct": 100.0,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
+        "number_of_products": 9,
         "fitted_count": 1,
-        "unfitted_count": 4,
+        "unfitted_count": 8,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": false
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12002,6 +12030,7 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0"
           ],
@@ -12082,17 +12111,27 @@
           "breedte": 4.0,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 640.0,
-        "volume_pct": 59.5,
-        "total_weight_g": 112.75,
+        "volume_pct": 100.0,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
+        "number_of_products": 9,
         "fitted_count": 3,
-        "unfitted_count": 2,
+        "unfitted_count": 6,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": false
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12105,6 +12144,7 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0"
           ],
@@ -12185,17 +12225,27 @@
           "breedte": 4.8,
           "hoogte": 10.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 926.4,
-        "volume_pct": 41.1,
-        "total_weight_g": 112.75,
+        "volume_pct": 100.0,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
+        "number_of_products": 9,
         "fitted_count": 3,
-        "unfitted_count": 2,
+        "unfitted_count": 6,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": false
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12208,6 +12258,7 @@
         "reason": "ITEMS_DID_NOT_ALL_FIT",
         "reason_details": {
           "unfitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0"
           ],
@@ -12288,17 +12339,27 @@
           "breedte": 6.0,
           "hoogte": 8.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 1152.0,
-        "volume_pct": 33.1,
-        "total_weight_g": 112.75,
+        "volume_pct": 84.9,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
+        "number_of_products": 9,
         "fitted_count": 3,
-        "unfitted_count": 2,
+        "unfitted_count": 6,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": false
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12312,6 +12373,7 @@
         "reason_details": {
           "unfitted_items": [],
           "fitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0",
             "3562290#0",
@@ -12321,11 +12383,32 @@
         },
         "placements": [
           {
+            "item_name": "3554350#stack",
+            "product_id": "3554350",
+            "product_name": "Beker 180cc Future",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              12.19,
+              7.0,
+              7.0
+            ],
+            "rotation_type": 3,
+            "kind": "stack",
+            "represented_count": 4,
+            "stack_unit_h": 9.19,
+            "stack_increment_h": 1.0,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3562270#0",
             "product_id": "3562270",
             "product_name": "Tennisbal 2e leven:)",
             "position": [
-              0.0,
+              12.19,
               0.0,
               0.0
             ],
@@ -12347,7 +12430,7 @@
             "product_name": "Hondenpoepzakje papier",
             "position": [
               0.0,
-              6.7,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12367,16 +12450,16 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              6.7,
+              18.89,
               0.0,
               0.0
             ],
             "dimensions": [
-              12.0,
               1.0,
-              1.0
+              1.0,
+              12.0
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12389,7 +12472,7 @@
             "product_name": "Munchy Stick voor hond",
             "position": [
               16.0,
-              6.7,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12409,8 +12492,8 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              18.7,
-              0.0,
+              17.0,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12432,17 +12515,27 @@
           "breedte": 10.0,
           "hoogte": 12.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 2400.0,
-        "volume_pct": 15.9,
-        "total_weight_g": 112.75,
+        "volume_pct": 40.8,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
-        "fitted_count": 5,
+        "number_of_products": 9,
+        "fitted_count": 9,
         "unfitted_count": 0,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": true
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12456,6 +12549,7 @@
         "reason_details": {
           "unfitted_items": [],
           "fitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0",
             "3562290#0",
@@ -12465,13 +12559,34 @@
         },
         "placements": [
           {
+            "item_name": "3554350#stack",
+            "product_id": "3554350",
+            "product_name": "Beker 180cc Future",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              7.0,
+              7.0,
+              12.19
+            ],
+            "rotation_type": 0,
+            "kind": "stack",
+            "represented_count": 4,
+            "stack_unit_h": 9.19,
+            "stack_increment_h": 1.0,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3562270#0",
             "product_id": "3562270",
             "product_name": "Tennisbal 2e leven:)",
             "position": [
               0.0,
               0.0,
-              0.0
+              12.19
             ],
             "dimensions": [
               6.7,
@@ -12491,7 +12606,7 @@
             "product_name": "Hondenpoepzakje papier",
             "position": [
               0.0,
-              6.7,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12511,7 +12626,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              6.7,
+              7.0,
               0.0,
               0.0
             ],
@@ -12532,9 +12647,9 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              7.7,
+              6.7,
               0.0,
-              0.0
+              12.19
             ],
             "dimensions": [
               1.0,
@@ -12553,7 +12668,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              8.7,
+              8.0,
               0.0,
               0.0
             ],
@@ -12576,17 +12691,27 @@
           "breedte": 8.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 2640.0,
-        "volume_pct": 14.4,
-        "total_weight_g": 112.75,
+        "volume_pct": 37.0,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
-        "fitted_count": 5,
+        "number_of_products": 9,
+        "fitted_count": 9,
         "unfitted_count": 0,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": true
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12600,6 +12725,7 @@
         "reason_details": {
           "unfitted_items": [],
           "fitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0",
             "3562290#0",
@@ -12609,11 +12735,32 @@
         },
         "placements": [
           {
+            "item_name": "3554350#stack",
+            "product_id": "3554350",
+            "product_name": "Beker 180cc Future",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              7.0,
+              7.0,
+              12.19
+            ],
+            "rotation_type": 0,
+            "kind": "stack",
+            "represented_count": 4,
+            "stack_unit_h": 9.19,
+            "stack_increment_h": 1.0,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3562270#0",
             "product_id": "3562270",
             "product_name": "Tennisbal 2e leven:)",
             "position": [
-              0.0,
+              7.0,
               0.0,
               0.0
             ],
@@ -12634,8 +12781,8 @@
             "product_id": "3562285",
             "product_name": "Hondenpoepzakje papier",
             "position": [
-              6.7,
               0.0,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12655,7 +12802,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              17.7,
+              13.7,
               0.0,
               0.0
             ],
@@ -12676,8 +12823,8 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              18.7,
-              0.0,
+              11.0,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12697,16 +12844,16 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
+              14.7,
               0.0,
-              6.7,
               0.0
             ],
             "dimensions": [
-              12.0,
               1.0,
-              1.0
+              1.0,
+              12.0
             ],
-            "rotation_type": 0,
+            "rotation_type": 2,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -12720,17 +12867,27 @@
           "breedte": 10.0,
           "hoogte": 20.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 4000.0,
-        "volume_pct": 9.5,
-        "total_weight_g": 112.75,
+        "volume_pct": 24.5,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
-        "fitted_count": 5,
+        "number_of_products": 9,
+        "fitted_count": 9,
         "unfitted_count": 0,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": true
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12744,6 +12901,7 @@
         "reason_details": {
           "unfitted_items": [],
           "fitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0",
             "3562290#0",
@@ -12753,11 +12911,32 @@
         },
         "placements": [
           {
+            "item_name": "3554350#stack",
+            "product_id": "3554350",
+            "product_name": "Beker 180cc Future",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              7.0,
+              7.0,
+              12.19
+            ],
+            "rotation_type": 0,
+            "kind": "stack",
+            "represented_count": 4,
+            "stack_unit_h": 9.19,
+            "stack_increment_h": 1.0,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3562270#0",
             "product_id": "3562270",
             "product_name": "Tennisbal 2e leven:)",
             "position": [
-              0.0,
+              7.0,
               0.0,
               0.0
             ],
@@ -12779,7 +12958,7 @@
             "product_name": "Hondenpoepzakje papier",
             "position": [
               0.0,
-              6.7,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12799,7 +12978,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              6.7,
+              13.7,
               0.0,
               0.0
             ],
@@ -12821,7 +13000,7 @@
             "product_name": "Munchy Stick voor hond",
             "position": [
               11.0,
-              6.7,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12841,7 +13020,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              7.7,
+              14.7,
               0.0,
               0.0
             ],
@@ -12864,17 +13043,27 @@
           "breedte": 8.0,
           "hoogte": 36.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 4608.0,
-        "volume_pct": 8.3,
-        "total_weight_g": 112.75,
+        "volume_pct": 21.2,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
-        "fitted_count": 5,
+        "number_of_products": 9,
+        "fitted_count": 9,
         "unfitted_count": 0,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": true
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
@@ -12888,6 +13077,7 @@
         "reason_details": {
           "unfitted_items": [],
           "fitted_items": [
+            "3554350#stack",
             "3562270#0",
             "3562285#0",
             "3562290#0",
@@ -12897,11 +13087,32 @@
         },
         "placements": [
           {
+            "item_name": "3554350#stack",
+            "product_id": "3554350",
+            "product_name": "Beker 180cc Future",
+            "position": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "dimensions": [
+              7.0,
+              7.0,
+              12.19
+            ],
+            "rotation_type": 0,
+            "kind": "stack",
+            "represented_count": 4,
+            "stack_unit_h": 9.19,
+            "stack_increment_h": 1.0,
+            "original_dimensions": null
+          },
+          {
             "item_name": "3562270#0",
             "product_id": "3562270",
             "product_name": "Tennisbal 2e leven:)",
             "position": [
-              0.0,
+              7.0,
               0.0,
               0.0
             ],
@@ -12922,8 +13133,8 @@
             "product_id": "3562285",
             "product_name": "Hondenpoepzakje papier",
             "position": [
-              6.7,
               0.0,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12943,7 +13154,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              17.7,
+              13.7,
               0.0,
               0.0
             ],
@@ -12964,8 +13175,8 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              18.7,
-              0.0,
+              11.0,
+              7.0,
               0.0
             ],
             "dimensions": [
@@ -12985,7 +13196,7 @@
             "product_id": "3562290",
             "product_name": "Munchy Stick voor hond",
             "position": [
-              19.7,
+              14.7,
               0.0,
               0.0
             ],
@@ -13008,17 +13219,27 @@
           "breedte": 10.0,
           "hoogte": 30.0
         },
-        "total_product_volume_cm3": 380.76,
+        "total_product_volume_cm3": 978.07,
         "package_volume_cm3": 6600.0,
-        "volume_pct": 5.8,
-        "total_weight_g": 112.75,
+        "volume_pct": 14.8,
+        "total_weight_g": 130.23,
         "package_max_weight_g": null,
-        "number_of_products": 5,
-        "fitted_count": 5,
+        "number_of_products": 9,
+        "fitted_count": 9,
         "unfitted_count": 0,
         "stacked_articles": {
-          "count": 0,
-          "details": []
+          "count": 1,
+          "details": [
+            {
+              "product_id": "3554350",
+              "product_name": "Beker 180cc Future",
+              "stacked_count": 4,
+              "unit_height_cm": 9.19,
+              "stack_increment_cm": 1.0,
+              "effective_height_cm": 12.19,
+              "fits": true
+            }
+          ]
         },
         "folded_articles": {
           "count": 0,
