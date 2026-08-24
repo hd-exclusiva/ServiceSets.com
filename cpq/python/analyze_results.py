@@ -52,11 +52,11 @@ RESULTS_DIR = Path("test_results")
 # De website gebruikt een frisse, eigentijdse uitstraling.
 # Deze kleuren zijn bewust als dashboard-thema gekozen:
 # donkergroen voor merk/headers, warm accent voor highlights.
-BRAND_GREEN = "#173F35"
-BRAND_GREEN_2 = "#245C4D"
-BRAND_LIGHT = "#EAF3EF"
+BRAND_GREEN = "#66C0B5"
+BRAND_GREEN_2 = "#236D59"
+BRAND_LIGHT = "#CAE7DA"
 BRAND_ACCENT = "#D6A85F"
-BRAND_DARK = "#14201D"
+BRAND_DARK = "#1A171B"
 WHITE = "#FFFFFF"
 GREY = "#66736F"
 LIGHT_GREY = "#F5F7F6"

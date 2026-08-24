@@ -11,7 +11,7 @@
   "failures": 382,
   "counterexamples": 1903,
   "warnings": 382,
-  "duration_seconds": 0.59,
+  "duration_seconds": 0.648,
   "py3dbp_available": true,
   "behavior": {
     "stackable_products": 3,
