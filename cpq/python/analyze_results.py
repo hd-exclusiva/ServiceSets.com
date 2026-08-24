@@ -118,17 +118,78 @@ with tab2:
         if row['gestapeld']:st.markdown('<div class="section">Gestapelde artikelen</div>',unsafe_allow_html=True);st.dataframe(pd.DataFrame(row['gestapeld']),width='stretch',hide_index=True)
         if row['gevouwen']:st.markdown('<div class="section">Gevouwen artikelen</div>',unsafe_allow_html=True);st.dataframe(pd.DataFrame(row['gevouwen']),width='stretch',hide_index=True)
 with tab3:
-    e=engine()
-    if e is None:st.warning('Plaats test.py naast dit dashboard om zelf combinaties te testen.')
+    e = engine()
+
+    if e is None:
+        st.warning('Plaats test.py naast dit dashboard om zelf combinaties te testen.')
     else:
         try:
-            pr=e.load_json_file(Path('data/products.json')) if Path('data/products.json').exists() else e.download_json(e.PRODUCTS_URL); pa=e.load_json_file(Path('data/package_dimensions.json')) if Path('data/package_dimensions.json').exists() else e.download_json(e.PACKAGES_URL); products,_=e.load_products(pr);packages,_=e.load_packages(pa)
-            labels={f'{p.name} ({p.product_id})':p for p in products}; selected=st.multiselect('Artikelen',sorted(labels)); expanded=[]
+            pr = (
+                e.load_json_file(Path('data/products.json'))
+                if Path('data/products.json').exists()
+                else e.download_json(e.PRODUCTS_URL)
+            )
+
+            pa = (
+                e.load_json_file(Path('data/package_dimensions.json'))
+                if Path('data/package_dimensions.json').exists()
+                else e.download_json(e.PACKAGES_URL)
+            )
+
+            products, _ = e.load_products(pr)
+            packages, _ = e.load_packages(pa)
+
+            labels = {
+                f'{p.name} ({p.product_id})': p
+                for p in products
+            }
+
+            selected = st.multiselect(
+                'Artikelen',
+                sorted(labels)
+            )
+
+            expanded = []
+
             for label in selected:
-                p=labels[label];count=st.number_input(label,min_value=1,max_value=999,value=1,key=f'amount_{p.product_id}');expanded.extend([p]*int(count))
-            if st.button('Test combinatie',type='primary') and expanded:
-                results=[e.test_products_together(expanded,p) for p in sorted(packages,key=lambda x:x.volume)];st.dataframe(pd.DataFrame([{'Verpakking':r['package'],'Resultaat':r['status'],'Volume %':r['volume_pct'],'Items passen':r['fitted_count'],'Items passen niet':r['unfitted_count']} for r in results]),width='stretch',hide_index=True)
-        except Exception as exc:st.error(f'Kon catalogus of packing engine niet laden: {exc}')
-with tab4:
+                p = labels[label]
+
+                count = st.number_input(
+                    label,
+                    min_value=1,
+                    max_value=999,
+                    value=1,
+                    key=f'amount_{p.product_id}'
+                )
+
+                expanded.extend([p] * int(count))
+
+            if st.button('Test combinatie', type='primary') and expanded:
+                results = [
+                    e.test_products_together(expanded, p)
+                    for p in sorted(packages, key=lambda x: x.volume)
+                ]
+
+                result_rows = [
+                    {
+                        'Verpakking': r['package'],
+                        'Resultaat': r['status'],
+                        'Volume %': r['volume_pct'],
+                        'Items passen': r['fitted_count'],
+                        'Items passen niet': r['unfitted_count'],
+                    }
+                    for r in results
+                ]
+
+                st.dataframe(
+                    pd.DataFrame(result_rows),
+                    width='stretch',
+                    hide_index=True
+                )
+
+        except Exception as exc:
+            st.error(
+                f'Kon catalogus of packing engine niet laden: {exc}'
+            )
     st.dataframe(pd.DataFrame(problems),width='stretch',hide_index=True) if problems else st.success('Geen dataproblemen gevonden.')
 st.caption('ServiceSets.com · gebaseerd op all_results.json')
