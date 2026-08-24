@@ -166,15 +166,36 @@ with tab3:
 
                 expanded.extend([p] * int(count))
 
+            # -----------------------------------------
+            # COMBINATIE TESTEN
+            # -----------------------------------------
+
             if st.button('Test combinatie', type='primary') and expanded:
 
-                # Test de combinatie in alle verpakkingen
                 results = [
                     e.test_products_together(expanded, p)
                     for p in sorted(packages, key=lambda x: x.volume)
                 ]
 
-                # Overzichtstabel
+                # Bewaar resultaten zodat ze beschikbaar blijven
+                # wanneer de gebruiker een andere verpakking selecteert.
+                st.session_state['custom_results'] = results
+
+            # -----------------------------------------
+            # BEWAARDE RESULTATEN OPHALEN
+            # -----------------------------------------
+
+            results = st.session_state.get(
+                'custom_results',
+                []
+            )
+
+            if results:
+
+                # -----------------------------------------
+                # RESULTATENTABEL
+                # -----------------------------------------
+
                 result_rows = [
                     {
                         'Verpakking': r['package'],
@@ -249,13 +270,11 @@ with tab3:
                     )
                 elif raw_dims:
                     st.warning(
-                        'De verpakking is beschikbaar, maar er zijn geen '
-                        'plaatsingen beschikbaar voor de 3D-weergave.'
+                        'Geen plaatsingen beschikbaar voor deze verpakking.'
                     )
                 else:
                     st.warning(
-                        'Geen verpakkingsafmetingen beschikbaar voor '
-                        'de 3D-weergave.'
+                        'Geen verpakkingsafmetingen beschikbaar.'
                     )
 
                 # -----------------------------------------
