@@ -323,6 +323,7 @@ def extract_placements(bin_result: Any, unit_by_item_id: Dict[str, PackingUnit])
 
 def test_products_together(products: List[Product], package: Package) -> Dict[str, Any]:
     units = build_packing_units(products)
+    
     packer = Packer()
     max_weight = package.max_gewicht if package.max_gewicht is not None else 1_000_000_000
     packer.add_bin(Bin(package.naam, package.lengte, package.breedte, package.hoogte, max_weight))
