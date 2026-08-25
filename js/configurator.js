@@ -1,339 +1,110 @@
-/* ==========================================================================
-   Servicesets CPQ Configurator — logica
-   Verwacht in de HTML: elementen met de id's zoals hieronder gebruikt,
-   binnen een wrapper met class "ssets-cpq-configurator".
-   Rekenkern draait als échte Python via Pyodide (packer_core.py).
-   ========================================================================== */
+(function () {
+  const root = document.getElementById('cpqJourney');
+  if (!root) return;
 
-(function(){
-  // ---------- STATE ----------
-  let products = [];
-  let composition = {};
-  let boxes = [
-    {id:'box1', name:'Doos S', l:15, w:12, h:12},
-    {id:'box2', name:'Doos M', l:20, w:15, h:15},
-    {id:'box3', name:'Doos L', l:30, w:25, h:20},
-    {id:'box4', name:'Doos XL', l:40, w:30, h:25},
+  const state = {
+    step: 'start', quantity: 0, branch: null, mode: null, sets: [], current: {}, cartMode: 'loose'
+  };
+  let catalog = [
+    { name: 'Badkamer essentials', category: 'Bad & douche', detail: 'Handdoek, zeepje en shampoo' },
+    { name: 'Koffie welkom', category: 'Koffie & thee', detail: 'Koffie, melk en suiker' },
+    { name: 'Schoonmaak compact', category: 'Schoonmaak', detail: 'Afwasmiddel en vaatwastablet' },
+    { name: 'Recreatie basis', category: 'Recreatie', detail: 'Alles voor een zorgeloos verblijf' },
+    { name: 'Huisdieren welkom', category: 'Huisdieren', detail: 'Verzorgd welkom voor elke gast' },
+    { name: 'Kantoor & ontvangst', category: 'Kantoor & papier', detail: 'Notitieblok en praktische extra\'s' }
   ];
-  let uidCounter = 1;
-  const nextId = (p) => p + (uidCounter++);
-  const fmt = (n) => Number.isInteger(n) ? n : n.toFixed(1);
+  const hydrateCatalog = () => fetch('../data/products.json')
+    .then((response) => response.ok ? response.json() : [])
+    .then((items) => {
+      if (!Array.isArray(items) || !items.length) return;
+      catalog = items.map((item) => ({
+        name: item.name,
+        category: item.category || 'Overig',
+        detail: [item.num, item.weight_g ? `${item.weight_g} g` : ''].filter(Boolean).join(' · ')
+      }));
+    })
+    .catch(() => {});
+  const recommendedAdditions = [
+    { name: 'Koffie cup Lungo', detail: 'Een gastvrij extraatje bij elk verblijf', category: 'Koffie & thee' },
+    { name: 'Hondenpoepzakje', detail: 'Praktisch voor accommodaties waar honden welkom zijn', category: 'Huisdieren' },
+    { name: 'Afvalzak HDPE', detail: 'Handige aanvulling voor keuken en sanitair', category: 'Afval & afvalzakken' },
+    { name: 'Stick limonade', detail: 'Een kleine dorstlesser voor onderweg', category: 'Dranken' }
+  ];
 
-  // ---------- PYODIDE: laad de ECHTE packer_core.py ----------
-  let pyodideInstance = null;
-  const pyReady = (async () => {
-    const pyodide = await loadPyodide();
-    // Gebruik absoluut pad naar de root-map /py/
-    const src = await (await fetch('cpq/python/python_packer.py')).text();
-    pyodide.runPython(src);
-    pyodideInstance = pyodide;
-    const statusEl = document.getElementById('sscpq-pyStatus');
-    statusEl.textContent = 'Python klaar (packer_core.py geladen)';
-    statusEl.className = 'ready';
-    const calcBtn = document.getElementById('sscpq-calcBtn');
-    calcBtn.disabled = false;
-    calcBtn.textContent = 'Bereken passende doos →';
-    return pyodide;
-  })();
+  const branchFor = (quantity) => quantity < 500 ? 'A' : quantity <= 1000 ? 'B' : 'C';
+  const branchLabel = { A: 'Kleine oplage', B: 'Maatwerk oplage', C: 'Grote oplage' };
+  const button = (label, action, variant = '') => `<button class="journey-btn ${variant}" data-action="${action}">${label}</button>`;
+  const back = () => button('Terug', 'back', 'journey-btn-quiet');
+  const next = (label = 'Verder') => button(`${label} <span aria-hidden="true">→</span>`, 'next');
+  const normalizeProductSelection = (products) => {
+    const selected = Array.isArray(products) ? [...new Set(products.map((item) => Number(item)).filter((item) => Number.isInteger(item) && item >= 0))] : [];
+    return selected.slice(0, 1);
+  };
+  const productSummary = (products) => {
+    const selected = normalizeProductSelection(products);
+    if (!selected.length) return 'Geen inhoud gekozen';
+    const names = selected.map((index) => catalog[index]?.name).filter(Boolean);
+    return names.length ? names.join(', ') : 'Geen inhoud gekozen';
+  };
 
-  async function pySelectBox(items, candidateBoxes){
-    const pyodide = await pyReady;
-    pyodide.globals.set('items_json', JSON.stringify(items));
-    pyodide.globals.set('boxes_json', JSON.stringify(candidateBoxes));
-    const resultJson = pyodide.runPython(`
-import json
-_items = json.loads(items_json)
-_boxes = json.loads(boxes_json)
-_result = select_box(_items, _boxes)
-json.dumps(_result)
-`);
-    return JSON.parse(resultJson);
-  }
-
-  // ---------- PRODUCT TABEL ----------
-  function renderProductTable(){
-    const wrap = document.getElementById('sscpq-productTableWrap');
-    if(products.length === 0){ wrap.innerHTML = '<div class="sscpq-empty-hint">Nog geen producten geladen.</div>'; return; }
-    let rows = products.map(p => `
-      <tr class="sscpq-item-row">
-        <td><input type="checkbox" data-id="${p.id}" class="sscpq-prod-check" ${composition[p.id] ? 'checked' : ''}/></td>
-        <td>${p.num}</td><td class="sscpq-name-cell">${p.name}</td>
-        <td>${fmt(p.l)}</td><td>${fmt(p.w)}</td><td>${fmt(p.h)}</td>
-        <td><input type="number" min="0" class="sscpq-prod-qty" data-id="${p.id}" value="${composition[p.id] || 1}" style="width:48px" /></td>
-      </tr>`).join('');
-    wrap.innerHTML = `
-      <div style="max-height:260px; overflow:auto;">
-      <table><thead><tr><th></th><th>Art.nr</th><th>Naam</th><th>L</th><th>B</th><th>H</th><th>Aantal</th></tr></thead>
-      <tbody>${rows}</tbody></table></div>
-      <div class="sscpq-row-actions"><button class="sscpq-btn secondary small" id="sscpq-clearProductsBtn">Wis lijst</button></div>`;
-    document.querySelectorAll('.sscpq-prod-check').forEach(cb => cb.addEventListener('change', onCheckChange));
-    document.querySelectorAll('.sscpq-prod-qty').forEach(inp => inp.addEventListener('input', onQtyChange));
-    document.getElementById('sscpq-clearProductsBtn').addEventListener('click', () => {
-      products = []; composition = {}; renderProductTable(); renderComposition();
-    });
-  }
-  function onCheckChange(e){
-    const id = e.target.dataset.id;
-    if(e.target.checked){ composition[id] = parseInt(document.querySelector(`.sscpq-prod-qty[data-id="${id}"]`).value) || 1; }
-    else{ delete composition[id]; }
-    renderComposition();
-  }
-  function onQtyChange(e){
-    const id = e.target.dataset.id;
-    const val = Math.max(0, parseInt(e.target.value) || 0);
-    if(composition[id] !== undefined){
-      if(val === 0){ delete composition[id]; document.querySelector(`.sscpq-prod-check[data-id="${id}"]`).checked = false; }
-      else composition[id] = val;
-    }
-    renderComposition();
-  }
-  function renderComposition(){
-    const wrap = document.getElementById('sscpq-compositionWrap');
-    const ids = Object.keys(composition);
-    document.getElementById('sscpq-compCount').textContent = ids.reduce((s,id)=>s+composition[id],0) + ' items';
-    if(ids.length === 0){ wrap.innerHTML = '<div class="sscpq-empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div>'; return; }
-    let totalVol = 0;
-    let rows = ids.map(id => {
-      const p = products.find(x=>x.id===id); if(!p) return '';
-      totalVol += p.l*p.w*p.h*composition[id];
-      return `<tr><td class="sscpq-name-cell">${p.name}</td><td>${fmt(p.l)}×${fmt(p.w)}×${fmt(p.h)}</td><td>${composition[id]}×</td></tr>`;
-    }).join('');
-    wrap.innerHTML = `<table><thead><tr><th>Naam</th><th>Afmeting (cm)</th><th>Aantal</th></tr></thead><tbody>${rows}</tbody></table>
-      <div class="sscpq-note">Totaal itemvolume: ${(totalVol/1000).toFixed(2)} liter</div>`;
-  }
-
-  // ---------- BOX TABEL ----------
-  function renderBoxTable(){
-    const wrap = document.getElementById('sscpq-boxTableWrap');
-    let rows = boxes.map(b => `
-      <tr><td class="sscpq-name-cell">${b.name}</td><td>${fmt(b.l)}×${fmt(b.w)}×${fmt(b.h)}</td>
-      <td><button class="sscpq-btn secondary small" data-id="${b.id}" data-action="del-box">✕</button></td></tr>`).join('');
-    wrap.innerHTML = `<table><thead><tr><th>Naam</th><th>Afmeting (cm)</th><th></th></tr></thead><tbody>${rows}</tbody></table>`;
-    wrap.querySelectorAll('[data-action="del-box"]').forEach(btn=>{
-      btn.addEventListener('click', () => { boxes = boxes.filter(b=>b.id !== btn.dataset.id); renderBoxTable(); });
+  function render() {
+    const views = { start: renderStart, quantity: renderQuantity, choose: renderChoose, products: renderProducts, extras: renderExtras, review: renderReview, cart: renderCart, checkout: renderCheckout };
+    root.innerHTML = `<section class="journey-hero"><div class="journey-hero-copy"><span class="eyebrow">ServiceSETS op maat</span><h1>Een set die precies past bij jouw gast.</h1><p>Stel in een paar stappen een eigen service-set samen. De hoeveelheid bepaalt de route die bij je past.</p></div><div class="journey-hero-art"><span class="art-label">Jouw idee</span><strong>${state.quantity ? `${state.quantity.toLocaleString('nl-NL')} sets` : 'jouw set'}</strong><i></i><i></i><i></i></div></section><div class="journey-wrap">${progress()}<div class="journey-layout"><main class="journey-main">${views[state.step]()}</main>${summary()}</div></div>`;
+    root.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => handle(el.dataset.action)));
+    root.querySelectorAll('input, select, textarea').forEach((el) => {
+      el.addEventListener('change', updateField);
+      if (el.id === 'quantity') el.addEventListener('input', () => { state.quantity = Math.max(0, Number(el.value) || 0); });
     });
   }
 
-  // ---------- SERVICESETS-CATALOGUS (automatisch geladen bij openen) ----------
-async function loadCatalog(){
-  const statusEl = document.getElementById('sscpq-catalogStatus');
-  statusEl.textContent = 'laden…';
-
-  try {
-    const catalogUrl =
-      'https://hd-exclusiva.github.io/ServiceSets.com/data/products.json';
-
-    const resp = await fetch(catalogUrl, {
-      headers: {
-        Accept: 'application/json'
-      }
-    });
-
-    if (!resp.ok) {
-      throw new Error(`HTTP ${resp.status} bij ${catalogUrl}`);
-    }
-
-    const catalogData = await resp.json();
-
-    if (!Array.isArray(catalogData)) {
-      throw new Error('products.json bevat geen JSON-array');
-    }
-
-    products = catalogData.map(p => ({
-      id: nextId('p'),
-      num: p.num,
-      name: p.name,
-      l: Number(p.l),
-      w: Number(p.w),
-      h: Number(p.h),
-      weight_g: p.weight_g
-    }));
-
-    composition = {};
-    renderProductTable();
-    renderComposition();
-
-    statusEl.textContent =
-      `${products.length} producten geladen uit catalogus`;
-
-  } catch (err) {
-    console.error('Catalogus laden mislukt:', err);
-    statusEl.textContent =
-      'kon catalogus niet laden (' + err.message + ')';
-  }
-}
-
-  // ---------- FILE UPLOAD ----------
-  function initFileUpload(){
-    const dropZone = document.getElementById('sscpq-dropZone');
-    const fileInput = document.getElementById('sscpq-fileInput');
-    dropZone.addEventListener('click', () => fileInput.click());
-    ;['dragenter','dragover'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('drag'); }));
-    ;['dragleave','drop'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove('drag'); }));
-    dropZone.addEventListener('drop', e => { if(e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]); });
-    fileInput.addEventListener('change', e => { if(e.target.files.length) handleFile(e.target.files[0]); });
+  function progress() {
+    const labels = ['Start', 'Aantal', 'Samenstellen', 'Afronden', 'Winkelmand'];
+    const active = ['start', 'quantity', 'choose', 'products', 'extras', 'review', 'cart', 'checkout'].indexOf(state.step);
+    return `<div class="journey-progress">${labels.map((label, index) => `<span class="${index <= Math.min(active, 4) ? 'is-done' : ''}"><b>${index + 1}</b>${label}</span>`).join('')}</div>`;
   }
 
-  function handleFile(file){
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      try{
-        const data = new Uint8Array(e.target.result);
-        const wb = XLSX.read(data, {type:'array'});
-        const sheet = wb.Sheets[wb.SheetNames[0]];
-        const rows = XLSX.utils.sheet_to_json(sheet, {header:1, defval:''});
-        let added = 0;
-        rows.forEach((r, idx) => {
-          if(idx === 0) return;
-          const [num, name, l, w, h] = r;
-          if(name === '' && num === '') return;
-          const L = parseFloat(l), W = parseFloat(w), H = parseFloat(h);
-          if(isNaN(L) || isNaN(W) || isNaN(H)) return;
-          products.push({ id: nextId('p'), num: String(num||'').trim(), name: String(name||'').trim() || '(naamloos)', l:L, w:W, h:H });
-          added++;
-        });
-        renderProductTable();
-        if(added === 0) alert('Geen geldige rijen gevonden. Check kolom A–E en of rij 1 een kop is.');
-      } catch(err){ alert('Kon het bestand niet lezen: ' + err.message); }
-    };
-    reader.readAsArrayBuffer(file);
+  function renderStart() { return `<div class="journey-kicker">Begin bij je oplage</div><h2>Wil je een eigen set samenstellen?</h2><p class="lead">Kies zelf de inhoud, uitstraling en verpakking. De hoeveelheid bepaalt welke ondersteuning en mogelijkheden bij je passen.</p><div class="choice-grid single-choice">${choice('Eigen set samenstellen', 'Van een kleine serie tot een volledig custom concept.', 'quantity', '✦')}</div>`; }
+  function renderQuantity() { return `<div class="journey-kicker">Stap 1 van 4</div><h2>Hoeveel sets heb je nodig?</h2><p class="lead">Zo tonen we meteen de route die past bij jouw project.</p><div class="quantity-entry"><label for="quantity">Aantal sets</label><input id="quantity" type="number" min="1" value="${state.quantity || ''}" placeholder="bijv. 750" autofocus><span>sets</span></div><div class="range-notes"><span><b>&lt; 500</b> klein en snel</span><span><b>500–1000</b> extra maatwerk</span><span><b>1000+</b> persoonlijk traject</span></div><div class="journey-actions">${back()}${next()}</div>`; }
+  function renderChoose() { const branch = branchFor(state.quantity); const selected = state.mode || ''; return `<div class="journey-kicker">Case ${branch} · ${branchLabel[branch]}</div><h2>${branch === 'A' ? 'Kies een startpunt voor je set.' : branch === 'B' ? 'Hoe wil je jouw samenstelling opbouwen?' : 'Van referentie naar volledig eigen concept.'}</h2><p class="lead">${branch === 'C' ? 'Gebruik een populaire samenstelling als vertrekpunt, of laat ons samen met jou iets nieuws ontwikkelen.' : 'Je kunt altijd later nog inhoud, aantallen en uitstraling aanpassen.'}</p><div class="choice-grid">${presetChoice(branch === 'A' ? 'Populairste standaardset' : 'Populaire samenstelling', 'Een bewezen combinatie als handig vertrekpunt.', 'popular', '★', selected)}${presetChoice('Zelf samenstellen', 'Kies zelf categorieën en producten.', 'custom', '＋', selected)}</div><div class="journey-actions">${back()}${next()}</div>`; }
+  function choice(title, detail, action, icon) { return `<button class="journey-choice" data-action="${action}"><span class="choice-icon">${icon}</span><span><strong>${title}</strong><small>${detail}</small></span><b aria-hidden="true">→</b></button>`; }
+  function presetChoice(title, detail, action, icon, selected) { return `<button class="journey-choice ${selected === action ? 'selected' : ''}" data-action="select-${action}" aria-pressed="${selected === action}"><span class="choice-icon">${icon}</span><span><strong>${title}</strong><small>${detail}</small></span><span class="choice-check" aria-hidden="true">${selected === action ? '✓' : ''}</span></button>`; }
+  function renderProducts() {
+    const selected = normalizeProductSelection(state.current.products || []);
+    const ownSelected = state.current.ownArticles || [];
+    const branch = branchFor(state.quantity);
+    const activeCategory = state.current.category || 'Alle categorieën';
+    const categories = ['Alle categorieën', ...new Set(catalog.map((item) => item.category))];
+    const groupedProducts = categories.filter((category) => category !== 'Alle categorieën').reduce((acc, category) => {
+      acc[category] = catalog.filter((item) => item.category === category);
+      return acc;
+    }, {});
+    const visibleCategories = activeCategory === 'Alle categorieën' ? Object.keys(groupedProducts) : [activeCategory];
+
+    return `<div class="journey-kicker">Stap 2 · Inhoud</div><h2>${branch === 'C' ? 'Kies assortiment of eigen artikelen.' : 'Kies wat er in jouw set komt.'}</h2><p class="lead">${branch === 'C' ? 'Kies eerst een productcategorie en voeg daarna artikelen toe aan je set.' : 'Kies een categorie en selecteer één product dat je gast nodig heeft.'}</p><div class="category-grid">${categories.map((category) => `<button class="category-choice ${activeCategory === category ? 'selected' : ''}" data-action="category-${category}">${category}<span>${category === 'Alle categorieën' ? catalog.length : (groupedProducts[category] || []).length}</span></button>`).join('')}</div><div class="catalog-groups">${visibleCategories.map((category) => `<div class="catalog-group"><h3>${category}</h3><div class="catalog-grid">${(groupedProducts[category] || []).map((item) => { const index = catalog.indexOf(item); return `<label class="catalog-item ${selected.includes(index) ? 'selected' : ''}"><input type="radio" name="catalog-item" value="${index}" ${selected.includes(index) ? 'checked' : ''}><span class="catalog-mark">0${index + 1}</span><span><strong>${item.name}</strong><small>${item.category} · ${item.detail}</small></span><span class="product-check" aria-hidden="true">${selected.includes(index) ? '✓' : '+'}</span></label>`; }).join('')}</div></div>`).join('')}</div>${branch === 'C' ? `<div class="recommended-additions"><div class="recommended-heading"><strong>Aanbevolen toevoegingen</strong><small>Voeg artikelen met één klik toe aan je set.</small></div><div class="recommended-grid">${recommendedAdditions.map((item, index) => `<button class="recommended-item ${ownSelected.includes(index) ? 'selected' : ''}" data-action="own-${index}"><span class="recommended-plus">${ownSelected.includes(index) ? '✓' : '+'}</span><span><strong>${item.name}</strong><small>${item.category} · ${item.detail}</small></span></button>`).join('')}</div></div>` : ''}<div class="journey-actions">${back()}${next()}</div>`;
   }
+  function renderExtras() { const branch = branchFor(state.quantity); return `<div class="journey-kicker">Stap 3 · Afwerking</div><h2>Maak de uitstraling eigen.</h2><p class="lead">${branch === 'A' ? 'Kies een standaard sticker en bekijk passende extra\'s.' : branch === 'B' ? 'Pas de inhoud aan en lever straks je eigen stickerontwerp aan.' : 'Kies verpakking en geef aan waarbij ons team kan ondersteunen.'}</p><div class="form-stack">${branch === 'C' ? `<label>Verpakking<select id="packaging"><option>Individuele sets</option><option>Een gezamenlijke omdoos</option><option>Advies van ServiceSETS</option></select></label><label class="toggle-row"><input id="support" type="checkbox"> <span>Ik wil gratis ondersteuning bij mijn aanvraag</span></label><label>Doosontwerp<select id="boxDesign"><option>Geen ontwerp nodig</option><option>Ik wil een ontwerp laten maken</option></select></label><label>Stickerontwerp<select id="stickerDesign"><option>Geen stickerontwerp nodig</option><option>Ik wil een ontwerp laten maken</option></select></label>` : `<label>Sticker<select id="sticker"><option>Standaard sticker · ServiceSETS</option><option>Eigen logo op standaard formaat</option><option>Ik lever een ontwerp aan</option></select></label><label class="toggle-row"><input id="upsell" type="checkbox"> <span>Toon passende extra producten</span></label>`}</div><div class="journey-note"><b>${branch === 'C' ? 'Persoonlijk traject' : 'Bijna klaar'}</b><span>${branch === 'C' ? 'Bij gratis ondersteuning neemt een specialist contact met je op.' : 'Je kunt de set na toevoegen gewoon nog wijzigen.'}</span></div><div class="journey-actions">${back()}${next('Bekijk je set')}</div>`; }
+  function renderReview() { const products = normalizeProductSelection(state.current.products || []).map((index) => catalog[index].name); const additions = (state.current.ownArticles || []).map((index) => recommendedAdditions[index].name); return `<div class="journey-kicker">Stap 4 · Controle</div><h2>Dit is jouw set.</h2><p class="lead">Controleer de keuzes voordat je de set toevoegt aan je winkelmand.</p><div class="review-sheet"><div><span>Oplage</span><strong>${state.quantity.toLocaleString('nl-NL')} sets</strong></div><div><span>Route</span><strong>Case ${state.branch}</strong></div><div><span>Inhoud</span><strong>${products.length ? products.join(', ') : 'Geen inhoud gekozen'}</strong></div>${additions.length ? `<div><span>Aanbevolen</span><strong>${additions.join(', ')}</strong></div>` : ''}<div><span>Afwerking</span><strong>${state.current.sticker || state.current.packaging || 'Standaard uitvoering'}</strong></div></div><div class="journey-actions">${back()}${button('Set toevoegen', 'add-set', 'journey-btn-primary')}</div>`; }
+  function summary() { const count = state.sets.length; const setLines = state.sets.length ? state.sets.map((set, index) => { const selectedProduct = normalizeProductSelection(set.products || []); const productName = selectedProduct.length ? catalog[selectedProduct[0]]?.name || 'Eigen artikel' : 'Geen artikel gekozen'; return `<div class="summary-line"><span>Set ${index + 1}</span><strong>${set.quantity.toLocaleString('nl-NL')} · ${productName}</strong></div>`; }).join('') : state.quantity ? `<div class="summary-line"><span>Oplage</span><strong>${state.quantity.toLocaleString('nl-NL')}</strong></div>` : '<p>Je keuzes verschijnen hier terwijl je samenstelt.</p>'; return `<aside class="journey-summary"><div class="summary-top"><span>Jouw aanvraag</span><b>${count} ${count === 1 ? 'set' : 'sets'}</b></div>${setLines}<div class="summary-rule"></div><span class="summary-foot">Nog geen prijsberekening</span></aside>`; }
+  function renderCart() { return `<div class="journey-kicker">Winkelmand</div><h2>Je aanvraag staat klaar.</h2><p class="lead">${state.sets.length} ${state.sets.length === 1 ? 'set is' : 'sets zijn'} toegevoegd. Kies hoe we ze voor je verpakken.</p><div class="cart-list">${state.sets.map((set, index) => { const setProducts = normalizeProductSelection(set.products || []); const productText = setProducts.length ? ` · ${catalog[setProducts[0]]?.name || 'Inhoud'}` : ''; return `<div class="cart-item"><span class="cart-number">0${index + 1}</span><div><strong>Eigen service-set</strong><small>${set.quantity.toLocaleString('nl-NL')} sets · Case ${set.branch}${productText}</small></div><button aria-label="Set verwijderen" data-action="remove-${index}">×</button></div>`; }).join('')}</div><div class="pack-choice"><label class="pack-option ${state.cartMode === 'loose' ? 'selected' : ''}"><input type="radio" name="cartMode" value="loose" ${state.cartMode === 'loose' ? 'checked' : ''}> <strong>Losse sets</strong><small>Elke set apart verpakt</small></label><label class="pack-option ${state.cartMode === 'combined' ? 'selected' : ''}"><input type="radio" name="cartMode" value="combined" ${state.cartMode === 'combined' ? 'checked' : ''}> <strong>Eén gezamenlijke omdoos</strong><small>Jou sets per combinatie in een omdoos</small></label></div><div class="journey-actions">${button('Nog een set samenstellen', 'new-set', 'journey-btn-quiet')}${button('Naar aanvraag', 'checkout', 'journey-btn-primary')}</div>`; }
+  function renderCheckout() { return `<div class="success-mark">✓</div><div class="journey-kicker">Aanvraag ontvangen</div><h2>We gaan ermee aan de slag.</h2><p class="lead">Bedankt. We hebben je configuratie klaargezet voor controle. In een echte shop volgt nu de checkout en bevestigingsmail.</p><div class="journey-note"><b>Volgende stap</b><span>Een bevestiging en eventuele ontwerpvraag komen per e-mail. Bij een niet-afgeronde checkout sturen we een herinnering.</span></div>${button('Terug naar winkelmand', 'cart', 'journey-btn-quiet')}`; }
 
-  function initManualAdders(){
-    document.getElementById('sscpq-addManualBtn').addEventListener('click', () => {
-      const num = document.getElementById('sscpq-manNum').value.trim();
-      const name = document.getElementById('sscpq-manName').value.trim();
-      const l = parseFloat(document.getElementById('sscpq-manL').value);
-      const w = parseFloat(document.getElementById('sscpq-manW').value);
-      const h = parseFloat(document.getElementById('sscpq-manH').value);
-      if(!name || isNaN(l) || isNaN(w) || isNaN(h)){ alert('Vul naam, L, B en H in.'); return; }
-      products.push({id: nextId('p'), num: num || '-', name, l, w, h});
-      ['sscpq-manNum','sscpq-manName','sscpq-manL','sscpq-manW','sscpq-manH'].forEach(id => document.getElementById(id).value = '');
-      renderProductTable();
-    });
-
-    document.getElementById('sscpq-addBoxBtn').addEventListener('click', () => {
-      const name = document.getElementById('sscpq-boxName').value.trim();
-      const l = parseFloat(document.getElementById('sscpq-boxL').value);
-      const w = parseFloat(document.getElementById('sscpq-boxW').value);
-      const h = parseFloat(document.getElementById('sscpq-boxH').value);
-      if(!name || isNaN(l) || isNaN(w) || isNaN(h)){ alert('Vul naam, L, B en H in.'); return; }
-      boxes.push({id: nextId('b'), name, l, w, h});
-      ['sscpq-boxName','sscpq-boxL','sscpq-boxW','sscpq-boxH'].forEach(id => document.getElementById(id).value = '');
-      renderBoxTable();
-    });
-
-    document.getElementById('sscpq-loadCatalogBtn').addEventListener('click', loadCatalog);
+  function updateField(event) { const el = event.target; if (el.id === 'quantity') { state.quantity = Math.max(0, Number(el.value) || 0); return; } if (el.name === 'cartMode') state.cartMode = el.value; if (el.closest('.catalog-item') && (el.type === 'radio' || el.type === 'checkbox')) { const index = Number(el.value); const nextSelection = el.checked ? [index] : []; state.current.products = nextSelection; render(); return; } if (el.id === 'sticker' || el.id === 'packaging' || el.id === 'boxDesign' || el.id === 'stickerDesign') state.current[el.id] = el.value; if (el.id === 'upsell' || el.id === 'support') state.current[el.id] = el.checked; render(); }
+  function handle(action) {
+    if (action === 'quantity') state.step = 'quantity';
+    else if (action === 'select-popular' || action === 'select-custom') { state.mode = action.replace('select-', ''); }
+    else if (action === 'popular' || action === 'custom') { state.mode = action; state.branch = branchFor(state.quantity); state.current = { products: action === 'popular' ? [0] : [] }; state.step = 'products'; }
+    else if (action.startsWith('own-')) { const index = Number(action.split('-')[1]); const selected = state.current.ownArticles || []; state.current.ownArticles = selected.includes(index) ? selected.filter((item) => item !== index) : [...selected, index]; }
+    else if (action.startsWith('category-')) { state.current.category = action.replace('category-', ''); }
+    else if (action === 'next') { if (state.step === 'quantity') { if (!state.quantity) return; state.branch = branchFor(state.quantity); state.step = 'choose'; } else if (state.step === 'choose') { if (!state.mode) return; state.branch = branchFor(state.quantity); state.current = { products: state.mode === 'popular' ? [0] : [] }; state.step = 'products'; } else if (state.step === 'products') { state.current.products = normalizeProductSelection([...root.querySelectorAll('.catalog-item input:checked')].map((input) => Number(input.value))); state.step = 'extras'; } else if (state.step === 'extras') state.step = 'review'; }
+    else if (action === 'back') { const previous = { quantity: 'start', choose: 'quantity', products: 'choose', extras: 'products', review: 'extras' }; state.step = previous[state.step] || 'start'; }
+    else if (action === 'add-set') { state.sets.push({ ...state.current, quantity: state.quantity, branch: state.branch }); state.step = 'cart'; }
+    else if (action === 'new-set') { state.current = {}; state.mode = null; state.step = 'quantity'; }
+    else if (action === 'checkout') state.step = 'checkout';
+    else if (action === 'cart') state.step = 'cart';
+    else if (action.startsWith('remove-')) state.sets.splice(Number(action.split('-')[1]), 1);
+    else return;
+    render();
   }
-
-  function expandItems(){
-    const out = [];
-    Object.keys(composition).forEach(id => {
-      const p = products.find(x=>x.id===id); if(!p) return;
-      for(let i=0;i<composition[id];i++){ out.push({name: p.name, l:p.l, w:p.w, h:p.h}); }
-    });
-    return out;
-  }
-
-  // ---------- ISOMETRISCHE VISUALISATIE ----------
-  // Palet afgeleid van de merkkleur (teal) plus gedempte, professionele
-  // complementaire tinten — puur functioneel om items te onderscheiden.
-  const PALETTE = ['#66C0B5','#E8917B','#7EA8C4','#E8C15D','#B98FBF','#8FBF8F','#D9C48F','#4A9E93'];
-
-  function isoProject(x,y,z, scale, ox, oy){
-    const px = (x - y) * Math.cos(Math.PI/6) * scale;
-    const py = ((x + y) * Math.sin(Math.PI/6) - z) * scale;
-    return [ox + px, oy + py];
-  }
-  function shade(hex, factor){
-    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-    const f = (v) => Math.min(255, Math.round(v*factor));
-    return `rgb(${f(r)},${f(g)},${f(b)})`;
-  }
-  function cuboidPolygons(x,y,z,l,w,h, scale, ox, oy, color){
-    const c = (dx,dy,dz) => isoProject(x+dx, y+dy, z+dz, scale, ox, oy);
-    const top = [c(0,0,h), c(l,0,h), c(l,w,h), c(0,w,h)];
-    const right = [c(l,0,0), c(l,w,0), c(l,w,h), c(l,0,h)];
-    const front = [c(0,w,0), c(l,w,0), c(l,w,h), c(0,w,h)];
-    const poly = (pts, fill) => `<polygon points="${pts.map(p=>p.join(',')).join(' ')}" fill="${fill}" stroke="#1A171B" stroke-width="0.6"/>`;
-    return poly(top, shade(color,1.15)) + poly(right, shade(color,0.7)) + poly(front, shade(color,0.9));
-  }
-  function binWireframe(l,w,h,scale,ox,oy){
-    const c = (x,y,z) => isoProject(x,y,z,scale,ox,oy);
-    const pts = { o:c(0,0,0), lx:c(l,0,0), wy:c(0,w,0), lw:c(l,w,0), oz:c(0,0,h), lxz:c(l,0,h), wyz:c(0,w,h), lwz:c(l,w,h) };
-    const line = (a,b) => `<line x1="${pts[a][0]}" y1="${pts[a][1]}" x2="${pts[b][0]}" y2="${pts[b][1]}" stroke="rgba(26,23,27,0.3)" stroke-width="1" stroke-dasharray="3,2"/>`;
-    return ['o-lx','o-wy','o-oz','lx-lw','lx-lxz','wy-lw','wy-wyz','oz-lxz','oz-wyz','lw-lwz','lxz-lwz','wyz-lwz']
-      .map(k => line(...k.split('-'))).join('');
-  }
-  function renderIsoSVG(bin, placements){
-    const scale = 460 / (bin.l + bin.w + bin.h);
-    const ox = 260, oy = 60;
-    const binEdges = binWireframe(bin.l, bin.w, bin.h, scale, ox, oy);
-    const sorted = [...placements].sort((a,b) => (a.x+a.y+a.z) - (b.x+b.y+b.z));
-    const itemSvg = sorted.map((p,i) => cuboidPolygons(p.x,p.y,p.z,p.l,p.w,p.h, scale, ox, oy, PALETTE[i % PALETTE.length])).join('');
-    return `<svg class="sscpq-iso" viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg">${binEdges}${itemSvg}</svg>`;
-  }
-
-  // ---------- BEREKENEN (via Python/Pyodide) ----------
-  function initCalculate(){
-    document.getElementById('sscpq-calcBtn').addEventListener('click', async () => {
-      const items = expandItems();
-      const resultWrap = document.getElementById('sscpq-resultWrap');
-      if(items.length === 0){ resultWrap.innerHTML = '<div class="sscpq-empty-hint">Selecteer eerst producten in stap 2.</div>'; return; }
-      if(boxes.length === 0){ resultWrap.innerHTML = '<div class="sscpq-empty-hint">Voeg minstens één kandidaat-doos toe in stap 3.</div>'; return; }
-
-      resultWrap.innerHTML = '<div class="sscpq-empty-hint">Python berekent…</div>';
-      const outcome = await pySelectBox(items, boxes);
-
-      if(!outcome.chosen_box){
-        const best = outcome.attempts.reduce((a,b) => (b.result.placed_count > a.result.placed_count ? b : a));
-        resultWrap.innerHTML = `
-          <div class="sscpq-result-box">
-            <div class="sscpq-result-status"><span class="sscpq-status-dot fail"></span><span class="sscpq-status-text">Geen enkele doos past</span></div>
-            <div class="sscpq-note">Grootste kandidaat (${best.box.name}, ${fmt(best.box.l)}×${fmt(best.box.w)}×${fmt(best.box.h)}cm) kreeg ${best.result.placed_count} van ${best.result.total_count} items geplaatst.</div>
-          </div>`;
-        return;
-      }
-
-      const chosen = outcome.chosen_box;
-      const result = outcome.result;
-      const itemVol = items.reduce((s,i)=>s + i.l*i.w*i.h, 0);
-      const boxVol = chosen.l*chosen.w*chosen.h;
-      const util = (itemVol/boxVol*100).toFixed(1);
-      const legend = result.placements.map((p,i) => `<span><span class="sscpq-swatch" style="background:${PALETTE[i%PALETTE.length]}"></span>${p.name}</span>`).join('');
-
-      resultWrap.innerHTML = `
-        <div class="sscpq-result-box">
-          <div class="sscpq-result-status">
-            <span class="sscpq-status-dot ok"></span><span class="sscpq-status-text">${chosen.name} past</span>
-            <span class="sscpq-status-meta">${fmt(chosen.l)}×${fmt(chosen.w)}×${fmt(chosen.h)} cm</span>
-          </div>
-          <div class="sscpq-stat-row">
-            <div><div class="sscpq-stat-label">Items</div><div class="sscpq-stat-value">${result.placed_count}</div></div>
-            <div><div class="sscpq-stat-label">Volumebenutting</div><div class="sscpq-stat-value">${util}%</div></div>
-            <div><div class="sscpq-stat-label">Geteste dozen</div><div class="sscpq-stat-value">${outcome.attempts.length}</div></div>
-          </div>
-          ${renderIsoSVG(chosen, result.placements)}
-          <div class="sscpq-legend">${legend}</div>
-          <div class="sscpq-note">Berekend door packer_core.py, uitgevoerd als échte Python via Pyodide (WebAssembly).</div>
-        </div>`;
-    });
-  }
-
-  // ---------- INIT ----------
-  function init(){
-    renderProductTable();
-    renderComposition();
-    renderBoxTable();
-    initFileUpload();
-    initManualAdders();
-    initCalculate();
-    loadCatalog();
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  hydrateCatalog().then(() => render());
+  render();
 })();

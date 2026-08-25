@@ -8,21 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css">
 
-  <!-- Externe libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/pyodide/v0.26.4/full/pyodide.js"></script>
-
-  <!-- Eigen scripts (relatief t.o.v. cpq/ map) -->
+  <!-- CPQ journey (relatief t.o.v. cpq/ map) -->
   <script src="../js/configurator.js" defer></script>
   <script src="../js/navigation.js" defer></script>
-  <script src="../js/shop.js" defer></script>
   <script src="../js/chat.js" defer></script>
-  <script src="../js/app.js" defer></script>
 </head>
 <body>
-
-<!-- ====== BANNER (prototype) ====== -->
-<div class="proto-banner">Klikbaar concept — <strong>customer journey</strong> voor Servicesets.com</div>
 
 <!-- ====== HEADER ====== -->
 <header class="site">
@@ -55,7 +46,7 @@
     <nav class="primary" id="primaryNav">
       <a href="../index.html">Home</a>
       <a href="../index.html#shop">Shop</a>
-      <a href="#" class="active">Set op maat</a>
+      <a href="#" class="active">Stel je eigen set samen</a>
       <a href="../index.html#contact">Contact</a>
     </nav>
     <div class="nav-actions">
@@ -84,56 +75,7 @@
 
 <!-- ====== MAIN ====== -->
 <main>
-  <!-- CPQ-component, volledig ingebed in de huisstijl -->
-  <div class="ssets-cpq-configurator" style="padding: 20px; max-width: 1400px; margin: 0 auto;">
-
-    <!-- Header van de CPQ -->
-    <div class="sscpq-header">
-      <div class="sscpq-title">
-        <span class="light">Servicesets</span><span class="black">CPQ</span>
-        <span class="tag">PYTHON</span>
-      </div>
-      <div id="sscpq-pyStatus" class="loading">Python-interpreter laden…</div>
-    </div>
-
-    <!-- CPQ Grid -->
-    <div class="sscpq-grid">
-
-      <!-- Linker kolom -->
-      <div>
-        <!-- Panel 1: Productdata -->
-        <div class="sscpq-panel">
-          <div class="sscpq-panel-title">01 · Productdata <span class="num">artikelnummer · naam · L · B · H (cm)</span></div>
-          <div class="sscpq-row-actions" style="margin-bottom:12px;">
-            <button class="sscpq-btn secondary small" id="sscpq-loadCatalogBtn">↻ Servicesets-catalogus herladen</button>
-            <span class="sscpq-dz-sub" id="sscpq-catalogStatus" style="align-self:center;"></span>
-          </div>
-          <div id="sscpq-productTableWrap" style="margin-top:14px;"></div>
-        </div>
-
-        <!-- Panel 2: Samenstelling -->
-        <div class="sscpq-panel">
-          <div class="sscpq-panel-title">02 · Samenstelling <span class="num" id="sscpq-compCount">0 items</span></div>
-          <div id="sscpq-compositionWrap"><div class="sscpq-empty-hint">Vink producten aan in de tabel hierboven en zet het aantal.</div></div>
-        </div>
-      </div>
-
-      <!-- Rechter kolom -->
-      <div>
-        <!-- Panel 3: Kandidaat-dozen -->
-        <div class="sscpq-panel">
-          <div class="sscpq-panel-title">03 · Kandidaat-dozen</div>
-          <div id="sscpq-boxTableWrap"></div>
-          <div class="sscpq-manual-add">
-            <input type="text" id="sscpq-boxName" placeholder="naam" style="width:90px" />
-            <input type="number" id="sscpq-boxL" placeholder="L" />
-            <input type="number" id="sscpq-boxW" placeholder="B" />
-            <input type="number" id="sscpq-boxH" placeholder="H" />
-            <button class="sscpq-btn secondary small" id="sscpq-addBoxBtn">+ Doos</button>
-          </div>
-        </div>
-
-<!-- einde .ssets-cpq-configurator -->
+  <div id="cpqJourney"></div>
 </main>
 
 <!-- ====== FOOTER ====== -->
