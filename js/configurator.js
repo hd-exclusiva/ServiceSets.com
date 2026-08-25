@@ -29,12 +29,14 @@
     })
     .catch(() => {});
   const recommendedAdditions = [
-    { name: 'Koffie cup Lungo', detail: 'Een gastvrij extraatje bij elk verblijf', category: 'Koffie & thee' },
-    { name: 'Hondenpoepzakje', detail: 'Praktisch voor accommodaties waar honden welkom zijn', category: 'Huisdieren' },
-    { name: 'Afvalzak HDPE', detail: 'Handige aanvulling voor keuken en sanitair', category: 'Afval & afvalzakken' },
-    { name: 'Stick limonade', detail: 'Een kleine dorstlesser voor onderweg', category: 'Dranken' }
+    { name: 'Koffie cup Lungo', detail: 'Een gastvrij extraatje bij elk verblijf', category: 'Koffie & thee', productName: 'Koffie cup Lungo nr6 aluminium' },
+    { name: 'Hondenpoepzakje', detail: 'Praktisch voor accommodaties waar honden welkom zijn', category: 'Huisdieren', productName: 'Hondenpoepzakje papier' },
+    { name: 'Afvalzak HDPE', detail: 'Handige aanvulling voor keuken en sanitair', category: 'Afval & afvalzakken', productName: 'Afvalzak HDPE 60x80' },
+    { name: 'Stick limonade', detail: 'Een kleine dorstlesser voor onderweg', category: 'Dranken', productName: 'Stick Limonade' }
   ];
+  // 0 = geen ontwerp nodig, 1 en 2 vragen om een aan te leveren bestand (logo of eigen ontwerp)
   const stickerOptions = ['Standaard sticker · ServiceSETS', 'Eigen logo op standaard formaat', 'Ik lever een ontwerp aan'];
+  const stickerPersonalizationType = ['none', 'logo_upload', 'sticker_design'];
 
   const branchFor = (quantity) => quantity < 500 ? 'A' : quantity <= 1000 ? 'B' : 'C';
   const branchLabel = { A: 'Kleine oplage', B: 'Maatwerk oplage', C: 'Grote oplage' };
@@ -58,6 +60,7 @@
     root.innerHTML = `<section class="journey-hero"><div class="journey-hero-copy"><span class="eyebrow">ServiceSETS op maat</span><h1>Een set die precies past bij jouw gast.</h1><p>Stel in een paar stappen een eigen service-set samen. De hoeveelheid bepaalt de route die bij je past.</p></div><div class="journey-hero-art"><span class="art-label">Jouw idee</span><strong>${state.quantity ? `${state.quantity.toLocaleString('nl-NL')} sets` : 'jouw set'}</strong><i></i><i></i><i></i></div></section><div class="journey-wrap">${progress()}<div class="journey-layout"><main class="journey-main">${views[state.step]()}</main>${summary()}</div></div>`;
     root.querySelectorAll('[data-action]').forEach((el) => el.addEventListener('click', () => handle(el.dataset.action)));
     root.querySelectorAll('input, select, textarea').forEach((el) => {
+      if (el.id === 'designFile') { el.addEventListener('change', handleDesignFile); return; }
       el.addEventListener('change', updateField);
       if (el.id === 'quantity') el.addEventListener('input', () => { state.quantity = Math.max(0, Number(el.value) || 0); });
     });
@@ -93,15 +96,58 @@
     const ownSelected = state.current.ownArticles || [];
     const selectedSticker = state.current.sticker || stickerOptions[0];
     const stickerField = `<label>Sticker<div class="choice-grid sticker-grid">${stickerOptions.map((option, index) => `<button class="journey-choice ${selectedSticker === option ? 'selected' : ''}" data-action="sticker-${index}" aria-pressed="${selectedSticker === option}"><span class="choice-icon">${index + 1}</span><span><strong>${option}</strong></span><span class="choice-check" aria-hidden="true">${selectedSticker === option ? '✓' : ''}</span></button>`).join('')}</div></label>`;
+    const needsDesignFile = selectedSticker !== stickerOptions[0];
+    const designField = needsDesignFile ? `<label>Logo of ontwerp<input id="designFile" type="file" accept="image/*,.pdf,.ai,.eps">${state.current.designFile ? `<small>Bijlage gekozen: ${state.current.designFile.filename}</small>` : '<small>Dit bestand gaat als bijlage mee met je offerte.</small>'}</label>` : '';
     const extrasBlock = `<div class="recommended-additions"><div class="recommended-heading"><strong>Passende extra producten</strong><small>Voeg met één klik een extraatje toe aan je set.</small></div><div class="recommended-grid">${recommendedAdditions.map((item, index) => `<button class="recommended-item ${ownSelected.includes(index) ? 'selected' : ''}" data-action="own-${index}"><span class="recommended-plus">${ownSelected.includes(index) ? '✓' : '+'}</span><span><strong>${item.name}</strong><small>${item.category} · ${item.detail}</small></span></button>`).join('')}</div></div>`;
-    return `<div class="journey-kicker">Stap 3 · Afwerking</div><h2>Maak de uitstraling eigen.</h2><p class="lead">${branch === 'A' ? 'Kies een standaard sticker en bekijk passende extra\'s.' : branch === 'B' ? 'Pas de inhoud aan en lever straks je eigen stickerontwerp aan.' : 'Kies verpakking en geef aan waarbij ons team kan ondersteunen.'}</p><div class="form-stack">${branch === 'C' ? `<label>Verpakking<select id="packaging"><option>Individuele sets</option><option>Een gezamenlijke omdoos</option><option>Advies van ServiceSETS</option></select></label><label class="toggle-row"><input id="support" type="checkbox"> <span>Ik wil gratis ondersteuning bij mijn aanvraag</span></label><label>Doosontwerp<select id="boxDesign"><option>Geen ontwerp nodig</option><option>Ik wil een ontwerp laten maken</option></select></label><label>Stickerontwerp<select id="stickerDesign"><option>Geen stickerontwerp nodig</option><option>Ik wil een ontwerp laten maken</option></select></label>` : stickerField}</div>${branch !== 'C' ? extrasBlock : ''}<div class="journey-note"><b>${branch === 'C' ? 'Persoonlijk traject' : 'Bijna klaar'}</b><span>${branch === 'C' ? 'Bij gratis ondersteuning neemt een specialist contact met je op.' : 'Je kunt de set na toevoegen gewoon nog wijzigen.'}</span></div><div class="journey-actions">${back()}${next('Bekijk je set')}</div>`;
+    return `<div class="journey-kicker">Stap 3 · Afwerking</div><h2>Maak de uitstraling eigen.</h2><p class="lead">${branch === 'A' ? 'Kies een standaard sticker en bekijk passende extra\'s.' : branch === 'B' ? 'Pas de inhoud aan en lever straks je eigen stickerontwerp aan.' : 'Kies verpakking en geef aan waarbij ons team kan ondersteunen.'}</p><div class="form-stack">${branch === 'C' ? `<label>Verpakking<select id="packaging"><option>Individuele sets</option><option>Een gezamenlijke omdoos</option><option>Advies van ServiceSETS</option></select></label><label class="toggle-row"><input id="support" type="checkbox"> <span>Ik wil gratis ondersteuning bij mijn aanvraag</span></label><label>Doosontwerp<select id="boxDesign"><option>Geen ontwerp nodig</option><option>Ik wil een ontwerp laten maken</option></select></label><label>Stickerontwerp<select id="stickerDesign"><option>Geen stickerontwerp nodig</option><option>Ik wil een ontwerp laten maken</option></select></label>` : `${stickerField}${designField}`}</div>${branch !== 'C' ? extrasBlock : ''}<div class="journey-note"><b>${branch === 'C' ? 'Persoonlijk traject' : 'Bijna klaar'}</b><span>${branch === 'C' ? 'Bij gratis ondersteuning neemt een specialist contact met je op.' : 'Je kunt de set na toevoegen gewoon nog wijzigen.'}</span></div><div class="journey-actions">${back()}${next('Bekijk je set')}</div>`;
   }
   function renderReview() { const products = normalizeProductSelection(state.current.products || []).map((index) => catalog[index].name); const additions = (state.current.ownArticles || []).map((index) => recommendedAdditions[index].name); return `<div class="journey-kicker">Stap 4 · Controle</div><h2>Dit is jouw set.</h2><p class="lead">Controleer de keuzes voordat je de set toevoegt aan je winkelmand.</p><div class="review-sheet"><div><span>Oplage</span><strong>${state.quantity.toLocaleString('nl-NL')} sets</strong></div><div><span>Route</span><strong>Case ${state.branch}</strong></div><div><span>Inhoud</span><strong>${products.length ? products.join(', ') : 'Geen inhoud gekozen'}</strong></div>${additions.length ? `<div><span>Aanbevolen</span><strong>${additions.join(', ')}</strong></div>` : ''}<div><span>Afwerking</span><strong>${state.current.sticker || state.current.packaging || 'Standaard uitvoering'}</strong></div></div><div class="journey-actions">${back()}${button('Set toevoegen', 'add-set', 'journey-btn-primary')}</div>`; }
   function summary() { const count = state.sets.length; const setLines = state.sets.length ? state.sets.map((set, index) => { const selectedProduct = normalizeProductSelection(set.products || []); const productName = selectedProduct.length ? selectedProduct.map((productIndex) => catalog[productIndex]?.name).filter(Boolean).join(', ') : 'Geen artikel gekozen'; return `<div class="summary-line"><span>Set ${index + 1}</span><strong>${set.quantity.toLocaleString('nl-NL')} · ${productName}</strong></div>`; }).join('') : state.quantity ? `<div class="summary-line"><span>Oplage</span><strong>${state.quantity.toLocaleString('nl-NL')}</strong></div>` : '<p>Je keuzes verschijnen hier terwijl je samenstelt.</p>'; return `<aside class="journey-summary"><div class="summary-top"><span>Jouw aanvraag</span><b>${count} ${count === 1 ? 'set' : 'sets'}</b></div>${setLines}<div class="summary-rule"></div><span class="summary-foot">Nog geen prijsberekening</span></aside>`; }
   function renderCart() { return `<div class="journey-kicker">Winkelmand</div><h2>Je aanvraag staat klaar.</h2><p class="lead">${state.sets.length} ${state.sets.length === 1 ? 'set is' : 'sets zijn'} toegevoegd. Kies hoe we ze voor je verpakken.</p><div class="cart-list">${state.sets.map((set, index) => { const setProducts = normalizeProductSelection(set.products || []); const productText = setProducts.length ? ` · ${setProducts.map((productIndex) => catalog[productIndex]?.name).filter(Boolean).join(', ')}` : ''; return `<div class="cart-item"><span class="cart-number">0${index + 1}</span><div><strong>Eigen service-set</strong><small>${set.quantity.toLocaleString('nl-NL')} sets · Case ${set.branch}${productText}</small></div><button aria-label="Set verwijderen" data-action="remove-${index}">×</button></div>`; }).join('')}</div><div class="pack-choice"><label class="pack-option ${state.cartMode === 'loose' ? 'selected' : ''}"><input type="radio" name="cartMode" value="loose" ${state.cartMode === 'loose' ? 'checked' : ''}> <strong>Losse sets</strong><small>Elke set apart verpakt</small></label><label class="pack-option ${state.cartMode === 'combined' ? 'selected' : ''}"><input type="radio" name="cartMode" value="combined" ${state.cartMode === 'combined' ? 'checked' : ''}> <strong>Eén gezamenlijke omdoos</strong><small>Jou sets per combinatie in een omdoos</small></label></div><div class="journey-actions">${button('Nog een set samenstellen', 'new-set', 'journey-btn-quiet')}${button('Naar aanvraag', 'checkout', 'journey-btn-primary')}</div>`; }
-  function renderCheckout() { return `<div class="success-mark">✓</div><div class="journey-kicker">Aanvraag ontvangen</div><h2>We gaan ermee aan de slag.</h2><p class="lead">Bedankt. We hebben je configuratie klaargezet voor controle. In een echte shop volgt nu de checkout en bevestigingsmail.</p><div class="journey-note"><b>Volgende stap</b><span>Een bevestiging en eventuele ontwerpvraag komen per e-mail. Bij een niet-afgeronde checkout sturen we een herinnering.</span></div>${button('Terug naar winkelmand', 'cart', 'journey-btn-quiet')}`; }
+  function renderCheckout() { return `<div class="success-mark">✓</div><div class="journey-kicker">Aanvraag ontvangen</div><h2>We gaan ermee aan de slag.</h2><p class="lead">Bedankt. Je sets staan klaar als artikel voor de offerte, inclusief eventuele ontwerpbestanden als bijlage. Een collega zet dit om in een echte offerte in Odoo.</p><div class="journey-note"><b>Volgende stap</b><span>Een bevestiging en eventuele ontwerpvraag komen per e-mail. Bij een niet-afgeronde checkout sturen we een herinnering.</span></div>${button('Terug naar winkelmand', 'cart', 'journey-btn-quiet')}`; }
 
   function updateField(event) { const el = event.target; if (el.id === 'quantity') { state.quantity = Math.max(0, Number(el.value) || 0); return; } if (el.name === 'cartMode') state.cartMode = el.value; if (el.closest('.catalog-item') && el.type === 'checkbox' && !el.disabled) { const index = Number(el.value); const currentSelection = normalizeProductSelection(state.current.products || []); state.current.products = el.checked ? [...currentSelection, index] : currentSelection.filter((item) => item !== index); state.current.category = el.checked ? catalog[index]?.category || state.current.category : state.current.category; render(); return; } if (el.id === 'packaging' || el.id === 'boxDesign' || el.id === 'stickerDesign') state.current[el.id] = el.value; if (el.id === 'support') state.current[el.id] = el.checked; render(); }
+  function handleDesignFile(event) {
+    const file = event.target.files && event.target.files[0];
+    if (!file) { state.current.designFile = null; render(); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      state.current.designFile = { filename: file.name, mimetype: file.type || 'application/octet-stream', dataBase64: String(reader.result).split(',')[1] || '' };
+      render();
+    };
+    reader.readAsDataURL(file);
+  }
+  // Zet de winkelmand om naar het formaat uit data/cpq-datamodel.md (cpq.configuration + cpq.personalization
+  // met bijlage), zodat een toekomstige Odoo-controller dit rechtstreeks kan verwerken tot offerteregels en BOM.
+  function assembleOdooPayload() {
+    const sets = state.sets.map((set) => {
+      const productLines = normalizeProductSelection(set.products || []).map((index) => {
+        const product = catalog[index] || {};
+        return { product_ref: product.id || null, product_name: product.name || null, qty: 1 };
+      });
+      const additionLines = (set.ownArticles || []).map((index) => {
+        const addition = recommendedAdditions[index];
+        const product = addition ? catalog.find((item) => item.name === addition.productName) : null;
+        return { product_ref: product?.id || null, product_name: product?.name || addition?.name || null, qty: 1 };
+      });
+      const personalizations = [];
+      if (set.branch !== 'C' && set.sticker && set.sticker !== stickerOptions[0]) {
+        const type = stickerPersonalizationType[stickerOptions.indexOf(set.sticker)] || 'sticker_design';
+        personalizations.push({ type, attachment: set.designFile ? { filename: set.designFile.filename, mimetype: set.designFile.mimetype, data_base64: set.designFile.dataBase64 } : null });
+      }
+      if (set.branch === 'C' && set.boxDesign === 'Ik wil een ontwerp laten maken') personalizations.push({ type: 'box_design', attachment: null, notes: 'Ontwerp wordt door ServiceSETS gemaakt' });
+      if (set.branch === 'C' && set.stickerDesign === 'Ik wil een ontwerp laten maken') personalizations.push({ type: 'sticker_design', attachment: null, notes: 'Ontwerp wordt door ServiceSETS gemaakt' });
+      return {
+        quantity: set.quantity,
+        branch: set.branch,
+        composition: { name: `Eigen samenstelling · Case ${set.branch}`, lines: [...productLines, ...additionLines] },
+        personalizations,
+        packaging: set.packaging || null,
+        support_requested: !!set.support
+      };
+    });
+    return { cart_mode: state.cartMode, sets };
+  }
   function handle(action) {
     if (action === 'quantity') state.step = 'quantity';
     else if (action === 'set-count-single' || action === 'set-count-multi') { state.multiSet = action === 'set-count-multi'; state.step = 'quantity'; }
@@ -115,7 +161,7 @@
     else if (action === 'back') { const previous = { quantity: 'start', choose: 'quantity', products: 'choose', extras: 'products', review: 'extras' }; state.step = previous[state.step] || 'start'; }
     else if (action === 'add-set') { state.sets.push({ ...state.current, quantity: state.quantity, branch: state.branch }); state.step = 'cart'; }
     else if (action === 'new-set') { state.current = {}; state.mode = null; state.step = 'quantity'; }
-    else if (action === 'checkout') state.step = 'checkout';
+    else if (action === 'checkout') { state.odooPayload = assembleOdooPayload(); console.log('CPQ → Odoo (nog niet verzonden, nog geen backend)\n' + JSON.stringify(state.odooPayload, null, 2)); state.step = 'checkout'; }
     else if (action === 'cart') state.step = 'cart';
     else if (action.startsWith('remove-')) state.sets.splice(Number(action.split('-')[1]), 1);
     else return;
