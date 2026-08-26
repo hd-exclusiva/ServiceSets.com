@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Servicesets — Customer Journey Prototype</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 
  <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -124,6 +124,12 @@
     </div>
   </div>
 
+  <section class="statement-section">
+    <div class="wrap">
+      <p class="statement-text" id="statementText"><span class="word">Een welkomstpakket</span> <span class="word word-accent">bepaalt het eerste gevoel</span> <span class="word">van een gast,</span> <span class="word">nog voor de kamer</span> <span class="word">is gezien.</span> <span class="word">Wij zorgen</span> <span class="word">dat dat gevoel</span> <span class="word word-accent">klopt.</span></p>
+    </div>
+  </section>
+
   <section class="section">
     <div class="wrap">
       <div class="section-head reveal">
@@ -131,7 +137,10 @@
           <span class="eyebrow">Onze sets</span>
           <h2>Kies een productlijn</h2>
         </div>
-        <p>Categorieën zijn losgekoppeld van de productstructuur — zo blijft de indeling hier vrij te bepalen, onafhankelijk van hoe artikelen intern zijn opgebouwd.</p>
+        <div>
+          <p>Categorieën zijn losgekoppeld van de productstructuur — zo blijft de indeling hier vrij te bepalen, onafhankelijk van hoe artikelen intern zijn opgebouwd.</p>
+          <a class="link-arrow" href="#" onclick="showPage('shop');return false;">Bekijk het hele assortiment <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
       <div class="cat-grid">
         <a class="cat-card tilt reveal" href="#" onclick="showPage('shop');return false;">

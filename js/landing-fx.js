@@ -39,6 +39,24 @@ const countObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 
+// ---------- scroll statement reveal ----------
+const statementWords = document.querySelectorAll('#statementText .word');
+if (statementWords.length) {
+  if (prefersReducedMotion.matches) {
+    statementWords.forEach(w => w.classList.add('lit'));
+  } else {
+    const wordObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('lit');
+          wordObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '-40% 0px -40% 0px' });
+    statementWords.forEach(w => wordObserver.observe(w));
+  }
+}
+
 // ---------- category card tilt ----------
 if (!prefersReducedMotion.matches) {
   document.querySelectorAll('.tilt').forEach(card => {
