@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicesets — Winkelmand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="proto-banner">Klikbaar concept <strong>winkelmand &amp; afrekenen</strong> voor Servicesets.com · geen echte betaling of orderverwerking</div>
+
+<!-- ====== HEADER ====== -->
+<header class="site">
+  <div class="utility-bar">
+    <div class="wrap">
+      <div class="utility-left">
+        <a class="util-tel" href="tel:0884356688">088 435 66 88</a>
+        <a href="../index.html#over-ons">Over ons</a>
+        <a href="#">Klantenservice</a>
+      </div>
+      <div class="lang-select" id="langSelect">
+        <button class="lang-btn" onclick="toggleLang(event)" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">NL</span><span class="lang-caret">▾</span>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button role="menuitem" aria-pressed="true" onclick="setLang('NL', event)">Nederlands <span>NL</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('DE', event)">Deutsch <span>DE</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('EN', event)">English <span>EN</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('FR', event)">Français <span>FR</span></button>
+          <div class="lang-cookie-note">We onthouden je taalkeuze via een functionele cookie, zodat je hem niet steeds opnieuw hoeft te kiezen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap nav-row">
+    <a href="../index.html" class="logo">
+      <span class="light">Service</span><span class="bold">SETS</span><sup>TM</sup>
+    </a>
+    <nav class="primary" id="primaryNav">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#shop">Shop</a>
+      <a onclick="window.open('../cpq/index.html', '_blank')" target="_blank">Stel je eigen set samen</a>
+      <a href="../index.html#contact">Contactpagina</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="icon-btn active cart-icon-btn" href="index.html" title="Winkelmand" aria-label="Winkelmand">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h2l2.4 12.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+        <span class="cart-badge" hidden>0</span>
+      </a>
+      <a class="icon-btn" href="../account/index.html" title="Mijn account" aria-label="Mijn account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      </a>
+      <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== MAIN ====== -->
+<main>
+
+<!-- ====== CART VIEW ====== -->
+<section class="account-view active" id="view-cart">
+  <div class="shop-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="../index.html">Home</a> / Winkelmand</div>
+      <h1 style="margin-bottom:0;">Winkelmand</h1>
+    </div>
+  </div>
+
+  <div class="wrap cart-layout">
+    <div class="cart-items" id="cartItems"></div>
+
+    <aside class="cart-summary">
+      <h4>Overzicht</h4>
+      <div class="cart-summary-row"><span>Subtotaal</span><span id="cartSubtotal">€ 0,00</span></div>
+      <div class="cart-summary-row muted"><span>Verzendkosten</span><span>Bepaald bij afrekenen</span></div>
+      <div class="cart-summary-row muted"><span>Gratis verzending</span><span>vanaf € 250,00</span></div>
+      <div class="cart-summary-total"><span>Totaal</span><span id="cartTotal">€ 0,00</span></div>
+      <button class="btn btn-primary" style="width:100%; justify-content:center;" onclick="goToCheckout()" id="checkoutBtn">Naar afrekenen</button>
+      <a href="../index.html#shop" class="link-arrow" style="justify-content:center; margin-top:16px;">Verder winkelen</a>
+    </aside>
+  </div>
+</section>
+
+<!-- ====== CHECKOUT VIEW ====== -->
+<section class="account-view" id="view-checkout">
+  <div class="shop-hero">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="#" onclick="showCartView('view-cart');return false;">Winkelmand</a> / Afrekenen</div>
+      <h1 style="margin-bottom:0;">Afrekenen</h1>
+    </div>
+  </div>
+
+  <div class="wrap contact-layout">
+    <form id="checkoutForm" onsubmit="return handlePlaceOrder(event)">
+      <h3>Bezorggegevens</h3>
+      <div class="form-row">
+        <div class="field"><label for="co-naam">Naam</label><input id="co-naam" type="text" autocomplete="name" placeholder="Voor- en achternaam" required></div>
+        <div class="field"><label for="co-bedrijf">Bedrijfsnaam</label><input id="co-bedrijf" type="text" autocomplete="organization" placeholder="Optioneel"></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="co-email">E-mailadres</label><input id="co-email" type="email" autocomplete="email" placeholder="uw@bedrijf.nl" required></div>
+        <div class="field"><label for="co-tel">Telefoonnummer</label><input id="co-tel" type="tel" autocomplete="tel" placeholder="Optioneel"></div>
+      </div>
+      <div class="form-row">
+        <div class="field full"><label for="co-adres">Adres</label><input id="co-adres" type="text" autocomplete="street-address" placeholder="Straat en huisnummer" required></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="co-postcode">Postcode</label><input id="co-postcode" type="text" autocomplete="postal-code" placeholder="1234 AB" required></div>
+        <div class="field"><label for="co-plaats">Plaats</label><input id="co-plaats" type="text" autocomplete="address-level2" placeholder="Plaatsnaam" required></div>
+      </div>
+
+      <h3 style="margin-top:34px;">Betaalmethode</h3>
+      <div class="payment-options">
+        <label class="payment-option">
+          <input type="radio" name="payment" value="ideal" checked>
+          <span><strong>iDEAL</strong><small>Direct online betalen</small></span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment" value="factuur">
+          <span><strong>Op factuur</strong><small>Betalen binnen 14 dagen, bij bestaand klantnummer</small></span>
+        </label>
+        <label class="payment-option">
+          <input type="radio" name="payment" value="overboeking">
+          <span><strong>Vooraf overmaken</strong><small>Bestelling wordt verwerkt na ontvangst</small></span>
+        </label>
+      </div>
+
+      <button class="btn btn-primary" type="submit" style="margin-top:28px;">Bestelling plaatsen</button>
+      <a href="#" class="link-arrow" style="margin-top:16px;" onclick="showCartView('view-cart');return false;">← Terug naar winkelmand</a>
+    </form>
+
+    <div>
+      <div class="contact-info-card">
+        <span class="eyebrow">Uw bestelling</span>
+        <div class="checkout-summary-list" id="checkoutSummaryList"></div>
+        <div class="checkout-summary-total"><span>Totaal</span><span id="checkoutTotal">€ 0,00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CONFIRMATION VIEW ====== -->
+<section class="account-view" id="view-confirmation">
+  <div class="wrap" style="padding:100px 0; max-width:640px; text-align:center;">
+    <div class="confirmation-check">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+    </div>
+    <h1>Bedankt voor uw bestelling</h1>
+    <p>Uw bestelling <strong id="confirmationOrderNumber">#SS-00000</strong> is geplaatst. U ontvangt een bevestiging per e-mail zodra deze in behandeling is genomen.</p>
+    <div class="hero-cta-row" style="justify-content:center;">
+      <a class="btn btn-primary" href="../account/index.html">Bekijk mijn bestellingen</a>
+      <a class="btn btn-outline" href="../index.html#shop">Verder winkelen</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-logo"><span class="light">Service</span><span class="bold">SETS</span></div>
+      <p style="max-width:34ch;">Merk van Exclusiva BV — bedenkt en produceert samengestelde service-sets voor recreatie, hotellerie en meer.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">in</a>
+        <a href="#" aria-label="YouTube">yt</a>
+      </div>
+    </div>
+    <div>
+      <h4>Over Servicesets</h4>
+      <ul>
+        <li><a href="../index.html#over-ons">Over ons</a></li>
+        <li><a href="#">Klantenservice</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="#">Algemene voorwaarden</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Onze pakketten</h4>
+      <ul>
+        <li><a href="../index.html#shop">Recreatie</a></li>
+        <li><a href="../index.html#shop">Hotel &amp; Wellness</a></li>
+        <li><a href="../index.html#shop">Koffie</a></li>
+        <li><a onclick="window.open('../cpq/index.html', '_blank')">Set op maat</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Taal</h4>
+      <ul>
+        <li><a href="#" onclick="setLang('NL', event)">Nederlands</a></li>
+        <li><a href="#" onclick="setLang('DE', event)">Deutsch</a></li>
+        <li><a href="#" onclick="setLang('EN', event)">English</a></li>
+        <li><a href="#" onclick="setLang('FR', event)">Français</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2014–2026 Servicesets - merk van Exclusiva BV</span>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a><a href="#">Disclaimer</a><a href="#">Cookie-instellingen</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/navigation.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/cart-page.js"></script>
+
+</body>
+</html>
