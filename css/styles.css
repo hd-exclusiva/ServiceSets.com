@@ -408,7 +408,7 @@
   /* ---------- usp marquee ---------- */
   .usp-strip{overflow:hidden;}
   .usp-track{display:flex; width:max-content; animation:uspScroll 28s linear infinite;}
-  .usp-strip:hover .usp-track{animation-play-state:paused;}
+  .usp-strip:hover .usp-track, .usp-strip:focus-within .usp-track{animation-play-state:paused;}
   .usp-set{display:flex; gap:40px; padding-right:40px; flex:none;}
   .usp-item{white-space:nowrap;}
   @keyframes uspScroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}

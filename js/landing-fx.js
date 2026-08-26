@@ -1,3 +1,5 @@
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
 // ---------- scroll reveal ----------
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -38,22 +40,24 @@ const countObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
 
 // ---------- category card tilt ----------
-document.querySelectorAll('.tilt').forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `translateY(-6px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 10).toFixed(2)}deg)`;
+if (!prefersReducedMotion.matches) {
+  document.querySelectorAll('.tilt').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      card.style.transform = `translateY(-6px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 10).toFixed(2)}deg)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
   });
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = '';
-  });
-});
+}
 
 // ---------- hero parallax ----------
 const heroSection = document.getElementById('heroSection');
 const heroVisual = document.getElementById('heroVisual');
-if (heroSection && heroVisual) {
+if (heroSection && heroVisual && !prefersReducedMotion.matches) {
   heroSection.addEventListener('mousemove', (e) => {
     const rect = heroSection.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
