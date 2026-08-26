@@ -358,6 +358,88 @@
   .chat-cta strong{display:block; font-size:.92rem;}
   .chat-cta span{font-size:.8rem; color:var(--ink-faint);}
 
+  /* ---------- account / login ---------- */
+  .account-view{display:none;}
+  .account-view.active{display:block; animation:fadein .35s ease;}
+
+  .auth-shell{
+    display:grid; grid-template-columns:.95fr 1.05fr; min-height:calc(100vh - 220px); align-items:stretch;
+  }
+  .auth-shell-single{grid-template-columns:1fr; max-width:480px; padding:80px 0;}
+  .auth-panel{
+    background:var(--ink); color:rgba(255,255,255,.75); padding:72px 56px; display:flex; flex-direction:column; justify-content:center;
+  }
+  .auth-panel h1{color:var(--white); font-size:clamp(1.8rem,3vw,2.4rem);}
+  .auth-benefits{list-style:none; margin:32px 0 0; padding:0; display:flex; flex-direction:column; gap:16px;}
+  .auth-benefits li{display:flex; align-items:flex-start; gap:12px; font-size:.92rem; color:rgba(255,255,255,.85);}
+  .auth-benefits svg{flex:none; color:var(--teal); margin-top:2px;}
+  .auth-card{
+    padding:72px 56px; display:flex; flex-direction:column; justify-content:center; max-width:460px; width:100%; margin:0 auto;
+  }
+  .auth-card h2{margin-bottom:.3em;}
+  .auth-card .field{margin-bottom:18px;}
+  .password-field{position:relative;}
+  .password-field input{width:100%; padding-right:46px;}
+  .password-toggle{
+    position:absolute; right:4px; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%;
+    background:none; border:none; color:var(--ink-faint); display:flex; align-items:center; justify-content:center; transition:background .15s ease, color .15s ease;
+  }
+  .password-toggle:hover{background:var(--teal-mist); color:var(--teal-deep);}
+  .password-toggle[aria-pressed="true"]{color:var(--teal-deep);}
+  .form-check-row{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:22px; flex-wrap:wrap;}
+  .auth-error, .auth-success{
+    display:flex; align-items:flex-start; gap:10px; border-radius:var(--radius-s); padding:12px 14px; font-size:.85rem;
+    margin-bottom:20px; line-height:1.5;
+  }
+  .auth-error[hidden], .auth-success[hidden]{display:none;}
+  .auth-error{background:#FBEAE8; color:#8A2C22;}
+  .auth-error svg{flex:none; margin-top:1px;}
+  .auth-success{background:var(--teal-mist); color:var(--teal-deep);}
+  .auth-success svg{flex:none; margin-top:1px;}
+  .auth-demo-hint{font-size:.78rem; color:var(--ink-faint); margin:18px 0 0; text-align:center;}
+
+  .account-hero{background:var(--teal-mist); padding:48px 0 36px;}
+  .account-shell{display:grid; grid-template-columns:230px 1fr; gap:40px; padding:48px 0 100px; align-items:start;}
+  .account-sidebar{display:flex; flex-direction:column; gap:4px; position:sticky; top:100px;}
+  .account-nav-item{
+    display:flex; align-items:center; gap:10px; text-align:left; background:none; border:none; border-radius:var(--radius-s);
+    padding:11px 14px; font-size:.9rem; font-weight:700; color:var(--ink-soft); transition:background .15s ease, color .15s ease;
+  }
+  .account-nav-item svg{flex:none; color:var(--ink-faint); transition:color .15s ease;}
+  .account-nav-item:hover{background:var(--teal-mist); color:var(--teal-deep);}
+  .account-nav-item:hover svg{color:var(--teal-deep);}
+  .account-nav-item.active{background:var(--ink); color:var(--white);}
+  .account-nav-item.active svg{color:var(--teal);}
+  .account-nav-logout{border-top:1px solid var(--line); margin-top:10px; padding-top:16px; color:var(--clay);}
+  .account-nav-logout svg{color:var(--clay);}
+  .account-nav-logout:hover{background:#FBEAE8; color:#8A2C22;}
+  .account-nav-logout:hover svg{color:#8A2C22;}
+
+  .account-panel{display:none;}
+  .account-panel.active{display:block; animation:fadein .3s ease;}
+  .account-panel-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:26px; flex-wrap:wrap; gap:14px;}
+  .profile-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px 32px; margin:0;}
+  .profile-grid dt{font-size:.74rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-faint); font-weight:700; margin-bottom:4px;}
+  .profile-grid dd{margin:0; font-size:.98rem; color:var(--ink);}
+
+  .order-list{display:flex; flex-direction:column; gap:12px;}
+  .order-row{
+    display:grid; grid-template-columns:1fr auto auto auto; align-items:center; gap:18px;
+    border:1px solid var(--line); border-radius:var(--radius-m); padding:16px 20px; transition:box-shadow .15s ease;
+  }
+  .order-row:hover{box-shadow:var(--shadow);}
+  .order-main{display:flex; flex-direction:column; gap:3px;}
+  .order-main strong{font-size:.94rem;}
+  .order-main span{font-size:.8rem; color:var(--ink-faint);}
+  .order-total{font-weight:900; font-size:.94rem; white-space:nowrap;}
+  .status-badge{
+    font-size:.7rem; font-weight:900; text-transform:uppercase; letter-spacing:.04em; padding:5px 12px;
+    border-radius:100px; white-space:nowrap;
+  }
+  .status-delivered{background:var(--teal-mist); color:var(--teal-deep);}
+  .status-transit{background:#FFF3DE; color:var(--amber);}
+  .status-processing{background:#EFEFEF; color:var(--ink-soft);}
+
   /* ---------- chat widget ---------- */
   .chat-launcher{
     position:fixed; bottom:26px; right:26px; z-index:90; width:60px; height:60px; border-radius:50%;
@@ -464,6 +546,13 @@
     .cfg-layout{grid-template-columns:1fr;}
     .summary-card{position:static;}
     .contact-layout{grid-template-columns:1fr;}
+    .auth-shell{grid-template-columns:1fr;}
+    .auth-panel{padding:48px 24px;}
+    .auth-card{padding:48px 24px; max-width:none;}
+    .account-shell{grid-template-columns:1fr;}
+    .account-sidebar{position:static; flex-direction:row; overflow-x:auto; gap:8px; padding-bottom:6px;}
+    .account-nav-logout{border-top:none; margin-top:0; padding-top:11px;}
+    .order-row{grid-template-columns:1fr; justify-items:start;}
     nav.primary{display:none;}
     .mobile-toggle{display:block;}
   }
@@ -473,6 +562,7 @@
     .product-grid{grid-template-columns:1fr 1fr;}
     .form-row{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
+    .profile-grid{grid-template-columns:1fr;}
     .utility-left{display:none;}
     .hero-glow{width:340px; height:340px; top:-80px; right:-60px;}
   }

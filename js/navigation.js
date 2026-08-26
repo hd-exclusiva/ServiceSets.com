@@ -48,22 +48,28 @@
     }
   }
   function closeSearch(){
-    document.getElementById('searchPanel').classList.remove('open');
-    document.getElementById('searchToggle').classList.remove('active');
-    document.getElementById('searchToggle').setAttribute('aria-expanded', 'false');
+    const panel = document.getElementById('searchPanel');
+    const toggleBtn = document.getElementById('searchToggle');
+    if(!panel || !toggleBtn) return;
+    panel.classList.remove('open');
+    toggleBtn.classList.remove('active');
+    toggleBtn.setAttribute('aria-expanded', 'false');
   }
 
  document.addEventListener('click', (e)=>{
-    if(!document.getElementById('langSelect').contains(e.target)){
-      document.getElementById('langSelect').classList.remove('open');
+    const langSelect = document.getElementById('langSelect');
+    if(langSelect && !langSelect.contains(e.target)){
+      langSelect.classList.remove('open');
     }
-    if(!document.getElementById('searchWrap').contains(e.target)){
+    const searchWrap = document.getElementById('searchWrap');
+    if(searchWrap && !searchWrap.contains(e.target)){
       closeSearch();
     }
   });
   document.addEventListener('keydown', (e)=>{
     if(e.key==='Escape'){
-      document.getElementById('langSelect').classList.remove('open');
+      const langSelect = document.getElementById('langSelect');
+      if(langSelect) langSelect.classList.remove('open');
       closeSearch();
     }
   });

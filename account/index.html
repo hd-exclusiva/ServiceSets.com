@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicesets — Mijn account</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+<div class="proto-banner">Klikbaar concept <strong>klantportaal</strong> voor Servicesets.com · inloggen is hier nagebootst, echte authenticatie loopt straks veilig via de Odoo-portal</div>
+
+<!-- ====== HEADER ====== -->
+<header class="site">
+  <div class="utility-bar">
+    <div class="wrap">
+      <div class="utility-left">
+        <a class="util-tel" href="tel:0884356688">088 435 66 88</a>
+        <a href="../index.html#over-ons">Over ons</a>
+        <a href="#">Klantenservice</a>
+      </div>
+      <div class="lang-select" id="langSelect">
+        <button class="lang-btn" onclick="toggleLang(event)" aria-haspopup="true" aria-expanded="false">
+          <span id="langCurrent">NL</span><span class="lang-caret">▾</span>
+        </button>
+        <div class="lang-menu" role="menu">
+          <button role="menuitem" aria-pressed="true" onclick="setLang('NL', event)">Nederlands <span>NL</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('DE', event)">Deutsch <span>DE</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('EN', event)">English <span>EN</span></button>
+          <button role="menuitem" aria-pressed="false" onclick="setLang('FR', event)">Français <span>FR</span></button>
+          <div class="lang-cookie-note">We onthouden je taalkeuze via een functionele cookie, zodat je hem niet steeds opnieuw hoeft te kiezen.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap nav-row">
+    <a href="../index.html" class="logo">
+      <span class="light">Service</span><span class="bold">SETS</span><sup>TM</sup>
+    </a>
+    <nav class="primary" id="primaryNav">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#shop">Shop</a>
+      <a onclick="window.open('../cpq/index.html', '_blank')" target="_blank">Stel je eigen set samen</a>
+      <a href="../index.html#contact">Contactpagina</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" title="Winkelmand" aria-label="Winkelmand">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h2l2.4 12.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>
+      </button>
+      <button class="icon-btn active" title="Mijn account" aria-label="Mijn account">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>
+      </button>
+      <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== MAIN ====== -->
+<main>
+
+<!-- ====== LOGIN VIEW ====== -->
+<section class="account-view active" id="view-login">
+  <div class="wrap auth-shell">
+    <div class="auth-panel">
+      <span class="eyebrow" style="color:var(--teal);">Klantportaal</span>
+      <h1 style="color:var(--white);">Alles over uw sets, op één plek.</h1>
+      <p>Log in met het account dat u van uw accountmanager heeft ontvangen om bestellingen te volgen, offertes te bekijken en uw gegevens te beheren.</p>
+      <ul class="auth-benefits">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Status van al uw bestellingen in realtime</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Offertes inzien en direct accepteren</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Bedrijfs- en contactgegevens zelf beheren</li>
+      </ul>
+    </div>
+
+    <div class="auth-card">
+      <h2>Inloggen</h2>
+      <p style="margin-bottom:1.6em;">Nog geen inloggegevens? Neem contact op met uw accountmanager of <a href="../index.html#contact" class="link-arrow" style="display:inline;">de klantenservice</a>.</p>
+
+      <div class="auth-error" id="authError" role="alert" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg>
+        <span id="authErrorText">E-mailadres of wachtwoord is onjuist. Controleer uw gegevens en probeer het opnieuw.</span>
+      </div>
+
+      <form id="loginForm" onsubmit="return handleLogin(event)">
+        <div class="field">
+          <label for="lg-email">E-mailadres</label>
+          <input id="lg-email" type="email" name="email" autocomplete="username" placeholder="uw@bedrijf.nl" required aria-describedby="authErrorText">
+        </div>
+        <div class="field">
+          <label for="lg-password">Wachtwoord</label>
+          <div class="password-field">
+            <input id="lg-password" type="password" name="password" autocomplete="current-password" placeholder="••••••••" required minlength="8">
+            <button type="button" class="password-toggle" id="passwordToggle" aria-label="Wachtwoord tonen" aria-pressed="false" onclick="togglePasswordVisibility()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="form-check-row">
+          <label class="filter-opt" style="padding:0;"><input type="checkbox" id="lg-remember"> Onthoud mij op dit apparaat</label>
+          <a href="#" class="link-arrow" style="font-size:.85rem;" onclick="showForgotPassword(event)">Wachtwoord vergeten?</a>
+        </div>
+        <button class="btn btn-primary" type="submit" id="loginSubmit" style="width:100%; justify-content:center; margin-top:8px;">
+          <span id="loginSubmitText">Inloggen</span>
+        </button>
+        <p class="auth-demo-hint">Prototype: gebruik <strong>demo@servicesets.com</strong> met wachtwoord <strong>demo1234</strong> om het klantportaal te bekijken.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FORGOT PASSWORD VIEW ====== -->
+<section class="account-view" id="view-forgot">
+  <div class="wrap auth-shell auth-shell-single">
+    <div class="auth-card">
+      <h2>Wachtwoord opnieuw instellen</h2>
+      <p style="margin-bottom:1.6em;">Vul uw e-mailadres in. Als dit adres bij ons bekend is, ontvangt u een beveiligde link om een nieuw wachtwoord in te stellen.</p>
+      <div class="auth-success" id="forgotSuccess" hidden>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+        <span>Als dit e-mailadres bij ons bekend is, ontvangt u binnen enkele minuten een e-mail met een resetlink.</span>
+      </div>
+      <form id="forgotForm" onsubmit="return handleForgotPassword(event)">
+        <div class="field">
+          <label for="fg-email">E-mailadres</label>
+          <input id="fg-email" type="email" name="email" autocomplete="username" placeholder="uw@bedrijf.nl" required>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%; justify-content:center; margin-top:8px;">Verstuur resetlink</button>
+      </form>
+      <p class="auth-demo-hint"><a href="#" class="link-arrow" onclick="showLogin(event)">← Terug naar inloggen</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DASHBOARD VIEW ====== -->
+<section class="account-view" id="view-dashboard">
+  <div class="account-hero">
+    <div class="wrap">
+      <span class="eyebrow">Klantportaal</span>
+      <h1 style="margin-bottom:0;">Welkom terug, <span id="dashName">Janneke</span></h1>
+    </div>
+  </div>
+
+  <div class="wrap account-shell">
+    <aside class="account-sidebar">
+      <button class="account-nav-item active" data-panel="profiel" onclick="showAccountPanel('profiel')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>Profiel
+      </button>
+      <button class="account-nav-item" data-panel="bestellingen" onclick="showAccountPanel('bestellingen')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h2l2.4 12.2a2 2 0 0 0 2 1.8h8.2a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1"/><circle cx="18" cy="21" r="1"/></svg>Bestellingen
+      </button>
+      <button class="account-nav-item" data-panel="offertes" onclick="showAccountPanel('offertes')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3v5h5M6 3h8l5 5v13H6z"/><path d="M9 13h6M9 17h6"/></svg>Offertes
+      </button>
+      <button class="account-nav-item account-nav-logout" onclick="handleLogout()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>Uitloggen
+      </button>
+    </aside>
+
+    <div class="account-panels">
+
+      <!-- PROFIEL -->
+      <div class="account-panel active" id="panel-profiel">
+        <div class="account-panel-head">
+          <h3>Mijn profiel</h3>
+          <button class="btn btn-outline" style="padding:9px 18px; font-size:.85rem;">Gegevens wijzigen</button>
+        </div>
+        <dl class="profile-grid">
+          <div><dt>Naam</dt><dd>Janneke de Vries</dd></div>
+          <div><dt>Bedrijf</dt><dd>Hotel Duinzicht B.V.</dd></div>
+          <div><dt>E-mailadres</dt><dd>demo@servicesets.com</dd></div>
+          <div><dt>Telefoonnummer</dt><dd>+31 6 12 34 56 78</dd></div>
+          <div><dt>Klantnummer</dt><dd>SS-10432</dd></div>
+          <div><dt>Facturatieadres</dt><dd>Duinweg 12, 2202 AB Noordwijk</dd></div>
+        </dl>
+      </div>
+
+      <!-- BESTELLINGEN -->
+      <div class="account-panel" id="panel-bestellingen">
+        <div class="account-panel-head">
+          <h3>Mijn bestellingen</h3>
+        </div>
+        <div class="order-list">
+          <div class="order-row">
+            <div class="order-main"><strong>#SS-24118</strong><span>Besteld op 12 augustus 2026 · 240 sets Hotel &amp; Wellness</span></div>
+            <span class="status-badge status-delivered">Geleverd</span>
+            <div class="order-total">€ 3.180,00</div>
+            <a href="#" class="link-arrow" onclick="return false;">Details</a>
+          </div>
+          <div class="order-row">
+            <div class="order-main"><strong>#SS-24145</strong><span>Besteld op 3 augustus 2026 · 180 sets Recreatie, eigen logo</span></div>
+            <span class="status-badge status-transit">Onderweg</span>
+            <div class="order-total">€ 2.340,00</div>
+            <a href="#" class="link-arrow" onclick="return false;">Details</a>
+          </div>
+          <div class="order-row">
+            <div class="order-main"><strong>#SS-24167</strong><span>Besteld op 20 augustus 2026 · Maatwerk koffieset, 300 stuks</span></div>
+            <span class="status-badge status-processing">In behandeling</span>
+            <div class="order-total">€ 4.620,00</div>
+            <a href="#" class="link-arrow" onclick="return false;">Details</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFERTES -->
+      <div class="account-panel" id="panel-offertes">
+        <div class="account-panel-head">
+          <h3>Mijn offertes</h3>
+        </div>
+        <div class="order-list">
+          <div class="order-row">
+            <div class="order-main"><strong>Offerte #OF-3312</strong><span>Maatwerk welkomstpakket, 500 stuks · geldig t/m 15 september 2026</span></div>
+            <span class="status-badge status-processing">Nieuw</span>
+            <div class="order-total">€ 6.750,00</div>
+            <a href="#" class="link-arrow" onclick="return false;">Bekijken</a>
+          </div>
+          <div class="order-row">
+            <div class="order-main"><strong>Offerte #OF-3298</strong><span>Uitbreiding bad &amp; douche-lijn, 4 vestigingen · geldig t/m 1 september 2026</span></div>
+            <span class="status-badge status-delivered">Geaccepteerd</span>
+            <div class="order-total">€ 9.410,00</div>
+            <a href="#" class="link-arrow" onclick="return false;">Bekijken</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ====== FOOTER ====== -->
+<footer class="site">
+  <div class="wrap footer-grid">
+    <div>
+      <div class="footer-logo"><span class="light">Service</span><span class="bold">SETS</span></div>
+      <p style="max-width:34ch;">Merk van Exclusiva BV — bedenkt en produceert samengestelde service-sets voor recreatie, hotellerie en meer.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">in</a>
+        <a href="#" aria-label="YouTube">yt</a>
+      </div>
+    </div>
+    <div>
+      <h4>Over Servicesets</h4>
+      <ul>
+        <li><a href="../index.html#over-ons">Over ons</a></li>
+        <li><a href="#">Klantenservice</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+        <li><a href="#">Algemene voorwaarden</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Onze pakketten</h4>
+      <ul>
+        <li><a href="../index.html#shop">Recreatie</a></li>
+        <li><a href="../index.html#shop">Hotel &amp; Wellness</a></li>
+        <li><a href="../index.html#shop">Koffie</a></li>
+        <li><a onclick="window.open('../cpq/index.html', '_blank')">Set op maat</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Taal</h4>
+      <ul>
+        <li><a href="#" onclick="setLang('NL', event)">Nederlands</a></li>
+        <li><a href="#" onclick="setLang('DE', event)">Deutsch</a></li>
+        <li><a href="#" onclick="setLang('EN', event)">English</a></li>
+        <li><a href="#" onclick="setLang('FR', event)">Français</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2014–2026 Servicesets - merk van Exclusiva BV</span>
+    <div class="legal-links">
+      <a href="#">Privacy Policy</a><a href="#">Disclaimer</a><a href="#">Cookie-instellingen</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/navigation.js"></script>
+<script src="../js/account.js"></script>
+
+</body>
+</html>
