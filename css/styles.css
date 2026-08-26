@@ -386,6 +386,44 @@
   }
   .proto-banner strong{font-weight:900;}
 
+  /* ---------- gradient text accent ---------- */
+  .grad-text{
+    background:linear-gradient(90deg, var(--teal-deep), var(--teal) 50%, var(--teal-deep));
+    background-size:200% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:gradShift 5s ease-in-out infinite;
+  }
+  @keyframes gradShift{0%{background-position:0% center;} 50%{background-position:100% center;} 100%{background-position:0% center;}}
+
+  /* ---------- hero glow ---------- */
+  .hero{position:relative;}
+  .hero-glow{
+    position:absolute; top:-140px; right:-100px; width:540px; height:540px; border-radius:50%;
+    background:radial-gradient(circle, rgba(102,192,181,.35), rgba(102,192,181,0) 70%);
+    pointer-events:none; z-index:0; animation:glowPulse 8s ease-in-out infinite;
+  }
+  @keyframes glowPulse{0%,100%{transform:scale(1); opacity:.8;} 50%{transform:scale(1.15); opacity:1;}}
+  .hero .wrap{position:relative; z-index:1;}
+  .hero-visual{transition:transform .2s ease-out;}
+
+  /* ---------- usp marquee ---------- */
+  .usp-strip{overflow:hidden;}
+  .usp-track{display:flex; width:max-content; animation:uspScroll 28s linear infinite;}
+  .usp-strip:hover .usp-track{animation-play-state:paused;}
+  .usp-set{display:flex; gap:40px; padding-right:40px; flex:none;}
+  .usp-item{white-space:nowrap;}
+  @keyframes uspScroll{from{transform:translateX(0);} to{transform:translateX(-50%);}}
+
+  /* ---------- scroll reveal ---------- */
+  .reveal{opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1; transform:translateY(0);}
+
+  /* ---------- card tilt ---------- */
+  .cat-grid{perspective:1200px;}
+  .tilt{will-change:transform;}
+
+  /* ---------- newsletter micro-interaction ---------- */
+  .nl-form .btn.sent{background:var(--teal-deep);}
+
   /* ---------- responsive ---------- */
   @media (max-width:980px){
     .hero .wrap{grid-template-columns:1fr;}
@@ -410,10 +448,11 @@
     .form-row{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
     .utility-left{display:none;}
-    .usp-strip .wrap{justify-content:center; text-align:center;}
+    .hero-glow{width:340px; height:340px; top:-80px; right:-60px;}
   }
   @media (prefers-reduced-motion: reduce){
-    .anim-box{animation:none;}
+    .anim-box, .hero-glow, .grad-text, .usp-track{animation:none;}
+    .reveal{opacity:1; transform:none; transition:none;}
     html{scroll-behavior:auto;}
   }
   /* ==========================================================================
