@@ -33,7 +33,14 @@ const CartStore = (() => {
     if (existing) {
       existing.qty += qty;
     } else {
-      items.push({ id: product.id, name: product.name, cat: product.cat, price: product.price, qty });
+      items.push({
+        id: product.id,
+        name: product.name,
+        cat: product.cat,
+        price: typeof product.price === 'number' ? product.price : null,
+        quote: product.price == null,
+        qty
+      });
     }
     write(items);
   }
@@ -63,10 +70,15 @@ const CartStore = (() => {
   }
 
   function totalPrice() {
-    return read().reduce((sum, i) => sum + i.qty * i.price, 0);
+    return read().reduce((sum, i) => sum + (typeof i.price === 'number' ? i.qty * i.price : 0), 0);
+  }
+
+  function hasQuoteItems() {
+    return read().some(i => i.quote);
   }
 
   function formatPrice(value) {
+    if (typeof value !== 'number') return 'Prijs op aanvraag';
     return '€ ' + value.toLocaleString('nl-NL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
   }
 
@@ -78,8 +90,11 @@ const CartStore = (() => {
     });
   }
 
-  return { getItems, addItem, setQty, removeItem, clear, totalCount, totalPrice, formatPrice, renderBadges };
+  return { getItems, addItem, setQty, removeItem, clear, totalCount, totalPrice, hasQuoteItems, formatPrice, renderBadges };
 })();
+// `const` bindings don't attach to `window`, but other scripts (e.g. configurator.js)
+// look this up via `window.CartStore` — assign it explicitly so that works.
+window.CartStore = CartStore;
 
 // ---------- add-to-cart toast ----------
 let toastTimer = null;

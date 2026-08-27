@@ -490,6 +490,10 @@
   .cart-summary-row{display:flex; justify-content:space-between; font-size:.88rem; padding-bottom:12px; margin-bottom:12px; border-bottom:1px dashed var(--line); color:var(--ink);}
   .cart-summary-row.muted{color:var(--ink-faint); font-size:.8rem;}
   .cart-summary-total{display:flex; justify-content:space-between; font-weight:900; font-size:1.1rem; margin-bottom:20px;}
+  .cart-quote-note{font-size:.76rem; color:var(--ink-faint); line-height:1.5; margin:-8px 0 16px;}
+  .cart-quote-note-dark{color:rgba(255,255,255,.55); margin:12px 0 0;}
+  .cart-row-quote{background:var(--teal-mist); border-color:transparent;}
+  .qty-fixed{border:none; padding:0; font-weight:700; font-size:.88rem; color:var(--ink-soft);}
 
   /* ---------- checkout ---------- */
   .payment-options{display:flex; flex-direction:column; gap:12px; margin-top:18px;}

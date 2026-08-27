@@ -18,27 +18,36 @@ function renderCartItems() {
     checkoutBtn.disabled = true;
   } else {
     checkoutBtn.disabled = false;
-    container.innerHTML = items.map(item => `
-      <div class="cart-row" data-id="${item.id}">
+    container.innerHTML = items.map(item => {
+      const isQuote = !!item.quote;
+      const qtyCell = isQuote
+        ? `<div class="qty-stepper qty-fixed">${item.qty}×</div>`
+        : `<div class="qty-stepper">
+            <button type="button" aria-label="Aantal verlagen" data-action="dec">−</button>
+            <span aria-live="polite">${item.qty}</span>
+            <button type="button" aria-label="Aantal verhogen" data-action="inc">+</button>
+          </div>`;
+      return `
+      <div class="cart-row ${isQuote ? 'cart-row-quote' : ''}" data-id="${item.id}">
         <div class="cart-row-info">
           <strong>${item.name}</strong>
           <span>${item.cat}</span>
         </div>
-        <div class="qty-stepper">
-          <button type="button" aria-label="Aantal verlagen" data-action="dec">−</button>
-          <span aria-live="polite">${item.qty}</span>
-          <button type="button" aria-label="Aantal verhogen" data-action="inc">+</button>
-        </div>
-        <div class="cart-row-price">${CartStore.formatPrice(item.price)}</div>
-        <div class="cart-row-total">${CartStore.formatPrice(item.price * item.qty)}</div>
+        ${qtyCell}
+        <div class="cart-row-price">${isQuote ? 'Op aanvraag' : CartStore.formatPrice(item.price)}</div>
+        <div class="cart-row-total">${isQuote ? 'Prijs op aanvraag' : CartStore.formatPrice(item.price * item.qty)}</div>
         <button type="button" class="cart-row-remove" aria-label="${item.name} verwijderen" data-action="remove">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m3 0-1 14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2L4 6h16Z"/></svg>
         </button>
-      </div>`).join('');
+      </div>`;
+    }).join('');
   }
 
   document.getElementById('cartSubtotal').textContent = CartStore.formatPrice(CartStore.totalPrice());
   document.getElementById('cartTotal').textContent = CartStore.formatPrice(CartStore.totalPrice());
+
+  const noteEl = document.getElementById('cartQuoteNote');
+  if (noteEl) noteEl.hidden = !CartStore.hasQuoteItems();
 }
 
 function renderCheckoutSummary() {
@@ -48,10 +57,12 @@ function renderCheckoutSummary() {
     <div class="contact-info-row">
       <div>
         <strong>${item.qty}× ${item.name}</strong>
-        <span>${CartStore.formatPrice(item.price * item.qty)}</span>
+        <span>${item.quote ? 'Prijs op aanvraag' : CartStore.formatPrice(item.price * item.qty)}</span>
       </div>
     </div>`).join('');
   document.getElementById('checkoutTotal').textContent = CartStore.formatPrice(CartStore.totalPrice());
+  const noteEl = document.getElementById('checkoutQuoteNote');
+  if (noteEl) noteEl.hidden = !CartStore.hasQuoteItems();
 }
 
 function goToCheckout() {
