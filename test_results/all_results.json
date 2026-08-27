@@ -1215,11 +1215,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 909.3,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 22.7,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 25.3,
         "total_weight_g": 86.0,
         "package_max_weight_g": null,
         "number_of_products": 8,
@@ -3284,11 +3284,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 238.88,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 6.0,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 6.6,
         "total_weight_g": 41.0,
         "package_max_weight_g": null,
         "number_of_products": 9,
@@ -5182,10 +5182,10 @@
             ],
             "dimensions": [
               0.2,
-              1.5,
-              5.0
+              5.0,
+              1.5
             ],
-            "rotation_type": 3,
+            "rotation_type": 4,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -5203,10 +5203,10 @@
             ],
             "dimensions": [
               0.2,
-              1.5,
-              5.0
+              5.0,
+              1.5
             ],
-            "rotation_type": 3,
+            "rotation_type": 4,
             "kind": "normal",
             "represented_count": 1,
             "stack_unit_h": null,
@@ -5218,11 +5218,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 3364.56,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 84.1,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 93.5,
         "total_weight_g": 603.22,
         "package_max_weight_g": null,
         "number_of_products": 17,
@@ -7216,11 +7216,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 474.21,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 11.9,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 13.2,
         "total_weight_g": 242.0,
         "package_max_weight_g": null,
         "number_of_products": 7,
@@ -10492,11 +10492,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 2099.17,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 52.5,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 58.3,
         "total_weight_g": 775.0,
         "package_max_weight_g": null,
         "number_of_products": 18,
@@ -12865,11 +12865,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 978.07,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 24.5,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 27.2,
         "total_weight_g": 130.23,
         "package_max_weight_g": null,
         "number_of_products": 9,
@@ -15626,11 +15626,11 @@
         "package_dimensions_cm": {
           "lengte": 20.0,
           "breedte": 10.0,
-          "hoogte": 20.0
+          "hoogte": 18.0
         },
         "total_product_volume_cm3": 1303.58,
-        "package_volume_cm3": 4000.0,
-        "volume_pct": 32.6,
+        "package_volume_cm3": 3600.0,
+        "volume_pct": 36.2,
         "total_weight_g": 303.0,
         "package_max_weight_g": null,
         "number_of_products": 14,
