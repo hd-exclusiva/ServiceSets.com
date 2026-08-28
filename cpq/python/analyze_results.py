@@ -369,7 +369,7 @@ with tab3:
                             placements,
                             f"{len(st.session_state.get('tab3_products', []))} artikelen in {result.get('package', 'verpakking')}",
                         )
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
                     except Exception as exc:
                         st.warning(f"3D-weergave kon niet worden opgebouwd: {exc}")
 
